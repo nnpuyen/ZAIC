@@ -1,9 +1,0 @@
-[
-  {
-    "kind": "current",
-    "sql": "SELECT COUNT(DISTINCT \"Status\") AS metric FROM \"danh_sach_hoa_don\" WHERE LOWER(CAST(\"Status\" AS VARCHAR)) LIKE LOWER(?)",
-    "params": [
-      "%Quý 2/2026%"
-    ]
-  }
-]
