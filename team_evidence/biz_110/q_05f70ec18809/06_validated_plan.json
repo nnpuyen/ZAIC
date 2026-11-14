@@ -1,0 +1,22 @@
+{
+  "operation": "aggregation",
+  "table": "danh_sach_hoa_don",
+  "metric": {
+    "column": "Status",
+    "aggregation": "count_distinct"
+  },
+  "joins": [],
+  "filters": [
+    {
+      "column": "Status",
+      "operator": "contains",
+      "value": "Quý 2/2026"
+    }
+  ],
+  "comparison_filters": [],
+  "group_by": [],
+  "group_by_period": null,
+  "order_by": [],
+  "limit": null,
+  "answer_type": "number"
+}

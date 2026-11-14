@@ -1,0 +1,44 @@
+# Optional per-business ingestion contract.
+# Copy this file into a business data directory and replace the example
+# aliases and definitions with the terminology for that business.
+tables:
+  orders:
+    aliases:
+      - invoices
+      - danh_sach_hoa_don
+    grain: one row per order
+    columns:
+      order_id:
+        aliases:
+          - Mã bill
+          - Mã đơn hàng
+        type: string
+        role: identifier
+      order_date:
+        aliases:
+          - Ngày giao dịch
+          - Ngày
+        type: date
+        role: transaction_date
+      order_total_amount:
+        aliases:
+          - TongTien
+          - Tổng tiền
+        type: decimal
+        role: measure
+        currency: VND
+        definition: Amount payable by the customer after discount and delivery fee
+      amount_paid:
+        aliases:
+          - Da tra
+          - Đã trả
+        type: decimal
+        role: measure
+        currency: VND
+      amount_due:
+        aliases:
+          - Chưa trả
+          - Chua tra
+        type: decimal
+        role: measure
+        currency: VND

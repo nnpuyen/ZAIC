@@ -1,0 +1,20 @@
+{
+  "tables": {
+    "danh_sach_hoa_don": {
+      "source": "train\\train\\data\\biz_110\\danh_sach_hoa_don.csv",
+      "sheet": null,
+      "rows": 29317,
+      "columns": [
+        "Tien hang",
+        "TongTien",
+        "Mã bill",
+        "Bên mua",
+        "Ngày giao dịch",
+        "Status",
+        "Da tra",
+        "Chưa trả"
+      ]
+    }
+  },
+  "load_errors": []
+}

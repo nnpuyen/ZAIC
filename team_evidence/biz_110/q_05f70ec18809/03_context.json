@@ -1,0 +1,129 @@
+{
+  "schema": {
+    "tables": [
+      {
+        "table": "danh_sach_hoa_don",
+        "source": "train\\train\\data\\biz_110\\danh_sach_hoa_don.csv",
+        "sheet": null,
+        "row_count": 29317,
+        "columns": [
+          {
+            "name": "Tien hang",
+            "type": "BIGINT",
+            "null_ratio": 0.0,
+            "distinct_count": 875,
+            "sample_values": [
+              35000,
+              81000,
+              80000,
+              64000,
+              177000
+            ],
+            "min": 7000,
+            "max": 7777500
+          },
+          {
+            "name": "TongTien",
+            "type": "BIGINT",
+            "null_ratio": 0.0,
+            "distinct_count": 874,
+            "sample_values": [
+              35000,
+              81000,
+              80000,
+              64000,
+              177000
+            ],
+            "min": 7000,
+            "max": 7882500
+          },
+          {
+            "name": "Mã bill",
+            "type": "VARCHAR",
+            "null_ratio": 0.014633148002865193,
+            "distinct_count": 28888,
+            "sample_values": [
+              "ORD000001",
+              "ORD000002",
+              "ORD000003",
+              "ORD000004",
+              "ORD000005"
+            ]
+          },
+          {
+            "name": "Bên mua",
+            "type": "VARCHAR",
+            "null_ratio": 0.0,
+            "distinct_count": 583,
+            "sample_values": [
+              "Khách lẻ",
+              "Mai Khoa Bình",
+              "kl",
+              "khách lẻ",
+              "Giang Chi Hùng"
+            ]
+          },
+          {
+            "name": "Ngày giao dịch",
+            "type": "DATE",
+            "null_ratio": 0.014633148002865193,
+            "distinct_count": 429,
+            "sample_values": [
+              "2025-05-01",
+              "2025-05-02",
+              "2025-05-03",
+              "2025-05-04",
+              "2025-05-05"
+            ]
+          },
+          {
+            "name": "Status",
+            "type": "VARCHAR",
+            "null_ratio": 0.014633148002865193,
+            "distinct_count": 4,
+            "sample_values": [
+              "Hoàn thành",
+              "Hoàn trả",
+              "khách hủy",
+              "Chờ giao"
+            ]
+          },
+          {
+            "name": "Da tra",
+            "type": "BIGINT",
+            "null_ratio": 0.0,
+            "distinct_count": 876,
+            "sample_values": [
+              35000,
+              81000,
+              80000,
+              64000,
+              177000
+            ],
+            "min": 0,
+            "max": 7715000
+          },
+          {
+            "name": "Chưa trả",
+            "type": "BIGINT",
+            "null_ratio": 0.0,
+            "distinct_count": 26,
+            "sample_values": [
+              0,
+              27333,
+              54000,
+              53500,
+              47000
+            ],
+            "min": 0,
+            "max": 371500
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu biz_110\n\nDanh sách hoá đơn, một file CSV: mỗi dòng một đơn hàng (hoá đơn), không có chi tiết mặt hàng trong đơn.\n\n## File\n- `danh_sach_hoa_don.csv` (csv)\n\n## Cột trong `danh_sach_hoa_don.csv`\n- **Tien hang**: tiền hàng của đơn: cộng thành tiền các mặt hàng, trước giảm giá của đơn, chưa gồm phí giao\n- **TongTien**: số khách phải trả cho cả đơn (đã tính giảm giá của đơn và phí giao)\n- **Mã bill**: mã đơn\n- **Bên mua**: tên khách (Khách lẻ nếu không lưu)\n- **Ngày giao dịch**: ngày bán\n- **Status**: trạng thái đơn\n- **Da tra**: đã thanh toán\n- **Chưa trả**: số khách còn nợ của đơn (đơn huỷ: 0)\n\n## Quy ước\n- Dữ liệu có đến hết 03/07/2026.\n- **Còn nợ**: **Chưa trả** là số khách còn nợ của đơn, tính đến hết ngày cuối dữ liệu.\n",
+  "rulebook": "",
+  "calendar": ""
+}
