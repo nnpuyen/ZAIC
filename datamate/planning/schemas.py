@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Literal, Union
 
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 # ------------------------------------------------------------------------------
@@ -33,6 +33,8 @@ FilterOperator = Literal[
 
 
 class Filter(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     column: str
     operator: FilterOperator
     value: Any = None
@@ -41,6 +43,8 @@ class Filter(BaseModel):
 
 
 class FilterGroup(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     logic: Literal["and", "or"] = "and"
     conditions: list[Union[Filter, FilterGroup]] = Field(default_factory=list)
 
@@ -239,12 +243,16 @@ OperationType = Literal[
 
 
 class QueryPlan(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     operation: OperationType = "select"
     table: str  # Table name, CTE name, or file path reader (e.g., read_parquet('...'))
     alias: str | None = None
 
     # CTEs (WITH clauses)
     ctes: list[CTE] = Field(default_factory=list)
+    # Set operations are applied left-to-right to this query and each branch.
+    set_operations: list[SetOperationBranch] = Field(default_factory=list)
 
     # Selections & Aggregations
     select_columns: list[str] = Field(default_factory=list)
@@ -278,19 +286,150 @@ class QueryPlan(BaseModel):
     distinct: bool = False
 
     # Metadata
-    answer_type: Literal["number", "percent", "string", "list", "table", "boolean"] = "number"
+    answer_type: Literal["number", "percent", "string", "date", "list", "table", "boolean"] = "number"
+
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_filter_shapes(cls, value: Any) -> Any:
+        return normalize_plan_filter_shapes(value)
+
+    @model_validator(mode="after")
+    def require_set_operation_branches(self) -> "QueryPlan":
+        if self.operation == "set_operation" and not self.set_operations:
+            raise ValueError("operation='set_operation' requires at least one set_operations branch")
+        return self
 
 
 class SetOperation(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     op_type: Literal["union", "union_all", "intersect", "except"]
     left_query: QueryPlan
     right_query: QueryPlan
+
+
+class SetOperationBranch(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    op_type: Literal["union", "union_all", "intersect", "except"] = "union"
+    query: QueryPlan
+
+
+QueryPlan.model_rebuild()
 
 
 class ParseResult(BaseModel):
     status: Literal["answerable", "unanswerable", "abstain"]
     plan: QueryPlan | SetOperation | None = None
     reason: str | None = None
+
+
+def normalize_plan_filter_shapes(raw_plan: Any) -> Any:
+    """Normalize planner filter and set-operation shapes to the native schema."""
+    if not isinstance(raw_plan, dict):
+        return raw_plan
+
+    normalized = dict(raw_plan)
+
+    # Older planner responses encode extra UNION branches as ``unions``. Map
+    # those to the typed set-operation representation before strict validation.
+    legacy_unions = normalized.pop("unions", None)
+    set_operations = normalized.get("set_operations")
+    if legacy_unions is not None:
+        if set_operations:
+            raise ValueError("Planner response cannot combine 'unions' and 'set_operations'")
+        if not isinstance(legacy_unions, list):
+            raise ValueError("Planner field 'unions' must be a list of query plans")
+        set_operations = [
+            {"op_type": "union", "query": branch}
+            for branch in legacy_unions
+        ]
+        normalized["set_operations"] = set_operations
+
+    if isinstance(set_operations, list):
+        normalized["set_operations"] = [
+            {
+                **step,
+                "query": normalize_plan_filter_shapes(step["query"]),
+            }
+            if isinstance(step, dict) and isinstance(step.get("query"), dict)
+            else step
+            for step in set_operations
+        ]
+    for key in ("filters", "comparison_filters", "having_filters", "qualify_filters"):
+        filters = normalized.get(key)
+        if isinstance(filters, dict):
+            filters = [filters]
+        if isinstance(filters, list):
+            normalized[key] = [_normalize_filter_shape(item) for item in filters]
+
+    if "metric" in normalized:
+        normalized["metric"] = _normalize_metric_filter_shapes(normalized["metric"])
+    metrics = normalized.get("metrics")
+    if isinstance(metrics, list):
+        normalized["metrics"] = [
+            _normalize_metric_filter_shapes(metric) for metric in metrics
+        ]
+
+    pivot = normalized.get("pivot")
+    if isinstance(pivot, dict) and isinstance(pivot.get("using"), list):
+        normalized_pivot = dict(pivot)
+        normalized_pivot["using"] = [
+            _normalize_metric_filter_shapes(metric) for metric in pivot["using"]
+        ]
+        normalized["pivot"] = normalized_pivot
+
+    ctes = normalized.get("ctes")
+    if isinstance(ctes, list):
+        normalized_ctes = []
+        for cte in ctes:
+            if isinstance(cte, dict) and isinstance(cte.get("query"), dict):
+                normalized_cte = dict(cte)
+                normalized_cte["query"] = normalize_plan_filter_shapes(cte["query"])
+                normalized_ctes.append(normalized_cte)
+            else:
+                normalized_ctes.append(cte)
+        normalized["ctes"] = normalized_ctes
+
+    for key in ("left_query", "right_query", "query_plan"):
+        if isinstance(normalized.get(key), dict):
+            normalized[key] = normalize_plan_filter_shapes(normalized[key])
+
+    return normalized
+
+
+def _normalize_metric_filter_shapes(raw_metric: Any) -> Any:
+    if not isinstance(raw_metric, dict):
+        return raw_metric
+    metric = dict(raw_metric)
+    for key in ("filter", "denominator_filter"):
+        if key in metric:
+            metric[key] = _normalize_filter_shape(metric[key])
+    return metric
+
+
+def _normalize_filter_shape(item: Any) -> Any:
+    if not isinstance(item, dict):
+        return item
+
+    # Some planners serialize union variants with explicit tags. Unwrap only
+    # single-key tags; extra keys remain for strict validation to reject.
+    if len(item) == 1 and "filter_group" in item:
+        return _normalize_filter_shape(item["filter_group"])
+    if len(item) == 1 and "filter" in item:
+        return _normalize_filter_shape(item["filter"])
+
+    normalized = dict(item)
+    if normalized.get("operator") == "not in":
+        normalized["operator"] = "not_in"
+    conditions = normalized.get("conditions")
+    if isinstance(conditions, dict):
+        conditions = [conditions]
+    if isinstance(conditions, list):
+        normalized["conditions"] = [
+            _normalize_filter_shape(condition) for condition in conditions
+        ]
+    return normalized
 # from __future__ import annotations
 
 # from typing import Any, Literal

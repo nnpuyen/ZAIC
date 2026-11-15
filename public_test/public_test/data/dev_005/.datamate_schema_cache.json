@@ -1,0 +1,2570 @@
+{
+  "version": 4,
+  "fingerprint": "7357a8ebf9b983f661274cc0c153615a444fc8e9ac894c33cc108f2199433318",
+  "schema": {
+    "tables": [
+      {
+        "table": "BanHang_Thang01_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang01_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 3179,
+        "canonical_name": "BanHang_Thang01_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2633,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-01-01T00:00:00",
+              "2025-01-02T00:00:00",
+              "2025-01-03T00:00:00",
+              "2025-01-04T00:00:00",
+              "2025-01-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "ok",
+              "hủy",
+              "trả lại"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 328,
+            "sample_values": [
+              "khách lẻ",
+              "cao hùng hoàng",
+              "châu hải quân",
+              "từ huy thắng",
+              "hứa dương ngân"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "acyclovir stella kem 5% tuýp 5g",
+              "salonpas cao dán hộp 24 gói x 10 miếng",
+              "nature's bounty vitamin e 400 iu chai 30 viên",
+              "plusssz max multivitamin viên sủi tuýp 20 viên",
+              "panadol extra hộp 15 vỉ x 12 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 8,
+            "sample_values": [
+              1,
+              2,
+              3,
+              6,
+              10,
+              4,
+              7,
+              9
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 122,
+            "sample_values": [
+              17000,
+              14500,
+              165000,
+              40000,
+              1400
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 330,
+            "sample_values": [
+              17000,
+              14500,
+              330000,
+              120000,
+              2800
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "tuýp",
+              "gói",
+              "chai",
+              "viên",
+              "lọ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang01_2026_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang01_2026.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 3180,
+        "canonical_name": "BanHang_Thang01_2026_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2629,
+            "sample_values": [
+              "ord029498",
+              "ord029499",
+              "ord029500",
+              "ord029501",
+              "ord029502"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-01-01T00:00:00",
+              "2026-01-02T00:00:00",
+              "2026-01-03T00:00:00",
+              "2026-01-04T00:00:00",
+              "2026-01-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "đã huỷ",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 329,
+            "sample_values": [
+              "đinh thảo hương",
+              "trương thu thảo",
+              "hứa đạt quang",
+              "bùi ngân linh",
+              "lý linh bảo"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "băng cá nhân urgo transparent hộp 100 miếng",
+              "siro ho bổ phế nam hà chỉ khái lộ chai 125ml",
+              "otrivin 0,1% xịt mũi chai 10ml",
+              "pharmaton essential hộp 30 viên",
+              "decolgen forte hộp 30 vỉ x 4 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 9,
+            "sample_values": [
+              1,
+              2,
+              4,
+              3,
+              10,
+              6,
+              9,
+              5,
+              8
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 113,
+            "sample_values": [
+              80000,
+              55000,
+              58000,
+              210000,
+              5600
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 324,
+            "sample_values": [
+              80000,
+              55000,
+              116000,
+              210000,
+              11200
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "hộp",
+              "chai",
+              "vỉ",
+              "viên",
+              "lọ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang02_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang02_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 2818,
+        "canonical_name": "BanHang_Thang02_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2310,
+            "sample_values": [
+              "ord002634",
+              "ord002635",
+              "ord002636",
+              "ord002637",
+              "ord002638"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 28,
+            "sample_values": [
+              "2025-02-01T00:00:00",
+              "2025-02-02T00:00:00",
+              "2025-02-03T00:00:00",
+              "2025-02-04T00:00:00",
+              "2025-02-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "ok",
+              "hủy",
+              "trả lại"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 323,
+            "sample_values": [
+              "diệp hoa tâm",
+              "doãn đạt trang",
+              "tống ngân ngọc",
+              "khách lẻ",
+              "lý hùng hồng"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "fugacar 500mg hộp 1 viên",
+              "phosphalugel hộp 26 gói",
+              "magne-b6 corbière hộp 5 vỉ x 10 viên",
+              "strepsils cool hộp 2 vỉ x 12 viên",
+              "telfast hd 180mg hộp 3 vỉ x 10 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 6,
+            "sample_values": [
+              1,
+              10,
+              3,
+              2,
+              4,
+              6
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 113,
+            "sample_values": [
+              22000,
+              122200,
+              2100,
+              1600,
+              8900
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 301,
+            "sample_values": [
+              22000,
+              122200,
+              21000,
+              16000,
+              26700
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "viên",
+              "hộp",
+              "gói",
+              "chai",
+              "vỉ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang02_2026_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang02_2026.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 2837,
+        "canonical_name": "BanHang_Thang02_2026_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2319,
+            "sample_values": [
+              "ord032127",
+              "ord032128",
+              "ord032129",
+              "ord032130",
+              "ord032131"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 28,
+            "sample_values": [
+              "2026-02-01T00:00:00",
+              "2026-02-02T00:00:00",
+              "2026-02-03T00:00:00",
+              "2026-02-04T00:00:00",
+              "2026-02-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "trả hàng",
+              "đã huỷ"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 329,
+            "sample_values": [
+              "khách lẻ",
+              "cao hằng thắng",
+              "giang hiếu tâm",
+              "mai mai trung",
+              "từ huy thắng"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "nurofen for children hỗn dịch chai 60ml",
+              "otrivin 0,1% xịt mũi chai 10ml",
+              "yumangel hộp 20 gói",
+              "omeprazol 20mg dhg hộp 3 vỉ x 10 viên",
+              "tiffy dey hộp 25 vỉ x 4 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 6,
+            "sample_values": [
+              1,
+              3,
+              10,
+              2,
+              4,
+              6
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 109,
+            "sample_values": [
+              60000,
+              58000,
+              5300,
+              800,
+              1300
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 298,
+            "sample_values": [
+              60000,
+              174000,
+              53000,
+              1600,
+              1300
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "chai",
+              "gói",
+              "viên",
+              "hộp",
+              "vỉ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang03_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang03_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 2913,
+        "canonical_name": "BanHang_Thang03_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2400,
+            "sample_values": [
+              "ord004944",
+              "ord004945",
+              "ord004946",
+              "ord004947",
+              "ord004948"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-03-01T00:00:00",
+              "2025-03-02T00:00:00",
+              "2025-03-03T00:00:00",
+              "2025-03-04T00:00:00",
+              "2025-03-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "ok",
+              "hủy",
+              "trả lại"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 326,
+            "sample_values": [
+              "khách lẻ",
+              "đinh loan tâm",
+              "quách phương loan",
+              "tống khoa thắng",
+              "trần phương dương"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 84,
+            "sample_values": [
+              "enterogermina 2 tỷ/5ml hộp 20 ống",
+              "yumangel hộp 20 gói",
+              "berberin 100mg mekophar chai 100 viên",
+              "panadol cảm cúm hộp 15 vỉ x 12 viên",
+              "amlodipin 5mg domesco hộp 3 vỉ x 10 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 7,
+            "sample_values": [
+              1,
+              10,
+              4,
+              2,
+              3,
+              6,
+              9
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 116,
+            "sample_values": [
+              194000,
+              106000,
+              800,
+              1200,
+              600
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 307,
+            "sample_values": [
+              194000,
+              106000,
+              800,
+              12000,
+              2400
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "hộp",
+              "viên",
+              "vỉ",
+              "chai",
+              "cái"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang03_2026_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang03_2026.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 3059,
+        "canonical_name": "BanHang_Thang03_2026_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2522,
+            "sample_values": [
+              "ord034446",
+              "ord034447",
+              "ord034448",
+              "ord034449",
+              "ord034450"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-03-01T00:00:00",
+              "2026-03-02T00:00:00",
+              "2026-03-03T00:00:00",
+              "2026-03-04T00:00:00",
+              "2026-03-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "đã huỷ",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 330,
+            "sample_values": [
+              "trương châu hùng",
+              "trần phúc dũng",
+              "khách lẻ",
+              "tống lan hùng",
+              "doãn đức chi"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "smecta hộp 30 gói",
+              "kudos vitamin c 1000mg viên sủi tuýp 20 viên",
+              "lorastad 10mg stella hộp 10 vỉ x 10 viên",
+              "berocca performance viên sủi tuýp 10 viên",
+              "acemuc kids 200mg hộp 30 gói"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 6,
+            "sample_values": [
+              6,
+              2,
+              1,
+              3,
+              10,
+              4
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 115,
+            "sample_values": [
+              5100,
+              132500,
+              800,
+              79000,
+              3000
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 315,
+            "sample_values": [
+              30600,
+              265000,
+              800,
+              79000,
+              3000
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "gói",
+              "tuýp",
+              "viên",
+              "chai",
+              "hộp"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang04_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang04_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 2898,
+        "canonical_name": "BanHang_Thang04_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2379,
+            "sample_values": [
+              "ord007344",
+              "ord007345",
+              "ord007346",
+              "ord007347",
+              "ord007348"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-04-01T00:00:00",
+              "2025-04-02T00:00:00",
+              "2025-04-03T00:00:00",
+              "2025-04-04T00:00:00",
+              "2025-04-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "ok",
+              "hủy",
+              "trả lại"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 326,
+            "sample_values": [
+              "khách lẻ",
+              "châu phong hạnh",
+              "tống thu hà",
+              "đoàn quang trung",
+              "thân châu ngọc"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "smecta hộp 30 gói",
+              "salonpas cao dán hộp 24 gói x 10 miếng",
+              "kẹo ngậm bổ phế nam hà candy hộp 10 vỉ x 8 viên",
+              "decolgen forte hộp 30 vỉ x 4 viên",
+              "enervon hộp 10 vỉ x 10 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 8,
+            "sample_values": [
+              6,
+              2,
+              1,
+              4,
+              10,
+              3,
+              7,
+              8
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 121,
+            "sample_values": [
+              5100,
+              14500,
+              2600,
+              1300,
+              23000
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 314,
+            "sample_values": [
+              30600,
+              29000,
+              2600,
+              23000,
+              385000
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "gói",
+              "viên",
+              "vỉ",
+              "hộp",
+              "cái"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang04_2026_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang04_2026.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 3030,
+        "canonical_name": "BanHang_Thang04_2026_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2493,
+            "sample_values": [
+              "ord036968",
+              "ord036969",
+              "ord036970",
+              "ord036971",
+              "ord036972"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2026-04-01T00:00:00",
+              "2026-04-02T00:00:00",
+              "2026-04-03T00:00:00",
+              "2026-04-04T00:00:00",
+              "2026-04-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "đã huỷ",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 328,
+            "sample_values": [
+              "ngô hoàng khoa",
+              "thái bình thảo",
+              "từ giang thu",
+              "trần đức hằng",
+              "khách lẻ"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "khẩu trang y tế 4 lớp khánh an hộp 50 cái",
+              "amoxicillin 500mg domesco hộp 10 vỉ x 10 viên",
+              "povidine 10% chai 90ml",
+              "siro tiffy chai 30ml"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 9,
+            "sample_values": [
+              1,
+              2,
+              6,
+              10,
+              3,
+              4,
+              5,
+              8,
+              9
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 111,
+            "sample_values": [
+              18000,
+              800,
+              10000,
+              17000,
+              39000
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 308,
+            "sample_values": [
+              17000,
+              800,
+              10000,
+              36000,
+              39000
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "vỉ",
+              "cái",
+              "chai",
+              "tuýp",
+              "viên"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang05_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang05_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 3090,
+        "canonical_name": "BanHang_Thang05_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2569,
+            "sample_values": [
+              "ord009723",
+              "ord009724",
+              "ord009725",
+              "ord009726",
+              "ord009727"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-05-01T00:00:00",
+              "2025-05-02T00:00:00",
+              "2025-05-03T00:00:00",
+              "2025-05-04T00:00:00",
+              "2025-05-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "ok",
+              "trả lại",
+              "hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 330,
+            "sample_values": [
+              "đoàn huy hải",
+              "đỗ thảo huy",
+              "khách lẻ",
+              "vũ bảo hà",
+              "đỗ dũng hùng"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "efferalgan 500mg viên sủi hộp 4 vỉ x 4 viên",
+              "salonpas cao dán hộp 24 gói x 10 miếng",
+              "cefuroxim 500mg vidipha hộp 10 vỉ x 10 viên",
+              "decolgen forte hộp 30 vỉ x 4 viên",
+              "air-x 80mg viên nhai hộp 10 vỉ x 10 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 9,
+            "sample_values": [
+              4,
+              1,
+              10,
+              2,
+              3,
+              6,
+              7,
+              8,
+              5
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 120,
+            "sample_values": [
+              3400,
+              14500,
+              1400,
+              900,
+              1000
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 321,
+            "sample_values": [
+              13600,
+              14500,
+              34000,
+              1400,
+              1800
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "viên",
+              "gói",
+              "cái",
+              "hộp",
+              "lọ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang05_2026_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang05_2026.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 1242,
+        "canonical_name": "BanHang_Thang05_2026_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 870,
+            "sample_values": [
+              "ord039461",
+              "ord039462",
+              "ord039463",
+              "ord039464",
+              "ord039465"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 10,
+            "sample_values": [
+              "2026-05-01T00:00:00",
+              "2026-05-02T00:00:00",
+              "2026-05-03T00:00:00",
+              "2026-05-04T00:00:00",
+              "2026-05-05T00:00:00",
+              "2026-05-06T00:00:00",
+              "2026-05-07T00:00:00",
+              "2026-05-08T00:00:00",
+              "2026-05-09T00:00:00",
+              "2026-05-10T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "đã giao",
+              "đã huỷ",
+              "trả hàng",
+              "đang xử lý"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 266,
+            "sample_values": [
+              "khách lẻ",
+              "hồ mai dương",
+              "quách thắng thắng",
+              "cao đạt châu",
+              "hà thu linh"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 84,
+            "sample_values": [
+              "berberin 100mg mekophar chai 100 viên",
+              "augmentin 625mg hộp 2 vỉ x 7 viên",
+              "yumangel hộp 20 gói",
+              "betadine gargle súc họng chai 125ml",
+              "hapacol 250 hộp 24 gói"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 6,
+            "sample_values": [
+              6,
+              2,
+              1,
+              10,
+              3,
+              4
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 108,
+            "sample_values": [
+              800,
+              13900,
+              5300,
+              79000,
+              2100
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 251,
+            "sample_values": [
+              4800,
+              27800,
+              5300,
+              79000,
+              4200
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "viên",
+              "gói",
+              "chai",
+              "hộp",
+              "tuýp"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang06_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang06_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 2979,
+        "canonical_name": "BanHang_Thang06_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2447,
+            "sample_values": [
+              "ord012292",
+              "ord012293",
+              "ord012294",
+              "ord012295",
+              "ord012296"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-06-01T00:00:00",
+              "2025-06-02T00:00:00",
+              "2025-06-03T00:00:00",
+              "2025-06-04T00:00:00",
+              "2025-06-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "ok",
+              "hủy",
+              "trả lại"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 330,
+            "sample_values": [
+              "ông bích cường",
+              "khách lẻ",
+              "dương tâm trang",
+              "đoàn hoàng tâm",
+              "tăng dũng phương"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "siro tiffy chai 30ml",
+              "clorpheniramin 4mg dhg hộp 10 vỉ x 20 viên",
+              "bio-acimin gold men vi sinh hộp 30 gói",
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "magne-b6 corbière hộp 5 vỉ x 10 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 7,
+            "sample_values": [
+              2,
+              1,
+              6,
+              3,
+              4,
+              10,
+              9
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 121,
+            "sample_values": [
+              16000,
+              2000,
+              159000,
+              1100,
+              2100
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 309,
+            "sample_values": [
+              32000,
+              2000,
+              159000,
+              1100,
+              2100
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "chai",
+              "vỉ",
+              "hộp",
+              "viên",
+              "gói"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang07_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang07_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 3061,
+        "canonical_name": "BanHang_Thang07_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2540,
+            "sample_values": [
+              "ord014739",
+              "ord014740",
+              "ord014741",
+              "ord014742",
+              "ord014743"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-07-01T00:00:00",
+              "2025-07-02T00:00:00",
+              "2025-07-03T00:00:00",
+              "2025-07-04T00:00:00",
+              "2025-07-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "ok",
+              "trả lại",
+              "hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 329,
+            "sample_values": [
+              "khách lẻ",
+              "tô giang nam",
+              "tăng linh bình",
+              "quách hồng thanh",
+              "phùng hoàng thu"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "povidine 10% chai 90ml",
+              "siro ho bổ phế nam hà chỉ khái lộ chai 125ml",
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "gaviscon hộp 24 gói x 10ml",
+              "clarityne 10mg hộp 1 vỉ x 10 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 6,
+            "sample_values": [
+              1,
+              2,
+              10,
+              4,
+              3,
+              6
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 117,
+            "sample_values": [
+              18000,
+              55000,
+              1400,
+              8000,
+              6700
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 309,
+            "sample_values": [
+              18000,
+              110000,
+              2800,
+              8000,
+              6700
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "chai",
+              "viên",
+              "gói",
+              "hộp",
+              "vỉ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang08_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang08_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 2961,
+        "canonical_name": "BanHang_Thang08_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2440,
+            "sample_values": [
+              "ord017279",
+              "ord017280",
+              "ord017281",
+              "ord017282",
+              "ord017283"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-08-01T00:00:00",
+              "2025-08-02T00:00:00",
+              "2025-08-03T00:00:00",
+              "2025-08-04T00:00:00",
+              "2025-08-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "ok",
+              "trả lại",
+              "hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 328,
+            "sample_values": [
+              "khách lẻ",
+              "phùng sơn cường",
+              "cao hằng thắng",
+              "diệp hoa tâm",
+              "huỳnh lan quang"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "efticol 0,9% lốc 10 lọ x 10ml",
+              "upsa-c 1g viên sủi tuýp 10 viên",
+              "clorpheniramin 4mg dhg hộp 10 vỉ x 20 viên",
+              "siro ho bổ phế nam hà chỉ khái lộ chai 125ml",
+              "enat 400 hộp 3 vỉ x 10 viên nang"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 7,
+            "sample_values": [
+              1,
+              2,
+              10,
+              4,
+              3,
+              6,
+              9
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 118,
+            "sample_values": [
+              2700,
+              3900,
+              2000,
+              55000,
+              4700
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 314,
+            "sample_values": [
+              2700,
+              7800,
+              2000,
+              110000,
+              4700
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "lọ",
+              "viên",
+              "vỉ",
+              "chai",
+              "miếng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang09_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang09_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 2874,
+        "canonical_name": "BanHang_Thang09_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2339,
+            "sample_values": [
+              "ord019719",
+              "ord019720",
+              "ord019721",
+              "ord019722",
+              "ord019723"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-09-01T00:00:00",
+              "2025-09-02T00:00:00",
+              "2025-09-03T00:00:00",
+              "2025-09-04T00:00:00",
+              "2025-09-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "ok",
+              "trả lại",
+              "hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 325,
+            "sample_values": [
+              "lương long tâm",
+              "khách lẻ",
+              "lý dương hương",
+              "nghiêm trang linh",
+              "đoàn huy hải"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "phosphalugel hộp 26 gói",
+              "prednisolon 5mg boston chai 500 viên",
+              "eugica hộp 10 vỉ x 10 viên nang",
+              "calcium corbière extra 10ml hộp 30 ống",
+              "otrivin 0,1% xịt mũi chai 10ml"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 7,
+            "sample_values": [
+              3,
+              1,
+              2,
+              4,
+              10,
+              6,
+              8
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 119,
+            "sample_values": [
+              4900,
+              500,
+              700,
+              6800,
+              58000
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 318,
+            "sample_values": [
+              14700,
+              500,
+              700,
+              13600,
+              58000
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "gói",
+              "viên",
+              "ống",
+              "chai",
+              "tuýp"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang10_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang10_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 3061,
+        "canonical_name": "BanHang_Thang10_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2513,
+            "sample_values": [
+              "ord022058",
+              "ord022059",
+              "ord022060",
+              "ord022061",
+              "ord022062"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-10-01T00:00:00",
+              "2025-10-02T00:00:00",
+              "2025-10-03T00:00:00",
+              "2025-10-04T00:00:00",
+              "2025-10-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "ok",
+              "trả lại",
+              "hủy",
+              "đã giao",
+              "trả hàng",
+              "đã huỷ"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 330,
+            "sample_values": [
+              "ngô anh bích",
+              "khách lẻ",
+              "tô ngọc thu",
+              "quách hải bích",
+              "hồ cường duy"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "povidine 10% chai 90ml",
+              "prospan siro ho chai 100ml",
+              "savi losartan 50mg hộp 3 vỉ x 10 viên",
+              "air-x 80mg viên nhai hộp 10 vỉ x 10 viên",
+              "upsa-c 1g viên sủi tuýp 10 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 8,
+            "sample_values": [
+              2,
+              1,
+              4,
+              10,
+              3,
+              6,
+              7,
+              5
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 120,
+            "sample_values": [
+              18000,
+              93000,
+              45000,
+              900,
+              3900
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 304,
+            "sample_values": [
+              36000,
+              93000,
+              45000,
+              900,
+              3900
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "chai",
+              "hộp",
+              "viên",
+              "tuýp",
+              "ống"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang11_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang11_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 2920,
+        "canonical_name": "BanHang_Thang11_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2399,
+            "sample_values": [
+              "ord024571",
+              "ord024572",
+              "ord024573",
+              "ord024574",
+              "ord024575"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-11-01T00:00:00",
+              "2025-11-02T00:00:00",
+              "2025-11-03T00:00:00",
+              "2025-11-04T00:00:00",
+              "2025-11-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "trả hàng",
+              "đã huỷ"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 328,
+            "sample_values": [
+              "lâm châu đạt",
+              "doãn thu thu",
+              "khách lẻ",
+              "võ hải sơn",
+              "lý phong đức"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "loperamid 2mg domesco hộp 5 vỉ x 10 viên",
+              "alaxan hộp 25 vỉ x 4 viên",
+              "efticol 0,9% lốc 10 lọ x 10ml",
+              "băng cá nhân urgo transparent hộp 100 miếng",
+              "prednisolon 5mg boston chai 500 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 6,
+            "sample_values": [
+              1,
+              4,
+              3,
+              2,
+              10,
+              6
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 115,
+            "sample_values": [
+              500,
+              1300,
+              27000,
+              800,
+              3900
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 309,
+            "sample_values": [
+              500,
+              5200,
+              27000,
+              2400,
+              3900
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "viên",
+              "lốc",
+              "miếng",
+              "chai",
+              "tuýp"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_Thang12_2025_DonHang_ChiTiet",
+        "source": "public_test\\public_test\\data\\dev_005\\BanHang_Thang12_2025.xlsx",
+        "sheet": "DonHang_ChiTiet",
+        "row_count": 3051,
+        "canonical_name": "BanHang_Thang12_2025_DonHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2528,
+            "sample_values": [
+              "ord026970",
+              "ord026971",
+              "ord026972",
+              "ord026973",
+              "ord026974"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-12-01T00:00:00",
+              "2025-12-02T00:00:00",
+              "2025-12-03T00:00:00",
+              "2025-12-04T00:00:00",
+              "2025-12-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "đã huỷ",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 329,
+            "sample_values": [
+              "quách hoa trang",
+              "cao đạt châu",
+              "trịnh phong linh",
+              "đào hồng nhung",
+              "khách lẻ"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "khẩu trang y tế 4 lớp khánh an hộp 50 cái",
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "panadol 500mg hộp 10 vỉ x 12 viên",
+              "boganic traphaco hộp 5 vỉ x 20 viên",
+              "efferalgan 500mg viên sủi hộp 4 vỉ x 4 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 8,
+            "sample_values": [
+              2,
+              1,
+              10,
+              4,
+              3,
+              6,
+              5,
+              8
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 113,
+            "sample_values": [
+              800,
+              1500,
+              1000,
+              3400,
+              15000
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "BIGINT",
+            "distinct_count": 302,
+            "sample_values": [
+              1600,
+              1500,
+              1000,
+              800,
+              34000
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "cái",
+              "viên",
+              "vỉ",
+              "chai",
+              "gói"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachQuyDoi_Sheet1",
+        "source": "public_test\\public_test\\data\\dev_005\\DanhSachQuyDoi.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 83,
+        "canonical_name": "DanhSachQuyDoi_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 53,
+            "sample_values": [
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "hapacol 250 hộp 24 gói",
+              "panadol 500mg hộp 10 vỉ x 12 viên",
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "berberin 100mg mekophar chai 100 viên"
+            ]
+          },
+          {
+            "name": "Đơn vị quy đổi",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "vỉ",
+              "hộp",
+              "chai",
+              "tuýp",
+              "lốc"
+            ]
+          },
+          {
+            "name": "Tỉ lệ quy đổi",
+            "type": "VARCHAR",
+            "distinct_count": 22,
+            "sample_values": [
+              "12",
+              "15 vỉ",
+              "24",
+              "10 vỉ",
+              "4"
+            ]
+          },
+          {
+            "name": "Đơn vị cơ bản",
+            "type": "VARCHAR",
+            "distinct_count": 7,
+            "sample_values": [
+              "viên",
+              "gói",
+              "cái",
+              "vỉ",
+              "miếng",
+              "ống",
+              "lọ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachSanPham_Sheet1",
+        "source": "public_test\\public_test\\data\\dev_005\\DanhSachSanPham.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 80,
+        "canonical_name": "DanhSachSanPham_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Định mức tồn tối thiểu",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              0
+            ]
+          },
+          {
+            "name": "Mã SKU",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Được bán trực tiếp",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              1
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mẫu ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Bảo hành",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "hapacol 250 hộp 24 gói",
+              "panadol 500mg hộp 10 vỉ x 12 viên",
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "nước muối sinh lý natri clorid 0,9% vĩnh phúc chai 500ml"
+            ]
+          },
+          {
+            "name": "Mã HH Liên quan",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": [],
+            "role": "identifier"
+          },
+          {
+            "name": "Mô tả chi tiết",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Thương hiệu",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Tồn lớn nhất",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              999999999
+            ]
+          },
+          {
+            "name": "Đơn vị",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "viên",
+              "gói",
+              "chai",
+              "cái",
+              "vỉ",
+              "miếng",
+              "hộp",
+              "ống",
+              "lọ",
+              "tuýp"
+            ]
+          },
+          {
+            "name": "Thuộc tính",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mã vạch EAN",
+            "type": "VARCHAR",
+            "distinct_count": 58,
+            "sample_values": [
+              "8936794138235",
+              "8930653323053",
+              "8935429607351",
+              "8936607655843",
+              "8933097562330"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Loại sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "giảm đau hạ sốt",
+              "ho cảm cúm",
+              "dùng ngoài",
+              "tiêu hoá",
+              "kháng sinh"
+            ]
+          },
+          {
+            "name": "Trọng lượng",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Vị trí",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Loại hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "hàng hóa"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachThuoc_Sheet1",
+        "source": "public_test\\public_test\\data\\dev_005\\DanhSachThuoc.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 80,
+        "canonical_name": "DanhSachThuoc_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã SKU",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Hoạt chất",
+            "type": "VARCHAR",
+            "distinct_count": 51,
+            "sample_values": [
+              "paracetamol + cafein",
+              "paracetamol",
+              "paracetamol + phenylephrin + clorpheniramin",
+              "natri clorid",
+              "berberin"
+            ]
+          },
+          {
+            "name": "Thuốc kê đơn",
+            "type": "BOOLEAN",
+            "distinct_count": 2,
+            "sample_values": [
+              false,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DonHang_Lo_Sheet1",
+        "source": "public_test\\public_test\\data\\dev_005\\DonHang_Lo.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 77653,
+        "canonical_name": "DonHang_Lo_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 39930,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mã lô",
+            "type": "VARCHAR",
+            "distinct_count": 3310,
+            "sample_values": [
+              "n2501227",
+              "o2501732",
+              "h2501163",
+              "j2501715",
+              "n2501852"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Số lượng",
+            "type": "BIGINT",
+            "distinct_count": 178,
+            "sample_values": [
+              1,
+              2,
+              3,
+              6,
+              50
+            ]
+          },
+          {
+            "name": "Số lượng trả",
+            "type": "BIGINT",
+            "distinct_count": 29,
+            "sample_values": [
+              0,
+              1,
+              2,
+              3,
+              17
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DonNhapHang_Sheet1",
+        "source": "public_test\\public_test\\data\\dev_005\\DonNhapHang.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 492,
+        "canonical_name": "DonNhapHang_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn nhập",
+            "type": "VARCHAR",
+            "distinct_count": 492,
+            "sample_values": [
+              "pn00001",
+              "pn00002",
+              "pn00003",
+              "pn00004",
+              "pn00005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày nhập",
+            "type": "TIMESTAMP",
+            "distinct_count": 492,
+            "sample_values": [
+              "2025-01-01T00:00:00",
+              "2025-01-04T00:00:00",
+              "2025-01-05T00:00:00",
+              "2025-01-06T00:00:00",
+              "2025-01-07T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã nhà cung cấp",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "ncc002",
+              "ncc004",
+              "ncc001",
+              "ncc005",
+              "ncc003"
+            ],
+            "role": "identifier"
+          }
+        ]
+      },
+      {
+        "table": "DonNhapHang_ChiTiet_Sheet1",
+        "source": "public_test\\public_test\\data\\dev_005\\DonNhapHang_ChiTiet.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 3312,
+        "canonical_name": "DonNhapHang_ChiTiet_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn nhập",
+            "type": "VARCHAR",
+            "distinct_count": 492,
+            "sample_values": [
+              "pn00138",
+              "pn00108",
+              "pn00196",
+              "pn00270",
+              "pn00452"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mã SKU",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mã lô",
+            "type": "VARCHAR",
+            "distinct_count": 3312,
+            "sample_values": [
+              "a2505755",
+              "b2504662",
+              "b2507196",
+              "b2509234",
+              "b2603807"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Hạn sử dụng",
+            "type": "VARCHAR",
+            "distinct_count": 1235,
+            "sample_values": [
+              "14/01/2028",
+              "04/05/2027",
+              "08/11/2025",
+              "27/01/2026",
+              "22/11/2028"
+            ]
+          },
+          {
+            "name": "Số lượng nhập",
+            "type": "BIGINT",
+            "distinct_count": 96,
+            "sample_values": [
+              360,
+              240,
+              216,
+              192,
+              300
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu dev_005\n\nFile Excel xuất từ phần mềm bán hàng. File đơn hàng mỗi dòng một sản phẩm.\n\nDữ liệu bán hàng xuất theo tháng, mỗi tháng một file (tách theo tháng, không theo năm): từ `BanHang_Thang01_2025.xlsx` đến `BanHang_Thang05_2026.xlsx` (17 file), các tháng cùng cột; mỗi file có sheet `DonHang_ChiTiet`.\n\n## File\n- `BanHang_Thang<tháng>_<năm>.xlsx` (xlsx)\n- `DanhSachQuyDoi.xlsx` (xlsx)\n- `DanhSachSanPham.xlsx` (xlsx)\n- `DonNhapHang.xlsx` (xlsx)\n- `DonNhapHang_ChiTiet.xlsx` (xlsx)\n- `DonHang_Lo.xlsx` (xlsx)\n- `DanhSachThuoc.xlsx` (xlsx)\n\n## Cột trong `BanHang_Thang<tháng>_<năm>.xlsx`, sheet `DonHang_ChiTiet`\n- **Mã đơn hàng**: mã đơn\n- **Ngày đặt hàng**: ngày bán\n- **Trạng thái đơn hàng**: trạng thái đơn\n- **Tên khách hàng**: tên khách (Khách lẻ nếu không lưu)\n- **Tên sản phẩm**: tên hàng\n- **Số lượng sản phẩm**: số lượng\n- **Giá sản phẩm**: đơn giá\n- **Tổng tiền**: thành tiền sau giảm\n- **Đơn vị tính**: đơn vị tính\n\n## Cột trong `DanhSachQuyDoi.xlsx`\n- **Tên sản phẩm**: tên hàng (file chỉ có mặt hàng có đơn vị lớn)\n- **Đơn vị quy đổi**: đơn vị lớn (thùng, hộp, tấn...)\n- **Tỉ lệ quy đổi**: hệ số: 1 đơn vị lớn bằng bấy nhiêu đơn vị ngay dưới nó; số kèm tên đơn vị là tính theo đơn vị đó, chỉ có số là tính theo đơn vị cơ bản\n- **Đơn vị cơ bản**: đơn vị cơ bản\n\n## Cột trong `DanhSachSanPham.xlsx`\n- **Mã SKU**: mã hàng\n- **Tên sản phẩm**: tên\n- **Đơn vị**: đơn vị cơ bản\n- **Loại sản phẩm**: nhóm hàng\n\n## Cột trong `DonNhapHang.xlsx`\n- **Mã đơn nhập**: mã phiếu nhập\n- **Ngày nhập**: ngày nhập\n- **Mã nhà cung cấp**: mã nhà cung cấp\n\n## Cột trong `DonNhapHang_ChiTiet.xlsx`\n- **Mã đơn nhập**: mã phiếu nhập\n- **Mã SKU**: mã hàng\n- **Mã lô**: số lô\n- **Hạn sử dụng**: hạn sử dụng\n- **Số lượng nhập**: số lượng nhập (đơn vị cơ bản)\n\n## Cột trong `DonHang_Lo.xlsx`\n- **Mã đơn hàng**: mã đơn\n- **Mã lô**: số lô\n- **Số lượng**: số lượng bán lấy từ lô (đơn vị cơ bản)\n- **Số lượng trả**: số lượng khách trả lại (đơn vị cơ bản); lớn hơn 0: đơn đó có trả hàng\n\n## Cột trong `DanhSachThuoc.xlsx`\n- **Mã SKU**: mã hàng\n- **Hoạt chất**: hoạt chất (trống với thực phẩm chức năng, vật tư)\n- **Thuốc kê đơn**: thuốc kê đơn\n\n## Quy ước\n- Dữ liệu có đến hết 10/05/2026.\n- **Lô, hạn dùng**: mỗi dòng nhập là một lô, số lô không trùng. Một dòng bán có thể lấy từ nhiều lô. Hàng khách trả về lại lô đã bán.\n- **Thuốc**: **Thuốc kê đơn** đúng (TRUE/1) là thuốc kê đơn. Hoạt chất ghi không kèm hàm lượng (hàm lượng ở tên hàng); nhiều chất nối bằng \" + \".\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng, hệ số quy đổi ở `DanhSachQuyDoi.xlsx`; sản phẩm có nhiều đơn vị lớn thì hệ số ghi theo đơn vị ngay dưới.\n"
+}

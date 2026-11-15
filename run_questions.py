@@ -13,8 +13,12 @@ def main() -> None:
     parser.add_argument("questions", type=Path)
     parser.add_argument("data_root", type=Path)
     parser.add_argument(
-        "output", type=Path, nargs="?", default=Path("outputs"),
-        help="Output directory (default: .\\outputs) or legacy JSONL output path",
+        "output_positional", type=Path, nargs="?",
+        help="Output directory or legacy JSONL output path",
+    )
+    parser.add_argument(
+        "--output", dest="output_option", type=Path,
+        help="Output directory or legacy JSONL output path (default: .\\outputs)",
     )
     parser.add_argument("--schema-output", type=Path)
     parser.add_argument("--trace-output", type=Path)
@@ -46,14 +50,18 @@ def main() -> None:
         help="Minimum seconds between consecutive LLM requests (default: 1; or LLM_REQUEST_DELAY)",
     )
     args = parser.parse_args()
-    output_root = args.output
+    if args.output_positional is not None and args.output_option is not None:
+        parser.error(
+            "provide the output path either positionally or with --output, not both"
+        )
+    output_root = args.output_option or args.output_positional or Path("outputs")
     if output_root.suffix.lower() == ".jsonl":
         output_path = output_root
         evidence_dir = args.evidence_dir
         answers_root = output_root.parent
     else:
         answers_root = output_root / f"{args.questions.stem}_answers"
-        output_path = answers_root / "answers.json"
+        output_path = answers_root / "answers.jsonl"
         evidence_dir = args.evidence_dir or answers_root
     answer_questions(
         args.questions,

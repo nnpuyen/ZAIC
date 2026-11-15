@@ -1,0 +1,407 @@
+{
+  "version": 4,
+  "fingerprint": "c1336729f0354d18372ca5578f2812f46d77f87196a57d906f89cc53ed58620a",
+  "schema": {
+    "tables": [
+      {
+        "table": "Danh_s_ích_h_áng_h_a_Sheet1",
+        "source": "train\\train\\data\\biz_130\\Danh s├ích h├áng h├│a.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 61,
+        "canonical_name": "Danh_s_ích_h_áng_h_a_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 61,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mô tả sản phẩm",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Bảo hành",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Được bán trực tiếp",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              1
+            ]
+          },
+          {
+            "name": "Loại hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "hàng hóa"
+            ]
+          },
+          {
+            "name": "Mã HH Liên quan",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": [],
+            "role": "identifier"
+          },
+          {
+            "name": "Mẫu ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 61,
+            "sample_values": [
+              "rau muống xào tỏi",
+              "bia tiger lon",
+              "cánh gà chiên nước mắm",
+              "lẩu thái tôm cá (nhỏ)",
+              "gỏi xoài khô cá sặc"
+            ]
+          },
+          {
+            "name": "Nhóm hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "rau",
+              "bia",
+              "chiên xào",
+              "lẩu",
+              "gỏi"
+            ]
+          },
+          {
+            "name": "Thương hiệu",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Định mức tồn tối thiểu",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              0
+            ]
+          },
+          {
+            "name": "Vị trí kệ",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 9,
+            "sample_values": [
+              "đĩa",
+              "lon",
+              "nồi",
+              "phần",
+              "tô",
+              "chai",
+              "con",
+              "ly",
+              "lần"
+            ]
+          },
+          {
+            "name": "Định mức tồn tối đa",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              999999999
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Giá vốn",
+            "type": "DOUBLE",
+            "distinct_count": 60,
+            "sample_values": [
+              15995.0,
+              16079.0,
+              30050.0,
+              78824.0,
+              34132.0
+            ],
+            "role": "measure"
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_1_Sheet1",
+        "source": "train\\train\\data\\biz_130\\So_chi_tiet_ban_hang_1.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 100000,
+        "canonical_name": "So_chi_tiet_ban_hang_1_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 337,
+            "sample_values": [
+              "2025-02-01T00:00:00",
+              "2025-02-02T00:00:00",
+              "2025-02-03T00:00:00",
+              "2025-02-04T00:00:00",
+              "2025-02-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 26603,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 408,
+            "sample_values": [
+              "bia sài gòn special lon",
+              "mì xào hải sản",
+              "đậu hũ chiên giòn",
+              "bia heineken lon",
+              "ốc len xào dừa"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "lon",
+              "đĩa",
+              "nồi",
+              "phần",
+              "lần"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 66,
+            "sample_values": [
+              "1",
+              "2 đĩa",
+              "1 lon",
+              "1 đĩa",
+              "3"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 160,
+            "sample_values": [
+              19000.0,
+              79000.0,
+              49000.0,
+              30000.0,
+              99000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 793,
+            "sample_values": [
+              19000.0,
+              158000.0,
+              49000.0,
+              30000.0,
+              99000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "DOUBLE",
+            "distinct_count": 12,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0,
+              6.0,
+              4.0
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_2_Sheet1",
+        "source": "train\\train\\data\\biz_130\\So_chi_tiet_ban_hang_2.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 72530,
+        "canonical_name": "So_chi_tiet_ban_hang_2_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 239,
+            "sample_values": [
+              "2026-01-03T00:00:00",
+              "2026-01-04T00:00:00",
+              "2026-01-05T00:00:00",
+              "2026-01-06T00:00:00",
+              "2026-01-07T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 19276,
+            "sample_values": [
+              "ord026603",
+              "ord026604",
+              "ord026605",
+              "ord026606",
+              "ord026607"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 308,
+            "sample_values": [
+              "trà đá",
+              "bia tiger lon",
+              "cơm chiên hải sản",
+              "cải thìa xào tỏi",
+              "cá kèo kho tộ"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "ly",
+              "lon",
+              "đĩa",
+              "phần",
+              "chai"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 67,
+            "sample_values": [
+              "1",
+              "1 đĩa",
+              "6",
+              "1 chai",
+              "1 con"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 157,
+            "sample_values": [
+              5000.0,
+              24000.0,
+              79000.0,
+              55000.0,
+              99000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 677,
+            "sample_values": [
+              5000.0,
+              24000.0,
+              79000.0,
+              55000.0,
+              594000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "đã hoàn thành",
+              "đã hủy",
+              "đã trả hàng",
+              "đang giao hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "DOUBLE",
+            "distinct_count": 12,
+            "sample_values": [
+              1.0,
+              6.0,
+              2.0,
+              3.0,
+              4.0
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu biz_130\n\nFile Excel xuất từ phần mềm bán hàng. Sổ chi tiết bán hàng: mỗi dòng một dòng hàng, thông tin đơn lặp lại ở mọi dòng.\n\n## File\n- `So_chi_tiet_ban_hang_1.xlsx` (xlsx)\n- `So_chi_tiet_ban_hang_2.xlsx` (xlsx)\n- `Danh sách hàng hóa.xlsx` (xlsx)\n\n## Cột trong `So_chi_tiet_ban_hang_1.xlsx`\n- **Ngày**: ngày bán\n- **Mã đơn hàng**: mã đơn\n- **Tên hàng hóa**: tên hàng\n- **Đơn vị tính**: đơn vị tính\n- **Số lượng**: số lượng\n- **Đơn giá**: đơn giá\n- **Thành tiền**: thành tiền sau giảm\n- **Trạng thái**: trạng thái đơn\n- **Số lượng quy đổi**: số lượng đã đổi ra đơn vị cơ bản\n\n## Cột trong `So_chi_tiet_ban_hang_2.xlsx`\n- **Ngày**: ngày bán\n- **Mã đơn hàng**: mã đơn\n- **Tên hàng hóa**: tên hàng\n- **Đơn vị tính**: đơn vị tính\n- **Số lượng**: số lượng\n- **Đơn giá**: đơn giá\n- **Thành tiền**: thành tiền sau giảm\n- **Trạng thái**: trạng thái đơn\n- **Số lượng quy đổi**: số lượng đã đổi ra đơn vị cơ bản\n\n## Cột trong `Danh sách hàng hóa.xlsx`\n- **Mã hàng hóa**: mã hàng\n- **Tên hàng hóa**: tên\n- **Nhóm hàng hóa**: nhóm hàng\n- **Đơn vị tính**: đơn vị cơ bản\n- **Giá vốn**: giá vốn\n\n## Quy ước\n- Dữ liệu có đến hết 29/08/2026.\n- **Phí phục vụ**: đơn ngồi phòng lạnh (không huỷ, không ghi nợ) có thêm dòng hàng \"Phí phục vụ\": phí phục vụ phòng lạnh của đơn, tính theo tiền món, đã ghi sẵn thành tiền.\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng:\n  - Bia Tiger lon: 1 thùng = 24 lon\n  - Bia Sài Gòn Special lon: 1 thùng = 24 lon\n  - Coca-Cola lon: 1 thùng = 24 lon\n  - Bia Tiger Bạc lon: 1 thùng = 24 lon\n  - Nước suối: 1 thùng = 24 chai\n  - Bia Heineken lon: 1 thùng = 24 lon\n  - Bia Sài Gòn Lager chai: 1 két = 20 chai\n  - 7Up lon: 1 thùng = 24 lon\n"
+}

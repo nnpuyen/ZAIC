@@ -1,0 +1,1245 @@
+{
+  "version": 4,
+  "fingerprint": "74c7e721799daedad051121b7375fd0ccb9ac76b16547a5295ef6e52bf5fa600",
+  "schema": {
+    "tables": [
+      {
+        "table": "DanhSachTho_Sheet1",
+        "source": "public_test\\public_test\\data\\dev_012\\DanhSachTho.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 4,
+        "canonical_name": "DanhSachTho_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Họ tên",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "hà loan đạt",
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "đàm lan an"
+            ]
+          },
+          {
+            "name": "Ngày vào làm",
+            "type": "TIMESTAMP",
+            "distinct_count": 4,
+            "sample_values": [
+              "2023-05-29T00:00:00",
+              "2024-09-19T00:00:00",
+              "2024-08-04T00:00:00",
+              "2023-10-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Hoa hồng (%)",
+            "type": "BIGINT",
+            "distinct_count": 4,
+            "sample_values": [
+              32,
+              25,
+              28,
+              33
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T7_2025",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T7-2025",
+        "row_count": 403,
+        "canonical_name": "SoSuaXe_T7_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-07-01T00:00:00",
+              "2025-07-02T00:00:00",
+              "2025-07-03T00:00:00",
+              "2025-07-04T00:00:00",
+              "2025-07-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 375,
+            "sample_values": [
+              "future 59b6-219.16",
+              "wave alpha 50k2-994.07",
+              "vario 50f1-334.29",
+              "ex 59e1-603.87",
+              "future 59f3-176.76"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 305,
+            "sample_values": [
+              "vệ sinh nồi",
+              "bdtq + vs nồi",
+              "bộ nhông xích + thay nước mát",
+              "bugi",
+              "làm điện"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "đàm lan an",
+              "an",
+              "hà loan đạt"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 119,
+            "sample_values": [
+              120000.0,
+              270000.0,
+              440000.0,
+              65000.0,
+              80000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 12,
+            "sample_values": [
+              "hẹn chiều lấy",
+              "thay thêm nếu cần",
+              "khách chờ lấy liền",
+              "kiểm tra lại tuần sau",
+              "bảo hành"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T8_2025",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T8-2025",
+        "row_count": 451,
+        "canonical_name": "SoSuaXe_T8_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-08-01T00:00:00",
+              "2025-08-02T00:00:00",
+              "2025-08-03T00:00:00",
+              "2025-08-04T00:00:00",
+              "2025-08-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 424,
+            "sample_values": [
+              "grande 51l3-168.55",
+              "airblade 50f5-227.38",
+              "future 61n3-574.63",
+              "lead 61x4-678.10",
+              "vario 51t1-852.95"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 332,
+            "sample_values": [
+              "thay bugi + bdtq + nhớt hãng",
+              "dây cu roa + nhớt láp + nhớt honda",
+              "shell 1l + thay nhớt motul",
+              "bố trước, shell 1l",
+              "bu gi + bảo dưỡng + nhớt hãng + làm điện"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "hà loan đạt",
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "đàm lan an",
+              "an"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 119,
+            "sample_values": [
+              310000.0,
+              405000.0,
+              415000.0,
+              220000.0,
+              390000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 12,
+            "sample_values": [
+              "xe để lại qua đêm",
+              "bảo hành, phiếu 20/7",
+              "kiểm tra lại tuần sau",
+              "bảo hành, phiếu 23/7",
+              "bảo hành"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T9_2025",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T9-2025",
+        "row_count": 387,
+        "canonical_name": "SoSuaXe_T9_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-09-01T00:00:00",
+              "2025-09-02T00:00:00",
+              "2025-09-03T00:00:00",
+              "2025-09-04T00:00:00",
+              "2025-09-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 363,
+            "sample_values": [
+              "sirius 51m2-125.32",
+              "vision 72l7-223.37",
+              "exciter 60t2-479.52",
+              "grande 61h2-326.44",
+              "vision 72l6-336.83"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 292,
+            "sample_values": [
+              "thay nhớt + vá xe",
+              "vá ruột + bố trước + bố sau",
+              "vs nồi + thay vỏ",
+              "bdtq",
+              "castrol, bdtq, thay nhớt láp"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "đàm lan an",
+              "an",
+              "hà loan đạt",
+              "lương chi đức",
+              "đoàn bảo phúc"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 113,
+            "sample_values": [
+              120000.0,
+              175000.0,
+              456000.0,
+              150000.0,
+              300000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 12,
+            "sample_values": [
+              "kiểm tra lại tuần sau",
+              "bảo hành, phiếu 21/8",
+              "khách chờ lấy liền",
+              "đã gọi khách",
+              "bảo hành"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T10_2025",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T10-2025",
+        "row_count": 445,
+        "canonical_name": "SoSuaXe_T10_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-10-01T00:00:00",
+              "2025-10-02T00:00:00",
+              "2025-10-03T00:00:00",
+              "2025-10-04T00:00:00",
+              "2025-10-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 411,
+            "sample_values": [
+              "lead 61h7-440.84",
+              "alpha 54t8-428.71",
+              "ab 54p3-820.93",
+              "alpha 59n7-354.93",
+              "airblade 59c5-926.98"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 332,
+            "sample_values": [
+              "nhớt honda, thay nhớt castrol",
+              "thay vỏ + bdtq",
+              "thay bugi, bố sau",
+              "bình gs + nhớt motul ga",
+              "láp + thay nhớt motul"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "đàm lan an",
+              "an",
+              "hà loan đạt"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 131,
+            "sample_values": [
+              215000.0,
+              486000.0,
+              135000.0,
+              585000.0,
+              165000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 14,
+            "sample_values": [
+              "khách chờ lấy liền",
+              "bảo hành",
+              "bảo hành, phiếu 28/9",
+              "xe để lại qua đêm",
+              "kiểm tra lại tuần sau"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T11_2025",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T11-2025",
+        "row_count": 436,
+        "canonical_name": "SoSuaXe_T11_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-11-01T00:00:00",
+              "2025-11-02T00:00:00",
+              "2025-11-03T00:00:00",
+              "2025-11-04T00:00:00",
+              "2025-11-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 404,
+            "sample_values": [
+              "ab 51u2-574.02",
+              "alpha 61n1-806.33",
+              "vision 110 59n7-633.33",
+              "ab 59m2-699.49",
+              "exciter 59v9-667.79"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 329,
+            "sample_values": [
+              "bố thắng trước, vá xe",
+              "đèn pha, vá ruột",
+              "bình + vá xe",
+              "bd, nhớt hộp số",
+              "bảo dưỡng xe"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "hà loan đạt",
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "đàm lan an",
+              "an"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 131,
+            "sample_values": [
+              105000.0,
+              80000.0,
+              475000.0,
+              180000.0,
+              150000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "xe để lại qua đêm",
+              "kiểm tra lại tuần sau",
+              "thay thêm nếu cần",
+              "khách chờ lấy liền",
+              "đã gọi khách",
+              "bảo hành, phiếu 8/11",
+              "bảo hành",
+              "bảo hành, phiếu 22/11",
+              "hẹn chiều lấy",
+              "bảo hành, phiếu 17/11"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T12_2025",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T12-2025",
+        "row_count": 398,
+        "canonical_name": "SoSuaXe_T12_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-12-01T00:00:00",
+              "2025-12-02T00:00:00",
+              "2025-12-03T00:00:00",
+              "2025-12-04T00:00:00",
+              "2025-12-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 373,
+            "sample_values": [
+              "wave rsx 59n7-534.01",
+              "exciter 51x2-652.38",
+              "alpha 50s2-338.65",
+              "sh mode 61n1-751.73",
+              "future 50u4-509.15"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 278,
+            "sample_values": [
+              "bố thắng trước",
+              "bdtq",
+              "nhớt, motul",
+              "rửa xe, nhớt hãng, bdtq, vá xe",
+              "nhớt castrol power1 + làm nồi"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "đoàn bảo phúc",
+              "an",
+              "đàm lan an",
+              "hà loan đạt",
+              "lương chi đức"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 145,
+            "sample_values": [
+              80000.0,
+              150000.0,
+              230000.0,
+              300000.0,
+              240000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 12,
+            "sample_values": [
+              "xe để lại qua đêm",
+              "bảo hành",
+              "thay thêm nếu cần",
+              "bảo hành, phiếu 18/11",
+              "bảo hành, phiếu 27/11"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T1_2026",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T1-2026",
+        "row_count": 422,
+        "canonical_name": "SoSuaXe_T1_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-01-01T00:00:00",
+              "2026-01-02T00:00:00",
+              "2026-01-03T00:00:00",
+              "2026-01-04T00:00:00",
+              "2026-01-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 395,
+            "sample_values": [
+              "wave α 51s3-559.01",
+              "lead 54g6-426.07",
+              "rsx 72c8-233.86",
+              "ab 50g1-417.07",
+              "air blade 72f8-886.70"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 316,
+            "sample_values": [
+              "thay vỏ",
+              "rửa kim phun, vá",
+              "bd + sửa điện + nhớt",
+              "thay nhớt castrol, lọc gió",
+              "motul, nhớt"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "đàm lan an",
+              "an",
+              "hà loan đạt"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 188,
+            "sample_values": [
+              336000.0,
+              176000.0,
+              490000.0,
+              214500.0,
+              230000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 9,
+            "sample_values": [
+              "đã gọi khách",
+              "bảo hành",
+              "bảo hành, phiếu 24/12",
+              "bảo hành, phiếu 2/1",
+              "khách chờ lấy liền",
+              "bảo hành, phiếu 27/12",
+              "thay thêm nếu cần",
+              "kiểm tra lại tuần sau",
+              "hẹn chiều lấy"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T2_2026",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T2-2026",
+        "row_count": 471,
+        "canonical_name": "SoSuaXe_T2_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 28,
+            "sample_values": [
+              "2026-02-01T00:00:00",
+              "2026-02-02T00:00:00",
+              "2026-02-03T00:00:00",
+              "2026-02-04T00:00:00",
+              "2026-02-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 433,
+            "sample_values": [
+              "sirius 61b2-515.41",
+              "sirius 59n3-928.90",
+              "wave rsx 51l1-358.05",
+              "winner 50d6-883.65",
+              "air blade 72s3-377.32"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 334,
+            "sample_values": [
+              "nhớt",
+              "làm điện",
+              "nhớt hãng",
+              "motul + bdtq",
+              "bố thắng trước"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "hà loan đạt",
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "an",
+              "đàm lan an"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 203,
+            "sample_values": [
+              95000.0,
+              80000.0,
+              292500.0,
+              154000.0,
+              157500.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "thay thêm nếu cần",
+              "hẹn chiều lấy",
+              "bảo hành",
+              "đã gọi khách",
+              "kiểm tra lại tuần sau"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T3_2026",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T3-2026",
+        "row_count": 459,
+        "canonical_name": "SoSuaXe_T3_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-03-01T00:00:00",
+              "2026-03-02T00:00:00",
+              "2026-03-03T00:00:00",
+              "2026-03-04T00:00:00",
+              "2026-03-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 422,
+            "sample_values": [
+              "sirius fi 60s4-802.46",
+              "wave alpha 59c9-434.79",
+              "sirius 72x6-109.34",
+              "ab 59p8-676.80",
+              "ab 59p6-200.88"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 296,
+            "sample_values": [
+              "bảo dưỡng, bu gi",
+              "nhớt",
+              "vỏ xe + bảo dưỡng + bố trước + thay lọc gió",
+              "motul + thay ruột",
+              "thay nhớt castrol, ắc quy, ruột xe"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "hà loan đạt",
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "đàm lan an",
+              "an"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 176,
+            "sample_values": [
+              295500.0,
+              95000.0,
+              676000.0,
+              219000.0,
+              760500.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 12,
+            "sample_values": [
+              "đã gọi khách",
+              "bảo hành",
+              "kiểm tra lại tuần sau",
+              "hẹn chiều lấy",
+              "thay thêm nếu cần"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T4_2026",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T4-2026",
+        "row_count": 404,
+        "canonical_name": "SoSuaXe_T4_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2026-04-01T00:00:00",
+              "2026-04-02T00:00:00",
+              "2026-04-03T00:00:00",
+              "2026-04-04T00:00:00",
+              "2026-04-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 379,
+            "sample_values": [
+              "lead 59g4-721.13",
+              "wave α 50g1-441.69",
+              "vision 54v8-379.04",
+              "alpha 59n7-650.66",
+              "air blade 72b7-889.06"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 264,
+            "sample_values": [
+              "curoa",
+              "nhớt castrol power1, thay nhớt, nhớt motul ga",
+              "bd + nước làm mát + nhớt castrol power1 + bu gi",
+              "vỏ casumina + bố trước",
+              "thay nhớt + curoa"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "đàm lan an",
+              "an",
+              "hà loan đạt",
+              "lương chi đức",
+              "đoàn bảo phúc"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 178,
+            "sample_values": [
+              280000.0,
+              350000.0,
+              410500.0,
+              416000.0,
+              375000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 13,
+            "sample_values": [
+              "hẹn chiều lấy",
+              "bảo hành",
+              "kiểm tra lại tuần sau",
+              "khách chờ lấy liền",
+              "bảo hành, phiếu 20/3"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T5_2026",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T5-2026",
+        "row_count": 455,
+        "canonical_name": "SoSuaXe_T5_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-05-01T00:00:00",
+              "2026-05-02T00:00:00",
+              "2026-05-03T00:00:00",
+              "2026-05-04T00:00:00",
+              "2026-05-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 423,
+            "sample_values": [
+              "air blade 50c5-913.97",
+              "wave alpha 50f5-847.70",
+              "wave alpha 54b3-967.91",
+              "future 60f5-624.79",
+              "wave alpha 50l2-605.05"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 336,
+            "sample_values": [
+              "đèn pha",
+              "láp, vệ sinh nồi",
+              "ruột xe",
+              "nhớt hộp số",
+              "bảo dưỡng, nhớt shell"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "an",
+              "đàm lan an",
+              "hà loan đạt"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 209,
+            "sample_values": [
+              58000.0,
+              156000.0,
+              84000.0,
+              30000.0,
+              312500.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 13,
+            "sample_values": [
+              "thay thêm nếu cần",
+              "xe để lại qua đêm",
+              "hẹn chiều lấy",
+              "đã gọi khách",
+              "bảo hành"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T6_2026",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T6-2026",
+        "row_count": 448,
+        "canonical_name": "SoSuaXe_T6_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2026-06-01T00:00:00",
+              "2026-06-02T00:00:00",
+              "2026-06-03T00:00:00",
+              "2026-06-04T00:00:00",
+              "2026-06-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 414,
+            "sample_values": [
+              "janus 59c2-382.22",
+              "lead 50v8-550.07",
+              "future 125 59l9-714.43",
+              "air blade 72f8-886.70",
+              "wave rsx 59c9-448.52"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 315,
+            "sample_values": [
+              "làm nồi",
+              "vá, má phanh trước, rửa",
+              "vs nồi",
+              "rửa + má phanh trước + shell 1l + vá",
+              "bugi, motul"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "hà loan đạt",
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "đàm lan an",
+              "an"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 185,
+            "sample_values": [
+              126000.0,
+              136000.0,
+              283000.0,
+              200000.0,
+              260000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 14,
+            "sample_values": [
+              "bảo hành, phiếu 24/5",
+              "bảo hành",
+              "đã gọi khách",
+              "bảo hành, phiếu 27/5",
+              "kiểm tra lại tuần sau"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T7_2026",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T7-2026",
+        "row_count": 441,
+        "canonical_name": "SoSuaXe_T7_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-07-01T00:00:00",
+              "2026-07-02T00:00:00",
+              "2026-07-03T00:00:00",
+              "2026-07-04T00:00:00",
+              "2026-07-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 421,
+            "sample_values": [
+              "vision 59x5-435.74",
+              "grande 61h2-326.44",
+              "ex 59x6-248.83",
+              "ex 51m8-504.38",
+              "vision 51b6-895.75"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 326,
+            "sample_values": [
+              "láp",
+              "bảo dưỡng + nhớt castrol",
+              "thay bóng đèn, bd, vá xe",
+              "láp + castrol",
+              "rửa, nước mát"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "đoàn bảo phúc",
+              "đàm lan an",
+              "an",
+              "hà loan đạt",
+              "lương chi đức"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 202,
+            "sample_values": [
+              30000.0,
+              285500.0,
+              249500.0,
+              180000.0,
+              90000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 12,
+            "sample_values": [
+              "kiểm tra lại tuần sau",
+              "xe để lại qua đêm",
+              "khách chờ lấy liền",
+              "thay thêm nếu cần",
+              "đã gọi khách"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoSuaXe_T8_2026",
+        "source": "public_test\\public_test\\data\\dev_012\\SoSuaXe.xlsx",
+        "sheet": "T8-2026",
+        "row_count": 458,
+        "canonical_name": "SoSuaXe_T8_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-08-01T00:00:00",
+              "2026-08-02T00:00:00",
+              "2026-08-03T00:00:00",
+              "2026-08-04T00:00:00",
+              "2026-08-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Xe",
+            "type": "VARCHAR",
+            "distinct_count": 419,
+            "sample_values": [
+              "vision 110 72b9-225.05",
+              "lead 61f2-542.23",
+              "future 59p6-377.22",
+              "ex 50k3-228.80",
+              "lead 72t6-963.19"
+            ]
+          },
+          {
+            "name": "Làm gì",
+            "type": "VARCHAR",
+            "distinct_count": 319,
+            "sample_values": [
+              "làm nồi, rửa, má phanh sau",
+              "bu gi",
+              "bdtq",
+              "má phanh trước",
+              "motul"
+            ]
+          },
+          {
+            "name": "Thợ",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "lương chi đức",
+              "đoàn bảo phúc",
+              "an",
+              "đàm lan an",
+              "hà loan đạt"
+            ]
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 196,
+            "sample_values": [
+              226000.0,
+              65000.0,
+              165500.0,
+              80000.0,
+              135000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "thay thêm nếu cần",
+              "hẹn chiều lấy",
+              "khách chờ lấy liền",
+              "xe để lại qua đêm",
+              "bảo hành",
+              "bảo hành, phiếu 1/8",
+              "đã gọi khách",
+              "bảo hành, phiếu 9/8",
+              "kiểm tra lại tuần sau",
+              "bảo hành, phiếu 21/8"
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu dev_012\n\nSổ sửa xe chủ tiệm tự ghi trên Excel, mỗi tháng một sheet: mỗi dòng một lượt xe vào sửa (một phiếu), không ghi mã phiếu, không ghi tên khách. Ô Làm gì ghi mọi việc của phiếu. Tiền là tổng cả phiếu, không ghi tiền từng việc. File DanhSachTho.xlsx ghi họ tên, phần trăm hoa hồng các thợ; sổ ghi thợ theo tên gọi. Phiếu ghi chú bảo hành, Tiền 0: xe quay lại bảo hành việc của một phiếu trước, tiệm không thu tiền.\n\n## File\n- `SoSuaXe.xlsx` (xlsx)\n- `DanhSachTho.xlsx` (xlsx)\n\n## Cột trong `SoSuaXe.xlsx`\n- **Ngày**: ngày sửa\n- **Xe**: dòng xe và biển số ghi chung một ô\n- **Làm gì**: các việc đã làm cho xe, nhiều việc ghi chung một ô\n- **Thợ**: thợ làm phiếu, ghi tên gọi\n- **Tiền**: tổng tiền cả phiếu\n- **Ghi chú**: ghi chú\n\n## Cột trong `DanhSachTho.xlsx`\n- **Họ tên**: họ tên thợ\n- **Ngày vào làm**: ngày vào làm\n- **Hoa hồng (%)**: phần trăm hoa hồng của thợ, tính trên tổng Tiền các phiếu thợ làm trong tháng\n\n## Quy ước\n- Dữ liệu có đến hết 31/08/2026.\n"
+}

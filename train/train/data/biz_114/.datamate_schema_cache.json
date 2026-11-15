@@ -1,0 +1,144 @@
+{
+  "version": 4,
+  "fingerprint": "e0864662d3c50d7b278f54ff591291c5c69752e0896240ada4a5f3b066787940",
+  "schema": {
+    "tables": [
+      {
+        "table": "ban_hang",
+        "source": "train\\train\\data\\biz_114\\ban_hang.csv",
+        "sheet": null,
+        "row_count": 26119,
+        "canonical_name": "ban_hang",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giá bán lẻ",
+            "type": "DOUBLE",
+            "distinct_count": 84,
+            "sample_values": [
+              1270000.0,
+              1200000.0,
+              300000.0,
+              560000.0,
+              240000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "cuộn",
+              "xe 4m3",
+              "thùng",
+              "bình",
+              "m3"
+            ]
+          },
+          {
+            "name": "Mã GD",
+            "type": "VARCHAR",
+            "distinct_count": 11875,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Quy ra ĐV lẻ",
+            "type": "VARCHAR",
+            "distinct_count": 25,
+            "sample_values": [
+              "2",
+              "8",
+              "1",
+              "3",
+              "5"
+            ]
+          },
+          {
+            "name": "Sluong",
+            "type": "VARCHAR",
+            "distinct_count": 111,
+            "sample_values": [
+              "2",
+              "2 xe 4m3",
+              "1 thùng",
+              "1",
+              "2 m3"
+            ]
+          },
+          {
+            "name": "Sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 54,
+            "sample_values": [
+              "dây điện cadivi cv 2.5 cuộn 100m",
+              "đá mi bụi",
+              "gạch lát nền prime 60x60 thùng 4 viên",
+              "gas saigon petro 12kg",
+              "cát xây tô"
+            ]
+          },
+          {
+            "name": "Tổng",
+            "type": "DOUBLE",
+            "distinct_count": 483,
+            "sample_values": [
+              2540000.0,
+              2400000.0,
+              300000.0,
+              560000.0,
+              480000.0
+            ]
+          },
+          {
+            "name": "Tên khách",
+            "type": "VARCHAR",
+            "distinct_count": 123,
+            "sample_values": [
+              "tăng chi trang",
+              "khách lẻ",
+              "lương hà bảo",
+              "bạch phong sơn",
+              "kl"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 537,
+            "sample_values": [
+              "2025-01-01T00:00:00",
+              "2025-01-02T00:00:00",
+              "2025-01-03T00:00:00",
+              "2025-01-04T00:00:00",
+              "2025-01-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "trang_thai",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "đã lấy",
+              "đã hủy đơn",
+              "trả hàng",
+              "đang giao"
+            ],
+            "role": "status"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu biz_114\n\nMột file phẳng, mỗi dòng một bản ghi (một dòng hàng trong đơn).\n\n## File\n- `ban_hang.csv` (csv)\n\n## Cột trong `ban_hang.csv`\n- **Giá bán lẻ**: đơn giá\n- **Đơn vị tính**: đơn vị tính\n- **Mã GD**: mã đơn\n- **Quy ra ĐV lẻ**: số lượng đã đổi ra đơn vị cơ bản\n- **Sluong**: số lượng\n- **Sản phẩm**: tên hàng\n- **Tổng**: thành tiền sau giảm\n- **Tên khách**: tên khách (Khách lẻ nếu không lưu)\n- **Ngày**: ngày bán\n- **trang_thai**: trạng thái đơn\n\n## Quy ước\n- Dữ liệu có đến hết 21/06/2026.\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng:\n  - Xi măng Hà Tiên PCB40 bao 50kg: 1 tấn = 20 bao\n  - Xi măng INSEE Power-S bao 50kg: 1 tấn = 20 bao\n  - Cát xây tô: 1 xe 4m3 = 4 m3\n  - Cát bê tông: 1 xe 4m3 = 4 m3\n  - Cát san lấp: 1 xe 4m3 = 4 m3\n  - Đá 1x2: 1 xe 4m3 = 4 m3\n  - Đá 4x6: 1 xe 4m3 = 4 m3\n  - Đá mi bụi: 1 xe 4m3 = 4 m3\n  - Gạch ống 8x8x18 Tuynel: 1 thiên = 1000 viên\n  - Gạch thẻ đặc 4x8x18: 1 thiên = 1000 viên\n  - Băng keo điện Nano 20 yard: 1 cây = 10 cuộn\n  - Lưới B40 mạ kẽm khổ 1.5m: 1 cuộn 10m = 10 m\n  - Ngói Đồng Nai 22 viên/m2: 1 thiên = 1000 viên\n"
+}

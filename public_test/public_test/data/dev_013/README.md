@@ -1,6 +1,6 @@
 # Dữ liệu dev_013
 
-Sổ sách Excel của tiệm mẹ và bé. `BanHang_<năm>.xlsx`: sổ bán hàng, mỗi tháng một sheet, header gộp 2 dòng (nhóm Hàng hoá, Tiền ở dòng trên). Mỗi dòng một mặt hàng khách mua; một hoá đơn nhiều dòng cùng số HĐ. Ngay sau các dòng hàng của một hoá đơn có thể có dòng không phải hàng, chỉ ghi HĐ, tên và TT: "Voucher" (tiền giảm của hoá đơn từ các chương trình ở sheet KhuyenMai, TT ghi số âm), "Dùng <n> điểm" (khách dùng n điểm thành viên, mỗi điểm trừ 100đ, TT ghi số âm), "Phí ship" (phí giao hàng khách trả thêm). `QuanLy.xlsx`: danh mục hàng (DanhMuc), khách thành viên (KhachHang), sổ nhập hàng (NhapHang), chương trình khuyến mãi (KhuyenMai), mỗi danh sách một sheet. Sổ không có mã hàng, mã khách: nối qua tên hàng, tên khách.
+Sổ sách Excel của tiệm mẹ và bé. `BanHang_<năm>.xlsx`: sổ bán hàng, mỗi tháng một sheet, nhóm tiêu đề hai dòng đã được chuẩn hóa thành một dòng phẳng. Mỗi dòng một mặt hàng khách mua; một hoá đơn nhiều dòng cùng số HĐ. Ngay sau các dòng hàng của một hoá đơn có thể có dòng không phải hàng, chỉ ghi HĐ, tên và TT: "Voucher" (tiền giảm của hoá đơn từ các chương trình ở sheet KhuyenMai, TT ghi số âm), "Dùng <n> điểm" (khách dùng n điểm thành viên, mỗi điểm trừ 100đ, TT ghi số âm), "Phí ship" (phí giao hàng khách trả thêm). `QuanLy.xlsx`: danh mục hàng (DanhMuc), khách thành viên (KhachHang), sổ nhập hàng (NhapHang), chương trình khuyến mãi (KhuyenMai), mỗi danh sách một sheet. Sổ không có mã hàng, mã khách: nối qua tên hàng, tên khách.
 
 ## File
 - `BanHang_2025.xlsx` (xlsx)

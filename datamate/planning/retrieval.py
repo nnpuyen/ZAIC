@@ -355,12 +355,23 @@ def retrieve_context(
             is_unnamed = (
                 str(column.get("name", "")).strip().casefold().startswith("unnamed:")
             )
-            if "sample_values" in column and (
-                is_unnamed
-                or column.get("role") == "status"
-                or str(column.get("type", "")).upper() in {"VARCHAR", "TEXT", "STRING"}
-            ):
-                compact["sample_values"] = column["sample_values"]
+            if "sample_values" in column:
+                sample_values = column["sample_values"]
+                if is_unnamed:
+                    sample_limit = 5
+                else:
+                    try:
+                        distinct_count = int(column.get("distinct_count"))
+                    except (TypeError, ValueError):
+                        distinct_count = None
+                    sample_limit = (
+                        None if distinct_count is not None and distinct_count <= 10 else 3
+                    )
+                compact["sample_values"] = (
+                    sample_values[:sample_limit]
+                    if sample_limit is not None and isinstance(sample_values, list)
+                    else sample_values
+                )
             compact_columns.append(compact)
         compact_table: dict[str, Any] = {
             "table": table.get("table"),

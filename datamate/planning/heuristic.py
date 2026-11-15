@@ -89,6 +89,9 @@ class HeuristicParser:
         answer_type = "string" if is_ranking and aggregation == "count" else (
             "percent" if "%" in text or "phan tram" in text or "ti le" in text else "number"
         )
+        if is_grouping:
+            # Grouped answers include both the grouping label and its measure.
+            answer_type = "table"
         if is_ranking and group_column:
             answer_type = "string" if limit == 1 else "table"
         operation = "ranking" if is_ranking else ("grouping" if is_grouping else "aggregation")

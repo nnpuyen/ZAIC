@@ -1,0 +1,583 @@
+{
+  "version": 2,
+  "fingerprint": "9b629a843c4a41fab2e8ed2c1dda62419e6e9d61e9576117497d470a78e76606",
+  "schema": {
+    "tables": [
+      {
+        "table": "DonHang_ChiTiet_Sheet1",
+        "source": "train\\train\\data\\biz_121\\DonHang_ChiTiet.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 47370,
+        "canonical_name": "DonHang_ChiTiet_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 44042,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "DATE",
+            "distinct_count": 569,
+            "sample_values": [
+              "2025-03-01",
+              "2025-03-02",
+              "2025-03-03",
+              "2025-03-04",
+              "2025-03-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "đã hoàn thành",
+              "đã hủy",
+              "đã hoàn hàng",
+              "đang giao dịch"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 323,
+            "sample_values": [
+              "lâm ngọc ngọc",
+              "lê phương hoàng",
+              "kl",
+              "khách lẻ",
+              "triệu ngân hiếu"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 88,
+            "sample_values": [
+              "amoxicillin 500mg domesco hộp 10 vỉ x 10 viên",
+              "hapacol 150 hộp 24 gói",
+              "hagifen 400mg dhg hộp 10 vỉ x 10 viên",
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "lorastad 10mg stella hộp 10 vỉ x 10 viên"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "BIGINT",
+            "distinct_count": 10,
+            "sample_values": [
+              1,
+              2,
+              10,
+              6,
+              3,
+              4,
+              9,
+              5,
+              8,
+              7
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "DOUBLE",
+            "distinct_count": 154,
+            "sample_values": [
+              100000.0,
+              1600.0,
+              6000.0,
+              1100.0,
+              800.0
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "VARCHAR",
+            "distinct_count": 1002,
+            "sample_values": [
+              "100000",
+              "3200",
+              "6,000",
+              "2200",
+              "8000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "hộp",
+              "gói",
+              "vỉ",
+              "viên",
+              "chai"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DuLieuXuat_DanhSachQuyDoi",
+        "source": "train\\train\\data\\biz_121\\DuLieuXuat.xlsx",
+        "sheet": "DanhSachQuyDoi",
+        "row_count": 83,
+        "canonical_name": "DuLieuXuat_DanhSachQuyDoi",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 53,
+            "sample_values": [
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "hapacol 250 hộp 24 gói",
+              "panadol 500mg hộp 10 vỉ x 12 viên",
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "berberin 100mg mekophar chai 100 viên"
+            ]
+          },
+          {
+            "name": "Đơn vị quy đổi",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "vỉ",
+              "hộp",
+              "chai",
+              "tuýp",
+              "lốc"
+            ]
+          },
+          {
+            "name": "Tỉ lệ quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 19,
+            "sample_values": [
+              12,
+              180,
+              24,
+              120,
+              4
+            ]
+          },
+          {
+            "name": "Đơn vị cơ bản",
+            "type": "VARCHAR",
+            "distinct_count": 7,
+            "sample_values": [
+              "viên",
+              "gói",
+              "cái",
+              "vỉ",
+              "miếng",
+              "ống",
+              "lọ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DuLieuXuat_DanhSachSanPham",
+        "source": "train\\train\\data\\biz_121\\DuLieuXuat.xlsx",
+        "sheet": "DanhSachSanPham",
+        "row_count": 80,
+        "canonical_name": "DuLieuXuat_DanhSachSanPham",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Vị trí",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mã SKU",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Bảo hành",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Thương hiệu",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mẫu ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "hapacol 250 hộp 24 gói",
+              "panadol 500mg hộp 10 vỉ x 12 viên",
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "nước muối sinh lý natri clorid 0,9% vĩnh phúc chai 500ml"
+            ]
+          },
+          {
+            "name": "Trọng lượng",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mã barcode",
+            "type": "VARCHAR",
+            "distinct_count": 48,
+            "sample_values": [
+              "8937854393632",
+              "8933585256918",
+              "8935581333440",
+              "8934122770669",
+              "8936152488248"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Đơn vị",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "viên",
+              "gói",
+              "chai",
+              "cái",
+              "vỉ",
+              "miếng",
+              "hộp",
+              "ống",
+              "lọ",
+              "tuýp"
+            ]
+          },
+          {
+            "name": "Mã HH Liên quan",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": [],
+            "role": "identifier"
+          },
+          {
+            "name": "Tồn lớn nhất",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              999999999
+            ]
+          },
+          {
+            "name": "Hình ảnh (url1,url2...)",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Thuộc tính",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mô tả chi tiết",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Loại sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "giảm đau hạ sốt",
+              "ho cảm cúm",
+              "dùng ngoài",
+              "tiêu hoá",
+              "kháng sinh"
+            ]
+          },
+          {
+            "name": "Loại hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "hàng hóa"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DuLieuXuat_DonNhapHang",
+        "source": "train\\train\\data\\biz_121\\DuLieuXuat.xlsx",
+        "sheet": "DonNhapHang",
+        "row_count": 566,
+        "canonical_name": "DuLieuXuat_DonNhapHang",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn nhập",
+            "type": "VARCHAR",
+            "distinct_count": 566,
+            "sample_values": [
+              "pn00001",
+              "pn00002",
+              "pn00003",
+              "pn00004",
+              "pn00005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày nhập",
+            "type": "DATE",
+            "distinct_count": 566,
+            "sample_values": [
+              "2025-03-01",
+              "2025-03-03",
+              "2025-03-04",
+              "2025-03-05",
+              "2025-03-06"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã nhà cung cấp",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "ncc001",
+              "ncc004",
+              "ncc002",
+              "ncc003",
+              "ncc005"
+            ],
+            "role": "identifier"
+          }
+        ]
+      },
+      {
+        "table": "DuLieuXuat_DonNhapHang_ChiTiet",
+        "source": "train\\train\\data\\biz_121\\DuLieuXuat.xlsx",
+        "sheet": "DonNhapHang_ChiTiet",
+        "row_count": 3665,
+        "canonical_name": "DuLieuXuat_DonNhapHang_ChiTiet",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn nhập",
+            "type": "VARCHAR",
+            "distinct_count": 566,
+            "sample_values": [
+              "pn00204",
+              "pn00331",
+              "pn00353",
+              "pn00398",
+              "pn00431"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mã SKU",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mã lô",
+            "type": "VARCHAR",
+            "distinct_count": 3665,
+            "sample_values": [
+              "a2509923",
+              "a2601643",
+              "a2602894",
+              "a2604476",
+              "a2605927"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Hạn sử dụng",
+            "type": "VARCHAR",
+            "distinct_count": 1285,
+            "sample_values": [
+              "08/03/2027",
+              "01/07/2028",
+              "03/01/2028",
+              "16/03/2028",
+              "20/05/2027"
+            ]
+          },
+          {
+            "name": "Số lượng nhập",
+            "type": "BIGINT",
+            "distinct_count": 84,
+            "sample_values": [
+              360,
+              216,
+              192,
+              240,
+              200
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DuLieuXuat_DonHang_Lo",
+        "source": "train\\train\\data\\biz_121\\DuLieuXuat.xlsx",
+        "sheet": "DonHang_Lo",
+        "row_count": 84745,
+        "canonical_name": "DuLieuXuat_DonHang_Lo",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 43584,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mã lô",
+            "type": "VARCHAR",
+            "distinct_count": 3658,
+            "sample_values": [
+              "y2503213",
+              "r2503152",
+              "q2503369",
+              "l2503172",
+              "d2503300"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Số lượng",
+            "type": "BIGINT",
+            "distinct_count": 175,
+            "sample_values": [
+              100,
+              2,
+              10,
+              1,
+              16
+            ]
+          },
+          {
+            "name": "Số lượng trả",
+            "type": "BIGINT",
+            "distinct_count": 26,
+            "sample_values": [
+              0,
+              6,
+              1,
+              8,
+              18
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DuLieuXuat_DanhSachThuoc",
+        "source": "train\\train\\data\\biz_121\\DuLieuXuat.xlsx",
+        "sheet": "DanhSachThuoc",
+        "row_count": 80,
+        "canonical_name": "DuLieuXuat_DanhSachThuoc",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã SKU",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Hoạt chất",
+            "type": "VARCHAR",
+            "distinct_count": 51,
+            "sample_values": [
+              "paracetamol + cafein",
+              "paracetamol",
+              "paracetamol + phenylephrin + clorpheniramin",
+              "natri clorid",
+              "berberin"
+            ]
+          },
+          {
+            "name": "Thuốc kê đơn",
+            "type": "BOOLEAN",
+            "distinct_count": 2,
+            "sample_values": [
+              false,
+              true
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu biz_121\n\nFile Excel xuất từ phần mềm bán hàng. File đơn hàng mỗi dòng một sản phẩm.\n\nCác danh sách `DanhSachQuyDoi`, `DanhSachSanPham`, `DonNhapHang`, `DonNhapHang_ChiTiet`, `DonHang_Lo`, `DanhSachThuoc` nằm chung file `DuLieuXuat.xlsx`, mỗi danh sách một sheet.\n\n## File\n- `DonHang_ChiTiet.xlsx` (xlsx)\n- `DuLieuXuat.xlsx` (xlsx)\n\n## Cột trong `DonHang_ChiTiet.xlsx`\n- **Mã đơn hàng**: mã đơn\n- **Ngày đặt hàng**: ngày bán\n- **Trạng thái đơn hàng**: trạng thái đơn\n- **Tên khách hàng**: tên khách (Khách lẻ nếu không lưu)\n- **Tên sản phẩm**: tên hàng\n- **Số lượng sản phẩm**: số lượng\n- **Giá sản phẩm**: đơn giá\n- **Tổng tiền**: thành tiền sau giảm\n- **Đơn vị tính**: đơn vị tính\n\n## Cột trong `DuLieuXuat.xlsx`, sheet `DanhSachQuyDoi`\n- **Tên sản phẩm**: tên hàng (file chỉ có mặt hàng có đơn vị lớn)\n- **Đơn vị quy đổi**: đơn vị lớn (thùng, hộp, tấn...)\n- **Tỉ lệ quy đổi**: hệ số: số đơn vị cơ bản trong 1 đơn vị lớn\n- **Đơn vị cơ bản**: đơn vị cơ bản\n\n## Cột trong `DuLieuXuat.xlsx`, sheet `DanhSachSanPham`\n- **Mã SKU**: mã hàng\n- **Tên sản phẩm**: tên\n- **Đơn vị**: đơn vị cơ bản\n- **Loại sản phẩm**: nhóm hàng\n\n## Cột trong `DuLieuXuat.xlsx`, sheet `DonNhapHang`\n- **Mã đơn nhập**: mã phiếu nhập\n- **Ngày nhập**: ngày nhập\n- **Mã nhà cung cấp**: mã nhà cung cấp\n\n## Cột trong `DuLieuXuat.xlsx`, sheet `DonNhapHang_ChiTiet`\n- **Mã đơn nhập**: mã phiếu nhập\n- **Mã SKU**: mã hàng\n- **Mã lô**: số lô\n- **Hạn sử dụng**: hạn sử dụng\n- **Số lượng nhập**: số lượng nhập (đơn vị cơ bản)\n\n## Cột trong `DuLieuXuat.xlsx`, sheet `DonHang_Lo`\n- **Mã đơn hàng**: mã đơn\n- **Mã lô**: số lô\n- **Số lượng**: số lượng bán lấy từ lô (đơn vị cơ bản)\n- **Số lượng trả**: số lượng khách trả lại (đơn vị cơ bản); lớn hơn 0: đơn đó có trả hàng\n\n## Cột trong `DuLieuXuat.xlsx`, sheet `DanhSachThuoc`\n- **Mã SKU**: mã hàng\n- **Hoạt chất**: hoạt chất (trống với thực phẩm chức năng, vật tư)\n- **Thuốc kê đơn**: thuốc kê đơn\n\n## Quy ước\n- Dữ liệu có đến hết 20/09/2026.\n- **Lô, hạn dùng**: mỗi dòng nhập là một lô, số lô không trùng. Một dòng bán có thể lấy từ nhiều lô. Hàng khách trả về lại lô đã bán.\n- **Thuốc**: **Thuốc kê đơn** đúng (TRUE/1) là thuốc kê đơn. Hoạt chất ghi không kèm hàm lượng (hàm lượng ở tên hàng); nhiều chất nối bằng \" + \".\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng, hệ số quy đổi ở `DuLieuXuat.xlsx`.\n"
+}

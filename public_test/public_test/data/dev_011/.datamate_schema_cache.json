@@ -1,0 +1,207 @@
+{
+  "version": 2,
+  "fingerprint": "43bc8b58883d6d710d75a1b0f9c6e4658af7d0cd087b0729cb451adaa8673870",
+  "schema": {
+    "tables": [
+      {
+        "table": "SoBanHang_Ghi_tắt",
+        "source": "public_test\\public_test\\data\\dev_011\\SoBanHang.xlsx",
+        "sheet": "Ghi tắt",
+        "row_count": 59,
+        "canonical_name": "SoBanHang_Ghi_tắt",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ghi tắt",
+            "type": "VARCHAR",
+            "distinct_count": 59,
+            "sample_values": [
+              "cáp c",
+              "cáp c-l",
+              "sạc 20w",
+              "sạc 25w ss",
+              "dây đeo"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 59,
+            "sample_values": [
+              "cáp type-c 1m",
+              "cáp type-c sang lightning 1m",
+              "củ sạc nhanh 20w type-c",
+              "củ sạc nhanh 25w samsung",
+              "dây đeo điện thoại"
+            ]
+          },
+          {
+            "name": "Loại",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "phụ kiện",
+              "máy mới",
+              "máy cũ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Sổ_bán_hàng",
+        "source": "public_test\\public_test\\data\\dev_011\\SoBanHang.xlsx",
+        "sheet": "Sổ bán hàng",
+        "row_count": 5863,
+        "canonical_name": "SoBanHang_Sổ_bán_hàng",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 426,
+            "sample_values": [
+              "2025-06-01T00:00:00",
+              "2025-06-02T00:00:00",
+              "2025-06-03T00:00:00",
+              "2025-06-04T00:00:00",
+              "2025-06-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 3819,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 1548,
+            "sample_values": [
+              "khách lẻ",
+              "kl",
+              "lẻ",
+              "trịnh hằng nam 0977824094",
+              "trương mai khánh 0972621741"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 115,
+            "sample_values": [
+              "sạc 25w ss",
+              "cáp c-l",
+              "pin sạc dự phòng 10000mah",
+              "cáp c",
+              "sạc 20w"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 1201,
+            "sample_values": [
+              "352264652741220",
+              "359506993102576",
+              "356783058295495",
+              "354179526554138",
+              "350840600373810"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "BIGINT",
+            "distinct_count": 2,
+            "sample_values": [
+              2,
+              1
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "BIGINT",
+            "distinct_count": 76,
+            "sample_values": [
+              290000,
+              150000,
+              390000,
+              90000,
+              250000
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "BIGINT",
+            "distinct_count": 126,
+            "sample_values": [
+              580000,
+              150000,
+              780000,
+              90000,
+              250000
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "DOUBLE",
+            "distinct_count": 91,
+            "sample_values": [
+              10000.0,
+              40000.0,
+              190000.0,
+              12000.0,
+              90000.0
+            ]
+          },
+          {
+            "name": "Thu máy cũ",
+            "type": "DOUBLE",
+            "distinct_count": 59,
+            "sample_values": [
+              2600000.0,
+              5600000.0,
+              1800000.0,
+              3000000.0,
+              5300000.0
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "DOUBLE",
+            "distinct_count": 974,
+            "sample_values": [
+              720000.0,
+              860000.0,
+              330000.0,
+              1000000.0,
+              280000.0
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "trả lại hàng",
+              "khách mang trả",
+              "khách trả lại"
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu dev_011\n\nSổ bán hàng của cửa hàng điện thoại, chủ tiệm tự ghi trên Excel: sheet `Ghi tắt` (cách ghi tắt tên hàng và loại hàng) và sheet `Sổ bán hàng` cả kỳ, mỗi dòng một mặt hàng của một đơn.\n\n## File\n- `SoBanHang.xlsx` (xlsx)\n\n## Cột trong `SoBanHang.xlsx`\n- **Ngày**: ngày bán\n- **STT**: số thứ tự đơn (hoá đơn) trong sổ\n- **Khách**: tên khách (khách không lưu: khách lẻ)\n- **Hàng**: hàng bán, có thể ghi tắt (tra ở sheet Ghi tắt)\n- **IMEI**: IMEI của máy bán (máy mới, máy cũ), dòng 2 máy ghi 2 số cách nhau \" / \"; phụ kiện để trống\n- **SL**: số lượng\n- **Giá**: đơn giá một máy / một cái\n- **Thành tiền**: thành tiền của dòng\n- **Bớt**: tiền bớt cho cả đơn (trống: không bớt)\n- **Thu máy cũ**: tiền thu máy cũ của khách, trừ vào tiền đơn (trống: không thu máy)\n- **Khách trả**: số tiền khách trả cho cả đơn, đã trừ bớt và thu máy cũ\n- **Ghi chú**: ghi chú của đơn; đơn khách trả lại hàng ghi ở đây\n\n## Quy ước\n- Dữ liệu có đến hết 31/07/2026.\n- **Đơn khách trả lại**: **Ghi chú** của đơn ghi khách trả lại.\n- **Tiền khách trả**: **Khách trả** là số tiền khách trả cho cả đơn (không phải của dòng), đã bớt và đã trừ tiền thu máy cũ; ô bớt, thu máy cũ để trống là không có khoản đó.\n- **Ghi tắt, loại hàng**: sheet `Ghi tắt` cho tên đầy đủ và loại hàng (máy mới, máy cũ, phụ kiện) của từng cách ghi tắt. Máy có IMEI (**IMEI**), phụ kiện không.\n"
+}

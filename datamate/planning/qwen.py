@@ -8,6 +8,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 from ..ingestion.loader import BusinessDatabase
+from .plan_extraction import extract_query_plan
 from .retrieval import retrieve_context
 from .schemas import QueryPlan
 
@@ -86,7 +87,8 @@ class LLMParser:
         )
         configured_timeout = os.getenv("LLM_TIMEOUT", "600")
         self.timeout = timeout if timeout is not None else float(configured_timeout)
-        configured_max_tokens = os.getenv("LLM_MAX_TOKENS", "512")
+        default_max_tokens = "1024"
+        configured_max_tokens = os.getenv("LLM_MAX_TOKENS", default_max_tokens)
         self.max_tokens = int(configured_max_tokens)
         configured_request_delay = os.getenv("LLM_REQUEST_DELAY", "1")
         self.request_delay = (
@@ -161,11 +163,17 @@ class LLMParser:
                     self.last_response_content = (
                         content if isinstance(content, str) else str(content)
                     )
-                    raw_plan = json.loads(content)
+                    try:
+                        raw_plan = json.loads(content)
+                    except json.JSONDecodeError:
+                        # Some endpoints add a short preamble or JSON fence
+                        # despite requesting JSON mode. The extractor handles
+                        # that framing while still validating the plan itself.
+                        raw_plan = content
                     self.last_raw_plan = raw_plan
                 except (KeyError, IndexError, TypeError, json.JSONDecodeError) as error:
                     raise ValueError("LLM response did not contain a JSON QueryPlan") from error
-                return QueryPlan.model_validate(_normalize_plan_operators(raw_plan))
+                return extract_query_plan(raw_plan)
             except HTTPError as error:
                 detail = error.read().decode("utf-8", errors="replace")
                 failure = f"LLM endpoint returned HTTP {error.code}: {detail}"
@@ -205,14 +213,24 @@ class LLMParser:
         """Build a concise prompt around the retrieved context."""
         instructions = f"""You plan safe queries for Vietnamese business data.
 
-Return exactly one complete JSON object strictly matching the QueryPlan schema. Do not return SQL, explanations, or markdown.
+Return exactly one complete JSON object strictly matching the QueryPlan schema, do not add any wrapper for the returend JSON object. Do not return SQL, explanations, or markdown.
+
+Schema shape and executable-plan rules:
+- A CTE is `{{"name": "cte_name", "query": {{...complete QueryPlan object...}}}}`; its `query` is itself a QueryPlan with a string `table` at its root.
+- To combine queries, keep the first query as the base QueryPlan and add ordered `set_operations` entries shaped as `{{"op_type": "union|union_all|intersect|except", "query": {{...complete QueryPlan object...}}}}`. Each branch must project the same columns in the same order. Use `union_all` for disjoint partitions such as monthly files; use `union` when duplicate rows should be removed. Use `intersect` or `except` only when the question asks for a common set or a set difference.
+- In a grouped query, every selected non-aggregated column must also be in `group_by`. For a scalar aggregate CTE, omit raw `select_columns` unless they are grouped.
+- Plan-level `filters` apply to all metrics in that query. Metric-level `filter` and `denominator_filter` are supported for `count`, `count_distinct`, and count-based `percentage`; do not attach them to `sum`, `avg`, `min`, or `max` expecting a conditional aggregate.
+- `percentage` computes a filtered count numerator divided by a filtered count denominator. Do not use it to compare monetary sums.
+- To compare two conditionally filtered sums, create one scalar CTE per sum, put each condition set in that CTE's plan-level `filters`, and give each sum metric an alias. Cross join the scalar CTEs, then use one outer `ratio` metric with `column` set to the numerator alias and `denominator_column` set to the denominator alias. Set `answer_type` to `percent` for a requested percentage. Do not group these scalar CTEs.
+- Use `answer_type: "percent"` for a requested percentage, even when the underlying calculation is a ratio of amounts.
 
 Interpretation priority:
 1. Follow any explicit rule in the user's question. For aspects not explicitly specified, apply the relevant business rules from the supplied rulebook, such as the definition of total order count.
-2. Apply relevant business rules from the supplied rulebook, using contextual evidence and common-sense reasoning where necessary, as long as they do not contradict the rulebook. For example, when calculating revenue, exclude orders with statuses such as "Hủy" (Cancelled) and "Hoàn trả" (Returned), as explicitly specified in the rulebook. Also exclude "Không giao được" (Failed delivery), if present in the status column, even if not explicitly mentioned in the rulebook, since such orders do not represent successfully completed sales.
+2. Apply relevant business rules from the supplied rulebook, using contextual evidence and common-sense reasoning where necessary, as long as they do not contradict the rulebook. For revenue and order counts, exclude orders marked as cancelled or returned when the rulebook says to exclude them. Also exclude a failed-delivery status such as "Không giao được" when it appears in the data, since it does not represent a completed sale. Ground excluded labels in the rulebook and actual data; do not infer that other statuses should be excluded. A NULL or blank status is not evidence that an order was cancelled or invalid, so include it unless an explicit rule says otherwise. Preserve blank statuses in the filter: use an OR group that keeps NULL (and the empty string if blank cells are stored that way) or statuses NOT IN the excluded labels. Never combine multiple `status <> value` checks with OR; use `not_in` or combine the `neq` checks with AND. When a status applies to an entire order, ensure excluding it removes all lines of that order from the calculation.
 
 Question understanding: 
-- Normalize the user's question before query planning. Interpret natural Vietnamese, abbreviations, shorthand, typos, and informal business terminology using context. Preserve the original intent and do not introduce assumptions or constraints not explicitly stated or supported by context.
+- Normalize the user's question first Interpret natural Vietnamese, abbreviations, shorthand, typos, and informal business terminology using context. Preserve the original intent.
+- Should understanding the question using the business_description in database context, follow the rules in business_description if any.
 
 Planning constraints:
 - Use exact table and column names from the supplied schema. Choose the simplest valid plan and only join tables when the question requires it and the supplied keys support it.
@@ -221,8 +239,10 @@ Planning constraints:
 - Count requested entities with count_distinct on their identifier, not line-item rows.
 - Ground status and category filters in the rulebook and actual sample values. Do not invent stored labels or relationships.
 - Use only supported filter operators: eq, neq, gt, gte, lt, lte, in, not_in, contains, between, is_null, is_not_null.
+- Match the QueryPlan filter schema exactly: use `logic` and `conditions` for groups, and put filter fields directly in each condition. Do not wrap them in `filter_group` or `filter` keys.
 - Use weighted averages when the underlying observations have different quantities. Do not add limits to aggregations unless requested.
 - Correct obvious language errors only when unambiguous; preserve codes, names, numbers, dates, and quoted values exactly.
+- When the same data come from different sources, should priority the most clear and clean source, can use join operator if needed to take the data source.
 
 Counting rules:
 - When the question asks for a count, use count_distinct on the semantic identifier of the target entity.
@@ -236,41 +256,21 @@ Counting rules:
 - Do not assume the primary key of the main table is always the identifier to count. Choose the identifier that represents the entity explicitly requested.
 - If the semantic identifier cannot be determined from the supplied schema, do not invent one.
 
+Answer type:
+- Set answer_type to match the requested final value: number for amounts/counts/quantities, percent for percentages, string for one name, date for one date, boolean for true/false, list for an ordered sequence of names or numbers, and table for multiple named columns and rows.
+- Choose the answer_type from the requested result shape, not from the SQL operation used to calculate it.
+- Only `list` and `table` answers may contain multiple values or rows. For `number`, `percent`, `string`, `date`, and `boolean`, plan one final value and ensure the query returns one row with one requested value.
+- For a scalar `percent`, compute the percentage as one metric (use the percentage aggregation with its numerator and denominator filters when counting). Do not return numerator and denominator as separate output columns.
+- If a question requests grouped results with a grouping label and a measure, use `table`; use `list` only when the requested output is one ordered value per row.
+- For list answers, select the one requested name or number as the output value for each row, and use order_by to preserve the order requested in the question or specified by the rulebook. If a metric is used only to rank names, keep the metric for sorting and return just the names.
+- For table answers, include every requested named column and let the query result preserve a consistent column order; the answer will serialize these as `columns` and positional `rows`.
+
 QueryPlan schema:
 {json.dumps(QueryPlan.model_json_schema(), ensure_ascii=False)}
 
 Database context:
 {json.dumps(context, ensure_ascii=False, default=str)}"""
         return instructions
-
-
-def _normalize_plan_operators(raw_plan: Any) -> Any:
-    """Normalize common LLM shape and operator aliases before validation."""
-    if not isinstance(raw_plan, dict):
-        return raw_plan
-    normalized = dict(raw_plan)
-    for key in ("filters", "comparison_filters", "having_filters", "qualify_filters"):
-        filters = normalized.get(key)
-        if isinstance(filters, dict):
-            filters = [filters]
-        if not isinstance(filters, list):
-            continue
-        normalized[key] = [_normalize_filter_item(item) for item in filters]
-    return normalized
-
-
-def _normalize_filter_item(item: Any) -> Any:
-    if not isinstance(item, dict):
-        return item
-    normalized = dict(item)
-    if normalized.get("operator") == "not in":
-        normalized["operator"] = "not_in"
-    conditions = normalized.get("conditions")
-    if isinstance(conditions, dict):
-        conditions = [conditions]
-    if isinstance(conditions, list):
-        normalized["conditions"] = [_normalize_filter_item(condition) for condition in conditions]
-    return normalized
 
 
 # Backward-compatible import for callers that used the old model-specific name.

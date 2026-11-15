@@ -1,0 +1,2623 @@
+{
+  "version": 2,
+  "fingerprint": "5d52e7f531abaa1596f0f6db59e62138d81e47964347cf540b0ff2bfa95eed73",
+  "schema": {
+    "tables": [
+      {
+        "table": "SoBanHang_Ghi_tắt",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "Ghi tắt",
+        "row_count": 59,
+        "canonical_name": "SoBanHang_Ghi_tắt",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ghi tắt",
+            "type": "VARCHAR",
+            "distinct_count": 59,
+            "sample_values": [
+              "cáp c",
+              "cáp c-l",
+              "sạc 20w",
+              "sạc 25w ss",
+              "dây đeo"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 59,
+            "sample_values": [
+              "cáp type-c 1m",
+              "cáp type-c sang lightning 1m",
+              "củ sạc nhanh 20w type-c",
+              "củ sạc nhanh 25w samsung",
+              "dây đeo điện thoại"
+            ]
+          },
+          {
+            "name": "Loại",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "phụ kiện",
+              "máy mới",
+              "máy cũ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T7_2025",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T7-2025",
+        "row_count": 626,
+        "canonical_name": "SoBanHang_T7_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 64,
+            "sample_values": [
+              "45839",
+              "01/07/2025",
+              "02/07/2025",
+              "45840",
+              "03/07/2025"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 377,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 355,
+            "sample_values": [
+              "triệu linh an 0327988481",
+              "triệu linh an - 0327 988 481",
+              "bùi khoa hoàng 0701076413",
+              "lẻ",
+              "châu hằng hùng - 0932 225 622"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 99,
+            "sample_values": [
+              "ip16 128 đen",
+              "ốp lưng silicon iphone",
+              "ốp trong",
+              "cl 9d",
+              "tai nghe bt"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 124,
+            "sample_values": [
+              "358841973775088",
+              "353277390076765",
+              "355349917716898",
+              "351152494366390",
+              "353754925428976"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 129,
+            "sample_values": [
+              "19tr990",
+              "120k",
+              "80.000đ",
+              "100k",
+              "450k"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 151,
+            "sample_values": [
+              "19.990.000đ",
+              "120000",
+              "80000",
+              "100.000đ",
+              "450.000đ"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 42,
+            "sample_values": [
+              "10000",
+              "10.000đ",
+              "70000",
+              "90.000đ",
+              "10k"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 343,
+            "sample_values": [
+              "20.100.000đ",
+              "20,1tr",
+              "80.000đ",
+              "540.000đ",
+              "540k"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T8_2025",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T8-2025",
+        "row_count": 707,
+        "canonical_name": "SoBanHang_T8_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 64,
+            "sample_values": [
+              "45870",
+              "01/08/2025",
+              "02/08/2025",
+              "45871",
+              "45872"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 436,
+            "sample_values": [
+              378.0,
+              379.0,
+              380.0,
+              381.0,
+              382.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 422,
+            "sample_values": [
+              "trần hương mai (0908995064)",
+              "trần hương mai 0908995064",
+              "kiều hoa hồng (0919703447)",
+              "kiều hoa hồng - 0919 703 447",
+              "ngô anh dũng - 0902 205 789"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 104,
+            "sample_values": [
+              "miếng dán lưng ppf",
+              "sạc 20w",
+              "ốp lưng silicon iphone",
+              "ip15 128 xanh",
+              "pin dp 20k"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 160,
+            "sample_values": [
+              "352628764420750",
+              "351607067512621",
+              "351980130176322",
+              "352715616872625",
+              "358069291047432"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 146,
+            "sample_values": [
+              "70000",
+              "250k",
+              "120000",
+              "16490k",
+              "590000"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 166,
+            "sample_values": [
+              "70000",
+              "500000",
+              "120000",
+              "16490000",
+              "590.000đ"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 39,
+            "sample_values": [
+              "10.000đ",
+              "10000",
+              "110000",
+              "110.000đ",
+              "90000"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 356,
+            "sample_values": [
+              "560000",
+              "16,5tr",
+              "16500000",
+              "580000",
+              "80000"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "khách mang trả",
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T9_2025",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T9-2025",
+        "row_count": 618,
+        "canonical_name": "SoBanHang_T9_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 63,
+            "sample_values": [
+              "01/09/2025",
+              "45901",
+              "45902",
+              "02/09/2025",
+              "03/09/2025"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 394,
+            "sample_values": [
+              814.0,
+              815.0,
+              816.0,
+              817.0,
+              818.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 350,
+            "sample_values": [
+              "lẻ",
+              "tống bích hoa (0906849000)",
+              "tống bích hoa - 0906 849 000",
+              "quách hoa hải (0986031932)",
+              "đặng nam duy 0971591820"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 94,
+            "sample_values": [
+              "thẻ nhớ microsd 64gb",
+              "ip13 128 trắng",
+              "kính cường lực chống nhìn trộm",
+              "pin dp 10k",
+              "củ sạc nhanh 20w type-c"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 112,
+            "sample_values": [
+              "357704596492997",
+              "356640571021768",
+              "357752217188544",
+              "355661853844058",
+              "354422271995126"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 122,
+            "sample_values": [
+              "160000",
+              "11.990.000đ",
+              "180k",
+              "390000",
+              "390.000đ"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 146,
+            "sample_values": [
+              "160000",
+              "11990000",
+              "180.000đ",
+              "390k",
+              "390000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 38,
+            "sample_values": [
+              "10000",
+              "10.000đ",
+              "50000",
+              "50k",
+              "5.000đ"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 308,
+            "sample_values": [
+              "160000",
+              "12160000",
+              "12160k",
+              "380k",
+              "630000"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "khách trả lại",
+              "trả lại hàng",
+              "khách mang trả"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T10_2025",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T10-2025",
+        "row_count": 617,
+        "canonical_name": "SoBanHang_T10_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 65,
+            "sample_values": [
+              "01/10/2025",
+              "45931",
+              "02/10/2025",
+              "45932",
+              "03/10/2025"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 398,
+            "sample_values": [
+              1208.0,
+              1209.0,
+              1210.0,
+              1211.0,
+              1212.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 364,
+            "sample_values": [
+              "phùng lan trung (0989358811)",
+              "phùng lan trung - 0989 358 811",
+              "đàm minh ngân 0328612829",
+              "tô lan trang 0916250622",
+              "kl"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 95,
+            "sample_values": [
+              "cl 9d",
+              "ốp silicon ip",
+              "sạc 20w",
+              "tai nghe dây",
+              "củ sạc nhanh 25w samsung"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 124,
+            "sample_values": [
+              "355742122379454",
+              "357345548528601",
+              "352814198341651",
+              "350226079837529",
+              "354814034687307"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 129,
+            "sample_values": [
+              "100000",
+              "120.000đ",
+              "250000",
+              "90000",
+              "290000"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 155,
+            "sample_values": [
+              "100000",
+              "120.000đ",
+              "250.000đ",
+              "90.000đ",
+              "290.000đ"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 36,
+            "sample_values": [
+              "10000",
+              "10.000đ",
+              "39500",
+              "80.000đ",
+              "80000"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 310,
+            "sample_values": [
+              "220.000đ",
+              "250.000đ",
+              "90000",
+              "430000",
+              "530000"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "khách mang trả",
+              "trả lại hàng",
+              "khách trả lại"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T11_2025",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T11-2025",
+        "row_count": 683,
+        "canonical_name": "SoBanHang_T11_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 63,
+            "sample_values": [
+              "45962",
+              "01/11/2025",
+              "02/11/2025",
+              "45963",
+              "45964"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 437,
+            "sample_values": [
+              1606.0,
+              1607.0,
+              1608.0,
+              1609.0,
+              1610.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 399,
+            "sample_values": [
+              "kl",
+              "khách lẻ",
+              "nghiêm hạnh hằng - 0796 308 488",
+              "nghiêm hạnh hằng (0796308488)",
+              "lẻ"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 100,
+            "sample_values": [
+              "kính cường lực 9d",
+              "cáp c",
+              "dây đeo điện thoại",
+              "ốp silicon ip",
+              "rn12 128 cũ"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 134,
+            "sample_values": [
+              "356926131791150",
+              "356166355020537",
+              "350686248157184",
+              "356449975117176",
+              "356133513949668"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              2.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 130,
+            "sample_values": [
+              "100.000đ",
+              "90k",
+              "40000",
+              "120k",
+              "2700000"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 152,
+            "sample_values": [
+              "200000",
+              "90.000đ",
+              "40000",
+              "120000",
+              "2700000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 45,
+            "sample_values": [
+              "20000",
+              "20.000đ",
+              "10.000đ",
+              "10000",
+              "40000"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 331,
+            "sample_values": [
+              "200.000đ",
+              "90.000đ",
+              "40.000đ",
+              "2800000",
+              "2.800.000đ"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "khách trả lại",
+              "khách mang trả",
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T12_2025",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T12-2025",
+        "row_count": 671,
+        "canonical_name": "SoBanHang_T12_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 65,
+            "sample_values": [
+              "01/12/2025",
+              "45992",
+              "02/12/2025",
+              "45993",
+              "45994"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 419,
+            "sample_values": [
+              2043.0,
+              2044.0,
+              2045.0,
+              2046.0,
+              2047.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 412,
+            "sample_values": [
+              "dương sơn anh (0325258544)",
+              "huỳnh ngọc quang (0796035871)",
+              "kl",
+              "đàm quang hà - 0797 816 713",
+              "đàm quang hà 0797816713"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 100,
+            "sample_values": [
+              "ip16pm 256 đen",
+              "ipxsm 64 cũ",
+              "sạc 25w ss",
+              "đế sạc không dây magsafe",
+              "ốp silicon ip"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 129,
+            "sample_values": [
+              "352269387291755 / 352276232122457",
+              "357831936960100",
+              "351235675283300 / 359116793558298",
+              "354555428108927",
+              "351866508614251"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              2.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 133,
+            "sample_values": [
+              "30tr990",
+              "3tr900",
+              "290.000đ",
+              "550.000đ",
+              "120000"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 154,
+            "sample_values": [
+              "61tr980",
+              "3tr900",
+              "290.000đ",
+              "550000",
+              "120k"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 39,
+            "sample_values": [
+              "80.000đ",
+              "10000",
+              "10.000đ",
+              "90000",
+              "10k"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 350,
+            "sample_values": [
+              "61900k",
+              "4tr180",
+              "660.000đ",
+              "660k",
+              "790000"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "khách mang trả",
+              "trả lại hàng",
+              "khách trả lại"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T1_2026",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T1-2026",
+        "row_count": 706,
+        "canonical_name": "SoBanHang_T1_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 64,
+            "sample_values": [
+              "01/01/2026",
+              "46023",
+              "46024",
+              "02/01/2026",
+              "03/01/2026"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 437,
+            "sample_values": [
+              2462.0,
+              2463.0,
+              2464.0,
+              2465.0,
+              2466.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 429,
+            "sample_values": [
+              "lẻ",
+              "khách lẻ",
+              "huỳnh ngọc thu (0916169216)",
+              "trịnh hương thảo 0700993812",
+              "trịnh hương thảo - 0700 993 812"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 105,
+            "sample_values": [
+              "dán ppf",
+              "pin dp 20k",
+              "cl 9d",
+              "sạc 20w",
+              "cáp c"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 144,
+            "sample_values": [
+              "351352535953111",
+              "354244403286343",
+              "352758968066271 / 358169159290403",
+              "350313451680626",
+              "358597507819038"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 138,
+            "sample_values": [
+              "70k",
+              "590000",
+              "100.000đ",
+              "250.000đ",
+              "90000"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 160,
+            "sample_values": [
+              "70.000đ",
+              "590.000đ",
+              "100.000đ",
+              "250.000đ",
+              "180.000đ"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 47,
+            "sample_values": [
+              "10k",
+              "10.000đ",
+              "10000",
+              "100.000đ",
+              "40.000đ"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 364,
+            "sample_values": [
+              "70.000đ",
+              "680k",
+              "680.000đ",
+              "250.000đ",
+              "180.000đ"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "khách trả lại",
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T2_2026",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T2-2026",
+        "row_count": 823,
+        "canonical_name": "SoBanHang_T2_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 59,
+            "sample_values": [
+              "01/02/2026",
+              "46054",
+              "46055",
+              "02/02/2026",
+              "03/02/2026"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 516,
+            "sample_values": [
+              2899.0,
+              2900.0,
+              2901.0,
+              2902.0,
+              2903.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 457,
+            "sample_values": [
+              "kl",
+              "lẻ",
+              "trần hương mai 0908995064",
+              "huỳnh nam cường - 0796 571 544",
+              "ngô lan châu - 0327 177 955"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 106,
+            "sample_values": [
+              "dây đeo",
+              "dán ppf",
+              "cl 9d",
+              "tai nghe dây",
+              "cl chống nhìn trộm"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 162,
+            "sample_values": [
+              "357163925989332",
+              "359008669032849",
+              "358069124502520",
+              "353768251726951",
+              "357737158912283"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 144,
+            "sample_values": [
+              "40.000đ",
+              "70000",
+              "100.000đ",
+              "90000",
+              "180k"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 175,
+            "sample_values": [
+              "40000",
+              "70.000đ",
+              "100.000đ",
+              "90.000đ",
+              "180.000đ"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 44,
+            "sample_values": [
+              "13k",
+              "13000",
+              "10k",
+              "10000",
+              "10.000đ"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 406,
+            "sample_values": [
+              "40.000đ",
+              "70000",
+              "100000",
+              "257.000đ",
+              "9.597.500đ"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "khách mang trả",
+              "khách trả lại",
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T3_2026",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T3-2026",
+        "row_count": 629,
+        "canonical_name": "SoBanHang_T3_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 65,
+            "sample_values": [
+              "46082",
+              "01/03/2026",
+              "02/03/2026",
+              "46083",
+              "46084"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 401,
+            "sample_values": [
+              3415.0,
+              3416.0,
+              3417.0,
+              3418.0,
+              3419.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 392,
+            "sample_values": [
+              "khách lẻ",
+              "tạ an đức (0989713791)",
+              "hà ngân phong (0904415683)",
+              "hà ngân phong 0904415683",
+              "vương trung giang - 0912 407 378"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 107,
+            "sample_values": [
+              "cáp type-c sang lightning 1m",
+              "ip15 128 xanh",
+              "ốp silicon ip",
+              "cl chống nhìn trộm",
+              "dán ppf"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 138,
+            "sample_values": [
+              "357194060663630",
+              "357068159852264",
+              "354394752339696",
+              "357028709120638",
+              "351367449455144"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              2.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 138,
+            "sample_values": [
+              "157.500đ",
+              "16.490.000đ",
+              "120k",
+              "180.000đ",
+              "70k"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 159,
+            "sample_values": [
+              "315000",
+              "16490000",
+              "240000",
+              "180.000đ",
+              "70.000đ"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 43,
+            "sample_values": [
+              "10000",
+              "10k",
+              "10.000đ",
+              "90.000đ",
+              "4.000đ"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 336,
+            "sample_values": [
+              "305.000đ",
+              "16720000",
+              "250k",
+              "250.000đ",
+              "9437500"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "khách mang trả",
+              "khách trả lại",
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T4_2026",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T4-2026",
+        "row_count": 628,
+        "canonical_name": "SoBanHang_T4_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 63,
+            "sample_values": [
+              "46113",
+              "01/04/2026",
+              "46114",
+              "02/04/2026",
+              "03/04/2026"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 393,
+            "sample_values": [
+              3816.0,
+              3817.0,
+              3818.0,
+              3819.0,
+              3820.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 361,
+            "sample_values": [
+              "trịnh thắng hoa - 0323 725 649",
+              "khách lẻ",
+              "đoàn phúc hiếu 0917760104",
+              "đoàn phúc hiếu - 0917 760 104",
+              "đinh hồng quân 0329428269"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 99,
+            "sample_values": [
+              "sạc magsafe",
+              "tai nghe dây",
+              "sạc 20w",
+              "tai nghe bt",
+              "sạc 25w ss"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 123,
+            "sample_values": [
+              "351033283985683 / 354960536824102",
+              "351303518095032",
+              "355044155411829",
+              "351349982124923",
+              "354078615734025"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 125,
+            "sample_values": [
+              "550.000đ",
+              "90.000đ",
+              "250000",
+              "450.000đ",
+              "290k"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 149,
+            "sample_values": [
+              "550.000đ",
+              "90.000đ",
+              "250000",
+              "450.000đ",
+              "290000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 45,
+            "sample_values": [
+              "10k",
+              "10000",
+              "10.000đ",
+              "25.000đ",
+              "90000"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 328,
+            "sample_values": [
+              "540k",
+              "90000",
+              "690000",
+              "690.000đ",
+              "360.000đ"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "trả lại hàng",
+              "khách mang trả"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T5_2026",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T5-2026",
+        "row_count": 724,
+        "canonical_name": "SoBanHang_T5_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 64,
+            "sample_values": [
+              "46143",
+              "01/05/2026",
+              "46144",
+              "02/05/2026",
+              "46145"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 444,
+            "sample_values": [
+              4209.0,
+              4210.0,
+              4211.0,
+              4212.0,
+              4213.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 423,
+            "sample_values": [
+              "nguyễn thắng châu - 0938 835 539",
+              "diệp hải phương - 0322 942 195",
+              "diệp hải phương (0322942195)",
+              "khách lẻ",
+              "dao giang mai - 0792 945 822"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 101,
+            "sample_values": [
+              "ip12 64 cũ",
+              "ốp chống sốc ss",
+              "mi14t 256 xám",
+              "ốp silicon ip",
+              "kính cường lực 9d"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 148,
+            "sample_values": [
+              "358117143254530",
+              "359946479709587",
+              "350399258827270 / 356030632547482",
+              "350854098694496",
+              "354070501462985"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 139,
+            "sample_values": [
+              "6300000",
+              "150.000đ",
+              "12.990.000đ",
+              "120.000đ",
+              "100k"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 171,
+            "sample_values": [
+              "6.300.000đ",
+              "150k",
+              "12,99tr",
+              "120.000đ",
+              "100k"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 50,
+            "sample_values": [
+              "10.000đ",
+              "60.000đ",
+              "60k",
+              "70.000đ",
+              "70000"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 397,
+            "sample_values": [
+              "3090k",
+              "13.200.000đ",
+              "13,2tr",
+              "100000",
+              "90.000đ"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "trả lại hàng",
+              "khách trả lại"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T6_2026",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T6-2026",
+        "row_count": 644,
+        "canonical_name": "SoBanHang_T6_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 62,
+            "sample_values": [
+              "01/06/2026",
+              "46174",
+              "46175",
+              "02/06/2026",
+              "03/06/2026"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 400,
+            "sample_values": [
+              4653.0,
+              4654.0,
+              4655.0,
+              4656.0,
+              4657.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 393,
+            "sample_values": [
+              "kl",
+              "lương khánh nam (0791683655)",
+              "la sơn hoa - 0359 697 991",
+              "lẻ",
+              "từ anh giang 0354889365"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 96,
+            "sample_values": [
+              "cl chống nhìn trộm",
+              "ốp lưng silicon iphone",
+              "pin dp 10k",
+              "sạc 25w ss",
+              "sạc 20w"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 132,
+            "sample_values": [
+              "350625059561233",
+              "355468451614648",
+              "358475437271317",
+              "351569852524080",
+              "359875532018787"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 130,
+            "sample_values": [
+              "180k",
+              "120.000đ",
+              "390k",
+              "290.000đ",
+              "250000"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 159,
+            "sample_values": [
+              "180000",
+              "120000",
+              "390.000đ",
+              "290k",
+              "250k"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 48,
+            "sample_values": [
+              "10.000đ",
+              "10000",
+              "10k",
+              "6000",
+              "90000"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 366,
+            "sample_values": [
+              "180.000đ",
+              "120k",
+              "380000",
+              "530k",
+              "530.000đ"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "khách mang trả",
+              "khách trả lại",
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T7_2026",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T7-2026",
+        "row_count": 720,
+        "canonical_name": "SoBanHang_T7_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 65,
+            "sample_values": [
+              "01/07/2026",
+              "46204",
+              "46205",
+              "02/07/2026",
+              "03/07/2026"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 452,
+            "sample_values": [
+              5053.0,
+              5054.0,
+              5055.0,
+              5056.0,
+              5057.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 418,
+            "sample_values": [
+              "hà linh nhung 0797032377",
+              "khách lẻ",
+              "lý an dũng (0320831773)",
+              "lý an dũng - 0320 831 773",
+              "kl"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 104,
+            "sample_values": [
+              "cl 9d",
+              "sạc magsafe",
+              "cáp c",
+              "samsung galaxy s24 fe 128gb xanh dương",
+              "op silicon ip"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 151,
+            "sample_values": [
+              "355215139778620",
+              "351237768801915",
+              "356962827873572",
+              "358620681597947",
+              "359899118595760"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 143,
+            "sample_values": [
+              "105.000đ",
+              "550.000đ",
+              "90.000đ",
+              "12490000",
+              "120k"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 174,
+            "sample_values": [
+              "105000",
+              "1,1tr",
+              "90.000đ",
+              "12490k",
+              "120000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 71,
+            "sample_values": [
+              "5000",
+              "10.000đ",
+              "90.000đ",
+              "90k",
+              "10000"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 413,
+            "sample_values": [
+              "100k",
+              "1tr090",
+              "195.000đ",
+              "10300000",
+              "10tr300"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "khách trả lại",
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T8_2026",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T8-2026",
+        "row_count": 669,
+        "canonical_name": "SoBanHang_T8_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 64,
+            "sample_values": [
+              "01/08/2026",
+              "46235",
+              "02/08/2026",
+              "46236",
+              "03/08/2026"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 409,
+            "sample_values": [
+              5505.0,
+              5506.0,
+              5507.0,
+              5508.0,
+              5509.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 408,
+            "sample_values": [
+              "cao đạt hải - 0352 309 029",
+              "cao đạt hải 0352309029",
+              "đinh duy hoàng 0709742617",
+              "lẻ",
+              "đinh duy hoàng - 0709 742 617"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 97,
+            "sample_values": [
+              "cáp c",
+              "cl 9d",
+              "ốp  lưng chống sốc samsung",
+              "dán ppf",
+              "pin sạc dự phòng 10000mah"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 125,
+            "sample_values": [
+              "352421452951876",
+              "351466060102447 / 355031812588289",
+              "355745738522151",
+              "350268130394660",
+              "355890635395127"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 132,
+            "sample_values": [
+              "90.000đ",
+              "105000",
+              "150.000đ",
+              "70.000đ",
+              "390.000đ"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 154,
+            "sample_values": [
+              "90000",
+              "105000",
+              "150.000đ",
+              "70.000đ",
+              "390000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "10000",
+              "10.000đ",
+              "39500",
+              "10k",
+              "16.000đ"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 357,
+            "sample_values": [
+              "335k",
+              "70k",
+              "380000",
+              "3,1tr",
+              "80.000đ"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "khách mang trả",
+              "khách trả lại",
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_T9_2026",
+        "source": "public_test\\public_test\\data\\dev_014\\SoBanHang.xlsx",
+        "sheet": "T9-2026",
+        "row_count": 681,
+        "canonical_name": "SoBanHang_T9_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "VARCHAR",
+            "distinct_count": 63,
+            "sample_values": [
+              "46266",
+              "01/09/2026",
+              "02/09/2026",
+              "46267",
+              "03/09/2026"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "DOUBLE",
+            "distinct_count": 421,
+            "sample_values": [
+              5914.0,
+              5915.0,
+              5916.0,
+              5917.0,
+              5918.0
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 405,
+            "sample_values": [
+              "trịnh hải ngọc (0354728959)",
+              "bùi đạt tâm - 0905 123 498",
+              "doãn đạt hằng - 0911 803 238",
+              "doãn đạt hằng (0911803238)",
+              "vương trung duy 0937283227"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 97,
+            "sample_values": [
+              "cl 9d",
+              "cáp c",
+              "ốp silicon ip",
+              "sạc 20w",
+              "ốp trong"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 150,
+            "sample_values": [
+              "358916122320752",
+              "350651723909459",
+              "355247500529050",
+              "352149462264903",
+              "358069941143656"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 137,
+            "sample_values": [
+              "105000",
+              "90.000đ",
+              "105.000đ",
+              "120k",
+              "250000"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 169,
+            "sample_values": [
+              "105000",
+              "90000",
+              "120k",
+              "250.000đ",
+              "80000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Bớt",
+            "type": "VARCHAR",
+            "distinct_count": 50,
+            "sample_values": [
+              "26k",
+              "26.000đ",
+              "10.000đ",
+              "10000",
+              "10k"
+            ]
+          },
+          {
+            "name": "Khách trả",
+            "type": "VARCHAR",
+            "distinct_count": 390,
+            "sample_values": [
+              "105000",
+              "90k",
+              "225000",
+              "225.000đ",
+              "419k"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "trả lại hàng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoNo_Sổ_nợ",
+        "source": "public_test\\public_test\\data\\dev_014\\SoNo.xlsx",
+        "sheet": "Sổ nợ",
+        "row_count": 337,
+        "canonical_name": "SoNo_Sổ_nợ",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "DATE",
+            "distinct_count": 139,
+            "sample_values": [
+              "2025-07-02",
+              "2025-07-03",
+              "2025-07-06",
+              "2025-07-08",
+              "2025-07-17"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 159,
+            "sample_values": [
+              "quách cường lan",
+              "giang quân an",
+              "đoàn châu quân",
+              "vương an loan",
+              "đào đức thanh"
+            ]
+          },
+          {
+            "name": "SĐT",
+            "type": "VARCHAR",
+            "distinct_count": 159,
+            "sample_values": [
+              "0909377857",
+              "0359938682",
+              "0795956685",
+              "0977852266",
+              "0324586042"
+            ]
+          },
+          {
+            "name": "Nợ",
+            "type": "VARCHAR",
+            "distinct_count": 150,
+            "sample_values": [
+              "270k",
+              "240.000đ",
+              "28.970.000đ",
+              "1744k",
+              "78.000đ"
+            ]
+          },
+          {
+            "name": "Đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 206,
+            "sample_values": [
+              "270k",
+              "80k",
+              "80.000đ",
+              "9.656.666đ",
+              "9.656.668đ"
+            ]
+          },
+          {
+            "name": "Ngày trả",
+            "type": "DATE",
+            "distinct_count": 230,
+            "sample_values": [
+              "2025-07-30",
+              "2025-07-17",
+              "2025-07-25",
+              "2025-08-02",
+              "2025-07-12"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 168,
+            "sample_values": [
+              "stt 26",
+              "stt 34",
+              "stt 70",
+              "stt 103",
+              "stt 205"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoNo_Trả_góp",
+        "source": "public_test\\public_test\\data\\dev_014\\SoNo.xlsx",
+        "sheet": "Trả góp",
+        "row_count": 1155,
+        "canonical_name": "SoNo_Trả_góp",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "DATE",
+            "distinct_count": 187,
+            "sample_values": [
+              "2025-07-03",
+              "2025-07-04",
+              "2025-07-12",
+              "2025-07-13",
+              "2025-07-15"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "STT",
+            "type": "BIGINT",
+            "distinct_count": 235,
+            "sample_values": [
+              33,
+              54,
+              158,
+              171,
+              174
+            ]
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 206,
+            "sample_values": [
+              "đinh mai hoa",
+              "hồ hạnh hồng",
+              "đỗ trang linh",
+              "phan hiếu an",
+              "ông tâm ngọc"
+            ]
+          },
+          {
+            "name": "SĐT",
+            "type": "VARCHAR",
+            "distinct_count": 205,
+            "sample_values": [
+              "0988028309",
+              "0986043312",
+              "0937827586",
+              "0790435227",
+              "0355641960"
+            ]
+          },
+          {
+            "name": "Máy",
+            "type": "VARCHAR",
+            "distinct_count": 67,
+            "sample_values": [
+              "iphone 16 128gb đen",
+              "xiaomi redmi 14c 128gb xanh",
+              "samsung galaxy a36 5g 128gb tím",
+              "xiaomi redmi note 14 256gb xanh",
+              "iphone 16 pro 128gb titan tự nhiên"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "VARCHAR",
+            "distinct_count": 223,
+            "sample_values": [
+              "19.980.000đ",
+              "3,9tr",
+              "7.770.000đ",
+              "6,78tr",
+              "25,67tr"
+            ]
+          },
+          {
+            "name": "Trả trước",
+            "type": "VARCHAR",
+            "distinct_count": 223,
+            "sample_values": [
+              "4,38tr",
+              "1200k",
+              "4,17tr",
+              "3180k",
+              "8,57tr"
+            ]
+          },
+          {
+            "name": "Số kỳ",
+            "type": "DOUBLE",
+            "distinct_count": 4,
+            "sample_values": [
+              6.0,
+              3.0,
+              9.0,
+              12.0
+            ]
+          },
+          {
+            "name": "Góp/tháng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "2.600.000đ",
+              "900k",
+              "1.200.000đ",
+              "600.000đ",
+              "1.900.000đ"
+            ]
+          },
+          {
+            "name": "Hạn góp (ngày)",
+            "type": "DOUBLE",
+            "distinct_count": 28,
+            "sample_values": [
+              3.0,
+              4.0,
+              12.0,
+              13.0,
+              15.0
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Ngày góp",
+            "type": "DATE",
+            "distinct_count": 364,
+            "sample_values": [
+              "2025-08-05",
+              "2025-09-03",
+              "2025-10-07",
+              "2025-11-05",
+              "2025-12-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Đã góp",
+            "type": "VARCHAR",
+            "distinct_count": 117,
+            "sample_values": [
+              "2,6tr",
+              "2.600.000đ",
+              "900.000đ",
+              "1.200.000đ",
+              "1,2tr"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoNo_Bảo_hành",
+        "source": "public_test\\public_test\\data\\dev_014\\SoNo.xlsx",
+        "sheet": "Bảo hành",
+        "row_count": 192,
+        "canonical_name": "SoNo_Bảo_hành",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày nhận",
+            "type": "DATE",
+            "distinct_count": 140,
+            "sample_values": [
+              "2025-07-22",
+              "2025-08-11",
+              "2025-08-13",
+              "2025-08-26",
+              "2025-08-31"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 157,
+            "sample_values": [
+              "phan trung hoàng",
+              "thân bình hiếu",
+              "hoàng hùng hoàng",
+              "phạm hằng huy",
+              "tạ nhung hạnh"
+            ]
+          },
+          {
+            "name": "SĐT",
+            "type": "VARCHAR",
+            "distinct_count": 157,
+            "sample_values": [
+              "0703695348",
+              "0324923706",
+              "0327519549",
+              "0702584679",
+              "0705529589"
+            ]
+          },
+          {
+            "name": "Máy",
+            "type": "VARCHAR",
+            "distinct_count": 33,
+            "sample_values": [
+              "xiaomi redmi note 14",
+              "iphone 15",
+              "iphone 13 pro max",
+              "iphone 16 pro",
+              "samsung galaxy s25 ultra"
+            ]
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 172,
+            "sample_values": [
+              "353862268796170",
+              "356354004843729",
+              "358208076832937",
+              "353504251861674",
+              "352464310300340"
+            ]
+          },
+          {
+            "name": "Ngày mua",
+            "type": "DATE",
+            "distinct_count": 150,
+            "sample_values": [
+              "2025-07-03",
+              "2025-08-03",
+              "2025-08-06",
+              "2025-08-04",
+              "2025-07-26"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Lỗi",
+            "type": "VARCHAR",
+            "distinct_count": 9,
+            "sample_values": [
+              "màn hình sọc",
+              "pin tụt nhanh",
+              "không nhận sạc",
+              "treo logo",
+              "nóng máy",
+              "camera mờ",
+              "cảm ứng loạn",
+              "loa rè",
+              "mất sóng"
+            ]
+          },
+          {
+            "name": "Xử lý",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "thay linh kiện",
+              "đổi máy khác",
+              "sửa tại tiệm",
+              "gửi hãng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "ThuMayCu_Sheet1",
+        "source": "public_test\\public_test\\data\\dev_014\\ThuMayCu.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 300,
+        "canonical_name": "ThuMayCu_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "DATE",
+            "distinct_count": 219,
+            "sample_values": [
+              "2025-07-03",
+              "2025-07-04",
+              "2025-07-05",
+              "2025-07-06",
+              "2025-07-07"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 256,
+            "sample_values": [
+              "trần phương hồng",
+              "triệu linh an",
+              "bùi châu ngọc",
+              "kiều hằng khoa",
+              "lưu huy trang"
+            ]
+          },
+          {
+            "name": "SĐT",
+            "type": "VARCHAR",
+            "distinct_count": 256,
+            "sample_values": [
+              "0973495724",
+              "0327988481",
+              "0791558407",
+              "0983609358",
+              "0709624293"
+            ]
+          },
+          {
+            "name": "Máy thu",
+            "type": "VARCHAR",
+            "distinct_count": 14,
+            "sample_values": [
+              "samsung galaxy a32",
+              "samsung galaxy s21",
+              "iphone 11 64gb",
+              "samsung galaxy s22 ultra",
+              "xiaomi redmi note 11"
+            ]
+          },
+          {
+            "name": "Tình trạng",
+            "type": "VARCHAR",
+            "distinct_count": 7,
+            "sample_values": [
+              "trầy nhẹ",
+              "bể kính lưng",
+              "đẹp 99%",
+              "màn ám",
+              "móp cạnh",
+              "pin yếu",
+              "đẹp, còn hộp"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "IMEI",
+            "type": "VARCHAR",
+            "distinct_count": 300,
+            "sample_values": [
+              "354987866187974",
+              "357656628792010",
+              "359403787348310",
+              "353813372359843",
+              "356625486278017"
+            ]
+          },
+          {
+            "name": "Giá thu",
+            "type": "VARCHAR",
+            "distinct_count": 129,
+            "sample_values": [
+              "1.200.000đ",
+              "3000k",
+              "3.000.000đ",
+              "9200k",
+              "1,7tr"
+            ]
+          },
+          {
+            "name": "Trừ vào (STT sổ bán)",
+            "type": "BIGINT",
+            "distinct_count": 300,
+            "sample_values": [
+              30,
+              53,
+              63,
+              77,
+              102
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu dev_014\n\nCửa hàng điện thoại gửi các sổ tự ghi trên Excel (mục File): sổ bán hàng (sheet `Ghi tắt` và mỗi tháng một sheet) và các sổ phụ: sổ thu máy cũ một file; sổ nợ, sổ góp, sổ bảo hành chung một file, mỗi sổ một sheet. Các sổ nối với nhau qua số thứ tự đơn trong sổ bán, IMEI và tên, số điện thoại của khách.\n\n## File\n- `SoBanHang.xlsx` (xlsx)\n- `ThuMayCu.xlsx` (xlsx)\n- `SoNo.xlsx` (xlsx)\n\n## Quy ước\n- Dữ liệu có đến hết 30/09/2026.\n- **Đơn**: các dòng cùng **STT** là một đơn; khách, bớt, khách trả, ghi chú của đơn lặp lại ở mọi dòng của đơn.\n- **Đơn khách trả lại**: **Ghi chú** của đơn ghi khách trả lại.\n- **Tiền khách trả**: **Khách trả** là số tiền khách trả cho cả đơn (không phải của dòng), đã bớt và đã trừ tiền thu máy cũ; ô bớt, thu máy cũ để trống là không có khoản đó.\n- **Ghi tắt, loại hàng**: sheet `Ghi tắt` cho tên đầy đủ và loại hàng (máy mới, máy cũ, phụ kiện) của từng cách ghi tắt. Máy có IMEI (**IMEI**), phụ kiện không.\n- **Thu máy cũ**: sổ thu máy cũ ghi máy khách đưa, giá thu (**Giá thu**) trừ vào tiền đơn có số thứ tự **Trừ vào (STT sổ bán)** ở sổ bán; **Khách trả** ở sổ bán đã trừ khoản này.\n- **Sổ nợ**: chỉ đơn khách còn nợ sau lúc mua, trừ đơn trả góp (ở sổ góp). Dòng đầu mỗi đơn ghi ngày mua, khách, **Nợ** là số còn nợ sau khi trả lúc mua. Các lần khách trả sau đó ghi ở **Đã trả**, **Ngày trả**: lần đầu ngay ở dòng đầu đơn, mỗi lần sau một dòng riêng. **Ghi chú** ghi số thứ tự đơn ở sổ bán. Đơn ghi nợ vẫn ghi đủ ở sổ bán, **Khách trả** là tiền cả đơn.\n- **Sổ góp**: mỗi đơn trả góp có dòng đầu ghi ngày mua, số thứ tự đơn ở sổ bán, khách, máy, **Giá** là tiền cả đơn, **Trả trước** là tiền trả lúc mua, còn lại chia đều **Số kỳ** kỳ, mỗi kỳ **Góp/tháng**. Kỳ thứ nhất có hạn vào ngày **Hạn góp (ngày)** của tháng ngay sau tháng mua, hạn kỳ sau là cùng ngày tháng kế tiếp. Mỗi lần khách góp ghi **Ngày góp**, **Đã góp**: lần đầu ở dòng đầu đơn, mỗi lần sau một dòng có **STT**. Đơn trả góp vẫn ghi đủ giá ở sổ bán.\n- **Sổ bảo hành**: mỗi lần khách mang máy tới bảo hành một dòng (**Ngày nhận**), máy nhận theo **IMEI**; một máy có thể tới nhiều lần. **Máy** ghi dòng máy (không ghi dung lượng, màu; máy mới và máy cũ cùng dòng ghi như nhau). Bảo hành không thu tiền, không phải đơn bán.\n"
+}

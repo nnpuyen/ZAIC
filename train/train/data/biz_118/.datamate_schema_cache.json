@@ -1,0 +1,3001 @@
+{
+  "version": 4,
+  "fingerprint": "61680d09f50cc70e3b77a69d378188e311f492dc3366459d6073914b2e1186cd",
+  "schema": {
+    "tables": [
+      {
+        "table": "Bß_úng_k_phiß_u_giao_h_áng_Sheet1",
+        "source": "train\\train\\data\\biz_118\\Bß║úng k├¬ phiß║┐u giao h├áng.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 41198,
+        "canonical_name": "Bß_úng_k_phiß_u_giao_h_áng_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày giao hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 587,
+            "sample_values": [
+              "2025-02-02T00:00:00",
+              "2025-02-03T00:00:00",
+              "2025-02-06T00:00:00",
+              "2025-02-08T00:00:00",
+              "2025-02-01T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 14290,
+            "sample_values": [
+              "ord000002",
+              "ord000003",
+              "ord000005",
+              "ord000007",
+              "ord000008"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Lần giao",
+            "type": "BIGINT",
+            "distinct_count": 3,
+            "sample_values": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "kẽm buộc 1mm",
+              "cát xây tô",
+              "dây điện cadivi cv 1.5 cuộn 100m",
+              "bạt xanh cam khổ 4m",
+              "đá 1x2"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "kg",
+              "m3",
+              "cuộn",
+              "m2",
+              "cây"
+            ]
+          },
+          {
+            "name": "Số lượng giao",
+            "type": "BIGINT",
+            "distinct_count": 59,
+            "sample_values": [
+              1,
+              10,
+              2,
+              3,
+              20
+            ]
+          },
+          {
+            "name": "Biển số xe",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "51c-327.66",
+              "51d-233.15"
+            ]
+          },
+          {
+            "name": "Người giao hàng",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "ông hương",
+              "châu giang"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "Chi_tiß_t_c_ng_nß_ú_theo_hß_ín_Sheet1",
+        "source": "train\\train\\data\\biz_118\\Chi tiß║┐t c├┤ng nß╗ú theo hß║ín.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 4915,
+        "canonical_name": "Chi_tiß_t_c_ng_nß_ú_theo_hß_ín_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 4915,
+            "sample_values": [
+              "ord000005",
+              "ord000006",
+              "ord000007",
+              "ord000022",
+              "ord000025"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Số ngày được nợ",
+            "type": "BIGINT",
+            "distinct_count": 2,
+            "sample_values": [
+              30,
+              60
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Hạn thanh toán",
+            "type": "VARCHAR",
+            "distinct_count": 601,
+            "sample_values": [
+              "03/03/2025",
+              "02/04/2025",
+              "04/03/2025",
+              "05/03/2025",
+              "04/04/2025"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "Danh_s_ích_h_áng_h_a_Sheet1",
+        "source": "train\\train\\data\\biz_118\\Danh s├ích h├áng h├│a.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 55,
+        "canonical_name": "Danh_s_ích_h_áng_h_a_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Hình ảnh (url1,url2...)",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Vị trí",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Trọng lượng",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Bảo hành",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mã hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mã barcode",
+            "type": "VARCHAR",
+            "distinct_count": 31,
+            "sample_values": [
+              "8939792877748",
+              "8939016206200",
+              "8931006721786",
+              "8939793666785",
+              "8938528379884"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mô tả sản phẩm",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "xi măng hà tiên pcb40 bao 50kg",
+              "xi măng insee power-s bao 50kg",
+              "cát xây tô",
+              "cát bê tông",
+              "cát san lấp"
+            ]
+          },
+          {
+            "name": "Loại hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "hàng hóa"
+            ]
+          },
+          {
+            "name": "Nhóm hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "xi măng",
+              "cát đá",
+              "gạch",
+              "sắt thép",
+              "sơn",
+              "ống nước",
+              "điện",
+              "gas & nước",
+              "hoàn thiện",
+              "dụng cụ"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "bao",
+              "m3",
+              "viên",
+              "thùng",
+              "cây"
+            ]
+          },
+          {
+            "name": "Mã HH Liên quan",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": [],
+            "role": "identifier"
+          },
+          {
+            "name": "Tồn lớn nhất",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              999999999
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mẫu ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Được bán trực tiếp",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T02_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T02-2025",
+        "row_count": 2075,
+        "canonical_name": "So_chi_tiet_ban_hang_T02_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 28,
+            "sample_values": [
+              "2025-02-01T00:00:00",
+              "2025-02-02T00:00:00",
+              "2025-02-03T00:00:00",
+              "2025-02-04T00:00:00",
+              "2025-02-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 934,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "ống pvc bình minh d32 cây 4m",
+              "cát xây tô",
+              "kẽm buộc 1mm",
+              "dây điện cadivi cv 1.5 cuộn 100m",
+              "bạt xanh cam khổ 4m"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 19,
+            "sample_values": [
+              "cây",
+              "m3",
+              "kg",
+              "cuộn",
+              "m2"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 77,
+            "sample_values": [
+              "2",
+              "1",
+              "3",
+              "1 cuộn",
+              "10"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 57,
+            "sample_values": [
+              65000.0,
+              300000.0,
+              20000.0,
+              790000.0,
+              12000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 218,
+            "sample_values": [
+              130000.0,
+              300000.0,
+              60000.0,
+              790000.0,
+              120000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hủy",
+              "hàng trả về"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 14,
+            "sample_values": [
+              2,
+              1,
+              3,
+              10,
+              20
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 226,
+            "sample_values": [
+              "tống trang dũng",
+              "hà trung hằng",
+              "lê huy lan",
+              "ông bình phong",
+              "dương tâm dương"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T03_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T03-2025",
+        "row_count": 2529,
+        "canonical_name": "So_chi_tiet_ban_hang_T03_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-03-01T00:00:00",
+              "2025-03-02T00:00:00",
+              "2025-03-03T00:00:00",
+              "2025-03-04T00:00:00",
+              "2025-03-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1195,
+            "sample_values": [
+              "ord000935",
+              "ord000936",
+              "ord000937",
+              "ord000938",
+              "ord000939"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "thép cuộn phi 6 hòa phát",
+              "gạch ống 8x8x18 tuynel",
+              "xi măng insee power-s bao 50kg",
+              "dây điện cadivi vcmd 2x2.5 cuộn 100m",
+              "thép cuộn phi 8 hòa phát"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "kg",
+              "viên",
+              "bao",
+              "cuộn",
+              "thùng"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 86,
+            "sample_values": [
+              "1",
+              "10 viên",
+              "3 bao",
+              "3 cuộn",
+              "2"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 60,
+            "sample_values": [
+              16500.0,
+              1300.0,
+              100000.0,
+              2760000.0,
+              15300.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 230,
+            "sample_values": [
+              16500.0,
+              13000.0,
+              300000.0,
+              8280000.0,
+              15300.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hủy",
+              "hàng trả về"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 13,
+            "sample_values": [
+              1,
+              10,
+              3,
+              2,
+              5
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 242,
+            "sample_values": [
+              "lẻ",
+              "kl",
+              "tống huy lan",
+              "đoàn sơn sơn",
+              "triệu thảo bảo"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T04_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T04-2025",
+        "row_count": 2463,
+        "canonical_name": "So_chi_tiet_ban_hang_T04_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-04-01T00:00:00",
+              "2025-04-02T00:00:00",
+              "2025-04-03T00:00:00",
+              "2025-04-04T00:00:00",
+              "2025-04-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1135,
+            "sample_values": [
+              "ord002130",
+              "ord002131",
+              "ord002132",
+              "ord002133",
+              "ord002134"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "gạch thẻ đặc 4x8x18",
+              "gas petrolimex 12kg",
+              "thép cuộn phi 8 hòa phát",
+              "sơn maxilite trong nhà 18l",
+              "ổ cắm đôi 3 chấu panasonic wide wev1582sw"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 19,
+            "sample_values": [
+              "viên",
+              "bình",
+              "kg",
+              "thùng",
+              "cái"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 79,
+            "sample_values": [
+              "1 viên",
+              "3",
+              "1",
+              "5 thùng",
+              "1 cái"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 62,
+            "sample_values": [
+              1500.0,
+              520000.0,
+              15300.0,
+              750000.0,
+              68000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 236,
+            "sample_values": [
+              1500.0,
+              1560000.0,
+              15300.0,
+              3750000.0,
+              68000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hàng trả về",
+              "hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 12,
+            "sample_values": [
+              1,
+              3,
+              5,
+              2,
+              10
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 236,
+            "sample_values": [
+              "khách lẻ",
+              "ông ngọc anh",
+              "lẻ",
+              "kl",
+              "ngô nam giang"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T05_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T05-2025",
+        "row_count": 2664,
+        "canonical_name": "So_chi_tiet_ban_hang_T05_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-05-01T00:00:00",
+              "2025-05-02T00:00:00",
+              "2025-05-03T00:00:00",
+              "2025-05-04T00:00:00",
+              "2025-05-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1192,
+            "sample_values": [
+              "ord003265",
+              "ord003266",
+              "ord003267",
+              "ord003268",
+              "ord003269"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "thép pomina d14 cây 11.7m",
+              "đá 4x6",
+              "gạch thẻ đặc 4x8x18",
+              "bồn nước inox sơn hà 1000l ngang",
+              "thép pomina d10 cây 11.7m"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "cây",
+              "m3",
+              "viên",
+              "cái",
+              "cuộn"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 84,
+            "sample_values": [
+              "1",
+              "2",
+              "3",
+              "5",
+              "3 cây"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 61,
+            "sample_values": [
+              225000.0,
+              350000.0,
+              1500.0,
+              2900000.0,
+              115000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 239,
+            "sample_values": [
+              225000.0,
+              700000.0,
+              4500.0,
+              2900000.0,
+              575000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hủy",
+              "hàng trả về"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 12,
+            "sample_values": [
+              1,
+              2,
+              3,
+              5,
+              10
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 241,
+            "sample_values": [
+              "ngô châu phúc",
+              "tăng long ngân",
+              "khách lẻ",
+              "trịnh cường thảo",
+              "diệp hằng thanh"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T06_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T06-2025",
+        "row_count": 2534,
+        "canonical_name": "So_chi_tiet_ban_hang_T06_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-06-01T00:00:00",
+              "2025-06-02T00:00:00",
+              "2025-06-03T00:00:00",
+              "2025-06-04T00:00:00",
+              "2025-06-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1130,
+            "sample_values": [
+              "ord004457",
+              "ord004458",
+              "ord004459",
+              "ord004460",
+              "ord004461"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "bột trét jotun nội thất 40kg",
+              "xi măng hà tiên pcb40 bao 50kg",
+              "keo dán gạch weber.tai fix xám 25kg",
+              "tôn lạnh hoa sen 0.4mm",
+              "keo dán ống pvc bình minh 200g"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 20,
+            "sample_values": [
+              "bao",
+              "m",
+              "lon",
+              "bình",
+              "cuộn"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 81,
+            "sample_values": [
+              "1",
+              "3 bao",
+              "2 m",
+              "1 lon",
+              "1 bình"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 62,
+            "sample_values": [
+              300000.0,
+              105000.0,
+              85000.0,
+              35000.0,
+              65000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 239,
+            "sample_values": [
+              300000.0,
+              105000.0,
+              900000.0,
+              170000.0,
+              35000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hủy",
+              "hàng trả về"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 15,
+            "sample_values": [
+              1,
+              3,
+              2,
+              5,
+              10
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 237,
+            "sample_values": [
+              "trần hải hùng",
+              "lý anh quân",
+              "quách chi hoàng",
+              "hà hồng thanh",
+              "lẻ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T07_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T07-2025",
+        "row_count": 2454,
+        "canonical_name": "So_chi_tiet_ban_hang_T07_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-07-01T00:00:00",
+              "2025-07-02T00:00:00",
+              "2025-07-03T00:00:00",
+              "2025-07-04T00:00:00",
+              "2025-07-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1142,
+            "sample_values": [
+              "ord005587",
+              "ord005588",
+              "ord005589",
+              "ord005590",
+              "ord005591"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "bột trét jotun nội thất 40kg",
+              "gas saigon petro 12kg",
+              "thép pomina d12 cây 11.7m",
+              "keo chà ron weber 1kg",
+              "xi măng hà tiên pcb40 bao 50kg"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "bao",
+              "bình",
+              "cây",
+              "gói",
+              "kg"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 84,
+            "sample_values": [
+              "2 bao",
+              "1",
+              "2",
+              "3",
+              "1 viên"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 59,
+            "sample_values": [
+              300000.0,
+              560000.0,
+              173000.0,
+              38000.0,
+              105000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 235,
+            "sample_values": [
+              600000.0,
+              560000.0,
+              346000.0,
+              38000.0,
+              299000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hủy",
+              "hàng trả về"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 14,
+            "sample_values": [
+              2,
+              1,
+              3,
+              10,
+              5
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 237,
+            "sample_values": [
+              "hà trung hằng",
+              "vũ quân dương",
+              "khách lẻ",
+              "trương dương quân",
+              "lẻ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T08_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T08-2025",
+        "row_count": 2476,
+        "canonical_name": "So_chi_tiet_ban_hang_T08_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-08-01T00:00:00",
+              "2025-08-02T00:00:00",
+              "2025-08-03T00:00:00",
+              "2025-08-04T00:00:00",
+              "2025-08-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1135,
+            "sample_values": [
+              "ord006729",
+              "ord006730",
+              "ord006731",
+              "ord006732",
+              "ord006733"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "nước khoáng lavie 19l",
+              "tấm thạch cao gyproc 9mm 1.2x2.4m",
+              "thép cuộn phi 6 hòa phát",
+              "sơn lót jotun jotashield chống kiềm 5l",
+              "bột trét jotun nội thất 40kg"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "bình",
+              "tấm",
+              "kg",
+              "thùng",
+              "bao"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 84,
+            "sample_values": [
+              "5",
+              "2 kg",
+              "1 thùng",
+              "2 thùng",
+              "20"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 65,
+            "sample_values": [
+              65000.0,
+              110000.0,
+              16500.0,
+              720000.0,
+              300000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 250,
+            "sample_values": [
+              325000.0,
+              550000.0,
+              33000.0,
+              720000.0,
+              1500000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hàng trả về",
+              "hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 14,
+            "sample_values": [
+              5,
+              2,
+              1,
+              20,
+              3
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 229,
+            "sample_values": [
+              "khách lẻ",
+              "hà khánh dương",
+              "bùi đức hải",
+              "trương nam chi",
+              "đỗ hằng đức"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T09_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T09-2025",
+        "row_count": 2592,
+        "canonical_name": "So_chi_tiet_ban_hang_T09_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-09-01T00:00:00",
+              "2025-09-02T00:00:00",
+              "2025-09-03T00:00:00",
+              "2025-09-04T00:00:00",
+              "2025-09-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1156,
+            "sample_values": [
+              "ord007864",
+              "ord007865",
+              "ord007866",
+              "ord007867",
+              "ord007868"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "thép pomina d12 cây 11.7m",
+              "công tắc 1 chiều panasonic wide kèm mặt",
+              "ống pvc bình minh d32 cây 4m",
+              "cát bê tông",
+              "bóng led bulb rạng đông a60 9w"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 19,
+            "sample_values": [
+              "cây",
+              "bộ",
+              "m3",
+              "cái",
+              "thùng"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "5 cây",
+              "2",
+              "1 cây",
+              "1",
+              "3"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 60,
+            "sample_values": [
+              181500.0,
+              41000.0,
+              65000.0,
+              330000.0,
+              47000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 234,
+            "sample_values": [
+              907500.0,
+              82000.0,
+              65000.0,
+              330000.0,
+              141000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hủy",
+              "hàng trả về"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 12,
+            "sample_values": [
+              5,
+              2,
+              1,
+              3,
+              10
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 245,
+            "sample_values": [
+              "đặng an dương",
+              "kl",
+              "khách lẻ",
+              "lẻ",
+              "hà hồng thanh"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T10_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T10-2025",
+        "row_count": 2395,
+        "canonical_name": "So_chi_tiet_ban_hang_T10_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-10-01T00:00:00",
+              "2025-10-02T00:00:00",
+              "2025-10-03T00:00:00",
+              "2025-10-04T00:00:00",
+              "2025-10-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1110,
+            "sample_values": [
+              "ord009020",
+              "ord009021",
+              "ord009022",
+              "ord009023",
+              "ord009024"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "lưới b40 mạ kẽm khổ 1.5m",
+              "công tắc 1 chiều panasonic wide kèm mặt",
+              "keo dán ống pvc bình minh 200g",
+              "kẽm buộc 1mm",
+              "gas petrolimex 12kg"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "m",
+              "bộ",
+              "lon",
+              "kg",
+              "bình"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 86,
+            "sample_values": [
+              "3 m",
+              "1 bộ",
+              "2",
+              "5",
+              "1 bình"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 60,
+            "sample_values": [
+              50500.0,
+              41000.0,
+              35000.0,
+              20000.0,
+              520000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 248,
+            "sample_values": [
+              151500.0,
+              41000.0,
+              70000.0,
+              100000.0,
+              520000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hủy",
+              "hàng trả về"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 13,
+            "sample_values": [
+              3,
+              1,
+              2,
+              5,
+              10
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 242,
+            "sample_values": [
+              "giang đạt dương",
+              "hứa trung chi",
+              "huỳnh khoa bảo",
+              "từ phong bích",
+              "đinh hà hùng"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T11_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T11-2025",
+        "row_count": 2454,
+        "canonical_name": "So_chi_tiet_ban_hang_T11_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-11-01T00:00:00",
+              "2025-11-02T00:00:00",
+              "2025-11-03T00:00:00",
+              "2025-11-04T00:00:00",
+              "2025-11-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1090,
+            "sample_values": [
+              "ord010130",
+              "ord010131",
+              "ord010132",
+              "ord010133",
+              "ord010134"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "dây điện cadivi vcmd 2x2.5 cuộn 100m",
+              "đá mi bụi",
+              "bóng led bulb rạng đông a60 9w",
+              "dây điện cadivi cv 1.5 cuộn 100m",
+              "thép hộp 40x80 dày 1.4mm cây 6m"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "cuộn",
+              "m3",
+              "cái",
+              "cây",
+              "xe 4m3"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 84,
+            "sample_values": [
+              "1",
+              "5",
+              "2",
+              "3",
+              "1 cây"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 59,
+            "sample_values": [
+              2898000.0,
+              300000.0,
+              47000.0,
+              790000.0,
+              295000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 241,
+            "sample_values": [
+              2898000.0,
+              300000.0,
+              47000.0,
+              790000.0,
+              1475000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã xong",
+              "hủy",
+              "hàng trả về"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 12,
+            "sample_values": [
+              1,
+              5,
+              8,
+              3,
+              2
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 233,
+            "sample_values": [
+              "đào phương hương",
+              "tô hạnh phong",
+              "phùng nam loan",
+              "khách lẻ",
+              "đoàn huy an"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T12_2025",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T12-2025",
+        "row_count": 2514,
+        "canonical_name": "So_chi_tiet_ban_hang_T12_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-12-01T00:00:00",
+              "2025-12-02T00:00:00",
+              "2025-12-03T00:00:00",
+              "2025-12-04T00:00:00",
+              "2025-12-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1140,
+            "sample_values": [
+              "ord011220",
+              "ord011221",
+              "ord011222",
+              "ord011223",
+              "ord011224"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "keo dán gạch weber.tai fix xám 25kg",
+              "thép cuộn phi 8 hòa phát",
+              "gạch ống 8x8x18 tuynel",
+              "đinh 5 phân",
+              "thép hộp 40x80 dày 1.4mm cây 6m"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "bao",
+              "kg",
+              "viên",
+              "cây",
+              "m2"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 82,
+            "sample_values": [
+              "1 bao",
+              "2",
+              "3",
+              "3 kg",
+              "1 cây"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 60,
+            "sample_values": [
+              300000.0,
+              16000.0,
+              1300.0,
+              20000.0,
+              295000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 245,
+            "sample_values": [
+              300000.0,
+              32000.0,
+              3900.0,
+              60000.0,
+              295000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "hủy",
+              "đã xong",
+              "hàng trả về",
+              "đã giao",
+              "trả hàng",
+              "không giao được"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 12,
+            "sample_values": [
+              1,
+              2,
+              3,
+              5,
+              10
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 233,
+            "sample_values": [
+              "nghiêm phúc lan",
+              "phan an chi",
+              "ông cường thu",
+              "lẻ",
+              "đỗ hương trung"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T01_2026",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T01-2026",
+        "row_count": 2561,
+        "canonical_name": "So_chi_tiet_ban_hang_T01_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-01-01T00:00:00",
+              "2026-01-02T00:00:00",
+              "2026-01-03T00:00:00",
+              "2026-01-04T00:00:00",
+              "2026-01-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1125,
+            "sample_values": [
+              "ord012360",
+              "ord012361",
+              "ord012362",
+              "ord012363",
+              "ord012364"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "chống thấm kova ct-11a tường 20kg",
+              "đinh 5 phân",
+              "gas petrolimex 12kg",
+              "sơn dulux weathershield powerflexx 5l",
+              "xi măng hà tiên pcb40 bao 50kg"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 19,
+            "sample_values": [
+              "thùng",
+              "kg",
+              "bình",
+              "bao",
+              "m"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 86,
+            "sample_values": [
+              "1",
+              "3",
+              "2",
+              "1 thùng",
+              "3 bao"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 58,
+            "sample_values": [
+              2150000.0,
+              20000.0,
+              520000.0,
+              1550000.0,
+              105000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 246,
+            "sample_values": [
+              2150000.0,
+              20000.0,
+              1560000.0,
+              4300000.0,
+              1550000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "không giao được",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 14,
+            "sample_values": [
+              1,
+              3,
+              2,
+              20,
+              5
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 232,
+            "sample_values": [
+              "dương hải ngân",
+              "kl",
+              "đinh dũng phương",
+              "lương khoa an",
+              "thái bảo hải"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T02_2026",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T02-2026",
+        "row_count": 1623,
+        "canonical_name": "So_chi_tiet_ban_hang_T02_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 28,
+            "sample_values": [
+              "2026-02-01T00:00:00",
+              "2026-02-02T00:00:00",
+              "2026-02-03T00:00:00",
+              "2026-02-04T00:00:00",
+              "2026-02-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 695,
+            "sample_values": [
+              "ord013485",
+              "ord013486",
+              "ord013487",
+              "ord013488",
+              "ord013489"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "thép cuộn phi 8 hòa phát",
+              "bộ van dây gas namilux",
+              "keo dán gạch weber.tai fix xám 25kg",
+              "gạch ống 8x8x18 tuynel",
+              "ống pvc bình minh d32 cây 4m"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "kg",
+              "bộ",
+              "bao",
+              "viên",
+              "cây"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 73,
+            "sample_values": [
+              "2",
+              "1",
+              "10",
+              "1 cây",
+              "1 bình"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 59,
+            "sample_values": [
+              16000.0,
+              250000.0,
+              300000.0,
+              1300.0,
+              65000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 225,
+            "sample_values": [
+              32000.0,
+              250000.0,
+              300000.0,
+              13000.0,
+              65000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "không giao được",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 13,
+            "sample_values": [
+              2,
+              1,
+              10,
+              3,
+              5
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 213,
+            "sample_values": [
+              "lẻ",
+              "lâm huy thu",
+              "kiều phong dương",
+              "lê hiếu thảo",
+              "khách lẻ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T03_2026",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T03-2026",
+        "row_count": 2437,
+        "canonical_name": "So_chi_tiet_ban_hang_T03_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-03-01T00:00:00",
+              "2026-03-02T00:00:00",
+              "2026-03-03T00:00:00",
+              "2026-03-04T00:00:00",
+              "2026-03-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1105,
+            "sample_values": [
+              "ord014180",
+              "ord014181",
+              "ord014182",
+              "ord014183",
+              "ord014184"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "gạch ống 8x8x18 tuynel",
+              "lưới b40 mạ kẽm khổ 1.5m",
+              "kẽm buộc 1mm",
+              "gas saigon petro 12kg",
+              "xi măng insee power-s bao 50kg"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "viên",
+              "m",
+              "kg",
+              "bình",
+              "bao"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 81,
+            "sample_values": [
+              "1",
+              "2",
+              "1 bình",
+              "5 bao",
+              "3"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 65,
+            "sample_values": [
+              1300.0,
+              50500.0,
+              20000.0,
+              560000.0,
+              100000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 256,
+            "sample_values": [
+              1300.0,
+              101000.0,
+              40000.0,
+              560000.0,
+              500000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "không giao được",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 11,
+            "sample_values": [
+              1,
+              2,
+              5,
+              3,
+              20
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 241,
+            "sample_values": [
+              "chung duy minh",
+              "trần minh bảo",
+              "đoàn khánh chi",
+              "khách lẻ",
+              "kl"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T04_2026",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T04-2026",
+        "row_count": 2349,
+        "canonical_name": "So_chi_tiet_ban_hang_T04_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2026-04-01T00:00:00",
+              "2026-04-02T00:00:00",
+              "2026-04-03T00:00:00",
+              "2026-04-04T00:00:00",
+              "2026-04-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1060,
+            "sample_values": [
+              "ord015285",
+              "ord015286",
+              "ord015287",
+              "ord015288",
+              "ord015289"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "ống pvc bình minh d50 cây 4m",
+              "nước tinh khiết vihawa 20l",
+              "gạch ốp tường viglacera 30x60 thùng 8 viên",
+              "dây điện cadivi cv 1.5 cuộn 100m",
+              "keo chà ron weber 1kg"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 19,
+            "sample_values": [
+              "cây",
+              "bình",
+              "thùng",
+              "cuộn",
+              "gói"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "1",
+              "2",
+              "1 thùng",
+              "10",
+              "1 cây"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 61,
+            "sample_values": [
+              125000.0,
+              58000.0,
+              280000.0,
+              829500.0,
+              38000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 250,
+            "sample_values": [
+              125000.0,
+              116000.0,
+              280000.0,
+              829500.0,
+              38000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "không giao được",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 14,
+            "sample_values": [
+              1,
+              2,
+              10,
+              5,
+              3
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 231,
+            "sample_values": [
+              "võ hiếu chi",
+              "kl",
+              "khách lẻ",
+              "trương dương quân",
+              "lê lan trang"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T05_2026",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T05-2026",
+        "row_count": 2383,
+        "canonical_name": "So_chi_tiet_ban_hang_T05_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-05-01T00:00:00",
+              "2026-05-02T00:00:00",
+              "2026-05-03T00:00:00",
+              "2026-05-04T00:00:00",
+              "2026-05-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1084,
+            "sample_values": [
+              "ord016345",
+              "ord016346",
+              "ord016347",
+              "ord016348",
+              "ord016349"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "keo dán ống pvc bình minh 200g",
+              "gạch lát nền prime 60x60 thùng 4 viên",
+              "ổ cắm đôi 3 chấu panasonic wide wev1582sw",
+              "thép cuộn phi 8 hòa phát",
+              "gạch thẻ đặc 4x8x18"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "lon",
+              "thùng",
+              "cái",
+              "kg",
+              "viên"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 78,
+            "sample_values": [
+              "2 lon",
+              "2 thùng",
+              "1 cái",
+              "1",
+              "1 viên"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 62,
+            "sample_values": [
+              35000.0,
+              315000.0,
+              68000.0,
+              16000.0,
+              1600.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 250,
+            "sample_values": [
+              70000.0,
+              630000.0,
+              68000.0,
+              16000.0,
+              1600.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "không giao được",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 14,
+            "sample_values": [
+              2,
+              1,
+              3,
+              20,
+              5
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 233,
+            "sample_values": [
+              "đào phương hương",
+              "hoàng mai anh",
+              "lẻ",
+              "dương hải ngân",
+              "dương thanh chi"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T06_2026",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T06-2026",
+        "row_count": 2188,
+        "canonical_name": "So_chi_tiet_ban_hang_T06_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2026-06-01T00:00:00",
+              "2026-06-02T00:00:00",
+              "2026-06-03T00:00:00",
+              "2026-06-04T00:00:00",
+              "2026-06-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 996,
+            "sample_values": [
+              "ord017429",
+              "ord017430",
+              "ord017431",
+              "ord017432",
+              "ord017433"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "ổ cắm đôi 3 chấu panasonic wide wev1582sw",
+              "sơn lót jotun jotashield chống kiềm 5l",
+              "ống pvc bình minh d32 cây 4m",
+              "lưới b40 mạ kẽm khổ 1.5m",
+              "thép pomina d12 cây 11.7m"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "cái",
+              "thùng",
+              "cây",
+              "m",
+              "kg"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "1 cái",
+              "2",
+              "20 cây",
+              "3 cây",
+              "5 kg"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 61,
+            "sample_values": [
+              68000.0,
+              720000.0,
+              65000.0,
+              50500.0,
+              181500.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 251,
+            "sample_values": [
+              68000.0,
+              1440000.0,
+              1300000.0,
+              101000.0,
+              544500.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "trả hàng",
+              "không giao được"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 14,
+            "sample_values": [
+              1,
+              2,
+              20,
+              3,
+              5
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 228,
+            "sample_values": [
+              "khách lẻ",
+              "ngô hoàng tâm",
+              "đào quang bình",
+              "dương cường dũng",
+              "chung dương tâm"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T07_2026",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T07-2026",
+        "row_count": 2263,
+        "canonical_name": "So_chi_tiet_ban_hang_T07_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-07-01T00:00:00",
+              "2026-07-02T00:00:00",
+              "2026-07-03T00:00:00",
+              "2026-07-04T00:00:00",
+              "2026-07-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1042,
+            "sample_values": [
+              "ord018425",
+              "ord018426",
+              "ord018427",
+              "ord018428",
+              "ord018429"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "nước khoáng lavie 19l",
+              "sơn lót jotun jotashield chống kiềm 5l",
+              "gạch thẻ đặc 4x8x18",
+              "đá 4x6",
+              "gạch ốp tường viglacera 30x60 thùng 8 viên"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 19,
+            "sample_values": [
+              "bình",
+              "thùng",
+              "viên",
+              "m3",
+              "bao"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 82,
+            "sample_values": [
+              "1",
+              "1 m3",
+              "2 bình",
+              "1 thùng",
+              "10"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 62,
+            "sample_values": [
+              68000.0,
+              720000.0,
+              1600.0,
+              367500.0,
+              280000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 242,
+            "sample_values": [
+              68000.0,
+              720000.0,
+              1600.0,
+              367500.0,
+              136000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "không giao được",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 14,
+            "sample_values": [
+              1,
+              2,
+              10,
+              3,
+              5
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 227,
+            "sample_values": [
+              "hà trung hằng",
+              "khách lẻ",
+              "tăng bình duy",
+              "kl",
+              "đỗ đạt dương"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T08_2026",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T08-2026",
+        "row_count": 2295,
+        "canonical_name": "So_chi_tiet_ban_hang_T08_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-08-01T00:00:00",
+              "2026-08-02T00:00:00",
+              "2026-08-03T00:00:00",
+              "2026-08-04T00:00:00",
+              "2026-08-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 1059,
+            "sample_values": [
+              "ord019467",
+              "ord019468",
+              "ord019469",
+              "ord019470",
+              "ord019471"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "nước tinh khiết bidrico 20l",
+              "gạch ống 8x8x18 tuynel",
+              "ngói đồng nai 22 viên/m2",
+              "cát san lấp",
+              "bóng led bulb rạng đông a60 9w"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "bình",
+              "viên",
+              "m3",
+              "cái",
+              "bao"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 82,
+            "sample_values": [
+              "1 bình",
+              "1 viên",
+              "3 viên",
+              "5",
+              "2 cái"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 64,
+            "sample_values": [
+              45000.0,
+              1300.0,
+              13500.0,
+              291500.0,
+              47000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 258,
+            "sample_values": [
+              45000.0,
+              1300.0,
+              40500.0,
+              1457500.0,
+              94000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "không giao được",
+              "trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 14,
+            "sample_values": [
+              1,
+              3,
+              5,
+              2,
+              10
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 230,
+            "sample_values": [
+              "ngô nam giang",
+              "lê nhung phong",
+              "lẻ",
+              "thân hạnh hoa",
+              "khách lẻ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "So_chi_tiet_ban_hang_T09_2026",
+        "source": "train\\train\\data\\biz_118\\So_chi_tiet_ban_hang.xlsx",
+        "sheet": "T09-2026",
+        "row_count": 752,
+        "canonical_name": "So_chi_tiet_ban_hang_T09_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 10,
+            "sample_values": [
+              "2026-09-01T00:00:00",
+              "2026-09-02T00:00:00",
+              "2026-09-03T00:00:00",
+              "2026-09-04T00:00:00",
+              "2026-09-05T00:00:00",
+              "2026-09-06T00:00:00",
+              "2026-09-07T00:00:00",
+              "2026-09-08T00:00:00",
+              "2026-09-09T00:00:00",
+              "2026-09-10T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 344,
+            "sample_values": [
+              "ord020526",
+              "ord020527",
+              "ord020528",
+              "ord020529",
+              "ord020530"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 55,
+            "sample_values": [
+              "băng keo điện nano 20 yard",
+              "dây điện cadivi cv 1.5 cuộn 100m",
+              "dây điện cadivi vcmd 2x2.5 cuộn 100m",
+              "thép pomina d14 cây 11.7m",
+              "nước khoáng lavie 19l"
+            ]
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "cuộn",
+              "cây",
+              "bình",
+              "lon",
+              "m3"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "VARCHAR",
+            "distinct_count": 69,
+            "sample_values": [
+              "1",
+              "5",
+              "2",
+              "1 cây",
+              "1 bình"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 60,
+            "sample_values": [
+              9000.0,
+              914500.0,
+              3043000.0,
+              225000.0,
+              68000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 196,
+            "sample_values": [
+              9000.0,
+              4572500.0,
+              6086000.0,
+              225000.0,
+              68000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã giao",
+              "không giao được",
+              "đang xử lý"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 10,
+            "sample_values": [
+              1,
+              5,
+              2,
+              50,
+              3,
+              10,
+              20,
+              4,
+              40,
+              8
+            ]
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 139,
+            "sample_values": [
+              "kl",
+              "khách lẻ",
+              "tăng ngân hà",
+              "thái linh nhung",
+              "đỗ hương trung"
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu biz_118\n\nFile Excel xuất từ phần mềm bán hàng. Sổ chi tiết bán hàng: mỗi dòng một dòng hàng, thông tin đơn lặp lại ở mọi dòng.\n\nFile `So_chi_tiet_ban_hang.xlsx` chia mỗi tháng một sheet, tên sheet ghi tháng và năm.\n\n## File\n- `So_chi_tiet_ban_hang.xlsx` (xlsx)\n- `Danh sách hàng hóa.xlsx` (xlsx)\n- `Bảng kê phiếu giao hàng.xlsx` (xlsx)\n- `Chi tiết công nợ theo hạn.xlsx` (xlsx)\n\n## Cột trong `So_chi_tiet_ban_hang.xlsx`\n- **Ngày**: ngày bán\n- **Mã đơn hàng**: mã đơn\n- **Tên hàng hóa**: tên hàng\n- **Đơn vị tính**: đơn vị tính\n- **Số lượng**: số lượng\n- **Đơn giá**: đơn giá\n- **Thành tiền**: thành tiền sau giảm\n- **Trạng thái**: trạng thái đơn\n- **Số lượng quy đổi**: số lượng đã đổi ra đơn vị cơ bản\n- **Khách hàng**: tên khách (Khách lẻ nếu không lưu)\n\n## Cột trong `Danh sách hàng hóa.xlsx`\n- **Mã hàng hóa**: mã hàng\n- **Tên hàng hóa**: tên\n- **Nhóm hàng hóa**: nhóm hàng\n- **Đơn vị tính**: đơn vị cơ bản\n\n## Cột trong `Bảng kê phiếu giao hàng.xlsx`\n- **Ngày giao hàng**: ngày giao\n- **Mã đơn hàng**: mã đơn\n- **Lần giao**: đợt giao (1, 2, 3)\n- **Tên hàng hóa**: tên hàng\n- **Đơn vị tính**: đơn vị cơ bản\n- **Số lượng giao**: số lượng đã đổi ra đơn vị cơ bản\n- **Biển số xe**: biển số xe\n- **Người giao hàng**: tài xế\n\n## Cột trong `Chi tiết công nợ theo hạn.xlsx`\n- **Mã đơn hàng**: mã đơn\n- **Số ngày được nợ**: số ngày được nợ\n- **Hạn thanh toán**: hạn thanh toán\n\n## Quy ước\n- Dữ liệu có đến hết 10/09/2026.\n- **Hạn thanh toán**: chỉ đơn bán nợ có hạn. **Hạn thanh toán** là ngày khách phải trả hết đơn; **Số ngày được nợ** là số ngày được nợ, tính từ ngày đặt.\n- **Giao hàng**: đơn không huỷ có ít nhất một mặt hàng nhóm cát đá, gạch, sắt thép, xi măng thì được giao tận nơi mọi mặt hàng của đơn, 1–3 đợt (**Lần giao**); đơn khác khách tự chở, không có trong sổ giao; đơn đặt mấy ngày cuối dữ liệu có thể chưa giao. **Số lượng giao** tính theo đơn vị cơ bản.\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng:\n  - Xi măng Hà Tiên PCB40 bao 50kg: 1 tấn = 20 bao\n  - Xi măng INSEE Power-S bao 50kg: 1 tấn = 20 bao\n  - Cát xây tô: 1 xe 4m3 = 4 m3\n  - Cát bê tông: 1 xe 4m3 = 4 m3\n  - Cát san lấp: 1 xe 4m3 = 4 m3\n  - Đá 1x2: 1 xe 4m3 = 4 m3\n  - Đá 4x6: 1 xe 4m3 = 4 m3\n  - Đá mi bụi: 1 xe 4m3 = 4 m3\n  - Gạch ống 8x8x18 Tuynel: 1 thiên = 1000 viên\n  - Gạch thẻ đặc 4x8x18: 1 thiên = 1000 viên\n  - Băng keo điện Nano 20 yard: 1 cây = 10 cuộn\n  - Lưới B40 mạ kẽm khổ 1.5m: 1 cuộn 10m = 10 m\n  - Ngói Đồng Nai 22 viên/m2: 1 thiên = 1000 viên\n  - Bạt xanh cam khổ 4m: 1 cuộn 4x50m = 200 m2\n"
+}

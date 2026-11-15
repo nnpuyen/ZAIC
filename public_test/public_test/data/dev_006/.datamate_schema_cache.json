@@ -1,0 +1,1880 @@
+{
+  "version": 4,
+  "fingerprint": "30fdf6ab0349d14dc0325cda0395f591bc35835757e3a6fac4619916ad65ca25",
+  "schema": {
+    "tables": [
+      {
+        "table": "chi_nhanh",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 1,
+        "canonical_name": "chi_nhanh",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaChiNhanh",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "cn1"
+            ]
+          },
+          {
+            "name": "TenGoi",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "nhà thuốc khánh"
+            ]
+          },
+          {
+            "name": "DiaChiLienHe",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "334 quang trung"
+            ]
+          },
+          {
+            "name": "NgayKhaiTruong",
+            "type": "TIMESTAMP",
+            "distinct_count": 1,
+            "sample_values": [
+              "2023-06-28T00:00:00"
+            ],
+            "role": "transaction_date"
+          }
+        ]
+      },
+      {
+        "table": "chi_tiet_don",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 71061,
+        "canonical_name": "chi_tiet_don",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaHoaDon",
+            "type": "VARCHAR",
+            "distinct_count": 37833,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ]
+          },
+          {
+            "name": "SoThuTu",
+            "type": "BIGINT",
+            "distinct_count": 4,
+            "sample_values": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "name": "MaHangHoa",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0074",
+              "sp0013",
+              "sp0001",
+              "sp0049",
+              "sp0018"
+            ]
+          },
+          {
+            "name": "DonViTinh",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "viên",
+              "hộp",
+              "vỉ",
+              "gói",
+              "chai"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "BIGINT",
+            "distinct_count": 10,
+            "sample_values": [
+              6,
+              1,
+              2,
+              10,
+              4,
+              3,
+              8,
+              7,
+              9,
+              5
+            ]
+          },
+          {
+            "name": "SLQuyDoi",
+            "type": "BIGINT",
+            "distinct_count": 41,
+            "sample_values": [
+              6,
+              16,
+              1,
+              2,
+              10
+            ]
+          },
+          {
+            "name": "GiaDonVi",
+            "type": "BIGINT",
+            "distinct_count": 161,
+            "sample_values": [
+              2600,
+              51200,
+              1400,
+              600,
+              34000
+            ]
+          },
+          {
+            "name": "ChietKhau",
+            "type": "BIGINT",
+            "distinct_count": 50,
+            "sample_values": [
+              0,
+              1000,
+              5000,
+              13000,
+              6000
+            ]
+          },
+          {
+            "name": "TriGia",
+            "type": "BIGINT",
+            "distinct_count": 565,
+            "sample_values": [
+              15600,
+              51200,
+              1400,
+              2800,
+              600
+            ]
+          },
+          {
+            "name": "GiaVonLucBan",
+            "type": "BIGINT",
+            "distinct_count": 2960,
+            "sample_values": [
+              1700,
+              40000,
+              1100,
+              500,
+              25000
+            ]
+          }
+        ]
+      },
+      {
+        "table": "chi_tiet_don_lo",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 72710,
+        "canonical_name": "chi_tiet_don_lo",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaHoaDon",
+            "type": "VARCHAR",
+            "distinct_count": 37438,
+            "sample_values": [
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005",
+              "ord000006"
+            ]
+          },
+          {
+            "name": "SoThuTu",
+            "type": "BIGINT",
+            "distinct_count": 4,
+            "sample_values": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "name": "MaLo",
+            "type": "VARCHAR",
+            "distinct_count": 3230,
+            "sample_values": [
+              "u2504390",
+              "d2504828",
+              "m2504604",
+              "f2504785",
+              "r2504742"
+            ]
+          },
+          {
+            "name": "SLQuyDoi",
+            "type": "BIGINT",
+            "distinct_count": 166,
+            "sample_values": [
+              16,
+              1,
+              2,
+              10,
+              4
+            ]
+          },
+          {
+            "name": "SLTraQuyDoi",
+            "type": "BIGINT",
+            "distinct_count": 29,
+            "sample_values": [
+              0,
+              3,
+              2,
+              1,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "table": "chi_tiet_nhap",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 3234,
+        "canonical_name": "chi_tiet_nhap",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaPhieuNhap",
+            "type": "VARCHAR",
+            "distinct_count": 494,
+            "sample_values": [
+              "pn00001",
+              "pn00002",
+              "pn00003",
+              "pn00004",
+              "pn00005"
+            ]
+          },
+          {
+            "name": "SoThuTu",
+            "type": "BIGINT",
+            "distinct_count": 80,
+            "sample_values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "name": "MaHangHoa",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ]
+          },
+          {
+            "name": "DonViTinh",
+            "type": "VARCHAR",
+            "distinct_count": 8,
+            "sample_values": [
+              "hộp",
+              "chai",
+              "tuýp",
+              "lốc",
+              "viên",
+              "cái",
+              "gói",
+              "lọ"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "BIGINT",
+            "distinct_count": 85,
+            "sample_values": [
+              2,
+              9,
+              3,
+              209,
+              10
+            ]
+          },
+          {
+            "name": "DonGiaNhap",
+            "type": "BIGINT",
+            "distinct_count": 220,
+            "sample_values": [
+              198000,
+              38400,
+              96000,
+              90000,
+              6900
+            ]
+          },
+          {
+            "name": "MaLo",
+            "type": "VARCHAR",
+            "distinct_count": 3234,
+            "sample_values": [
+              "d2504828",
+              "g2504735",
+              "m2504926",
+              "l2504514",
+              "z2504562"
+            ]
+          },
+          {
+            "name": "HanSuDung",
+            "type": "VARCHAR",
+            "distinct_count": 1220,
+            "sample_values": [
+              "2026-09-15",
+              "2025-09-24",
+              "2028-02-03",
+              "2026-12-20",
+              "2028-01-12"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "don_hang",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 37833,
+        "canonical_name": "don_hang",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaHoaDon",
+            "type": "VARCHAR",
+            "distinct_count": 37833,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ]
+          },
+          {
+            "name": "MaChiNhanh",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "cn1"
+            ]
+          },
+          {
+            "name": "MaKhachHang",
+            "type": "VARCHAR",
+            "distinct_count": 320,
+            "sample_values": [
+              "kh0210",
+              "kh0160",
+              "kh0144",
+              "kh0237",
+              "kh0029"
+            ]
+          },
+          {
+            "name": "MaNhanVien",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "nv002",
+              "nv003",
+              "nv001"
+            ]
+          },
+          {
+            "name": "MaCaLam",
+            "type": "VARCHAR",
+            "distinct_count": 990,
+            "sample_values": [
+              "ca202504011",
+              "ca202504012",
+              "ca202504021",
+              "ca202504022",
+              "ca202504031"
+            ]
+          },
+          {
+            "name": "KenhBanHang",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "store",
+              "phone",
+              "zalo_oa"
+            ]
+          },
+          {
+            "name": "ThoiGianLap",
+            "type": "VARCHAR",
+            "distinct_count": 37808,
+            "sample_values": [
+              "2025-04-01 06:00:39",
+              "2025-04-01 06:19:45",
+              "2025-04-01 07:25:46",
+              "2025-04-01 07:28:36",
+              "2025-04-01 07:36:45"
+            ]
+          },
+          {
+            "name": "NgayLap",
+            "type": "TIMESTAMP",
+            "distinct_count": 495,
+            "sample_values": [
+              "2025-04-01T00:00:00",
+              "2025-04-02T00:00:00",
+              "2025-04-03T00:00:00",
+              "2025-04-04T00:00:00",
+              "2025-04-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "TinhTrang",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "cancelled",
+              "completed",
+              "returned",
+              "shipping"
+            ]
+          },
+          {
+            "name": "TongTienHang",
+            "type": "BIGINT",
+            "distinct_count": 4581,
+            "sample_values": [
+              15600,
+              51200,
+              1400,
+              41400,
+              30000
+            ]
+          },
+          {
+            "name": "ChietKhau",
+            "type": "BIGINT",
+            "distinct_count": 2,
+            "sample_values": [
+              0,
+              10000
+            ]
+          },
+          {
+            "name": "PhiVanChuyen",
+            "type": "BIGINT",
+            "distinct_count": 2,
+            "sample_values": [
+              0,
+              15000
+            ]
+          },
+          {
+            "name": "ThueGTGT",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              0
+            ]
+          },
+          {
+            "name": "TongThanhToan",
+            "type": "BIGINT",
+            "distinct_count": 4578,
+            "sample_values": [
+              15600,
+              51200,
+              1400,
+              41400,
+              30000
+            ]
+          },
+          {
+            "name": "KhachDaTra",
+            "type": "BIGINT",
+            "distinct_count": 4562,
+            "sample_values": [
+              0,
+              51200,
+              1400,
+              41400,
+              30000
+            ]
+          },
+          {
+            "name": "ConPhaiThu",
+            "type": "BIGINT",
+            "distinct_count": 26,
+            "sample_values": [
+              0,
+              27000,
+              297000,
+              146200,
+              28000
+            ]
+          },
+          {
+            "name": "PhuongThucTT",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "transfer",
+              "cash",
+              "debt",
+              "ewallet",
+              "cod"
+            ]
+          },
+          {
+            "name": "SoHoaDonDienTu",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "TinhTrangHDDT",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "MaKhuyenMai",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "km01"
+            ]
+          },
+          {
+            "name": "DienGiai",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          }
+        ]
+      },
+      {
+        "table": "don_vi_sp",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 83,
+        "canonical_name": "don_vi_sp",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaHangHoa",
+            "type": "VARCHAR",
+            "distinct_count": 53,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0006"
+            ]
+          },
+          {
+            "name": "DonViTinh",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "hộp",
+              "vỉ",
+              "chai",
+              "tuýp",
+              "lốc"
+            ]
+          },
+          {
+            "name": "HeSoQuyDoi",
+            "type": "BIGINT",
+            "distinct_count": 19,
+            "sample_values": [
+              180,
+              12,
+              24,
+              120,
+              100
+            ]
+          },
+          {
+            "name": "GiaDonVi",
+            "type": "BIGINT",
+            "distinct_count": 65,
+            "sample_values": [
+              270000,
+              18000,
+              50400,
+              120000,
+              12000
+            ]
+          }
+        ]
+      },
+      {
+        "table": "khach_hang",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 320,
+        "canonical_name": "khach_hang",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaKhachHang",
+            "type": "VARCHAR",
+            "distinct_count": 320,
+            "sample_values": [
+              "kh0001",
+              "kh0002",
+              "kh0003",
+              "kh0004",
+              "kh0005"
+            ]
+          },
+          {
+            "name": "TenGoi",
+            "type": "VARCHAR",
+            "distinct_count": 320,
+            "sample_values": [
+              "đoàn huy khoa",
+              "dương đạt lan",
+              "phùng mai khoa",
+              "lê hùng anh",
+              "phạm hiếu đức"
+            ]
+          },
+          {
+            "name": "trang_thai_kh",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "đang hoạt động"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "tong_diem",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          },
+          {
+            "name": "diem_hien_tai",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          },
+          {
+            "name": "loai_hinh_kh",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "cá nhân"
+            ]
+          },
+          {
+            "name": "cccd",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "SoDienThoai",
+            "type": "VARCHAR",
+            "distinct_count": 320,
+            "sample_values": [
+              "0354537025",
+              "0988055021",
+              "0979159799",
+              "0325735026",
+              "0351523540"
+            ]
+          },
+          {
+            "name": "email",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "ghi_chu_kh",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "NamNu",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "LoaiKhachHang",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "khách lẻ",
+              "thân thiết",
+              "sỉ"
+            ]
+          },
+          {
+            "name": "cong_ty",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "TaoLuc",
+            "type": "VARCHAR",
+            "distinct_count": 244,
+            "sample_values": [
+              "2024-12-11",
+              "2023-03-24",
+              "2022-11-27",
+              "2023-03-22",
+              "2025-04-11"
+            ]
+          },
+          {
+            "name": "ma_so_thue",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "0756583064",
+              "0491630316",
+              "0708908803",
+              "0263267727"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "DiaChiLienHe",
+            "type": "VARCHAR",
+            "distinct_count": 318,
+            "sample_values": [
+              "386 lê trọng tấn",
+              "186 đinh bộ lĩnh",
+              "39 lê đức thọ",
+              "2 phạm văn đồng",
+              "87 an dương vương"
+            ]
+          },
+          {
+            "name": "nguoi_tao",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "admin"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "lich_su_gia",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 120,
+        "canonical_name": "lich_su_gia",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaHangHoa",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ]
+          },
+          {
+            "name": "NgayApDung",
+            "type": "TIMESTAMP",
+            "distinct_count": 40,
+            "sample_values": [
+              "2025-04-01T00:00:00",
+              "2026-03-26T00:00:00",
+              "2026-02-13T00:00:00",
+              "2025-06-09T00:00:00",
+              "2025-06-17T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "GiaBanLe",
+            "type": "BIGINT",
+            "distinct_count": 82,
+            "sample_values": [
+              1400,
+              1500,
+              2000,
+              2100,
+              1000
+            ]
+          }
+        ]
+      },
+      {
+        "table": "lo_hang",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 3234,
+        "canonical_name": "lo_hang",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaHangHoa",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ]
+          },
+          {
+            "name": "MaLo",
+            "type": "VARCHAR",
+            "distinct_count": 3234,
+            "sample_values": [
+              "b2504172",
+              "b2505387",
+              "b2506788",
+              "b2606501",
+              "c2506356"
+            ]
+          },
+          {
+            "name": "MaPhieuNhap",
+            "type": "VARCHAR",
+            "distinct_count": 494,
+            "sample_values": [
+              "pn00019",
+              "pn00051",
+              "pn00064",
+              "pn00433",
+              "pn00089"
+            ]
+          },
+          {
+            "name": "HanSuDung",
+            "type": "VARCHAR",
+            "distinct_count": 1220,
+            "sample_values": [
+              "2027-06-30",
+              "2025-10-09",
+              "2027-07-15",
+              "2026-12-05",
+              "2027-10-06"
+            ]
+          },
+          {
+            "name": "SLNhapQuyDoi",
+            "type": "BIGINT",
+            "distinct_count": 86,
+            "sample_values": [
+              360,
+              216,
+              192,
+              240,
+              200
+            ]
+          },
+          {
+            "name": "DonGiaNhap",
+            "type": "BIGINT",
+            "distinct_count": 183,
+            "sample_values": [
+              1000,
+              1100,
+              1500,
+              1600,
+              1700
+            ]
+          }
+        ]
+      },
+      {
+        "table": "nha_cung_cap",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 5,
+        "canonical_name": "nha_cung_cap",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "email",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "nhom_ncc",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "MaNhaCungCap",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "ncc001",
+              "ncc002",
+              "ncc003",
+              "ncc004",
+              "ncc005"
+            ]
+          },
+          {
+            "name": "ma_so_thue",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": [],
+            "role": "identifier"
+          },
+          {
+            "name": "nguoi_tao",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "admin"
+            ]
+          },
+          {
+            "name": "trang_thai_ncc",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "đang hoạt động"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "TenGoi",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "cty giang thanh",
+              "cty diệp đức",
+              "cty trương hoa",
+              "cty trịnh giang",
+              "cty kiều ngọc"
+            ]
+          },
+          {
+            "name": "SoDienThoai",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "0798551890",
+              "0904763719",
+              "0904395211",
+              "0973126679",
+              "0975882063"
+            ]
+          },
+          {
+            "name": "DiaChiLienHe",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "504 bình long",
+              "963 kinh dương vương",
+              "579 khánh hội",
+              "687 an dương vương",
+              "152 quang trung"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "nhan_vien",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 3,
+        "canonical_name": "nhan_vien",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaNhanVien",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "nv001",
+              "nv002",
+              "nv003"
+            ]
+          },
+          {
+            "name": "TenGoi",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "võ trung hoa",
+              "từ hùng hằng",
+              "đinh đạt đức"
+            ]
+          },
+          {
+            "name": "MaChiNhanh",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "cn1"
+            ]
+          },
+          {
+            "name": "ChucVu",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "owner",
+              "cashier",
+              "sales"
+            ]
+          },
+          {
+            "name": "NgayNhanViec",
+            "type": "TIMESTAMP",
+            "distinct_count": 3,
+            "sample_values": [
+              "2023-06-08T00:00:00",
+              "2024-09-22T00:00:00",
+              "2024-04-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "NgayThoiViec",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": [],
+            "role": "transaction_date"
+          }
+        ]
+      },
+      {
+        "table": "phieu_nhap",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 494,
+        "canonical_name": "phieu_nhap",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaPhieuNhap",
+            "type": "VARCHAR",
+            "distinct_count": 494,
+            "sample_values": [
+              "pn00001",
+              "pn00002",
+              "pn00003",
+              "pn00004",
+              "pn00005"
+            ]
+          },
+          {
+            "name": "MaNhaCungCap",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "ncc003",
+              "ncc005",
+              "ncc001",
+              "ncc004",
+              "ncc002"
+            ]
+          },
+          {
+            "name": "MaChiNhanh",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "cn1"
+            ]
+          },
+          {
+            "name": "NgayNhapKho",
+            "type": "TIMESTAMP",
+            "distinct_count": 494,
+            "sample_values": [
+              "2025-04-01T00:00:00",
+              "2025-04-02T00:00:00",
+              "2025-04-04T00:00:00",
+              "2025-04-05T00:00:00",
+              "2025-04-06T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "TinhTrang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "received"
+            ]
+          },
+          {
+            "name": "TongGiaTriNhap",
+            "type": "BIGINT",
+            "distinct_count": 487,
+            "sample_values": [
+              185863400,
+              200000,
+              415000,
+              180000,
+              555000
+            ]
+          },
+          {
+            "name": "DienGiai",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "nhập đầu kỳ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "san_pham",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 80,
+        "canonical_name": "san_pham",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "mo_ta",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "ghi_chu_hh",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaHangHoa",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ]
+          },
+          {
+            "name": "ma_hh_lien_quan",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": [],
+            "role": "identifier"
+          },
+          {
+            "name": "thuoc_tinh",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "ban_truc_tiep",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "1"
+            ]
+          },
+          {
+            "name": "mau_ghi_chu",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "vi_tri",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "trong_luong",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "ton_nho_nhat",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          },
+          {
+            "name": "TenGoi",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "hapacol 250 hộp 24 gói",
+              "panadol 500mg hộp 10 vỉ x 12 viên",
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "nước muối sinh lý natri clorid 0,9% vĩnh phúc chai 500ml"
+            ]
+          },
+          {
+            "name": "ma_vach_ean",
+            "type": "VARCHAR",
+            "distinct_count": 30,
+            "sample_values": [
+              "8933564034063",
+              "8933232206747",
+              "8934036222711",
+              "8931574263435",
+              "8939896882280"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "DanhMuc",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "giảm đau hạ sốt",
+              "ho cảm cúm",
+              "dùng ngoài",
+              "tiêu hoá",
+              "kháng sinh"
+            ]
+          },
+          {
+            "name": "DonViCoSo",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "viên",
+              "gói",
+              "chai",
+              "cái",
+              "vỉ",
+              "miếng",
+              "hộp",
+              "ống",
+              "lọ",
+              "tuýp"
+            ]
+          },
+          {
+            "name": "GiaBanLe",
+            "type": "BIGINT",
+            "distinct_count": 59,
+            "sample_values": [
+              1500,
+              2100,
+              1000,
+              1100,
+              10000
+            ]
+          },
+          {
+            "name": "hinh_anh",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "GiaVonHang",
+            "type": "BIGINT",
+            "distinct_count": 68,
+            "sample_values": [
+              1100,
+              1509,
+              800,
+              900,
+              6460
+            ]
+          },
+          {
+            "name": "ton_lon_nhat",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "999999999"
+            ]
+          },
+          {
+            "name": "TyLeThue",
+            "type": "BIGINT",
+            "distinct_count": 3,
+            "sample_values": [
+              0,
+              8,
+              10
+            ]
+          },
+          {
+            "name": "bao_hanh",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "thuong_hieu",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "loai_hang_hoa",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "hàng hóa"
+            ]
+          },
+          {
+            "name": "ConKinhDoanh",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              1
+            ]
+          },
+          {
+            "name": "TaoLuc",
+            "type": "VARCHAR",
+            "distinct_count": 71,
+            "sample_values": [
+              "2024-11-02",
+              "2024-10-23",
+              "2024-10-27",
+              "2024-02-27",
+              "2024-03-10"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "thanh_toan",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 37939,
+        "canonical_name": "thanh_toan",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaPhieuThu",
+            "type": "VARCHAR",
+            "distinct_count": 37939,
+            "sample_values": [
+              "pay000001",
+              "pay000002",
+              "pay000003",
+              "pay000004",
+              "pay000005"
+            ]
+          },
+          {
+            "name": "MaHoaDon",
+            "type": "VARCHAR",
+            "distinct_count": 37418,
+            "sample_values": [
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005",
+              "ord000006"
+            ]
+          },
+          {
+            "name": "NgayGioThu",
+            "type": "TIMESTAMP",
+            "distinct_count": 37913,
+            "sample_values": [
+              "2025-04-01T06:19:45",
+              "2025-04-01T07:25:46",
+              "2025-04-01T07:28:36",
+              "2025-04-01T07:36:45",
+              "2025-04-01T07:47:15"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "SoTienThu",
+            "type": "VARCHAR",
+            "distinct_count": 4744,
+            "sample_values": [
+              "51200",
+              "1400",
+              "41400",
+              "30000",
+              "372200"
+            ]
+          },
+          {
+            "name": "PhuongThuc",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "cash",
+              "transfer",
+              "ewallet",
+              "cod"
+            ]
+          },
+          {
+            "name": "DienGiai",
+            "type": "VARCHAR",
+            "distinct_count": 0,
+            "sample_values": []
+          }
+        ]
+      },
+      {
+        "table": "the_kho",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 73901,
+        "canonical_name": "the_kho",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaGiaoDichKho",
+            "type": "VARCHAR",
+            "distinct_count": 73901,
+            "sample_values": [
+              "mv0000001",
+              "mv0000002",
+              "mv0000003",
+              "mv0000004",
+              "mv0000005"
+            ]
+          },
+          {
+            "name": "MaHangHoa",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ]
+          },
+          {
+            "name": "MaChiNhanh",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "cn1"
+            ]
+          },
+          {
+            "name": "NgayGioPhatSinh",
+            "type": "TIMESTAMP",
+            "distinct_count": 38260,
+            "sample_values": [
+              "2025-04-01T06:00:00",
+              "2025-04-01T06:19:45",
+              "2025-04-01T07:25:46",
+              "2025-04-01T07:28:36",
+              "2025-04-01T07:36:45"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "LoaiGiaoDich",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "in_purchase",
+              "out_sale",
+              "in_return"
+            ]
+          },
+          {
+            "name": "SLQuyDoi",
+            "type": "BIGINT",
+            "distinct_count": 152,
+            "sample_values": [
+              360,
+              216,
+              240,
+              300,
+              209
+            ]
+          },
+          {
+            "name": "KieuChungTu",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "purchase",
+              "order",
+              "return"
+            ]
+          },
+          {
+            "name": "MaChungTu",
+            "type": "VARCHAR",
+            "distinct_count": 38284,
+            "sample_values": [
+              "pn00001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ]
+          },
+          {
+            "name": "TonCuoi",
+            "type": "BIGINT",
+            "distinct_count": 503,
+            "sample_values": [
+              360,
+              216,
+              240,
+              300,
+              209
+            ]
+          }
+        ]
+      },
+      {
+        "table": "thong_tin_thuoc",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 80,
+        "canonical_name": "thong_tin_thuoc",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaHangHoa",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ]
+          },
+          {
+            "name": "ThanhPhanChinh",
+            "type": "VARCHAR",
+            "distinct_count": 51,
+            "sample_values": [
+              "paracetamol + cafein",
+              "paracetamol",
+              "paracetamol + phenylephrin + clorpheniramin",
+              "natri clorid",
+              "berberin"
+            ]
+          },
+          {
+            "name": "BanTheoDon",
+            "type": "BIGINT",
+            "distinct_count": 2,
+            "sample_values": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "table": "tra_hang",
+        "source": "public_test\\public_test\\data\\dev_006\\pos.sqlite",
+        "sheet": null,
+        "row_count": 352,
+        "canonical_name": "tra_hang",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "IDCuaHang",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "dev_006"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "MaPhieuTra",
+            "type": "VARCHAR",
+            "distinct_count": 352,
+            "sample_values": [
+              "th00001",
+              "th00002",
+              "th00003",
+              "th00004",
+              "th00005"
+            ]
+          },
+          {
+            "name": "MaHoaDon",
+            "type": "VARCHAR",
+            "distinct_count": 352,
+            "sample_values": [
+              "ord000158",
+              "ord000085",
+              "ord000140",
+              "ord000068",
+              "ord000689"
+            ]
+          },
+          {
+            "name": "NgayGioTra",
+            "type": "TIMESTAMP",
+            "distinct_count": 352,
+            "sample_values": [
+              "2025-04-03T20:12:33",
+              "2025-04-04T19:27:27",
+              "2025-04-06T18:18:15",
+              "2025-04-07T10:36:49",
+              "2025-04-15T18:00:54"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "NguyenNhan",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "mua nhầm",
+              "gần hết hạn",
+              "hàng lỗi"
+            ]
+          },
+          {
+            "name": "TienHoanTra",
+            "type": "BIGINT",
+            "distinct_count": 143,
+            "sample_values": [
+              14800,
+              1600,
+              1400,
+              1500,
+              800
+            ]
+          },
+          {
+            "name": "CachHoanTien",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "cash"
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu dev_006\n\nFile máy POS xuất ra.\n\n## File\n- `pos.sqlite` (sqlite)\n\n## Bảng\n`chi_nhanh`, `nhan_vien`, `khach_hang`, `nha_cung_cap`, `san_pham`, `don_vi_sp`, `phieu_nhap`, `chi_tiet_nhap`, `don_hang`, `chi_tiet_don`, `thanh_toan`, `tra_hang`, `the_kho`, `lich_su_gia`, `lo_hang`, `chi_tiet_don_lo`, `thong_tin_thuoc`\n\nMã đơn nối `don_hang` với `chi_tiet_don`. Ngày giờ dạng text.\n\n## Quy ước\n- Dữ liệu có đến hết 08/08/2026.\n- **Dòng hàng**: `chi_tiet_don.TriGia` là thành tiền của dòng (đã trừ giảm giá dòng); `chi_tiet_don.SLQuyDoi` là số lượng đã đổi ra đơn vị cơ bản.\n- **Mã tham chiếu**: `don_hang.MaCaLam` là mã ca bán hàng; `don_hang.MaKhuyenMai` là mã khuyến mãi áp cho đơn (trống: không áp); `the_kho.KieuChungTu`, `the_kho.MaChungTu` là loại và số của chứng từ gốc của dòng thẻ kho (đơn bán, phiếu nhập hoặc phiếu khách trả).\n- **Công nợ**: mỗi lần khách trả tiền cho một đơn là một dòng, `thanh_toan.SoTienThu` là số tiền trả lần đó; `don_hang.TongThanhToan` là số khách phải trả cho cả đơn.\n- **Giá vốn**: `chi_tiet_don.GiaVonLucBan` là giá vốn một đơn vị bán.\n- **Tồn kho**: mỗi dòng `the_kho.TonCuoi` là tồn sau lần nhập/bán/trả đó, theo đơn vị cơ bản; tồn tại một thời điểm là tồn ở dòng cuối của sản phẩm tính đến thời điểm đó.\n- **Lô, hạn dùng**: mỗi dòng nhập là một lô, số lô không trùng. Một dòng bán có thể lấy từ nhiều lô. Hàng khách trả về lại lô đã bán.\n- **Nhập hàng**: `chi_tiet_nhap.DonGiaNhap` là giá nhập một đơn vị, theo đơn vị nhập của dòng; `phieu_nhap.TongGiaTriNhap` là tổng tiền của cả phiếu nhập.\n- **Giá bán**: `lich_su_gia.GiaBanLe` (theo đơn vị cơ bản) áp dụng từ `lich_su_gia.NgayApDung` đến trước lần đổi giá sau của cùng mặt hàng; dòng đầu mỗi mặt hàng là giá lúc bắt đầu dữ liệu.\n- **Thuốc**: `thong_tin_thuoc.BanTheoDon` đúng (TRUE/1) là thuốc kê đơn. Hoạt chất ghi không kèm hàm lượng (hàm lượng ở tên hàng); nhiều chất nối bằng \" + \".\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng, hệ số quy đổi ở bảng `don_vi_sp`.\n"
+}

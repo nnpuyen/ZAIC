@@ -1,0 +1,2738 @@
+{
+  "version": 4,
+  "fingerprint": "bc32cfd872ca256b834d5288454344f3cd22667beabd7eb02e9ad7608dcc85f1",
+  "schema": {
+    "tables": [
+      {
+        "table": "BangGia_Sheet1",
+        "source": "train\\train\\data\\biz_117\\BangGia.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 100,
+        "canonical_name": "BangGia_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày áp dụng",
+            "type": "TIMESTAMP",
+            "distinct_count": 40,
+            "sample_values": [
+              "2025-01-01T00:00:00",
+              "2025-05-04T00:00:00",
+              "2025-07-08T00:00:00",
+              "2025-08-09T00:00:00",
+              "2026-02-11T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Giá cũ",
+            "type": "DOUBLE",
+            "distinct_count": 37,
+            "sample_values": [
+              105000.0,
+              110000.0,
+              115500.0,
+              121500.0,
+              100000.0
+            ]
+          },
+          {
+            "name": "Giá mới",
+            "type": "DOUBLE",
+            "distinct_count": 81,
+            "sample_values": [
+              105000.0,
+              110000.0,
+              115500.0,
+              121500.0,
+              127500.0
+            ]
+          },
+          {
+            "name": "TenHang",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "xi măng hà tiên pcb40 bao 50kg",
+              "xi măng insee power-s bao 50kg",
+              "cát xây tô",
+              "cát bê tông",
+              "cát san lấp"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhMuc_Sheet1",
+        "source": "train\\train\\data\\biz_117\\DanhMuc.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 14,
+        "canonical_name": "DanhMuc_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 14,
+            "sample_values": [
+              "xi măng hà tiên pcb40 bao 50kg",
+              "xi măng insee power-s bao 50kg",
+              "cát xây tô",
+              "cát bê tông",
+              "cát san lấp"
+            ]
+          },
+          {
+            "name": "ĐV lớn",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "tấn",
+              "xe 4m3",
+              "thiên",
+              "cây",
+              "cuộn 10m",
+              "cuộn 4x50m"
+            ]
+          },
+          {
+            "name": "ĐV nhỏ",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "bao",
+              "m3",
+              "viên",
+              "cuộn",
+              "m",
+              "m2"
+            ]
+          },
+          {
+            "name": "Hệ số QĐ",
+            "type": "BIGINT",
+            "distinct_count": 5,
+            "sample_values": [
+              20,
+              4,
+              1000,
+              10,
+              200
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_01_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 01-2025",
+        "row_count": 1578,
+        "canonical_name": "SoBanHang_Tháng_01_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 698,
+            "sample_values": [
+              "2025-01-01T06:13:20",
+              "2025-01-01T06:17:23.999999",
+              "2025-01-01T07:24:03",
+              "2025-01-01T08:06:24",
+              "2025-01-01T08:10:15"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 695,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 164,
+            "sample_values": [
+              "triệu đức duy",
+              "lẻ",
+              "đào bình loan",
+              "huỳnh an tâm",
+              "mai ngọc đức"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 62,
+            "sample_values": [
+              "0001-01-01T00:00:00",
+              "2025-01-01T00:00:00",
+              "2025-01-02T00:00:00",
+              "0001-01-02T00:00:00",
+              "2025-01-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 218,
+            "sample_values": [
+              1440000.0,
+              300000.0,
+              55000.0,
+              600000.0,
+              76000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "thành công",
+              "đã hoàn thành",
+              "đã lấy",
+              "hủy",
+              "trả lại"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 61,
+            "sample_values": [
+              720000.0,
+              300000.0,
+              55000.0,
+              38000.0,
+              35000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 19,
+            "sample_values": [
+              "thùng",
+              "bao",
+              "bình",
+              "gói",
+              "lon"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 84,
+            "sample_values": [
+              "2 thùng",
+              "1",
+              "1 bình",
+              "2",
+              "3 cây"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "sơn lót jotun jotashield chống kiềm 5l",
+              "keo dán gạch weber.tai fix xám 25kg",
+              "nước tinh khiết vihawa 20l",
+              "bột trét jotun nội thất 40kg",
+              "keo chà ron weber 1kg"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_02_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 02-2025",
+        "row_count": 1520,
+        "canonical_name": "SoBanHang_Tháng_02_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 706,
+            "sample_values": [
+              "2025-02-01T06:07:12.999999",
+              "2025-02-01T07:17:09.999999",
+              "2025-02-01T07:43:20.999999",
+              "2025-02-01T08:07:43",
+              "2025-02-01T08:12:44.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 701,
+            "sample_values": [
+              "ord000696",
+              "ord000697",
+              "ord000698",
+              "ord000699",
+              "ord000700"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 168,
+            "sample_values": [
+              "khách lẻ",
+              "thái hồng hiếu",
+              "bạch đạt hương",
+              "giang anh phúc",
+              "kl"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 56,
+            "sample_values": [
+              "2025-02-01T00:00:00",
+              "0001-02-01T00:00:00",
+              "2025-02-02T00:00:00",
+              "0001-02-02T00:00:00",
+              "2025-02-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 227,
+            "sample_values": [
+              825000.0,
+              1050000.0,
+              380000.0,
+              1440000.0,
+              170000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "thành công",
+              "đã lấy",
+              "trả lại",
+              "đã hoàn thành",
+              "đã trả hàng",
+              "hủy"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 59,
+            "sample_values": [
+              165000.0,
+              350000.0,
+              380000.0,
+              720000.0,
+              85000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 17,
+            "sample_values": [
+              "cây",
+              "m3",
+              "thùng",
+              "m",
+              "viên"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 85,
+            "sample_values": [
+              "5 cây",
+              "3",
+              "1 m3",
+              "2 thùng",
+              "2 m"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "thép pomina d12 cây 11.7m",
+              "đá 4x6",
+              "đá 1x2",
+              "sơn lót jotun jotashield chống kiềm 5l",
+              "tôn lạnh hoa sen 0.4mm"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_03_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 03-2025",
+        "row_count": 2030,
+        "canonical_name": "SoBanHang_Tháng_03_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 934,
+            "sample_values": [
+              "2025-03-01T06:12:26.999999",
+              "2025-03-01T07:50:57.999999",
+              "2025-03-01T08:03:41.999999",
+              "2025-03-01T08:15:27",
+              "2025-03-01T08:22:35"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 921,
+            "sample_values": [
+              "ord001397",
+              "ord001398",
+              "ord001399",
+              "ord001400",
+              "ord001401"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 172,
+            "sample_values": [
+              "đỗ dương phong",
+              "vũ ngân huy",
+              "lẻ",
+              "hứa chi nam",
+              "dương phúc hương"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 62,
+            "sample_values": [
+              "2025-03-01T00:00:00",
+              "0001-03-01T00:00:00",
+              "0001-03-02T00:00:00",
+              "2025-03-02T00:00:00",
+              "2025-03-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 252,
+            "sample_values": [
+              300000.0,
+              144000.0,
+              38000.0,
+              4158000.0,
+              342000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "đã lấy",
+              "thành công",
+              "đã hoàn thành",
+              "hủy",
+              "trả lại",
+              "đã trả hàng"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 59,
+            "sample_values": [
+              300000.0,
+              72000.0,
+              38000.0,
+              1386000.0,
+              2900000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "m3",
+              "bình",
+              "gói",
+              "xe 4m3",
+              "cái"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 91,
+            "sample_values": [
+              "1",
+              "2",
+              "1 gói",
+              "3 xe 4m3",
+              "5 bình"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "cát xây tô",
+              "nước kiềm ion life 19l",
+              "keo chà ron weber 1kg",
+              "cát bê tông",
+              "bồn nước inox sơn hà 1000l ngang"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_04_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 04-2025",
+        "row_count": 1966,
+        "canonical_name": "SoBanHang_Tháng_04_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 866,
+            "sample_values": [
+              "2025-04-01T15:07:03.999999",
+              "2025-04-01T07:07:31",
+              "2025-04-01T07:24:57",
+              "2025-04-01T07:25:46.999999",
+              "2025-04-01T07:34:30"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 863,
+            "sample_values": [
+              "ord002250",
+              "ord002318",
+              "ord002319",
+              "ord002320",
+              "ord002321"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 166,
+            "sample_values": [
+              "dương phúc hương",
+              "đặng hà khoa",
+              "khách lẻ",
+              "lê hoa nhung",
+              "nguyễn dương phong"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 60,
+            "sample_values": [
+              "0001-04-01T00:00:00",
+              "2025-04-01T00:00:00",
+              "0001-04-02T00:00:00",
+              "2025-04-02T00:00:00",
+              "2025-04-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 245,
+            "sample_values": [
+              -15300.0,
+              520000.0,
+              115000.0,
+              70000.0,
+              47000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "trả lại",
+              "đã lấy",
+              "thành công",
+              "đã hoàn thành",
+              "hủy",
+              "đã trả hàng"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 60,
+            "sample_values": [
+              15300.0,
+              520000.0,
+              115000.0,
+              35000.0,
+              47000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 17,
+            "sample_values": [
+              "kg",
+              "bình",
+              "cây",
+              "lon",
+              "cái"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "-1 kg",
+              "1",
+              "1 cây",
+              "2 lon",
+              "2 cái"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "thép cuộn phi 8 hòa phát",
+              "gas petrolimex 12kg",
+              "thép pomina d10 cây 11.7m",
+              "keo dán ống pvc bình minh 200g",
+              "nước tinh khiết bidrico 20l"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_05_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 05-2025",
+        "row_count": 2068,
+        "canonical_name": "SoBanHang_Tháng_05_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 935,
+            "sample_values": [
+              "2025-05-01T06:10:20.999999",
+              "2025-05-01T06:12:53",
+              "2025-05-01T06:27:31",
+              "2025-05-01T07:11:25.999999",
+              "2025-05-01T07:22:54.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 926,
+            "sample_values": [
+              "ord003180",
+              "ord003181",
+              "ord003182",
+              "ord003183",
+              "ord003184"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 175,
+            "sample_values": [
+              "khách lẻ",
+              "kl",
+              "chung quang khoa",
+              "bùi đạt duy",
+              "huỳnh phúc huy"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 62,
+            "sample_values": [
+              "2025-05-01T00:00:00",
+              "0001-05-01T00:00:00",
+              "2025-05-02T00:00:00",
+              "0001-05-02T00:00:00",
+              "2025-05-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 254,
+            "sample_values": [
+              790000.0,
+              295000.0,
+              75500.0,
+              130000.0,
+              230000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "thành công",
+              "đã lấy",
+              "đã hoàn thành",
+              "trả lại",
+              "đã trả hàng",
+              "hủy"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 61,
+            "sample_values": [
+              790000.0,
+              295000.0,
+              75500.0,
+              65000.0,
+              115000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "cuộn",
+              "cây",
+              "bình",
+              "viên",
+              "xe 4m3"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 84,
+            "sample_values": [
+              "1 cuộn",
+              "1 cây",
+              "1",
+              "2 cây",
+              "2"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "dây điện cadivi cv 1.5 cuộn 100m",
+              "thép hộp 40x80 dày 1.4mm cây 6m",
+              "nước kiềm ion life 19l",
+              "ống pvc bình minh d32 cây 4m",
+              "thép pomina d10 cây 11.7m"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_06_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 06-2025",
+        "row_count": 2067,
+        "canonical_name": "SoBanHang_Tháng_06_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 952,
+            "sample_values": [
+              "2025-06-01T06:25:17",
+              "2025-06-01T07:31:24.999999",
+              "2025-06-01T08:16:27",
+              "2025-06-01T08:19:35.999999",
+              "2025-06-01T08:27:23"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 946,
+            "sample_values": [
+              "ord004106",
+              "ord004107",
+              "ord004108",
+              "ord004109",
+              "ord004110"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 167,
+            "sample_values": [
+              "khách lẻ",
+              "hà nhung sơn",
+              "hứa hải phong",
+              "đàm huy hoàng",
+              "vương loan tâm"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 60,
+            "sample_values": [
+              "2025-06-01T00:00:00",
+              "0001-06-01T00:00:00",
+              "0001-06-02T00:00:00",
+              "2025-06-02T00:00:00",
+              "0001-06-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 239,
+            "sample_values": [
+              180000.0,
+              155000.0,
+              42000.0,
+              2362500.0,
+              2200000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "thành công",
+              "đã hoàn thành",
+              "đã lấy",
+              "trả lại",
+              "hủy",
+              "đã trả hàng"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 60,
+            "sample_values": [
+              90000.0,
+              155000.0,
+              21000.0,
+              787500.0,
+              2200000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "cây",
+              "bộ",
+              "kg",
+              "thùng",
+              "tấn"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 89,
+            "sample_values": [
+              "2",
+              "1 bộ",
+              "3 thùng",
+              "1 tấn",
+              "1"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "băng keo điện nano 20 yard",
+              "bộ đèn tuýp led t8 1.2m 18w rạng đông",
+              "kẽm buộc 1mm",
+              "sơn maxilite trong nhà 18l",
+              "xi măng hà tiên pcb40 bao 50kg"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_07_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 07-2025",
+        "row_count": 1946,
+        "canonical_name": "SoBanHang_Tháng_07_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 915,
+            "sample_values": [
+              "2025-07-01T07:34:30",
+              "2025-07-01T07:56:44",
+              "2025-07-01T08:00:13",
+              "2025-07-01T08:11:12",
+              "2025-07-01T08:44:12.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 911,
+            "sample_values": [
+              "ord005051",
+              "ord005052",
+              "ord005053",
+              "ord005054",
+              "ord005055"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 180,
+            "sample_values": [
+              "lẻ",
+              "lâm anh cường",
+              "đặng sơn khánh",
+              "vũ quang hằng",
+              "ngô long hoa"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 62,
+            "sample_values": [
+              "2025-07-01T00:00:00",
+              "0001-07-01T00:00:00",
+              "2025-07-02T00:00:00",
+              "0001-07-02T00:00:00",
+              "2025-07-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 248,
+            "sample_values": [
+              295000.0,
+              220000.0,
+              38000.0,
+              96000.0,
+              110000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "đã lấy",
+              "đã hoàn thành",
+              "thành công",
+              "đã trả hàng",
+              "hủy"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 64,
+            "sample_values": [
+              295000.0,
+              110000.0,
+              38000.0,
+              48000.0,
+              55000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "cây",
+              "bao",
+              "gói",
+              "m",
+              "bình"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 90,
+            "sample_values": [
+              "1 cây",
+              "2",
+              "1 gói",
+              "1 m3",
+              "3"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "thép pomina d16 cây 11.7m",
+              "xi măng hà tiên pcb40 bao 50kg",
+              "keo chà ron weber 1kg",
+              "lưới b40 mạ kẽm khổ 1.5m",
+              "nước tinh khiết vihawa 20l"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_08_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 08-2025",
+        "row_count": 2091,
+        "canonical_name": "SoBanHang_Tháng_08_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 925,
+            "sample_values": [
+              "2025-08-01T07:14:36.999999",
+              "2025-08-01T07:17:44.999999",
+              "2025-08-01T07:22:03.999999",
+              "2025-08-01T07:22:32",
+              "2025-08-01T07:31:50.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 920,
+            "sample_values": [
+              "ord005961",
+              "ord005962",
+              "ord005963",
+              "ord005964",
+              "ord005965"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 174,
+            "sample_values": [
+              "lẻ",
+              "quách hạnh nam",
+              "đỗ ngân bình",
+              "bùi long thắng",
+              "vũ hùng thu"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 62,
+            "sample_values": [
+              "2025-08-01T00:00:00",
+              "0001-08-01T00:00:00",
+              "2025-08-02T00:00:00",
+              "0001-08-02T00:00:00",
+              "2025-08-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 265,
+            "sample_values": [
+              20000.0,
+              85000.0,
+              399000.0,
+              675000.0,
+              175000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "thành công",
+              "đã hoàn thành",
+              "đã lấy",
+              "đã trả hàng",
+              "hủy",
+              "trả lại"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 63,
+            "sample_values": [
+              20000.0,
+              85000.0,
+              399000.0,
+              225000.0,
+              35000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "kg",
+              "m",
+              "m3",
+              "cây",
+              "bộ"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 94,
+            "sample_values": [
+              "1 kg",
+              "1",
+              "3 cây",
+              "5",
+              "5 xe 4m3"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "đinh 5 phân",
+              "tôn lạnh hoa sen 0.4mm",
+              "đá 1x2",
+              "thép pomina d14 cây 11.7m",
+              "công tắc 1 chiều panasonic wide kèm mặt"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_09_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 09-2025",
+        "row_count": 2097,
+        "canonical_name": "SoBanHang_Tháng_09_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 912,
+            "sample_values": [
+              "2025-09-01T06:16:22.999999",
+              "2025-09-01T07:13:50",
+              "2025-09-01T07:51:16.999999",
+              "2025-09-01T07:53:06",
+              "2025-09-01T08:00:05.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 907,
+            "sample_values": [
+              "ord006881",
+              "ord006882",
+              "ord006883",
+              "ord006884",
+              "ord006885"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 178,
+            "sample_values": [
+              "lẻ",
+              "phạm thắng long",
+              "khách lẻ",
+              "lê hạnh dũng",
+              "tăng duy cường"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 60,
+            "sample_values": [
+              "2025-09-01T00:00:00",
+              "0001-09-01T00:00:00",
+              "0001-09-02T00:00:00",
+              "2025-09-02T00:00:00",
+              "2025-09-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 256,
+            "sample_values": [
+              1995000.0,
+              825000.0,
+              295000.0,
+              65000.0,
+              35000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "đã lấy",
+              "đã hoàn thành",
+              "thành công",
+              "hủy",
+              "đã trả hàng",
+              "trả lại"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 62,
+            "sample_values": [
+              399000.0,
+              165000.0,
+              295000.0,
+              65000.0,
+              35000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "m3",
+              "cây",
+              "bình",
+              "bộ",
+              "cuộn"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 88,
+            "sample_values": [
+              "5 m3",
+              "5",
+              "1",
+              "1 bộ",
+              "3 cây"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "đá 1x2",
+              "thép pomina d12 cây 11.7m",
+              "thép hộp 40x80 dày 1.4mm cây 6m",
+              "nước khoáng lavie 19l",
+              "công tắc 1 chiều panasonic wide kèm mặt"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_10_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 10-2025",
+        "row_count": 2011,
+        "canonical_name": "SoBanHang_Tháng_10_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 920,
+            "sample_values": [
+              "2025-10-01T06:02:29.999999",
+              "2025-10-01T06:27:12.999999",
+              "2025-10-01T06:36:41",
+              "2025-10-01T06:39:53.999999",
+              "2025-10-01T07:03:04"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 913,
+            "sample_values": [
+              "ord007788",
+              "ord007789",
+              "ord007790",
+              "ord007791",
+              "ord007792"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 175,
+            "sample_values": [
+              "tạ ngọc hoa",
+              "phạm hoa hạnh",
+              "kl",
+              "khách lẻ",
+              "cao phúc hương"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 62,
+            "sample_values": [
+              "2025-10-01T00:00:00",
+              "0001-10-01T00:00:00",
+              "0001-10-02T00:00:00",
+              "2025-10-02T00:00:00",
+              "2025-10-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 257,
+            "sample_values": [
+              155000.0,
+              300000.0,
+              15500.0,
+              600000.0,
+              1575000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "đã lấy",
+              "đã hoàn thành",
+              "thành công",
+              "đã trả hàng",
+              "hủy",
+              "trả lại"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 63,
+            "sample_values": [
+              155000.0,
+              100000.0,
+              15500.0,
+              300000.0,
+              787500.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 19,
+            "sample_values": [
+              "bộ",
+              "cái",
+              "kg",
+              "bao",
+              "thùng"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 89,
+            "sample_values": [
+              "1 bộ",
+              "3 cái",
+              "1 kg",
+              "2 bao",
+              "2"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "bộ đèn tuýp led t8 1.2m 18w rạng đông",
+              "thước thủy nhôm total 60cm",
+              "thép cuộn phi 6 hòa phát",
+              "keo dán gạch weber.tai fix xám 25kg",
+              "sơn maxilite trong nhà 18l"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_11_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 11-2025",
+        "row_count": 1993,
+        "canonical_name": "SoBanHang_Tháng_11_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 896,
+            "sample_values": [
+              "2025-11-01T06:15:59.999999",
+              "2025-11-01T06:51:34.999999",
+              "2025-11-01T07:05:47.999999",
+              "2025-11-01T07:35:34",
+              "2025-11-01T08:00:21.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 894,
+            "sample_values": [
+              "ord008699",
+              "ord008700",
+              "ord008701",
+              "ord008702",
+              "ord008703"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 176,
+            "sample_values": [
+              "kl",
+              "thái hồng hiếu",
+              "đặng sơn khánh",
+              "lâm minh châu",
+              "lê hạnh dũng"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 60,
+            "sample_values": [
+              "2025-11-01T00:00:00",
+              "0001-11-01T00:00:00",
+              "2025-11-02T00:00:00",
+              "0001-11-02T00:00:00",
+              "2025-11-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 264,
+            "sample_values": [
+              2000000.0,
+              300000.0,
+              345000.0,
+              94000.0,
+              243000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "thành công",
+              "đã hoàn thành",
+              "hủy",
+              "đã lấy",
+              "trả lại",
+              "đã trả hàng"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 65,
+            "sample_values": [
+              100000.0,
+              300000.0,
+              115000.0,
+              47000.0,
+              121500.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "bao",
+              "m3",
+              "cây",
+              "cái",
+              "thùng"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 89,
+            "sample_values": [
+              "20 bao",
+              "1 m3",
+              "3",
+              "2",
+              "2 bao"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "xi măng insee power-s bao 50kg",
+              "cát xây tô",
+              "thép pomina d10 cây 11.7m",
+              "bóng led bulb rạng đông a60 9w",
+              "xi măng hà tiên pcb40 bao 50kg"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_12_2025",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 12-2025",
+        "row_count": 2091,
+        "canonical_name": "SoBanHang_Tháng_12_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 950,
+            "sample_values": [
+              "2025-12-01T06:04:05",
+              "2025-12-01T06:11:54.999999",
+              "2025-12-01T06:12:12.999999",
+              "2025-12-01T06:31:08.999999",
+              "2025-12-01T06:53:57"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 943,
+            "sample_values": [
+              "ord009591",
+              "ord009592",
+              "ord009593",
+              "ord009594",
+              "ord009595"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 177,
+            "sample_values": [
+              "khách lẻ",
+              "phạm minh hồng",
+              "kl",
+              "đào thanh trung",
+              "trần anh dũng"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 62,
+            "sample_values": [
+              "2025-12-01T00:00:00",
+              "0001-12-01T00:00:00",
+              "2025-12-02T00:00:00",
+              "0001-12-02T00:00:00",
+              "2025-12-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 266,
+            "sample_values": [
+              47000.0,
+              115000.0,
+              16000.0,
+              94000.0,
+              1456000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "thành công",
+              "đã lấy",
+              "đã hoàn thành",
+              "đã trả hàng",
+              "hủy",
+              "trả lại"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 65,
+            "sample_values": [
+              47000.0,
+              115000.0,
+              16000.0,
+              1456000.0,
+              165000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "bình",
+              "cây",
+              "kg",
+              "xe 4m3",
+              "cuộn"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 91,
+            "sample_values": [
+              "1 bình",
+              "1 cây",
+              "1 kg",
+              "2",
+              "1 xe 4m3"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "nước tinh khiết bidrico 20l",
+              "thép pomina d10 cây 11.7m",
+              "thép cuộn phi 8 hòa phát",
+              "cát bê tông",
+              "thép pomina d12 cây 11.7m"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_01_2026",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 01-2026",
+        "row_count": 2313,
+        "canonical_name": "SoBanHang_Tháng_01_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 1061,
+            "sample_values": [
+              "2026-01-01T18:57:42",
+              "2026-01-01T06:49:38.999999",
+              "2026-01-01T06:57:16",
+              "2026-01-01T07:15:30",
+              "2026-01-01T07:28:19.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 1056,
+            "sample_values": [
+              "ord010355",
+              "ord010533",
+              "ord010534",
+              "ord010535",
+              "ord010536"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 177,
+            "sample_values": [
+              "lẻ",
+              "đinh hải hương",
+              "phạm hoa hạnh",
+              "đoàn ngọc nhung",
+              "nghiêm trung chi"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 62,
+            "sample_values": [
+              "0001-01-01T00:00:00",
+              "2026-01-01T00:00:00",
+              "2026-01-02T00:00:00",
+              "0001-01-02T00:00:00",
+              "0001-01-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 277,
+            "sample_values": [
+              -1400.0,
+              347500.0,
+              46500.0,
+              9000.0,
+              480000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "đã trả hàng",
+              "thành công",
+              "đã lấy",
+              "đã hoàn thành",
+              "hủy",
+              "trả lại"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 64,
+            "sample_values": [
+              1400.0,
+              347500.0,
+              15500.0,
+              9000.0,
+              480000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "viên",
+              "thùng",
+              "kg",
+              "cuộn",
+              "cuộn 10m"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 86,
+            "sample_values": [
+              "-1 viên",
+              "1",
+              "3 kg",
+              "1 m3",
+              "1 cái"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "gạch ống 8x8x18 tuynel",
+              "gạch lát nền prime 60x60 thùng 4 viên",
+              "thép cuộn phi 6 hòa phát",
+              "băng keo điện nano 20 yard",
+              "lưới b40 mạ kẽm khổ 1.5m"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_02_2026",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 02-2026",
+        "row_count": 1501,
+        "canonical_name": "SoBanHang_Tháng_02_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 669,
+            "sample_values": [
+              "2026-02-01T06:15:57.999999",
+              "2026-02-01T06:44:05.999999",
+              "2026-02-01T06:57:06.999999",
+              "2026-02-01T07:28:45",
+              "2026-02-01T07:41:07.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 666,
+            "sample_values": [
+              "ord011587",
+              "ord011588",
+              "ord011589",
+              "ord011590",
+              "ord011591"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 156,
+            "sample_values": [
+              "lẻ",
+              "tống nam loan",
+              "khách lẻ",
+              "hứa hồng hùng",
+              "dương bích minh"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 56,
+            "sample_values": [
+              "0001-02-01T00:00:00",
+              "2026-02-01T00:00:00",
+              "2026-02-02T00:00:00",
+              "0001-02-02T00:00:00",
+              "2026-02-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 262,
+            "sample_values": [
+              310000.0,
+              110000.0,
+              65000.0,
+              347500.0,
+              39000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "thành công",
+              "đã lấy",
+              "đã trả hàng",
+              "đã hoàn thành",
+              "trả lại",
+              "hủy"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 65,
+            "sample_values": [
+              155000.0,
+              55000.0,
+              65000.0,
+              347500.0,
+              39000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "bộ",
+              "bình",
+              "thùng",
+              "lon",
+              "cây"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 82,
+            "sample_values": [
+              "2",
+              "1",
+              "1 thùng",
+              "1 lon",
+              "10"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "bộ đèn tuýp led t8 1.2m 18w rạng đông",
+              "nước tinh khiết vihawa 20l",
+              "nước khoáng lavie 19l",
+              "gạch lát nền prime 60x60 thùng 4 viên",
+              "keo dán ống pvc bình minh 200g"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_03_2026",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 03-2026",
+        "row_count": 2318,
+        "canonical_name": "SoBanHang_Tháng_03_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 1048,
+            "sample_values": [
+              "2026-03-01T06:16:20",
+              "2026-03-01T06:29:33.999999",
+              "2026-03-01T07:02:08.999999",
+              "2026-03-01T07:30:19",
+              "2026-03-01T07:36:22"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 1040,
+            "sample_values": [
+              "ord012251",
+              "ord012252",
+              "ord012253",
+              "ord012254",
+              "ord012255"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 177,
+            "sample_values": [
+              "khách lẻ",
+              "bạch an hoàng",
+              "bùi dương hải",
+              "triệu hải quân",
+              "trần dương đạt"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 62,
+            "sample_values": [
+              "2026-03-01T00:00:00",
+              "0001-03-01T00:00:00",
+              "2026-03-02T00:00:00",
+              "0001-03-02T00:00:00",
+              "2026-03-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 276,
+            "sample_values": [
+              130000.0,
+              2800.0,
+              6090000.0,
+              210000.0,
+              1592000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "thành công",
+              "đã hoàn thành",
+              "đã lấy",
+              "hủy",
+              "trả lại",
+              "đã trả hàng"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 64,
+            "sample_values": [
+              65000.0,
+              1400.0,
+              3045000.0,
+              105000.0,
+              1676000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "bình",
+              "viên",
+              "cái",
+              "bao",
+              "xe 4m3"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 91,
+            "sample_values": [
+              "2",
+              "2 bao",
+              "1",
+              "5 m3",
+              "3"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "nước khoáng lavie 19l",
+              "gạch ống 8x8x18 tuynel",
+              "bồn nước inox sơn hà 1000l ngang",
+              "xi măng insee power-s bao 50kg",
+              "đá 1x2"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_04_2026",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 04-2026",
+        "row_count": 2286,
+        "canonical_name": "SoBanHang_Tháng_04_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 1031,
+            "sample_values": [
+              "2026-04-01T06:01:33",
+              "2026-04-01T06:31:24.999999",
+              "2026-04-01T07:04:55.999999",
+              "2026-04-01T07:07:52",
+              "2026-04-01T07:33:50.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 1024,
+            "sample_values": [
+              "ord013291",
+              "ord013292",
+              "ord013293",
+              "ord013294",
+              "ord013295"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 177,
+            "sample_values": [
+              "bùi long thắng",
+              "kl",
+              "võ bảo bích",
+              "vũ hùng thu",
+              "triệu châu minh"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 60,
+            "sample_values": [
+              "0001-04-01T00:00:00",
+              "2026-04-01T00:00:00",
+              "2026-04-02T00:00:00",
+              "0001-04-02T00:00:00",
+              "2026-04-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 283,
+            "sample_values": [
+              504000.0,
+              230000.0,
+              13800000.0,
+              114000.0,
+              255000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 6,
+            "sample_values": [
+              "thành công",
+              "đã lấy",
+              "đã hoàn thành",
+              "hủy",
+              "trả lại",
+              "đã trả hàng"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 69,
+            "sample_values": [
+              252000.0,
+              115000.0,
+              2760000.0,
+              38000.0,
+              127500.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "m3",
+              "cây",
+              "cuộn",
+              "gói",
+              "bao"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 94,
+            "sample_values": [
+              "2 m3",
+              "2",
+              "5",
+              "3 gói",
+              "2 bình"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "cát san lấp",
+              "thép pomina d10 cây 11.7m",
+              "dây điện cadivi vcmd 2x2.5 cuộn 100m",
+              "keo chà ron weber 1kg",
+              "xi măng hà tiên pcb40 bao 50kg"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoBanHang_Tháng_05_2026",
+        "source": "train\\train\\data\\biz_117\\SoBanHang.xlsx",
+        "sheet": "Tháng 05-2026",
+        "row_count": 1496,
+        "canonical_name": "SoBanHang_Tháng_05_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Giờ",
+            "type": "TIMESTAMP",
+            "distinct_count": 681,
+            "sample_values": [
+              "2026-05-01T06:37:34.999999",
+              "2026-05-01T07:03:07.999999",
+              "2026-05-01T07:06:34",
+              "2026-05-01T07:59:30.999999",
+              "2026-05-01T08:38:17.999999"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 679,
+            "sample_values": [
+              "ord014314",
+              "ord014315",
+              "ord014316",
+              "ord014317",
+              "ord014318"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "TenKH",
+            "type": "VARCHAR",
+            "distinct_count": 167,
+            "sample_values": [
+              "quách hiếu hoa",
+              "khách lẻ",
+              "lẻ",
+              "kl",
+              "đinh bảo châu"
+            ]
+          },
+          {
+            "name": "Ngày lập",
+            "type": "TIMESTAMP",
+            "distinct_count": 40,
+            "sample_values": [
+              "2026-05-01T00:00:00",
+              "0001-05-01T00:00:00",
+              "0001-05-02T00:00:00",
+              "2026-05-02T00:00:00",
+              "2026-05-03T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tiền",
+            "type": "DOUBLE",
+            "distinct_count": 252,
+            "sample_values": [
+              575000.0,
+              68000.0,
+              70000.0,
+              3937500.0,
+              45000.0
+            ]
+          },
+          {
+            "name": "Ghi chú TT",
+            "type": "VARCHAR",
+            "distinct_count": 8,
+            "sample_values": [
+              "đã lấy",
+              "đã hoàn thành",
+              "thành công",
+              "hủy",
+              "đã trả hàng",
+              "trả lại",
+              "đang giao",
+              "đang gửi"
+            ]
+          },
+          {
+            "name": "Giá",
+            "type": "DOUBLE",
+            "distinct_count": 67,
+            "sample_values": [
+              115000.0,
+              68000.0,
+              35000.0,
+              787500.0,
+              45000.0
+            ]
+          },
+          {
+            "name": "DonVi",
+            "type": "VARCHAR",
+            "distinct_count": 18,
+            "sample_values": [
+              "cây",
+              "cái",
+              "bộ",
+              "thùng",
+              "cuộn"
+            ]
+          },
+          {
+            "name": "Số lượng hàng",
+            "type": "VARCHAR",
+            "distinct_count": 80,
+            "sample_values": [
+              "5",
+              "1",
+              "2",
+              "1 cái",
+              "3 bộ"
+            ]
+          },
+          {
+            "name": "Tên SP",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "thép pomina d10 cây 11.7m",
+              "ổ cắm đôi 3 chấu panasonic wide wev1582sw",
+              "công tắc 1 chiều panasonic wide kèm mặt",
+              "sơn maxilite trong nhà 18l",
+              "lưỡi cắt gạch 110mm total"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoGiaoHang_Sheet1",
+        "source": "train\\train\\data\\biz_117\\SoGiaoHang.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 28411,
+        "canonical_name": "SoGiaoHang_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐV gốc",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "cây",
+              "viên",
+              "cái",
+              "thùng",
+              "cuộn"
+            ]
+          },
+          {
+            "name": "Biển số xe",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "61c-873.50",
+              "51c-887.85",
+              "51d-130.73"
+            ]
+          },
+          {
+            "name": "Mã bill",
+            "type": "VARCHAR",
+            "distinct_count": 9689,
+            "sample_values": [
+              "ord000006",
+              "ord000007",
+              "ord000009",
+              "ord000011",
+              "ord000012"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Lượt giao",
+            "type": "BIGINT",
+            "distinct_count": 3,
+            "sample_values": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "name": "SL thực giao",
+            "type": "BIGINT",
+            "distinct_count": 47,
+            "sample_values": [
+              3,
+              8,
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "thép pomina d12 cây 11.7m",
+              "gạch ống 8x8x18 tuynel",
+              "bay thợ hồ total 160mm",
+              "thước thủy nhôm total 60cm",
+              "sơn maxilite trong nhà 18l"
+            ]
+          },
+          {
+            "name": "Ngày chở",
+            "type": "TIMESTAMP",
+            "distinct_count": 505,
+            "sample_values": [
+              "2025-01-02T00:00:00",
+              "2025-01-08T00:00:00",
+              "2025-01-10T00:00:00",
+              "2025-01-03T00:00:00",
+              "2025-01-01T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Người chở",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "chung ngân",
+              "tô loan",
+              "ông anh"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoHanNo_Sheet1",
+        "source": "train\\train\\data\\biz_117\\SoHanNo.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 2722,
+        "canonical_name": "SoHanNo_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "So hoa don",
+            "type": "VARCHAR",
+            "distinct_count": 2722,
+            "sample_values": [
+              "ord000001",
+              "ord000004",
+              "ord000008",
+              "ord000009",
+              "ord000015"
+            ]
+          },
+          {
+            "name": "Hạn nợ (ngày)",
+            "type": "BIGINT",
+            "distinct_count": 2,
+            "sample_values": [
+              30,
+              60
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Han tra",
+            "type": "VARCHAR",
+            "distinct_count": 945,
+            "sample_values": [
+              "31/01/2025",
+              "45688",
+              "45718",
+              "45689",
+              "01/02/2025"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "SoNhapHang_Sheet1",
+        "source": "train\\train\\data\\biz_117\\SoNhapHang.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 1134,
+        "canonical_name": "SoNhapHang_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Số phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 432,
+            "sample_values": [
+              "pn00001",
+              "pn00002",
+              "pn00003",
+              "pn00004",
+              "pn00005"
+            ]
+          },
+          {
+            "name": "Product",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "xi măng hà tiên pcb40 bao 50kg",
+              "xi măng insee power-s bao 50kg",
+              "cát xây tô",
+              "cát bê tông",
+              "cát san lấp"
+            ]
+          },
+          {
+            "name": "Ngày nhập",
+            "type": "TIMESTAMP",
+            "distinct_count": 432,
+            "sample_values": [
+              "2025-01-01T00:00:00",
+              "2025-01-03T00:00:00",
+              "2025-01-11T00:00:00",
+              "2025-01-14T00:00:00",
+              "2025-01-15T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 17,
+            "sample_values": [
+              "tấn",
+              "xe 4m3",
+              "thiên",
+              "thùng",
+              "cây"
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "DOUBLE",
+            "distinct_count": 858,
+            "sample_values": [
+              16560000.0,
+              9960000.0,
+              35560000.0,
+              29200000.0,
+              15360000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Nội dung",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "nhập đầu kỳ"
+            ]
+          },
+          {
+            "name": "Nhà cung cấp",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "cty châu linh",
+              "cty phạm giang",
+              "cty cao bích",
+              "cty vương minh",
+              "cty huỳnh chi"
+            ]
+          },
+          {
+            "name": "SL nhập",
+            "type": "BIGINT",
+            "distinct_count": 108,
+            "sample_values": [
+              9,
+              6,
+              35,
+              25,
+              20
+            ]
+          },
+          {
+            "name": "Giá nhập",
+            "type": "DOUBLE",
+            "distinct_count": 434,
+            "sample_values": [
+              1840000.0,
+              1660000.0,
+              1016000.0,
+              1168000.0,
+              768000.0
+            ]
+          }
+        ]
+      },
+      {
+        "table": "TonKho_Sheet1",
+        "source": "train\\train\\data\\biz_117\\TonKho.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 60,
+        "canonical_name": "TonKho_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Tồn thực",
+            "type": "BIGINT",
+            "distinct_count": 48,
+            "sample_values": [
+              169,
+              36,
+              78,
+              85,
+              37
+            ]
+          },
+          {
+            "name": "Đơn vị",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "bao",
+              "m3",
+              "viên",
+              "thùng",
+              "cây"
+            ]
+          },
+          {
+            "name": "Product",
+            "type": "VARCHAR",
+            "distinct_count": 60,
+            "sample_values": [
+              "xi măng hà tiên pcb40 bao 50kg",
+              "xi măng insee power-s bao 50kg",
+              "cát xây tô",
+              "cát bê tông",
+              "cát san lấp"
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu biz_117\n\nSổ bán hàng ghi tay chuyển sang Excel, mỗi tháng một sheet.\n\n## File\n- `SoBanHang.xlsx` (xlsx)\n- `DanhMuc.xlsx` (xlsx)\n- `TonKho.xlsx` (xlsx)\n- `SoGiaoHang.xlsx` (xlsx)\n- `SoHanNo.xlsx` (xlsx)\n- `SoNhapHang.xlsx` (xlsx)\n- `BangGia.xlsx` (xlsx)\n\n## Cột trong `SoBanHang.xlsx`\n- **Giờ**: giờ đặt đơn (dòng trả hàng: lúc trả)\n- **Mã phiếu**: mã đơn\n- **TenKH**: tên khách (Khách lẻ nếu không lưu)\n- **Ngày lập**: ngày bán\n- **Tiền**: thành tiền sau giảm\n- **Ghi chú TT**: trạng thái đơn\n- **Giá**: đơn giá\n- **DonVi**: đơn vị tính\n- **Số lượng hàng**: số lượng\n- **Tên SP**: tên hàng\n\n## Cột trong `DanhMuc.xlsx`\n- **Hàng**: tên hàng (file chỉ có mặt hàng có đơn vị lớn)\n- **ĐV lớn**: đơn vị lớn (thùng, hộp, tấn...)\n- **ĐV nhỏ**: đơn vị cơ bản\n- **Hệ số QĐ**: hệ số: số đơn vị cơ bản trong 1 đơn vị lớn\n\n## Cột trong `TonKho.xlsx`\n- **Tồn thực**: tồn kho (đơn vị cơ bản)\n- **Đơn vị**: đơn vị cơ bản\n- **Product**: tên hàng\n\n## Cột trong `SoGiaoHang.xlsx`\n- **ĐV gốc**: đơn vị cơ bản\n- **Biển số xe**: biển số xe\n- **Mã bill**: mã đơn\n- **Lượt giao**: đợt giao (1, 2, 3)\n- **SL thực giao**: số lượng đã đổi ra đơn vị cơ bản\n- **Tên hàng**: tên hàng\n- **Ngày chở**: ngày giao\n- **Người chở**: tài xế\n\n## Cột trong `SoHanNo.xlsx`\n- **So hoa don**: mã đơn\n- **Hạn nợ (ngày)**: số ngày được nợ\n- **Han tra**: hạn thanh toán\n\n## Cột trong `SoNhapHang.xlsx`\n- **Số phiếu**: mã phiếu nhập\n- **Product**: tên hàng\n- **Ngày nhập**: ngày nhập\n- **ĐVT**: đơn vị nhập\n- **Thành tiền**: tiền nhập của cả dòng\n- **Nội dung**: ghi chú\n- **Nhà cung cấp**: nhà cung cấp\n- **SL nhập**: số lượng nhập\n- **Giá nhập**: giá nhập một đơn vị (theo đơn vị nhập của dòng)\n\n## Cột trong `BangGia.xlsx`\n- **Ngày áp dụng**: ngày bắt đầu áp dụng giá\n- **Giá cũ**: giá trước lần đổi (trống ở dòng đầu mỗi mặt hàng)\n- **Giá mới**: giá bán áp dụng từ ngày đó (đơn vị cơ bản)\n- **TenHang**: tên hàng\n\n## Quy ước\n- Dữ liệu có đến hết 20/05/2026.\n- **Trả hàng**: hàng trả ghi số lượng âm, cùng mã đơn với đơn đã bán: đơn có dòng số lượng âm là đơn có trả hàng.\n- **Tồn kho**: **Tồn thực** là tồn cuối ngày cuối có dữ liệu, theo đơn vị cơ bản.\n- **Hạn thanh toán**: chỉ đơn bán nợ có hạn. **Han tra** là ngày khách phải trả hết đơn; **Hạn nợ (ngày)** là số ngày được nợ, tính từ ngày đặt.\n- **Giao hàng**: đơn không huỷ có ít nhất một mặt hàng nhóm cát đá, gạch, sắt thép, xi măng thì được giao tận nơi mọi mặt hàng của đơn, 1–3 đợt (**Lượt giao**); đơn khác khách tự chở, không có trong sổ giao; đơn đặt mấy ngày cuối dữ liệu có thể chưa giao. **SL thực giao** tính theo đơn vị cơ bản.\n- **Nhập hàng**: **Giá nhập** là giá nhập một đơn vị, theo đơn vị nhập của dòng; **Thành tiền** là tiền nhập của cả dòng.\n- **Giá bán**: **Giá mới** (theo đơn vị cơ bản) áp dụng từ **Ngày áp dụng** đến trước lần đổi giá sau của cùng mặt hàng; dòng đầu mỗi mặt hàng là giá lúc bắt đầu dữ liệu (**Giá cũ** trống).\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng, hệ số quy đổi ở `DanhMuc.xlsx`.\n"
+}

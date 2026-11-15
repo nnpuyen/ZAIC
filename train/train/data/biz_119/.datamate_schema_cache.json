@@ -1,0 +1,3568 @@
+{
+  "version": 2,
+  "fingerprint": "c1cf44590c16f643a87d9d6d4ca7b974af8069ff9c2070e31eb24b2c628e0097",
+  "schema": {
+    "tables": [
+      {
+        "table": "BaoCaoTonKho_Sheet1",
+        "source": "train\\train\\data\\biz_119\\BaoCaoTonKho.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 70,
+        "canonical_name": "BaoCaoTonKho_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hàng",
+            "type": "VARCHAR",
+            "distinct_count": 70,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 70,
+            "sample_values": [
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "hapacol 250 hộp 24 gói",
+              "panadol 500mg hộp 10 vỉ x 12 viên",
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "nước muối sinh lý natri clorid 0,9% vĩnh phúc chai 500ml"
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "viên",
+              "gói",
+              "chai",
+              "cái",
+              "vỉ",
+              "miếng",
+              "hộp",
+              "ống",
+              "lọ",
+              "tuýp"
+            ]
+          },
+          {
+            "name": "Tồn cuối kỳ",
+            "type": "BIGINT",
+            "distinct_count": 57,
+            "sample_values": [
+              80,
+              165,
+              58,
+              97,
+              87
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachChiTietNhapHang_Sheet1",
+        "source": "train\\train\\data\\biz_119\\DanhSachChiTietNhapHang.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 3122,
+        "canonical_name": "DanhSachChiTietNhapHang_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã nhập hàng",
+            "type": "VARCHAR",
+            "distinct_count": 554,
+            "sample_values": [
+              "pn00001",
+              "pn00002",
+              "pn00003",
+              "pn00004",
+              "pn00005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "STT",
+            "type": "BIGINT",
+            "distinct_count": 70,
+            "sample_values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "name": "Mã hàng",
+            "type": "VARCHAR",
+            "distinct_count": 70,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 8,
+            "sample_values": [
+              "hộp",
+              "chai",
+              "tuýp",
+              "lốc",
+              "viên",
+              "cái",
+              "gói",
+              "lọ"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "BIGINT",
+            "distinct_count": 64,
+            "sample_values": [
+              2,
+              8,
+              192,
+              9,
+              4
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 165,
+            "sample_values": [
+              180000.0,
+              36000.0,
+              96000.0,
+              90000.0,
+              6700.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Lô",
+            "type": "VARCHAR",
+            "distinct_count": 3122,
+            "sample_values": [
+              "w2501882",
+              "w2501754",
+              "m2501906",
+              "x2501948",
+              "x2501996"
+            ]
+          },
+          {
+            "name": "Hạn sử dụng",
+            "type": "TIMESTAMP",
+            "distinct_count": 1239,
+            "sample_values": [
+              "2025-04-26T00:00:00",
+              "2026-09-30T00:00:00",
+              "2025-05-17T00:00:00",
+              "2026-06-17T00:00:00",
+              "2027-10-06T00:00:00"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T01_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T01-2025",
+        "row_count": 2069,
+        "canonical_name": "DanhSachHoaDon_T01_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 2069,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-01-01",
+              "2025-01-02",
+              "2025-01-03",
+              "2025-01-04",
+              "2025-01-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 296,
+            "sample_values": [
+              "kh0144",
+              "kh0206",
+              "kh0002",
+              "kh0082",
+              "kh0075"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 322,
+            "sample_values": [
+              "hồ ngọc châu",
+              "phạm sơn đức",
+              "khách lẻ",
+              "dương hạnh đạt",
+              "ngô quang dũng"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 874,
+            "sample_values": [
+              "8,800",
+              "5,200",
+              "53,400",
+              "1,000",
+              "53,300"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 891,
+            "sample_values": [
+              "8,800",
+              "20,200",
+              "53,400",
+              "1,000",
+              "53,300"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 2068,
+            "sample_values": [
+              "2025-01-01T06:06:11",
+              "2025-01-01T06:48:05",
+              "2025-01-01T06:57:09",
+              "2025-01-01T07:04:47",
+              "2025-01-01T07:13:25"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 896,
+            "sample_values": [
+              "8,800",
+              "20,200",
+              "53,400",
+              "1,000",
+              "53,300"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T02_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T02-2025",
+        "row_count": 1823,
+        "canonical_name": "DanhSachHoaDon_T02_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1823,
+            "sample_values": [
+              "ord002070",
+              "ord002071",
+              "ord002072",
+              "ord002073",
+              "ord002074"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 28,
+            "sample_values": [
+              "2025-02-01",
+              "2025-02-02",
+              "2025-02-03",
+              "2025-02-04",
+              "2025-02-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 293,
+            "sample_values": [
+              "kh0267",
+              "kh0061",
+              "kh0156",
+              "kh0035",
+              "kh0024"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 327,
+            "sample_values": [
+              "khách lẻ",
+              "chung hoa linh",
+              "vuong hung an",
+              "la hiếu quân",
+              "đặng hoa phong"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 803,
+            "sample_values": [
+              "13,200",
+              "1,600",
+              "6,700",
+              "72,000",
+              "184,000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 824,
+            "sample_values": [
+              "13,200",
+              "1,600",
+              "6,700",
+              "87,000",
+              "184,000"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1819,
+            "sample_values": [
+              "2025-02-01T06:11:04",
+              "2025-02-01T06:35:57",
+              "2025-02-01T06:40:11",
+              "2025-02-01T06:59:39",
+              "2025-02-01T07:00:54"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 827,
+            "sample_values": [
+              "13,200",
+              "1,600",
+              "6,700",
+              "87,000",
+              "184,000"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T03_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T03-2025",
+        "row_count": 2032,
+        "canonical_name": "DanhSachHoaDon_T03_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 2032,
+            "sample_values": [
+              "ord003893",
+              "ord003894",
+              "ord003895",
+              "ord003896",
+              "ord003897"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-03-01",
+              "2025-03-02",
+              "2025-03-03",
+              "2025-03-04",
+              "2025-03-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 294,
+            "sample_values": [
+              "kh0177",
+              "kh0178",
+              "kh0045",
+              "kh0148",
+              "kh0065"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 330,
+            "sample_values": [
+              "khách lẻ",
+              "từ nam bích",
+              "doãn thắng trung",
+              "hồ khoa đức",
+              "hà mai anh"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 870,
+            "sample_values": [
+              "5,500",
+              "117,000",
+              "265,100",
+              "62,000",
+              "35,300"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 885,
+            "sample_values": [
+              "20,500",
+              "117,000",
+              "265,100",
+              "62,000",
+              "35,300"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 2031,
+            "sample_values": [
+              "2025-03-01T06:24:48",
+              "2025-03-01T07:01:56",
+              "2025-03-01T07:17:31",
+              "2025-03-01T07:23:09",
+              "2025-03-01T07:27:40"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 890,
+            "sample_values": [
+              "20,500",
+              "117,000",
+              "265,100",
+              "62,000",
+              "35,300"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T04_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T04-2025",
+        "row_count": 1952,
+        "canonical_name": "DanhSachHoaDon_T04_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1952,
+            "sample_values": [
+              "ord005925",
+              "ord005926",
+              "ord005927",
+              "ord005928",
+              "ord005929"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-04-01",
+              "2025-04-02",
+              "2025-04-03",
+              "2025-04-04",
+              "2025-04-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 294,
+            "sample_values": [
+              "kh0214",
+              "kh0174",
+              "kh0241",
+              "kh0210",
+              "kh0259"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 323,
+            "sample_values": [
+              "vương loan bảo",
+              "khách lẻ",
+              "bùi anh long",
+              "vương đức ngọc",
+              "tạ chi đức"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "DOUBLE",
+            "distinct_count": 845,
+            "sample_values": [
+              800.0,
+              100000.0,
+              6500.0,
+              186000.0,
+              29300.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "DOUBLE",
+            "distinct_count": 857,
+            "sample_values": [
+              800.0,
+              115000.0,
+              6500.0,
+              186000.0,
+              44300.0
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã trả hàng",
+              "đã hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1951,
+            "sample_values": [
+              "2025-04-01T06:33:46",
+              "2025-04-01T07:01:00",
+              "2025-04-01T07:04:51",
+              "2025-04-01T07:50:48",
+              "2025-04-01T07:56:35"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 866,
+            "sample_values": [
+              800.0,
+              115000.0,
+              6500.0,
+              186000.0,
+              44300.0
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T05_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T05-2025",
+        "row_count": 2006,
+        "canonical_name": "DanhSachHoaDon_T05_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 2006,
+            "sample_values": [
+              "ord007877",
+              "ord007878",
+              "ord007879",
+              "ord007880",
+              "ord007881"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-05-01",
+              "2025-05-02",
+              "2025-05-03",
+              "2025-05-04",
+              "2025-05-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 292,
+            "sample_values": [
+              "kh0010",
+              "kh0146",
+              "kh0256",
+              "kh0090",
+              "kh0203"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 319,
+            "sample_values": [
+              "khách lẻ",
+              "lâm trung hồng",
+              "thái bảo linh",
+              "nguyễn huy hương",
+              "tạ khánh châu"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "DOUBLE",
+            "distinct_count": 857,
+            "sample_values": [
+              1500.0,
+              170900.0,
+              79600.0,
+              70700.0,
+              800.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "DOUBLE",
+            "distinct_count": 880,
+            "sample_values": [
+              1500.0,
+              170900.0,
+              79600.0,
+              70700.0,
+              800.0
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 2003,
+            "sample_values": [
+              "2025-05-01T07:02:33",
+              "2025-05-01T07:08:16",
+              "2025-05-01T07:14:22",
+              "2025-05-01T07:22:01",
+              "2025-05-01T07:24:18"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 889,
+            "sample_values": [
+              1500.0,
+              170900.0,
+              79600.0,
+              70700.0,
+              800.0
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T06_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T06-2025",
+        "row_count": 1880,
+        "canonical_name": "DanhSachHoaDon_T06_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1880,
+            "sample_values": [
+              "ord009883",
+              "ord009884",
+              "ord009885",
+              "ord009886",
+              "ord009887"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-06-01",
+              "2025-06-02",
+              "2025-06-03",
+              "2025-06-04",
+              "2025-06-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 294,
+            "sample_values": [
+              "kh0028",
+              "kh0045",
+              "kh0004",
+              "kh0253",
+              "kh0241"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 325,
+            "sample_values": [
+              "vũ ngọc thanh",
+              "hồ khoa đức",
+              "luong huy hai",
+              "khách lẻ",
+              "hà đức dương"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 829,
+            "sample_values": [
+              "65,000",
+              "12,600",
+              "55,000",
+              "800",
+              "2,400"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 846,
+            "sample_values": [
+              "65,000",
+              "12,600",
+              "55,000",
+              "800",
+              "2,400"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã trả hàng",
+              "đã hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1880,
+            "sample_values": [
+              "2025-06-01T06:10:16",
+              "2025-06-01T06:14:27",
+              "2025-06-01T07:01:48",
+              "2025-06-01T07:05:58",
+              "2025-06-01T07:14:04"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 847,
+            "sample_values": [
+              "65,000",
+              "12,600",
+              "55,000",
+              "800",
+              "2,400"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T07_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T07-2025",
+        "row_count": 1912,
+        "canonical_name": "DanhSachHoaDon_T07_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1912,
+            "sample_values": [
+              "ord011763",
+              "ord011764",
+              "ord011765",
+              "ord011766",
+              "ord011767"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-07-01",
+              "2025-07-02",
+              "2025-07-03",
+              "2025-07-04",
+              "2025-07-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 292,
+            "sample_values": [
+              "kh0099",
+              "kh0034",
+              "kh0168",
+              "kh0257",
+              "kh0098"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 320,
+            "sample_values": [
+              "khách lẻ",
+              "đinh quân ngọc",
+              "la tâm thanh",
+              "doãn thanh thắng",
+              "lý anh ngọc"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 828,
+            "sample_values": [
+              "8,000",
+              "3,300",
+              "101,200",
+              "110,000",
+              "51,400"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 853,
+            "sample_values": [
+              "8,000",
+              "3,300",
+              "101,200",
+              "110,000",
+              "51,400"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1912,
+            "sample_values": [
+              "2025-07-01T07:10:05",
+              "2025-07-01T07:26:32",
+              "2025-07-01T07:30:36",
+              "2025-07-01T07:45:28",
+              "2025-07-01T07:52:11"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 859,
+            "sample_values": [
+              "8,000",
+              "3,300",
+              "101,200",
+              "110,000",
+              "51,400"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T08_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T08-2025",
+        "row_count": 1926,
+        "canonical_name": "DanhSachHoaDon_T08_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1926,
+            "sample_values": [
+              "ord013675",
+              "ord013676",
+              "ord013677",
+              "ord013678",
+              "ord013679"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-08-01",
+              "2025-08-02",
+              "2025-08-03",
+              "2025-08-04",
+              "2025-08-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 295,
+            "sample_values": [
+              "kh0135",
+              "kh0256",
+              "kh0063",
+              "kh0155",
+              "kh0299"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 317,
+            "sample_values": [
+              "khách lẻ",
+              "kiều chi hùng",
+              "nguyễn huy hương",
+              "võ châu giang",
+              "đặng an hoàng"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 822,
+            "sample_values": [
+              "22,000",
+              "2,300",
+              "261,000",
+              "57,200",
+              "187,000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 852,
+            "sample_values": [
+              "22,000",
+              "2,300",
+              "261,000",
+              "57,200",
+              "187,000"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "đã trả hàng",
+              "hoàn thành",
+              "đã hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1925,
+            "sample_values": [
+              "2025-08-01T06:03:02",
+              "2025-08-01T06:36:48",
+              "2025-08-01T07:11:04",
+              "2025-08-01T07:15:26",
+              "2025-08-01T07:30:59"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 852,
+            "sample_values": [
+              "22,000",
+              "2,300",
+              "261,000",
+              "57,200",
+              "187,000"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T09_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T09-2025",
+        "row_count": 1867,
+        "canonical_name": "DanhSachHoaDon_T09_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1867,
+            "sample_values": [
+              "ord015601",
+              "ord015602",
+              "ord015603",
+              "ord015604",
+              "ord015605"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-09-01",
+              "2025-09-02",
+              "2025-09-03",
+              "2025-09-04",
+              "2025-09-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 293,
+            "sample_values": [
+              "kh0188",
+              "kh0165",
+              "kh0212",
+              "kh0019",
+              "kh0172"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 327,
+            "sample_values": [
+              "tăng duy châu",
+              "khách lẻ",
+              "hoàng hải chi",
+              "la nhung phong",
+              "tăng loan khánh"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 823,
+            "sample_values": [
+              "284,600",
+              "40,000",
+              "3,000",
+              "11,200",
+              "17,600"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 838,
+            "sample_values": [
+              "284,600",
+              "40,000",
+              "3,000",
+              "11,200",
+              "17,600"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã trả hàng",
+              "đã hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1866,
+            "sample_values": [
+              "2025-09-01T06:26:47",
+              "2025-09-01T07:23:56",
+              "2025-09-01T07:30:01",
+              "2025-09-01T07:32:45",
+              "2025-09-01T08:15:32"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 840,
+            "sample_values": [
+              "284,600",
+              "40,000",
+              "3,000",
+              "11,200",
+              "17,600"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T10_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T10-2025",
+        "row_count": 1828,
+        "canonical_name": "DanhSachHoaDon_T10_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1828,
+            "sample_values": [
+              "ord017468",
+              "ord017469",
+              "ord017470",
+              "ord017471",
+              "ord017472"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-10-01",
+              "2025-10-02",
+              "2025-10-03",
+              "2025-10-04",
+              "2025-10-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 294,
+            "sample_values": [
+              "kh0142",
+              "kh0242",
+              "kh0281",
+              "kh0089",
+              "kh0215"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 318,
+            "sample_values": [
+              "khách lẻ",
+              "lưu mai thắng",
+              "hứa hoàng hoàng",
+              "phạm tâm bích",
+              "thái hải ngọc"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "DOUBLE",
+            "distinct_count": 787,
+            "sample_values": [
+              500.0,
+              49000.0,
+              17400.0,
+              45600.0,
+              14600.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "DOUBLE",
+            "distinct_count": 808,
+            "sample_values": [
+              15500.0,
+              49000.0,
+              17400.0,
+              500.0,
+              45600.0
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã trả hàng",
+              "đã hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1826,
+            "sample_values": [
+              "2025-10-01T06:01:48",
+              "2025-10-01T06:38:02",
+              "2025-10-01T07:03:03",
+              "2025-10-01T07:04:35",
+              "2025-10-01T07:06:11"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 811,
+            "sample_values": [
+              15500.0,
+              49000.0,
+              17400.0,
+              500.0,
+              45600.0
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T11_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T11-2025",
+        "row_count": 1764,
+        "canonical_name": "DanhSachHoaDon_T11_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1764,
+            "sample_values": [
+              "ord019296",
+              "ord019297",
+              "ord019298",
+              "ord019299",
+              "ord019300"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-11-01",
+              "2025-11-02",
+              "2025-11-03",
+              "2025-11-04",
+              "2025-11-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 291,
+            "sample_values": [
+              "kh0055",
+              "kh0076",
+              "kh0014",
+              "kh0206",
+              "kh0147"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 324,
+            "sample_values": [
+              "khách lẻ",
+              "tống cường minh",
+              "đinh chi phúc",
+              "trịnh minh hồng",
+              "phạm sơn đức"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "DOUBLE",
+            "distinct_count": 788,
+            "sample_values": [
+              104600.0,
+              80000.0,
+              120000.0,
+              127300.0,
+              195000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "DOUBLE",
+            "distinct_count": 795,
+            "sample_values": [
+              104600.0,
+              80000.0,
+              120000.0,
+              127300.0,
+              195000.0
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1764,
+            "sample_values": [
+              "2025-11-01T07:28:48",
+              "2025-11-01T07:39:56",
+              "2025-11-01T07:55:00",
+              "2025-11-01T07:59:46",
+              "2025-11-01T08:15:29"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 800,
+            "sample_values": [
+              104600.0,
+              80000.0,
+              120000.0,
+              127300.0,
+              195000.0
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T12_2025",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T12-2025",
+        "row_count": 1834,
+        "canonical_name": "DanhSachHoaDon_T12_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1834,
+            "sample_values": [
+              "ord021060",
+              "ord021061",
+              "ord021062",
+              "ord021063",
+              "ord021064"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-12-01",
+              "2025-12-02",
+              "2025-12-03",
+              "2025-12-04",
+              "2025-12-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 293,
+            "sample_values": [
+              "kh0289",
+              "kh0187",
+              "kh0036",
+              "kh0074",
+              "kh0147"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 317,
+            "sample_values": [
+              "khách lẻ",
+              "đinh thanh huy",
+              "lâm khánh hiếu",
+              "tạ phong bình",
+              "tống hoàng hùng"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 800,
+            "sample_values": [
+              "227,000",
+              "313,200",
+              "1,500",
+              "16,300",
+              "21,000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 810,
+            "sample_values": [
+              "227,000",
+              "303,200",
+              "1,500",
+              "16,300",
+              "21,000"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1833,
+            "sample_values": [
+              "2025-12-01T06:13:57",
+              "2025-12-01T07:02:42",
+              "2025-12-01T07:05:21",
+              "2025-12-01T07:51:14",
+              "2025-12-01T08:28:01"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 814,
+            "sample_values": [
+              "227,000",
+              "303,200",
+              "1,500",
+              "16,300",
+              "21,000"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T01_2026",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T01-2026",
+        "row_count": 1754,
+        "canonical_name": "DanhSachHoaDon_T01_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1754,
+            "sample_values": [
+              "ord022894",
+              "ord022895",
+              "ord022896",
+              "ord022897",
+              "ord022898"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-01-01",
+              "2026-01-02",
+              "2026-01-03",
+              "2026-01-04",
+              "2026-01-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 291,
+            "sample_values": [
+              "kh0206",
+              "kh0013",
+              "kh0277",
+              "kh0046",
+              "kh0103"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 320,
+            "sample_values": [
+              "phạm sơn đức",
+              "đàm hùng hoa",
+              "khách lẻ",
+              "tống ngọc linh",
+              "võ phong duy"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 763,
+            "sample_values": [
+              "192,000",
+              "150,200",
+              "303,000",
+              "8,400",
+              "20,000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 779,
+            "sample_values": [
+              "192,000",
+              "150,200",
+              "293,000",
+              "8,400",
+              "20,000"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1752,
+            "sample_values": [
+              "2026-01-01T06:13:05",
+              "2026-01-01T06:18:51",
+              "2026-01-01T06:24:18",
+              "2026-01-01T06:40:58",
+              "2026-01-01T07:58:57"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 780,
+            "sample_values": [
+              "192,000",
+              "150,200",
+              "293,000",
+              "8,400",
+              "20,000"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T02_2026",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T02-2026",
+        "row_count": 1746,
+        "canonical_name": "DanhSachHoaDon_T02_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1746,
+            "sample_values": [
+              "ord024648",
+              "ord024649",
+              "ord024650",
+              "ord024651",
+              "ord024652"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 28,
+            "sample_values": [
+              "2026-02-01",
+              "2026-02-02",
+              "2026-02-03",
+              "2026-02-04",
+              "2026-02-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 289,
+            "sample_values": [
+              "kh0042",
+              "kh0126",
+              "kh0038",
+              "kh0164",
+              "kh0127"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 325,
+            "sample_values": [
+              "doãn khoa anh",
+              "dương mai khánh",
+              "châu trung bình",
+              "khách lẻ",
+              "chung phúc ngọc"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "DOUBLE",
+            "distinct_count": 789,
+            "sample_values": [
+              8200.0,
+              17000.0,
+              2600.0,
+              21000.0,
+              22400.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "DOUBLE",
+            "distinct_count": 799,
+            "sample_values": [
+              8200.0,
+              17000.0,
+              2600.0,
+              21000.0,
+              22400.0
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã trả hàng",
+              "đã hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1744,
+            "sample_values": [
+              "2026-02-01T06:27:29",
+              "2026-02-01T06:27:44",
+              "2026-02-01T07:03:27",
+              "2026-02-01T07:06:25",
+              "2026-02-01T07:42:09"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 805,
+            "sample_values": [
+              8200.0,
+              17000.0,
+              2600.0,
+              21000.0,
+              22400.0
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T03_2026",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T03-2026",
+        "row_count": 1728,
+        "canonical_name": "DanhSachHoaDon_T03_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1728,
+            "sample_values": [
+              "ord026394",
+              "ord026395",
+              "ord026396",
+              "ord026397",
+              "ord026398"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-03-01",
+              "2026-03-02",
+              "2026-03-03",
+              "2026-03-04",
+              "2026-03-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 287,
+            "sample_values": [
+              "kh0140",
+              "kh0289",
+              "kh0148",
+              "kh0078",
+              "kh0281"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 313,
+            "sample_values": [
+              "khách lẻ",
+              "hứa loan dũng",
+              "đinh thanh huy",
+              "hà mai anh",
+              "trương hồng lan"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 797,
+            "sample_values": [
+              "25,900",
+              "174,000",
+              "3,400",
+              "224,000",
+              "96,000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 817,
+            "sample_values": [
+              "25,900",
+              "174,000",
+              "3,400",
+              "224,000",
+              "96,000"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1728,
+            "sample_values": [
+              "2026-03-01T07:05:54",
+              "2026-03-01T07:27:09",
+              "2026-03-01T07:56:44",
+              "2026-03-01T07:57:23",
+              "2026-03-01T08:30:13"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 822,
+            "sample_values": [
+              "25,900",
+              "174,000",
+              "3,400",
+              "224,000",
+              "96,000"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T04_2026",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T04-2026",
+        "row_count": 1689,
+        "canonical_name": "DanhSachHoaDon_T04_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1689,
+            "sample_values": [
+              "ord028122",
+              "ord028123",
+              "ord028124",
+              "ord028125",
+              "ord028126"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 30,
+            "sample_values": [
+              "2026-04-01",
+              "2026-04-02",
+              "2026-04-03",
+              "2026-04-04",
+              "2026-04-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 293,
+            "sample_values": [
+              "kh0281",
+              "kh0298",
+              "kh0043",
+              "kh0215",
+              "kh0057"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 325,
+            "sample_values": [
+              "phạm tâm bích",
+              "khách lẻ",
+              "bùi chi duy",
+              "ông dũng quang",
+              "võ an linh"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 809,
+            "sample_values": [
+              "1,600",
+              "3,200",
+              "5,000",
+              "12,600",
+              "28,800"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 823,
+            "sample_values": [
+              "1,600",
+              "18,200",
+              "5,000",
+              "12,600",
+              "28,800"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã trả hàng",
+              "đã hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1688,
+            "sample_values": [
+              "2026-04-01T06:33:25",
+              "2026-04-01T07:32:19",
+              "2026-04-01T07:43:45",
+              "2026-04-01T07:46:47",
+              "2026-04-01T08:39:08"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 825,
+            "sample_values": [
+              "1,600",
+              "18,200",
+              "5,000",
+              "12,600",
+              "28,800"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T05_2026",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T05-2026",
+        "row_count": 1764,
+        "canonical_name": "DanhSachHoaDon_T05_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1764,
+            "sample_values": [
+              "ord029811",
+              "ord029812",
+              "ord029813",
+              "ord029814",
+              "ord029815"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-05-01",
+              "2026-05-02",
+              "2026-05-03",
+              "2026-05-04",
+              "2026-05-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 294,
+            "sample_values": [
+              "kh0063",
+              "kh0016",
+              "kh0254",
+              "kh0093",
+              "kh0066"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 326,
+            "sample_values": [
+              "võ châu giang",
+              "khách lẻ",
+              "ông nhung thảo",
+              "bùi đức anh",
+              "thân ngân bình"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 819,
+            "sample_values": [
+              "5,900",
+              "92,600",
+              "2,200",
+              "800",
+              "10,700"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 835,
+            "sample_values": [
+              "5,900",
+              "92,600",
+              "2,200",
+              "800",
+              "10,700"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã hủy",
+              "đã trả hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1763,
+            "sample_values": [
+              "2026-05-01T07:47:20",
+              "2026-05-01T07:47:45",
+              "2026-05-01T07:53:01",
+              "2026-05-01T07:55:44",
+              "2026-05-01T08:00:47"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 842,
+            "sample_values": [
+              "5,900",
+              "92,600",
+              "2,200",
+              "800",
+              "10,700"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T06_2026",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T06-2026",
+        "row_count": 1730,
+        "canonical_name": "DanhSachHoaDon_T06_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 1730,
+            "sample_values": [
+              "ord031575",
+              "ord031576",
+              "ord031577",
+              "ord031578",
+              "ord031579"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 30,
+            "sample_values": [
+              "2026-06-01",
+              "2026-06-02",
+              "2026-06-03",
+              "2026-06-04",
+              "2026-06-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 294,
+            "sample_values": [
+              "kh0268",
+              "kh0157",
+              "kh0132",
+              "kh0244",
+              "kh0060"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 334,
+            "sample_values": [
+              "doãn dũng an",
+              "lâm trang cường",
+              "khách lẻ",
+              "cao hùng duy",
+              "phạm nhung hoàng"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 818,
+            "sample_values": [
+              "45,200",
+              "16,400",
+              "265,000",
+              "82,800",
+              "162,600"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 836,
+            "sample_values": [
+              "45,200",
+              "31,400",
+              "265,000",
+              "82,800",
+              "162,600"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "hoàn thành",
+              "đã trả hàng",
+              "đã hủy"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 1730,
+            "sample_values": [
+              "2026-06-01T06:50:37",
+              "2026-06-01T07:17:41",
+              "2026-06-01T07:41:22",
+              "2026-06-01T08:11:47",
+              "2026-06-01T08:20:05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 840,
+            "sample_values": [
+              "45,200",
+              "31,400",
+              "265,000",
+              "82,800",
+              "162,600"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "DOUBLE",
+            "distinct_count": 8,
+            "sample_values": [
+              0.0,
+              900.0,
+              140900.0,
+              3750.0,
+              400.0,
+              16000.0,
+              76000.0,
+              6950.0
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDon_T07_2026",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDon.xlsx",
+        "sheet": "T07-2026",
+        "row_count": 743,
+        "canonical_name": "DanhSachHoaDon_T07_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 743,
+            "sample_values": [
+              "ord033305",
+              "ord033306",
+              "ord033307",
+              "ord033308",
+              "ord033309"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 13,
+            "sample_values": [
+              "2026-07-01",
+              "2026-07-02",
+              "2026-07-03",
+              "2026-07-04",
+              "2026-07-05"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã KH",
+            "type": "VARCHAR",
+            "distinct_count": 233,
+            "sample_values": [
+              "kh0142",
+              "kh0015",
+              "kh0249",
+              "kh0099",
+              "kh0292"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 243,
+            "sample_values": [
+              "lưu mai thắng",
+              "hoàng khoa hùng",
+              "khách lẻ",
+              "mai hải khoa",
+              "đinh quân ngọc"
+            ]
+          },
+          {
+            "name": "Tổng tiền hàng",
+            "type": "VARCHAR",
+            "distinct_count": 450,
+            "sample_values": [
+              "92,600",
+              "174,400",
+              "16,000",
+              "424,000",
+              "55,000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 2,
+            "sample_values": [
+              0.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Khách đã trả",
+            "type": "VARCHAR",
+            "distinct_count": 451,
+            "sample_values": [
+              "92,600",
+              "174,400",
+              "16,000",
+              "414,000",
+              "55,000"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "hoàn thành",
+              "đã trả hàng",
+              "đã hủy",
+              "đang giao hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Thời gian tạo",
+            "type": "TIMESTAMP",
+            "distinct_count": 743,
+            "sample_values": [
+              "2026-07-01T06:07:01",
+              "2026-07-01T06:13:03",
+              "2026-07-01T06:34:51",
+              "2026-07-01T06:42:00",
+              "2026-07-01T06:59:50"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tổng sau giảm giá",
+            "type": "VARCHAR",
+            "distinct_count": 466,
+            "sample_values": [
+              "92,600",
+              "174,400",
+              "16,000",
+              "414,000",
+              "55,000"
+            ]
+          },
+          {
+            "name": "Còn nợ",
+            "type": "DOUBLE",
+            "distinct_count": 22,
+            "sample_values": [
+              0.0,
+              11400.0,
+              32000.0,
+              2800.0,
+              124000.0
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDonChiTiet_Sheet1",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDonChiTiet.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 63823,
+        "canonical_name": "DanhSachHoaDonChiTiet_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 34047,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mã hàng",
+            "type": "VARCHAR",
+            "distinct_count": 70,
+            "sample_values": [
+              "sp0004",
+              "sp0029",
+              "sp0005",
+              "sp0046",
+              "sp0008"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 102,
+            "sample_values": [
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "alaxan hộp 25 vỉ x 4 viên",
+              "nước muối sinh lý natri clorid 0,9% vĩnh phúc chai 500ml",
+              "clarityne 10mg hộp 1 vỉ x 10 viên",
+              "amoxicillin 500mg domesco hộp 10 vỉ x 10 viên"
+            ]
+          },
+          {
+            "name": "Số lượng",
+            "type": "BIGINT",
+            "distinct_count": 10,
+            "sample_values": [
+              2,
+              1,
+              4,
+              3,
+              10,
+              6,
+              8,
+              5,
+              7,
+              9
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "DOUBLE",
+            "distinct_count": 141,
+            "sample_values": [
+              4400.0,
+              5200.0,
+              10000.0,
+              6700.0,
+              1000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Giảm giá",
+            "type": "DOUBLE",
+            "distinct_count": 37,
+            "sample_values": [
+              0.0,
+              29000.0,
+              1000.0,
+              5000.0,
+              3000.0
+            ]
+          },
+          {
+            "name": "Thành tiền",
+            "type": "VARCHAR",
+            "distinct_count": 485,
+            "sample_values": [
+              "8,800",
+              "5,200",
+              "40,000",
+              "13,400",
+              "1,000"
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Số lượng quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 36,
+            "sample_values": [
+              8,
+              4,
+              2,
+              1,
+              60
+            ]
+          },
+          {
+            "name": "STT",
+            "type": "BIGINT",
+            "distinct_count": 4,
+            "sample_values": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachHoaDonChiTietLo_Sheet1",
+        "source": "train\\train\\data\\biz_119\\DanhSachHoaDonChiTietLo.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 65483,
+        "canonical_name": "DanhSachHoaDonChiTietLo_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hóa đơn",
+            "type": "VARCHAR",
+            "distinct_count": 33715,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "STT",
+            "type": "BIGINT",
+            "distinct_count": 4,
+            "sample_values": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "name": "Lô",
+            "type": "VARCHAR",
+            "distinct_count": 3120,
+            "sample_values": [
+              "x2501948",
+              "f2501832",
+              "x2501996",
+              "m2501930",
+              "r2501656"
+            ]
+          },
+          {
+            "name": "Số lượng (ĐVT cơ bản)",
+            "type": "BIGINT",
+            "distinct_count": 165,
+            "sample_values": [
+              8,
+              4,
+              2,
+              1,
+              60
+            ]
+          },
+          {
+            "name": "Số lượng trả (ĐVT cơ bản)",
+            "type": "BIGINT",
+            "distinct_count": 24,
+            "sample_values": [
+              0,
+              1,
+              3,
+              2,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachKhachHang_Sheet1",
+        "source": "train\\train\\data\\biz_119\\DanhSachKhachHang.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 300,
+        "canonical_name": "DanhSachKhachHang_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Công ty",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Tổng điểm",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              0
+            ]
+          },
+          {
+            "name": "Mã khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 300,
+            "sample_values": [
+              "kh0001",
+              "kh0002",
+              "kh0003",
+              "kh0004",
+              "kh0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ghi chú KH",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Ngày sinh",
+            "type": "DATE",
+            "distinct_count": 50,
+            "sample_values": [
+              "1993-09-27",
+              "1966-07-27",
+              "1986-01-04",
+              "1991-07-27",
+              "2001-03-16"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 300,
+            "sample_values": [
+              "đào hà phúc",
+              "dương hạnh đạt",
+              "tăng phúc hoàng",
+              "lương huy hải",
+              "lương bình bảo"
+            ]
+          },
+          {
+            "name": "Người tạo",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "admin"
+            ]
+          },
+          {
+            "name": "Đối tượng KH",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "cá nhân"
+            ]
+          },
+          {
+            "name": "Điểm tích lũy",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              0
+            ]
+          },
+          {
+            "name": "Điện thoại",
+            "type": "VARCHAR",
+            "distinct_count": 300,
+            "sample_values": [
+              "0909460221",
+              "0917736338",
+              "0917517616",
+              "0701493002",
+              "0798710308"
+            ]
+          },
+          {
+            "name": "MST",
+            "type": "VARCHAR",
+            "distinct_count": 16,
+            "sample_values": [
+              "0896203682",
+              "0244300353",
+              "0121255242",
+              "0686201929",
+              "0190909953"
+            ]
+          },
+          {
+            "name": "Địa chỉ",
+            "type": "VARCHAR",
+            "distinct_count": 299,
+            "sample_values": [
+              "62 khánh hội",
+              "65 bình long",
+              "58 tỉnh lộ 10",
+              "365 võ văn tần",
+              "33 nguyễn văn linh"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachLoHang_Sheet1",
+        "source": "train\\train\\data\\biz_119\\DanhSachLoHang.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 3122,
+        "canonical_name": "DanhSachLoHang_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã nhập hàng",
+            "type": "VARCHAR",
+            "distinct_count": 554,
+            "sample_values": [
+              "pn00039",
+              "pn00124",
+              "pn00258",
+              "pn00294",
+              "pn00514"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Mã hàng",
+            "type": "VARCHAR",
+            "distinct_count": 70,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Lô",
+            "type": "VARCHAR",
+            "distinct_count": 3122,
+            "sample_values": [
+              "a2502949",
+              "b2505889",
+              "b2509833",
+              "b2510344",
+              "b2606343"
+            ]
+          },
+          {
+            "name": "Hạn sử dụng",
+            "type": "VARCHAR",
+            "distinct_count": 1239,
+            "sample_values": [
+              "29/07/2025",
+              "08/02/2027",
+              "09/07/2028",
+              "07/04/2028",
+              "23/05/2028"
+            ]
+          },
+          {
+            "name": "Số lượng (ĐVT cơ bản)",
+            "type": "BIGINT",
+            "distinct_count": 63,
+            "sample_values": [
+              360,
+              180,
+              192,
+              168,
+              240
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachNhapHang_Sheet1",
+        "source": "train\\train\\data\\biz_119\\DanhSachNhapHang.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 554,
+        "canonical_name": "DanhSachNhapHang_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã nhập hàng",
+            "type": "VARCHAR",
+            "distinct_count": 554,
+            "sample_values": [
+              "pn00001",
+              "pn00002",
+              "pn00003",
+              "pn00004",
+              "pn00005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Thời gian",
+            "type": "DATE",
+            "distinct_count": 554,
+            "sample_values": [
+              "2025-01-01",
+              "2025-01-02",
+              "2025-01-05",
+              "2025-01-06",
+              "2025-01-07"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Mã NCC",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "ncc002",
+              "ncc001",
+              "ncc005",
+              "ncc003",
+              "ncc004"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Cần trả NCC",
+            "type": "VARCHAR",
+            "distinct_count": 544,
+            "sample_values": [
+              "94,231,600",
+              "687,000",
+              "811,000",
+              "1,837,200",
+              "1,045,200"
+            ]
+          },
+          {
+            "name": "Trạng thái",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "đã nhập hàng"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "nhập đầu kỳ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachSanPham_Sheet1",
+        "source": "train\\train\\data\\biz_119\\DanhSachSanPham.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 70,
+        "canonical_name": "DanhSachSanPham_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Trọng lượng",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mã hàng",
+            "type": "VARCHAR",
+            "distinct_count": 70,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Loại hàng hóa",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "hàng hóa"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 70,
+            "sample_values": [
+              "panadol extra hộp 15 vỉ x 12 viên",
+              "hapacol 250 hộp 24 gói",
+              "panadol 500mg hộp 10 vỉ x 12 viên",
+              "tiffy dey hộp 25 vỉ x 4 viên",
+              "nước muối sinh lý natri clorid 0,9% vĩnh phúc chai 500ml"
+            ]
+          },
+          {
+            "name": "Tồn nhỏ nhất",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              0
+            ]
+          },
+          {
+            "name": "Bảo hành",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Được bán trực tiếp",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              1
+            ]
+          },
+          {
+            "name": "Mẫu ghi chú",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Nhóm hàng(3 Cấp)",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "giảm đau hạ sốt",
+              "ho cảm cúm",
+              "dùng ngoài",
+              "tiêu hoá",
+              "kháng sinh"
+            ]
+          },
+          {
+            "name": "Vị trí kệ",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mô tả chi tiết",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Thuộc tính",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Hình ảnh (url1,url2...)",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Giá bán",
+            "type": "BIGINT",
+            "distinct_count": 49,
+            "sample_values": [
+              1400,
+              2000,
+              1000,
+              1100,
+              10000
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "viên",
+              "gói",
+              "chai",
+              "cái",
+              "vỉ",
+              "miếng",
+              "hộp",
+              "ống",
+              "lọ",
+              "tuýp"
+            ]
+          },
+          {
+            "name": "Mã HH Liên quan",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": [],
+            "role": "identifier"
+          },
+          {
+            "name": "Thương hiệu",
+            "type": "DOUBLE",
+            "distinct_count": 0,
+            "sample_values": []
+          },
+          {
+            "name": "Mã vạch EAN",
+            "type": "VARCHAR",
+            "distinct_count": 48,
+            "sample_values": [
+              "8934444599665",
+              "8932673100447",
+              "8935636804314",
+              "8935497277340",
+              "8932785093378"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Tồn lớn nhất",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              999999999
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DanhSachThuoc_Sheet1",
+        "source": "train\\train\\data\\biz_119\\DanhSachThuoc.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 70,
+        "canonical_name": "DanhSachThuoc_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã hàng",
+            "type": "VARCHAR",
+            "distinct_count": 70,
+            "sample_values": [
+              "sp0001",
+              "sp0002",
+              "sp0003",
+              "sp0004",
+              "sp0005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Hoạt chất",
+            "type": "VARCHAR",
+            "distinct_count": 49,
+            "sample_values": [
+              "paracetamol + cafein",
+              "paracetamol",
+              "paracetamol + phenylephrin + clorpheniramin",
+              "natri clorid",
+              "berberin"
+            ]
+          },
+          {
+            "name": "Thuốc kê đơn",
+            "type": "BOOLEAN",
+            "distinct_count": 2,
+            "sample_values": [
+              false,
+              true
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu biz_119\n\nFile Excel xuất từ phần mềm bán hàng, mỗi danh sách một file (danh sách dài tách thành nhiều file, tên thêm đuôi _1, _2… hoặc đuôi năm _2025, _2026…), nối với nhau qua mã. Ngày dạng dd/mm/yyyy.\n\nFile `DanhSachHoaDon.xlsx` chia mỗi tháng một sheet, tên sheet ghi tháng và năm.\n\n## File\n- `DanhSachHoaDon.xlsx` (xlsx)\n- `DanhSachHoaDonChiTiet.xlsx` (xlsx)\n- `DanhSachSanPham.xlsx` (xlsx)\n- `DanhSachKhachHang.xlsx` (xlsx)\n- `BaoCaoTonKho.xlsx` (xlsx)\n- `DanhSachNhapHang.xlsx` (xlsx)\n- `DanhSachLoHang.xlsx` (xlsx)\n- `DanhSachHoaDonChiTietLo.xlsx` (xlsx)\n- `DanhSachThuoc.xlsx` (xlsx)\n- `DanhSachChiTietNhapHang.xlsx` (xlsx)\n\n## Cột trong `DanhSachHoaDon.xlsx`\n- **Mã hóa đơn**: mã đơn\n- **Thời gian**: ngày bán\n- **Mã KH**: mã khách (trống nếu khách lẻ)\n- **Khách hàng**: tên khách (Khách lẻ nếu không lưu)\n- **Tổng tiền hàng**: tổng tiền hàng của đơn (cộng thành tiền các dòng), trước giảm giá của đơn\n- **Giảm giá**: giảm giá\n- **Khách đã trả**: đã thanh toán\n- **Trạng thái**: trạng thái đơn\n- **Thời gian tạo**: thời điểm đặt đơn (ngày giờ)\n- **Tổng sau giảm giá**: tổng tiền đơn\n- **Còn nợ**: còn nợ\n\n## Cột trong `DanhSachHoaDonChiTiet.xlsx`\n- **Mã hóa đơn**: mã đơn\n- **Mã hàng**: mã hàng\n- **Tên hàng**: tên hàng\n- **Số lượng**: số lượng\n- **Đơn giá**: đơn giá\n- **Giảm giá**: giảm giá\n- **Thành tiền**: thành tiền sau giảm\n- **Số lượng quy đổi**: số lượng đã đổi ra đơn vị cơ bản\n- **STT**: số thứ tự dòng trong đơn\n\n## Cột trong `DanhSachSanPham.xlsx`\n- **Mã hàng**: mã hàng\n- **Tên hàng**: tên\n- **Nhóm hàng(3 Cấp)**: nhóm hàng\n- **Giá bán**: giá bán hiện tại\n- **ĐVT**: đơn vị cơ bản\n\n## Cột trong `DanhSachKhachHang.xlsx`\n- **Mã khách hàng**: mã khách\n- **Tên khách hàng**: tên\n- **Điện thoại**: số điện thoại\n- **Địa chỉ**: địa chỉ\n\n## Cột trong `BaoCaoTonKho.xlsx`\n- **Mã hàng**: mã hàng\n- **Tên hàng**: tên hàng\n- **ĐVT**: đơn vị cơ bản\n- **Tồn cuối kỳ**: tồn kho (đơn vị cơ bản)\n\n## Cột trong `DanhSachNhapHang.xlsx`\n- **Mã nhập hàng**: mã phiếu nhập\n- **Thời gian**: ngày nhập\n- **Mã NCC**: mã nhà cung cấp\n- **Cần trả NCC**: tổng tiền phiếu nhập\n- **Trạng thái**: trạng thái phiếu nhập\n- **Ghi chú**: ghi chú\n\n## Cột trong `DanhSachLoHang.xlsx`\n- **Mã nhập hàng**: mã phiếu nhập\n- **Mã hàng**: mã hàng\n- **Lô**: số lô\n- **Hạn sử dụng**: hạn sử dụng\n- **Số lượng (ĐVT cơ bản)**: số lượng nhập (đơn vị cơ bản)\n\n## Cột trong `DanhSachHoaDonChiTietLo.xlsx`\n- **Mã hóa đơn**: mã đơn\n- **STT**: số thứ tự dòng trong đơn\n- **Lô**: số lô\n- **Số lượng (ĐVT cơ bản)**: số lượng bán lấy từ lô (đơn vị cơ bản)\n- **Số lượng trả (ĐVT cơ bản)**: số lượng khách trả lại (đơn vị cơ bản); lớn hơn 0: đơn đó có trả hàng\n\n## Cột trong `DanhSachThuoc.xlsx`\n- **Mã hàng**: mã hàng\n- **Hoạt chất**: hoạt chất (trống với thực phẩm chức năng, vật tư)\n- **Thuốc kê đơn**: thuốc kê đơn\n\n## Cột trong `DanhSachChiTietNhapHang.xlsx`\n- **Mã nhập hàng**: mã phiếu nhập\n- **STT**: số thứ tự dòng trong phiếu nhập\n- **Mã hàng**: mã hàng\n- **ĐVT**: đơn vị tính\n- **Số lượng**: số lượng\n- **Đơn giá**: giá nhập một đơn vị (theo đơn vị nhập của dòng)\n- **Lô**: số lô\n- **Hạn sử dụng**: hạn sử dụng\n\n## Quy ước\n- Dữ liệu có đến hết 13/07/2026.\n- **Còn nợ**: **Còn nợ** là số khách còn nợ của đơn, tính đến hết ngày cuối dữ liệu.\n- **Tồn kho**: **Tồn cuối kỳ** là tồn cuối ngày cuối có dữ liệu, theo đơn vị cơ bản.\n- **Lô, hạn dùng**: mỗi dòng nhập là một lô, số lô không trùng. Một dòng bán có thể lấy từ nhiều lô. Hàng khách trả về lại lô đã bán.\n- **Nhập hàng**: **Đơn giá** là giá nhập một đơn vị, theo đơn vị nhập của dòng; **Cần trả NCC** là tổng tiền của cả phiếu nhập.\n- **Thuốc**: **Thuốc kê đơn** đúng (TRUE/1) là thuốc kê đơn. Hoạt chất ghi không kèm hàm lượng (hàm lượng ở tên hàng); nhiều chất nối bằng \" + \".\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng:\n  - Panadol Extra hộp 15 vỉ x 12 viên: 1 vỉ = 12 viên\n  - Panadol Extra hộp 15 vỉ x 12 viên: 1 hộp = 180 viên\n  - Hapacol 250 hộp 24 gói: 1 hộp = 24 gói\n  - Panadol 500mg hộp 10 vỉ x 12 viên: 1 vỉ = 12 viên\n  - Panadol 500mg hộp 10 vỉ x 12 viên: 1 hộp = 120 viên\n  - Tiffy Dey hộp 25 vỉ x 4 viên: 1 vỉ = 4 viên\n  - Tiffy Dey hộp 25 vỉ x 4 viên: 1 hộp = 100 viên\n  - Berberin 100mg Mekophar chai 100 viên: 1 chai = 100 viên\n  - Oresol 245 DHG hộp 20 gói: 1 hộp = 20 gói\n  - Amoxicillin 500mg Domesco hộp 10 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Amoxicillin 500mg Domesco hộp 10 vỉ x 10 viên: 1 hộp = 100 viên\n  - Salonpas cao dán hộp 24 gói x 10 miếng: 1 hộp = 24 gói\n  - Decolgen Forte hộp 30 vỉ x 4 viên: 1 vỉ = 4 viên\n  - Decolgen Forte hộp 30 vỉ x 4 viên: 1 hộp = 120 viên\n  - Khẩu trang y tế 4 lớp Khánh An hộp 50 cái: 1 hộp = 50 cái\n  - Smecta hộp 30 gói: 1 hộp = 30 gói\n  - Efferalgan 500mg viên sủi hộp 4 vỉ x 4 viên: 1 vỉ = 4 viên\n  - Efferalgan 500mg viên sủi hộp 4 vỉ x 4 viên: 1 hộp = 16 viên\n  - Phosphalugel hộp 26 gói: 1 hộp = 26 gói\n  - Strepsils Cool hộp 2 vỉ x 12 viên: 1 vỉ = 12 viên\n  - Strepsils Cool hộp 2 vỉ x 12 viên: 1 hộp = 24 viên\n  - Clorpheniramin 4mg DHG hộp 10 vỉ x 20 viên: 1 hộp = 10 vỉ\n  - Yumangel hộp 20 gói: 1 hộp = 20 gói\n  - Cefuroxim 500mg Vidipha hộp 10 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Cefuroxim 500mg Vidipha hộp 10 vỉ x 10 viên: 1 hộp = 100 viên\n  - Băng cá nhân Urgo Transparent hộp 100 miếng: 1 hộp = 100 miếng\n  - Hapacol 150 hộp 24 gói: 1 hộp = 24 gói\n  - Eugica hộp 10 vỉ x 10 viên nang: 1 vỉ = 10 viên\n  - Eugica hộp 10 vỉ x 10 viên nang: 1 hộp = 100 viên\n  - UPSA-C 1g viên sủi tuýp 10 viên: 1 tuýp = 10 viên\n  - Lorastad 10mg Stella hộp 10 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Lorastad 10mg Stella hộp 10 vỉ x 10 viên: 1 hộp = 100 viên\n  - Cetirizin 10mg Domesco hộp 10 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Cetirizin 10mg Domesco hộp 10 vỉ x 10 viên: 1 hộp = 100 viên\n  - Amlodipin 5mg Domesco hộp 3 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Amlodipin 5mg Domesco hộp 3 vỉ x 10 viên: 1 hộp = 30 viên\n  - Panadol Cảm Cúm hộp 15 vỉ x 12 viên: 1 vỉ = 12 viên\n  - Panadol Cảm Cúm hộp 15 vỉ x 12 viên: 1 hộp = 180 viên\n  - Alaxan hộp 25 vỉ x 4 viên: 1 vỉ = 4 viên\n  - Alaxan hộp 25 vỉ x 4 viên: 1 hộp = 100 viên\n  - Gofen 400 hộp 5 vỉ x 10 viên nang: 1 vỉ = 10 viên\n  - Gofen 400 hộp 5 vỉ x 10 viên nang: 1 hộp = 50 viên\n  - Acemuc Kids 200mg hộp 30 gói: 1 hộp = 30 gói\n  - Gaviscon hộp 24 gói x 10ml: 1 hộp = 24 gói\n  - Enterogermina 2 tỷ/5ml hộp 20 ống: 1 hộp = 20 ống\n  - Omeprazol 20mg DHG hộp 3 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Omeprazol 20mg DHG hộp 3 vỉ x 10 viên: 1 hộp = 30 viên\n  - Vitamin C 500mg Quapharco hộp 10 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Vitamin C 500mg Quapharco hộp 10 vỉ x 10 viên: 1 hộp = 100 viên\n  - Efticol 0,9% lốc 10 lọ x 10ml: 1 lốc = 10 lọ\n  - Magne-B6 Corbière hộp 5 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Magne-B6 Corbière hộp 5 vỉ x 10 viên: 1 hộp = 50 viên\n  - Loperamid 2mg Domesco hộp 5 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Loperamid 2mg Domesco hộp 5 vỉ x 10 viên: 1 hộp = 50 viên\n  - Metformin Stella 500mg hộp 6 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Metformin Stella 500mg hộp 6 vỉ x 10 viên: 1 hộp = 60 viên\n  - Clarityne 10mg hộp 1 vỉ x 10 viên: 1 hộp = 10 viên\n  - Zyrtec 10mg hộp 1 vỉ x 10 viên: 1 hộp = 10 viên\n  - Telfast HD 180mg hộp 3 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Telfast HD 180mg hộp 3 vỉ x 10 viên: 1 hộp = 30 viên\n  - Hagifen 400mg DHG hộp 10 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Hagifen 400mg DHG hộp 10 vỉ x 10 viên: 1 hộp = 100 viên\n  - Enervon hộp 10 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Enervon hộp 10 vỉ x 10 viên: 1 hộp = 100 viên\n  - Savi Losartan 50mg hộp 3 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Savi Losartan 50mg hộp 3 vỉ x 10 viên: 1 hộp = 30 viên\n  - Air-X 80mg viên nhai hộp 10 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Air-X 80mg viên nhai hộp 10 vỉ x 10 viên: 1 hộp = 100 viên\n  - Biosubtyl-II hộp 25 gói: 1 hộp = 25 gói\n  - Berocca Performance viên sủi tuýp 10 viên: 1 tuýp = 10 viên\n  - Prednisolon 5mg Boston chai 500 viên: 1 chai = 500 viên\n  - Bio-acimin Gold men vi sinh hộp 30 gói: 1 hộp = 30 gói\n  - Boganic Traphaco hộp 5 vỉ x 20 viên: 1 vỉ = 20 viên\n  - Boganic Traphaco hộp 5 vỉ x 20 viên: 1 hộp = 100 viên\n  - Calcium Corbière Extra 10ml hộp 30 ống: 1 hộp = 30 ống\n  - Bisolvon 8mg hộp 3 vỉ x 10 viên: 1 vỉ = 10 viên\n  - Bisolvon 8mg hộp 3 vỉ x 10 viên: 1 hộp = 30 viên\n"
+}

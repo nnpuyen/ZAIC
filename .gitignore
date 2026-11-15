@@ -32,3 +32,10 @@ tmp*/
 Thumbs.db
 .vscode/
 .idea/
+
+# Scripts
+start_gemma4.sh
+start_llama.ps1
+start_qwen.ps1
+TRAIN_DATA_QUALITY_REPORT.md
+

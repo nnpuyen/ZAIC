@@ -138,6 +138,10 @@ and expects the `gemma-local` model alias. To reduce inference latency, select
 a remote provider with `--llm-provider` or
 `LLM_PROVIDER`, then set the provider's API key:
 
+The Python data pipeline and DuckDB executor do not allocate GPU memory; local
+VRAM use comes from the model server. The launchers below set bounded context,
+concurrency, and KV cache defaults for local inference.
+
 ```powershell
 $env:LLM_PROVIDER = "openrouter"
 $env:OPENROUTER_API_KEY = "..."
@@ -177,11 +181,13 @@ free tier and Qwen model availability should be checked in the account.
 Before each model call, deterministic retrieval
 includes the full table and column catalog, relevant rulebook sections, resolved
 Gregorian time ranges, and minimal lunar-calendar evidence when required.
-The selected LLM returns a `QueryPlan`; SQL and identifier validation remain local.
+The selected LLM returns a structurally validated `QueryPlan`. The local
+table/column reference validator is disabled by default; DuckDB resolves names
+when it executes the generated SQL.
 
 The LLM planner is the default. The CLI uses `.\outputs` as its default output
 directory. For an input such as `questions.jsonl`, results are written under
-`outputs\questions_answers\`: `answers.json`, `token_usage.jsonl`, and one
+`outputs\questions_answers\`: `answers.jsonl`, `token_usage.jsonl`, and one
 folder per question containing its `answer.json` and `evidence\` files.
 Use `--evidence-dir PATH` to override the per-question evidence root.
 
@@ -362,7 +368,9 @@ Converts a natural-language request into a typed, executable query plan.
 
 Responsible for validating plans, compiling SQL, and executing calculations.
 
-- `_validate()` checks table and column references and operation constraints.
+- `_validate()` checks table and column references and operation constraints
+  when `VALIDATE_PLAN_REFERENCES` is enabled; this check is disabled by default,
+  so DuckDB reports unresolved SQL identifiers during execution.
 - `compile_query()`:
   - quotes identifiers
   - binds filter values as parameters
@@ -431,16 +439,18 @@ Run the pipeline and compare its answers with the reference answers:
 python .\evaluate_questions.py `
   .\train\train\questions.jsonl `
   .\train\train\data `
-  --answers .\train\train\answers.jsonl `
   --output .\outputs `
   --planner llm
 ```
+
+By default, the evaluator reads `answers.jsonl` from the parent directory of
+`data_root`. Use `--answers <path>` to override that location.
 
 The procedure invokes `run_questions.py`, then writes
 `performance.json` with precision, recall, and F1, plus
 `wrong_answers` containing each pipeline output and its correct reference
 record. Both files are written into the same
-`.\outputs\<question-file-name>_answers` directory as `answers.json`.
+`.\outputs\<question-file-name>_answers` directory as `answers.jsonl`.
 Metrics include only questions present in the question file passed to the command.
 
 ## 7. Running the pipeline
@@ -468,12 +478,18 @@ $env:LLM_MODEL = "gemma-local"
 
 The local provider already defaults to `http://localhost:8000/v1` and the
 `gemma-local` model alias. Start the server before running questions. The
-default server context window is 32,768 tokens. To override it, pass
-`-ContextSize` explicitly:
+launcher defaults to a 16,384-token context, one parallel request, automatic
+GPU layer placement across devices, and 8-bit K/V cache to reduce VRAM use.
+To change the context window, pass `-ContextSize` explicitly:
 
 ```powershell
-.\start_llama.ps1 -ContextSize 32768
+.\start_llama.ps1 -ContextSize 16384
 ```
+
+The `-CacheTypeK` and `-CacheTypeV` parameters default to `q8_0`; set both to
+`f16` if the installed llama.cpp build or model does not support quantized KV
+cache. `-GpuLayers` and `-SplitMode` can override automatic layer placement
+and the default multi-GPU layer split.
 
 To select a GGUF model stored elsewhere, pass its path explicitly and keep the
 alias aligned with `LLM_MODEL`:
@@ -491,17 +507,34 @@ a build that supports your hardware. See the
 [vLLM Gemma 4 guide](https://docs.vllm.ai/projects/recipes/en/stable/Google/Gemma4.html)
 for supported builds and hardware notes.
 
-From a WSL2 shell in the project directory, run:
+The weights do not need to be uploaded with the codebase. Set
+`GEMMA4_MODEL_PATH` to the Hugging Face repo ID to let vLLM download the model
+on the Molab machine and cache it there. For a restricted repo, authenticate
+with Hugging Face and provide `HF_TOKEN` as a secret environment variable.
+Point `HF_HOME` to persistent storage if Molab's default cache is temporary.
+The machine needs enough disk space for the model and cache.
+
+From a Molab terminal in the project directory, run:
 
 ```bash
+export GEMMA4_MODEL_PATH="google/gemma-4-12B"
+# Optional, if needed for Hugging Face access:
+# export HF_TOKEN="your-token"
+# Optional, use a persistent disk for downloads/cache:
+# export HF_HOME="/path/to/persistent/hf-cache"
 bash ./start_gemma4.sh
 ```
 
-The launcher serves the local checkpoint on `127.0.0.1:8001` with the model
-name `gemma4-12b-planner`, a 16K context window, and image/audio processing
-disabled. Adjust `GEMMA4_CONTEXT_SIZE` or `GEMMA4_GPU_MEMORY_UTILIZATION` if
-needed for the available GPU memory. Windows applications can reach WSL2
-services through `localhost` on supported Windows versions.
+The launcher also accepts a local model directory (the default is
+`models\gemma-4-12B`). It serves on `127.0.0.1:8001` with the model name
+`gemma4-12b-planner`, a 16K context window, and image/audio processing
+disabled. Its defaults target two GPUs: tensor parallel size 2, one active
+sequence, chunked prefill in 2,048-token batches, and a 0.70 per-GPU memory
+utilization cap. Adjust `GEMMA4_CONTEXT_SIZE`,
+`GEMMA4_GPU_MEMORY_UTILIZATION`, `GEMMA4_TENSOR_PARALLEL_SIZE`,
+`GEMMA4_MAX_NUM_SEQS`, or `GEMMA4_MAX_NUM_BATCHED_TOKENS` for a different
+hardware setup. Windows applications can reach WSL2 services through
+`localhost` on supported Windows versions.
 
 Then choose the new planner preset:
 
@@ -509,6 +542,9 @@ Then choose the new planner preset:
 python .\run_questions.py .\questions_samples.jsonl .\public_test\public_test `
   --planner llm --llm-provider gemma4-local
 ```
+
+The planner defaults to `1024` completion tokens to keep generation bounded.
+Set `LLM_MAX_TOKENS` in the shell running `run_questions.py` to override it.
 
 The provider defaults to `http://localhost:8001/v1` and
 `gemma4-12b-planner`. `LLM_PROVIDER=gemma4-local` selects it by default for
@@ -572,8 +608,18 @@ SQL trace, query result, and `answer.json` are stored under
 
 ### Outputs
 
-- Answer records contain `id`, `type`, `answer`, and `alias`.
-- Unanswerable records additionally contain a `reason`.
+- Answer records contain `id`, `type`, and `answer`; `type` is selected from
+  the query plan's requested result shape (`number`, `percent`, `string`,
+  `date`, `boolean`, `list`, or `table`).
+- A `list` answer is an ordered JSON array of names or numbers. Its order follows
+  the question or, when unspecified, the applicable rulebook default.
+- A `table` answer is an object with `columns` and `rows`; each row is an array
+  whose values correspond positionally to `columns`. During evaluation,
+  columns are matched by normalized name when possible and otherwise by
+  position, while rows are compared as a set. String cells use normalized
+  string matching and numeric cells use numeric tolerance.
+- `unanswerable` and `abstain` records contain `id`, `type`, and a diagnostic
+  `reason`.
 - Schema output contains per-business table/column profiles and ingestion errors.
 - Trace output contains the selected plan and generated SQL parameters.
 

@@ -4,12 +4,19 @@ import re
 import sqlite3
 import unicodedata
 from dataclasses import dataclass, field
+from datetime import timezone
 from pathlib import Path
 from typing import Any
 
 import duckdb
 import pandas as pd
 import yaml
+
+from ..numeric import (
+    NUMBER_SQL_FUNCTION,
+    has_number_format_marker,
+    parse_measure_number,
+)
 
 
 SUPPORTED_SUFFIXES = {".csv", ".xlsx", ".xls", ".sqlite", ".sqlite3", ".db"}
@@ -265,6 +272,12 @@ def _parse_date_series(series: pd.Series) -> pd.Series | None:
 
     numeric = pd.to_numeric(normalized, errors="coerce")
     excel_dates = numeric.between(20_000, 60_000).fillna(False)
+    # Values read from Excel as datetimes become ISO strings above. Parse
+    # year-first values before the locale-aware day-first fallback so dates
+    # such as 2025-03-04 do not silently become 2025-04-03.
+    iso_dates = normalized.str.match(
+        r"^\d{4}[-/]\d{1,2}[-/]\d{1,2}(?:$|[ T])", na=False
+    ) & ~excel_dates
     # Keep the intermediate container object-backed.  With newer pandas
     # versions, Excel/date parsing can produce higher-resolution timestamps
     # (for example datetime64[us]); assigning those into a datetime64[ns]
@@ -274,7 +287,23 @@ def _parse_date_series(series: pd.Series) -> pd.Series | None:
         parsed.loc[excel_dates] = pd.to_datetime(
             numeric.loc[excel_dates], unit="D", origin="1899-12-30", errors="coerce"
         )
-    remaining = ~excel_dates
+    if iso_dates.any():
+        try:
+            parsed.loc[iso_dates] = pd.to_datetime(
+                normalized.loc[iso_dates],
+                yearfirst=True,
+                dayfirst=False,
+                format="mixed",
+                errors="coerce",
+            )
+        except ValueError:
+            parsed.loc[iso_dates] = pd.to_datetime(
+                normalized.loc[iso_dates],
+                yearfirst=True,
+                dayfirst=False,
+                errors="coerce",
+            )
+    remaining = ~(excel_dates | iso_dates)
     if remaining.any():
         try:
             parsed.loc[remaining] = pd.to_datetime(
@@ -285,10 +314,48 @@ def _parse_date_series(series: pd.Series) -> pd.Series | None:
                 normalized.loc[remaining], dayfirst=True, errors="coerce"
             )
     non_null = values.notna() & values.ne("")
-    if not non_null.any() or not parsed.loc[non_null].notna().all():
+    if not non_null.any():
         return None
-    return parsed.map(
-        lambda value: value.date() if hasattr(value, "date") else value
+    parsed_non_null = parsed.loc[non_null].notna()
+    # A date column can contain repeated report headers or a few malformed
+    # cells. Keep the usable dates as timestamps and turn only those invalid
+    # cells into NULL. If most of the column is not date-like, leave it as text
+    # so a mislabeled free-text column is not silently erased.
+    if not parsed_non_null.any() or parsed_non_null.mean() < 0.5:
+        return None
+
+    def as_datetime(value: Any) -> Any:
+        if pd.isna(value):
+            return None
+        if hasattr(value, "to_pydatetime"):
+            return value.to_pydatetime()
+        return value
+
+    datetimes = [as_datetime(value) for value in parsed]
+    has_timezone = any(
+        value is not None
+        and value.tzinfo is not None
+        and value.utcoffset() is not None
+        for value in datetimes
+    )
+    if has_timezone:
+        # Use UTC as the shared representation when a source mixes offsets or
+        # combines offset-aware values with naive values. Naive values in such
+        # a mixed column are interpreted as UTC because the source gives no
+        # offset to apply.
+        datetimes = [
+            value.replace(tzinfo=timezone.utc)
+            if value is not None and (value.tzinfo is None or value.utcoffset() is None)
+            else value.astimezone(timezone.utc)
+            if value is not None
+            else None
+            for value in datetimes
+        ]
+
+    return pd.Series(
+        datetimes,
+        index=series.index,
+        dtype="object",
     )
 
 
@@ -310,31 +377,13 @@ def _infer_column_type(
         if parsed_dates is not None:
             return parsed_dates
 
-    def normalize_number(value: str) -> str:
-        value = value.replace(" ", "").replace("\u00a0", "")
-        comma, dot = value.rfind(","), value.rfind(".")
-        if comma >= 0 and dot >= 0:
-            decimal = "," if comma > dot else "."
-            thousands = "." if decimal == "," else ","
-            return value.replace(thousands, "").replace(decimal, ".")
-        separator = "," if comma >= 0 else ("." if dot >= 0 else None)
-        if separator is None:
-            return value
-        whole, fraction = value.rsplit(separator, 1)
-        # Vietnamese exports commonly use dot thousands and comma decimals;
-        # a three-digit suffix is treated as grouping when there is one mark.
-        if len(fraction) == 3 and whole.lstrip("+-").isdigit():
-            return whole + fraction
-        return whole + "." + fraction
-
-    numeric_text = values.map(normalize_number)
-    numeric = pd.to_numeric(numeric_text, errors="coerce")
+    numeric = pd.to_numeric(values.map(parse_measure_number), errors="coerce")
     all_numeric = numeric.notna().all()
-    has_separator = values.str.contains(r"[,\.]", regex=True).any()
+    has_number_marker = values.map(has_number_format_marker).any()
     is_declared_numeric = normalized_type in {
         "decimal", "float", "number", "numeric", "integer", "int"
     }
-    if all_numeric and (is_declared_numeric or has_separator):
+    if all_numeric and (is_declared_numeric or has_number_marker):
         converted = pd.Series(pd.NA, index=series.index, dtype="Float64")
         converted.loc[values.index] = numeric
         return converted
@@ -362,6 +411,15 @@ class BusinessDatabase:
     tables: dict[str, TableMetadata] = field(default_factory=dict)
     errors: list[dict[str, str]] = field(default_factory=list)
     distinct_values: dict[tuple[str, str], list[Any]] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        self.connection.create_function(
+            NUMBER_SQL_FUNCTION,
+            parse_measure_number,
+            [duckdb.sqltypes.VARCHAR],
+            duckdb.sqltypes.DOUBLE,
+            null_handling="special",
+        )
 
     def close(self) -> None:
         self.connection.close()
@@ -510,7 +568,10 @@ def load_business_data(
     if not root.is_dir():
         raise NotADirectoryError(root)
 
-    database = BusinessDatabase(duckdb.connect(db_path))
+    connection = duckdb.connect(db_path)
+    # Keep comparisons against timezone-aware source timestamps deterministic.
+    connection.execute("SET TimeZone = 'UTC'")
+    database = BusinessDatabase(connection)
     used_names: set[str] = set()
     mapping_path = (
         Path(canonical_mapping_path)

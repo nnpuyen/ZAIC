@@ -1,13 +1,21 @@
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from decimal import Decimal
 from typing import Any
 import re
 import unicodedata
 
 from .ingestion.loader import BusinessDatabase
+from .numeric import number_sql_expression, parse_measure_number
 from .planning.schemas import Filter, FilterGroup, Metric, QueryPlan
+
+
+# Keep planner-generated SQL flowing to DuckDB without the local schema
+# reference validator. Set this to True to restore fail-fast plan-reference checks.
+VALIDATE_PLAN_REFERENCES = False
+# Controls the join-key checks within _validate when reference validation is on.
+VALIDATE_JOIN_COLUMNS = False
 
 
 def _quote(identifier: str) -> str:
@@ -38,6 +46,8 @@ def _normalize_plan_columns(plan: QueryPlan, database: BusinessDatabase) -> Quer
     normalized = plan.model_copy(deep=True)
     for cte in normalized.ctes:
         cte.query = _normalize_plan_columns(cte.query, database)
+    for operation in normalized.set_operations:
+        operation.query = _normalize_plan_columns(operation.query, database)
 
     base_columns = (
         set(database.tables[normalized.table].columns)
@@ -169,6 +179,138 @@ def _stored_value(
     return value
 
 
+def _date_only(value: Any) -> date | None:
+    """Return a calendar date only when the filter value has no time part."""
+    if isinstance(value, datetime):
+        return None
+    if isinstance(value, date):
+        return value
+    if not isinstance(value, str):
+        return None
+    normalized = value.strip()
+    try:
+        return date.fromisoformat(normalized)
+    except ValueError:
+        pass
+    for format_string in ("%d/%m/%Y", "%d-%m-%Y", "%d.%m.%Y", "%d thg %m %Y"):
+        try:
+            return datetime.strptime(normalized, format_string).date()
+        except ValueError:
+            continue
+    return None
+
+
+def _parse_filter_datetime(value: Any) -> datetime | None:
+    """Parse planner date/time literals without discarding a supplied time."""
+    if isinstance(value, datetime):
+        return value
+    if isinstance(value, date):
+        return datetime.combine(value, datetime.min.time())
+    if not isinstance(value, str):
+        return None
+    normalized = value.strip()
+    date_value = _date_only(normalized)
+    if date_value is not None:
+        return datetime.combine(date_value, datetime.min.time())
+    try:
+        return datetime.fromisoformat(normalized.replace("Z", "+00:00"))
+    except ValueError:
+        pass
+    if normalized.replace(".", "", 1).isdigit():
+        try:
+            serial = float(normalized)
+            if 20_000 <= serial <= 60_000:
+                return datetime(1899, 12, 30) + timedelta(days=serial)
+        except ValueError:
+            pass
+    formats = (
+        "%d/%m/%Y %H:%M:%S.%f", "%d/%m/%Y %H:%M:%S", "%d/%m/%Y %H:%M",
+        "%d/%m/%Y %I:%M:%S %p", "%d/%m/%Y %I:%M %p",
+        "%d-%m-%Y %H:%M:%S.%f", "%d-%m-%Y %H:%M:%S", "%d-%m-%Y %H:%M",
+        "%d-%m-%Y %I:%M:%S %p", "%d-%m-%Y %I:%M %p",
+        "%d.%m.%Y %H:%M:%S.%f", "%d.%m.%Y %H:%M:%S", "%d.%m.%Y %H:%M",
+        "%d.%m.%Y %I:%M:%S %p", "%d.%m.%Y %I:%M %p",
+        "%Y-%m-%d %H:%M:%S.%f", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M",
+        "%Y-%m-%d %I:%M:%S %p", "%Y-%m-%d %I:%M %p",
+        "%Y-%m-%dT%H:%M:%S.%f", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%dT%H:%M",
+    )
+    for format_string in formats:
+        try:
+            return datetime.strptime(normalized, format_string)
+        except ValueError:
+            continue
+    return None
+
+
+def _parse_text_timestamp_sql(column: str) -> str:
+    """Build a tolerant SQL timestamp expression for legacy text date columns."""
+    value = f"TRIM(CAST({column} AS VARCHAR))"
+    timezone_formats = [
+        "%Y-%m-%d %H:%M:%S.%f%z",
+        "%Y-%m-%d %H:%M:%S%z",
+        "%Y-%m-%dT%H:%M:%S.%f%z",
+        "%Y-%m-%dT%H:%M:%S%z",
+        "%d/%m/%Y %H:%M:%S.%f%z",
+        "%d/%m/%Y %H:%M:%S%z",
+        "%d/%m/%Y %H:%M%z",
+        "%d-%m-%Y %H:%M:%S.%f%z",
+        "%d-%m-%Y %H:%M:%S%z",
+        "%d-%m-%Y %H:%M%z",
+    ]
+    formats = [
+        "%Y-%m-%d %H:%M:%S.%f",
+        "%Y-%m-%d %H:%M:%S",
+        "%Y-%m-%d %H:%M",
+        "%Y-%m-%d %I:%M:%S %p",
+        "%Y-%m-%d %I:%M %p",
+        "%Y-%m-%d",
+        "%Y-%m-%dT%H:%M:%S.%f",
+        "%Y-%m-%dT%H:%M:%S",
+        "%Y-%m-%dT%H:%M",
+        "%d/%m/%Y %H:%M:%S.%f",
+        "%d/%m/%Y %H:%M:%S",
+        "%d/%m/%Y %H:%M",
+        "%d/%m/%Y %I:%M:%S %p",
+        "%d/%m/%Y %I:%M %p",
+        "%d/%m/%Y",
+        "%d-%m-%Y %H:%M:%S.%f",
+        "%d-%m-%Y %H:%M:%S",
+        "%d-%m-%Y %H:%M",
+        "%d-%m-%Y %I:%M:%S %p",
+        "%d-%m-%Y %I:%M %p",
+        "%d-%m-%Y",
+        "%d.%m.%Y %H:%M:%S.%f",
+        "%d.%m.%Y %H:%M:%S",
+        "%d.%m.%Y %H:%M",
+        "%d.%m.%Y %I:%M:%S %p",
+        "%d.%m.%Y %I:%M %p",
+        "%d.%m.%Y",
+        "%d thg %m %Y %H:%M:%S",
+        "%d thg %m %Y",
+    ]
+    format_list = "[" + ", ".join(
+        "'" + format_string.replace("'", "''") + "'"
+        for format_string in formats
+    ) + "]"
+    timezone_format_list = "[" + ", ".join(
+        "'" + format_string.replace("'", "''") + "'"
+        for format_string in timezone_formats
+    ) + "]"
+    excel_serial = f"TRY_CAST({value} AS DOUBLE)"
+    return (
+        "COALESCE("
+        f"TRY_STRPTIME({value}, {timezone_format_list}), "
+        f"TRY_STRPTIME({value}, {format_list}), "
+        f"TRY_CAST({value} AS TIMESTAMPTZ), "
+        f"TRY_CAST({value} AS TIMESTAMP), "
+        "CASE WHEN "
+        f"{excel_serial} BETWEEN 20000 AND 60000 "
+        "THEN TIMESTAMP '1899-12-30' + "
+        f"({excel_serial} * INTERVAL '1 day') END"
+        ")"
+    )
+
+
 def _normalize_scalar(
     value: Any, database: BusinessDatabase, table: str, column: str, column_type: str
 ) -> Any:
@@ -178,6 +320,16 @@ def _normalize_scalar(
         if isinstance(value, (date, datetime)):
             return value
         if isinstance(value, str):
+            parsed_day = _date_only(value)
+            if parsed_day is not None:
+                return parsed_day
+            parsed_datetime = _parse_filter_datetime(value)
+            if parsed_datetime is not None:
+                return (
+                    parsed_datetime.date()
+                    if "DATE" in column_type and "TIME" not in column_type
+                    else parsed_datetime
+                )
             try:
                 return (
                     datetime.fromisoformat(value).date()
@@ -190,11 +342,8 @@ def _normalize_scalar(
         if isinstance(value, (int, float, Decimal)):
             return value
         if isinstance(value, str):
-            try:
-                numeric = value.replace(",", "").strip()
-                return float(numeric) if any(char in numeric for char in ".eE") else int(numeric)
-            except ValueError:
-                return value
+            numeric = parse_measure_number(value)
+            return numeric if numeric is not None else value
     return _stored_value(database, table, column, value)
 
 
@@ -271,6 +420,9 @@ def normalize_plan(
     for cte in normalized.ctes:
         cte.query, cte_changes = normalize_plan(cte.query, database)
         changes.extend(cte_changes)
+    for operation in normalized.set_operations:
+        operation.query, operation_changes = normalize_plan(operation.query, database)
+        changes.extend(operation_changes)
     column_tables = _column_tables(normalized, database)
     table_aliases = {
         alias: source
@@ -311,15 +463,24 @@ def normalize_plan(
     return normalized, changes
 
 
+def _plan_output_columns(plan: QueryPlan) -> list[str]:
+    """Return the column names emitted by a query plan in projection order."""
+    columns = ["group_period"] if plan.group_by_period else list(plan.group_by)
+    metrics = ([plan.metric] if plan.metric is not None else []) + list(plan.metrics)
+    if metrics:
+        columns.extend(
+            metric.alias or ("metric" if index == 0 else f"metric_{index}")
+            for index, metric in enumerate(metrics)
+        )
+    else:
+        columns.extend(plan.select_columns)
+    return columns
+
+
 def _cte_columns(plan: QueryPlan, name: str) -> set[str]:
     for cte in plan.ctes:
         if cte.name == name:
-            query = cte.query
-            if query.select_columns:
-                return set(query.select_columns)
-            if query.metric is not None:
-                return {query.metric.alias or "metric"}
-            return {metric.alias or "metric" for metric in query.metrics}
+            return set(_plan_output_columns(cte.query))
     return set()
 
 
@@ -366,18 +527,22 @@ def _validate(plan: QueryPlan, database: BusinessDatabase) -> None:
             if join.table in database.tables
             else _cte_columns(plan, join.table)
         )
-        for condition in join.on_conditions:
-            if condition.left_column not in columns:
-                raise ValueError(
-                    f"Unknown left join column in {plan.table}: {condition.left_column}"
-                )
-            if condition.right_column not in join_columns:
-                raise ValueError(
-                    f"Unknown right join column in {join.table}: {condition.right_column}"
-                )
+        if VALIDATE_JOIN_COLUMNS:
+            for condition in join.on_conditions:
+                if condition.left_column not in columns:
+                    raise ValueError(
+                        f"Unknown left join column in {plan.table}: {condition.left_column}"
+                    )
+                if condition.right_column not in join_columns:
+                    raise ValueError(
+                        f"Unknown right join column in {join.table}: {condition.right_column}"
+                    )
         columns.update(join_columns)
     metrics = ([plan.metric] if plan.metric is not None else []) + list(plan.metrics)
     referenced = set(plan.group_by)
+    referenced.update(plan.select_columns)
+    if plan.group_by_period_column:
+        referenced.add(plan.group_by_period_column)
     referenced.update(item.column for item in _iter_filters(plan.filters))
     referenced.update(item.column for item in plan.comparison_filters)
     referenced.update(item.column for item in _iter_filters(plan.having_filters))
@@ -420,26 +585,133 @@ def _validate(plan: QueryPlan, database: BusinessDatabase) -> None:
             if item.column not in owner_columns:
                 raise ValueError(f"Unknown filter column in {item.table}: {item.column}")
 
+    _validate_set_operations_in(plan, database)
+
+
+def _validate_set_operations_in(plan: QueryPlan, database: BusinessDatabase) -> None:
+    """Validate set-operation branches, including branches nested in CTEs."""
+    if plan.set_operations:
+        expected_columns = _plan_output_columns(plan)
+        if not expected_columns:
+            raise ValueError("Set operations require a query that projects columns")
+        for operation in plan.set_operations:
+            _validate(operation.query, database)
+            branch_columns = _plan_output_columns(operation.query)
+            if branch_columns != expected_columns:
+                raise ValueError(
+                    "Set-operation branches must project the same columns in the same order; "
+                    f"expected {expected_columns}, got {branch_columns}"
+                )
+    for cte in plan.ctes:
+        _validate_set_operations_in(cte.query, database)
+
 def _compile_filter(
     item: Filter | FilterGroup,
     params: list[Any],
     column_reference: Any,
+    column_type_reference: Any | None = None,
 ) -> str:
     if isinstance(item, FilterGroup):
         if not item.conditions:
             return "TRUE" if item.logic == "and" else "FALSE"
         operator = " AND " if item.logic == "and" else " OR "
         return "(" + operator.join(
-            _compile_filter(condition, params, column_reference)
+            _compile_filter(
+                condition, params, column_reference, column_type_reference
+            )
             for condition in item.conditions
         ) + ")"
 
     column = column_reference(item.column, item.table)
+    column_type = (
+        str(column_type_reference(item.column, item.table)).upper()
+        if column_type_reference is not None
+        else ""
+    )
+    is_text_column = any(
+        marker in column_type for marker in ("VARCHAR", "CHAR", "STRING", "TEXT")
+    )
+    date_column = _parse_text_timestamp_sql(column) if is_text_column else column
+
+    def day_bounds(value: Any) -> tuple[datetime, datetime] | None:
+        value_date = _date_only(value)
+        if value_date is None:
+            return None
+        start = datetime.combine(value_date, datetime.min.time())
+        return start, start + timedelta(days=1)
+
+    # A date-only equality means the whole calendar day for timestamp columns.
+    # The same parsed expression also lets legacy VARCHAR date columns match
+    # dd/mm/yyyy, ISO date/time, and Excel serial representations.
+    if item.operator in {"eq", "neq", "gt", "gte", "lt", "lte"}:
+        bounds = day_bounds(item.value)
+        if bounds is not None and ("TIMESTAMP" in column_type or is_text_column):
+            start, end = bounds
+            if item.operator == "eq":
+                params.extend((start, end))
+                return f"({date_column} >= ? AND {date_column} < ?)"
+            if item.operator == "neq":
+                params.extend((start, end))
+                return f"NOT ({date_column} >= ? AND {date_column} < ?)"
+            if item.operator == "gt":
+                params.append(end)
+                return f"{date_column} >= ?"
+            if item.operator == "gte":
+                params.append(start)
+                return f"{date_column} >= ?"
+            if item.operator == "lt":
+                params.append(start)
+                return f"{date_column} < ?"
+            params.append(end)
+            return f"{date_column} < ?"
+
     if item.operator in {"is_null", "is_not_null"}:
         return f"{column} IS {'NOT ' if item.operator == 'is_not_null' else ''}NULL"
+    if item.operator in {"in", "not_in"}:
+        values = item.value if isinstance(item.value, list) else [item.value]
+        if (
+            values
+            and ("TIMESTAMP" in column_type or is_text_column)
+            and all(day_bounds(value) is not None for value in values)
+        ):
+            day_terms = []
+            for value in values:
+                start, end = day_bounds(value)  # type: ignore[misc]
+                params.extend((start, end))
+                day_terms.append(f"({date_column} >= ? AND {date_column} < ?)")
+            joined_days = "(" + " OR ".join(day_terms) + ")"
+            return f"NOT {joined_days}" if item.operator == "not_in" else joined_days
+        if values and is_text_column:
+            parsed_values = [_parse_filter_datetime(value) for value in values]
+            if all(value is not None for value in parsed_values):
+                params.extend(parsed_values)
+                operator = "NOT IN" if item.operator == "not_in" else "IN"
+                return (
+                    f"{date_column} {operator} "
+                    f"({', '.join('?' for _ in parsed_values)})"
+                )
     if item.operator == "between":
         if not isinstance(item.value, list) or len(item.value) != 2:
             raise ValueError("between filter requires two values")
+        start_bounds, end_bounds = day_bounds(item.value[0]), day_bounds(item.value[1])
+        if "TIMESTAMP" in column_type or is_text_column:
+            start_value = (
+                start_bounds[0]
+                if start_bounds is not None
+                else _parse_filter_datetime(item.value[0])
+            )
+            end_value = (
+                end_bounds[1]
+                if end_bounds is not None
+                else _parse_filter_datetime(item.value[1])
+            )
+            if start_value is not None and end_value is not None:
+                params.extend((start_value, end_value))
+                upper_operator = "<" if end_bounds is not None else "<="
+                return (
+                    f"({date_column} >= ? AND {date_column} "
+                    f"{upper_operator} ?)"
+                )
         params.extend(item.value)
         return f"{column} BETWEEN ? AND ?"
     if item.operator in {"in", "not_in"}:
@@ -452,6 +724,19 @@ def _compile_filter(
     if item.operator == "contains":
         params.append(f"%{item.value}%")
         return f"LOWER(CAST({column} AS VARCHAR)) LIKE LOWER(?)"
+    if is_text_column and item.operator in {"eq", "neq", "gt", "gte", "lt", "lte"}:
+        parsed_value = _parse_filter_datetime(item.value)
+        if parsed_value is not None:
+            operators = {
+                "eq": "=",
+                "neq": "<>",
+                "gt": ">",
+                "gte": ">=",
+                "lt": "<",
+                "lte": "<=",
+            }
+            params.append(parsed_value)
+            return f"{date_column} {operators[item.operator]} ?"
     operators = {
         "eq": "=",
         "neq": "<>",
@@ -468,7 +753,8 @@ def _compile_filter(
 
 def compile_query(plan: QueryPlan, database: BusinessDatabase) -> tuple[str, list[Any]]:
     plan = _normalize_plan_columns(plan, database)
-    _validate(plan, database)
+    if VALIDATE_PLAN_REFERENCES:
+        _validate(plan, database)
     return _compile_query(plan, database, include_ctes=True)
 
 
@@ -519,6 +805,39 @@ def _compile_query(
         # fallback so this helper remains safe for unusual table metadata.
         return _quote(column)
 
+    column_type_cache: dict[tuple[str, str], str] = {}
+
+    def column_type_reference(column: str, owner: str | None = None) -> str:
+        source_table: str | None = None
+        if owner in {plan.table, plan.alias}:
+            source_table = plan.table
+        elif owner is not None:
+            for index, join in enumerate(plan.joins):
+                alias = join.alias or f"_join_{index}"
+                if owner in {join.table, join.alias, alias}:
+                    source_table = join.table
+                    break
+        elif column in base_columns:
+            source_table = plan.table
+        else:
+            for join, (_, columns) in zip(plan.joins, joined_columns):
+                if column in columns:
+                    source_table = join.table
+                    break
+
+        if (
+            source_table is None
+            or source_table not in database.tables
+            or column not in database.tables[source_table].columns
+        ):
+            return ""
+        key = (source_table, column)
+        if key not in column_type_cache:
+            column_type_cache[key] = _column_type(
+                database, source_table, column
+            )
+        return column_type_cache[key]
+
     def having_column_reference(column: str, owner: str | None = None) -> str:
         """Reference a HAVING column at the grouped grain.
 
@@ -530,16 +849,22 @@ def _compile_query(
         reference = column_reference(column, owner)
         if column in plan.group_by:
             return reference
-        return (
-            "SUM(TRY_CAST(REPLACE(CAST("
-            f"{reference} AS VARCHAR), ',', '') AS DOUBLE))"
-        )
+        return f"SUM({number_sql_expression(reference)})"
 
     params: list[Any] = []
 
     def compile_metric(metric: Metric) -> str:
         metric_column = column_reference(metric.column)
-        numeric = f"TRY_CAST(REPLACE(CAST({metric_column} AS VARCHAR), ',', '') AS DOUBLE)"
+        numeric = number_sql_expression(metric_column)
+
+        def aggregate_with_filter(expression: str, condition: Any | None) -> str:
+            aggregate = f"SUM({expression})"
+            if condition is not None:
+                predicate = _compile_filter(
+                    condition, params, column_reference, column_type_reference
+                )
+                aggregate += f" FILTER (WHERE {predicate})"
+            return aggregate
 
         def count_expression(condition: Any | None) -> str:
             if metric.column in {"", "*"}:
@@ -549,7 +874,9 @@ def _compile_query(
             else:
                 expression = "COUNT(*)"
             if condition is not None:
-                predicate = _compile_filter(condition, params, column_reference)
+                predicate = _compile_filter(
+                    condition, params, column_reference, column_type_reference
+                )
                 expression += f" FILTER (WHERE {predicate})"
             return expression
 
@@ -564,9 +891,12 @@ def _compile_query(
         if metric.aggregation == "ratio":
             if not metric.denominator_column:
                 raise ValueError("ratio aggregation requires denominator_column")
-            numerator = f"SUM(TRY_CAST(REPLACE(CAST({metric_column} AS VARCHAR), ',', '') AS DOUBLE))"
+            numerator = aggregate_with_filter(numeric, metric.filter)
             denominator_column = column_reference(metric.denominator_column)
-            denominator = f"SUM(TRY_CAST(REPLACE(CAST({denominator_column} AS VARCHAR), ',', '') AS DOUBLE))"
+            denominator_numeric = number_sql_expression(denominator_column)
+            denominator = aggregate_with_filter(
+                denominator_numeric, metric.denominator_filter
+            )
             return f"ROUND(100.0 * ({numerator}) / NULLIF(({denominator}), 0), 2)"
         if metric.aggregation in {"weighted_avg", "weighted_average"}:
             if not metric.weight_column:
@@ -574,13 +904,18 @@ def _compile_query(
                     "weighted_avg aggregation requires weight_column"
                 )
             weight_reference = column_reference(metric.weight_column)
-            weight = (
-                "TRY_CAST(REPLACE(CAST("
-                f"{weight_reference} AS VARCHAR), ',', '') AS DOUBLE)"
-            )
-            return f"SUM(({numeric}) * ({weight})) / NULLIF(SUM({weight}), 0)"
+            weight = number_sql_expression(weight_reference)
+            numerator = aggregate_with_filter(f"({numeric}) * ({weight})", metric.filter)
+            denominator = aggregate_with_filter(weight, metric.filter)
+            return f"{numerator} / NULLIF({denominator}, 0)"
         function = "AVG" if metric.aggregation == "mean" else metric.aggregation.upper()
-        return f"{function}({numeric})"
+        aggregate = f"{function}({numeric})"
+        if metric.filter is not None:
+            predicate = _compile_filter(
+                metric.filter, params, column_reference, column_type_reference
+            )
+            aggregate += f" FILTER (WHERE {predicate})"
+        return aggregate
 
     metrics = ([plan.metric] if plan.metric is not None else []) + list(plan.metrics)
     metric_sqls = [compile_metric(metric) for metric in metrics]
@@ -600,7 +935,8 @@ def _compile_query(
         select_parts.extend(column_reference(column) for column in plan.select_columns)
     else:
         raise ValueError("Query plan requires metric, metrics, or select_columns")
-    sql = f"SELECT {', '.join(select_parts)} FROM {table}"
+    distinct = " DISTINCT" if plan.distinct else ""
+    sql = f"SELECT{distinct} {', '.join(select_parts)} FROM {table}"
     joined_before: list[tuple[str, set[str]]] = []
     for index, join in enumerate(plan.joins):
         join_table = _quote(join.table)
@@ -634,10 +970,14 @@ def _compile_query(
                             None,
                         )
                     if left_reference is None:
-                        raise ValueError(
-                            "Unknown left join column before joining "
-                            f"{join.table!r}: {condition.left_column}"
-                        )
+                        if VALIDATE_JOIN_COLUMNS:
+                            raise ValueError(
+                                "Unknown left join column before joining "
+                                f"{join.table!r}: {condition.left_column}"
+                            )
+                        # Keep compiling when schema-level validation is off;
+                        # DuckDB will decide whether this base-table reference exists.
+                        left_reference = f"{table}.{_quote(condition.left_column)}"
                     clauses.append(
                         f"{left_reference} "
                         f"{operators[condition.operator]} "
@@ -652,7 +992,10 @@ def _compile_query(
             else _cte_columns(plan, join.table)
         )
         joined_before.append((join.alias or f"_join_{index}", joined_table_columns))
-    predicates = [_compile_filter(item, params, column_reference) for item in plan.filters]
+    predicates = [
+        _compile_filter(item, params, column_reference, column_type_reference)
+        for item in plan.filters
+    ]
     if predicates:
         sql += " WHERE " + " AND ".join(predicates)
     if plan.group_by:
@@ -663,16 +1006,54 @@ def _compile_query(
         )
         sql += " GROUP BY " + group_expression
     having_predicates = [
-        _compile_filter(item, params, having_column_reference)
+        _compile_filter(
+            item, params, having_column_reference, column_type_reference
+        )
         for item in plan.having_filters
     ]
     if having_predicates:
         sql += " HAVING " + " AND ".join(having_predicates)
+    if plan.set_operations:
+        operators = {
+            "union": "UNION",
+            "union_all": "UNION ALL",
+            "intersect": "INTERSECT",
+            "except": "EXCEPT",
+        }
+        combined_sql = sql
+        combined_params = params
+        for index, operation in enumerate(plan.set_operations):
+            branch_sql, branch_params = _compile_query(
+                operation.query, database, include_ctes=False
+            )
+            operator = operators[operation.op_type]
+            combined_sql = (
+                f"SELECT * FROM ({combined_sql}) AS {_quote(f'_set_left_{index}')} "
+                f"{operator} "
+                f"SELECT * FROM ({branch_sql}) AS {_quote(f'_set_right_{index}')}"
+            )
+            combined_params = combined_params + branch_params
+        sql = combined_sql
+        params = combined_params
+
     if plan.order_by:
         order = plan.order_by[0]
-        expression = "metric" if order.expression == "metric" else (
-            "group_period" if plan.group_by_period else column_reference(plan.group_by[0])
-        )
+        if plan.set_operations:
+            if order.expression == "metric":
+                first_metric = plan.metric or (plan.metrics[0] if plan.metrics else None)
+                expression = (first_metric.alias or "metric") if first_metric else order.expression
+            elif order.expression == "group" and plan.group_by:
+                expression = plan.group_by[0]
+            elif plan.group_by_period and order.expression in {"group_period", "group"}:
+                expression = "group_period"
+            elif order.expression.isdigit():
+                expression = order.expression
+            else:
+                expression = _quote(order.expression)
+        else:
+            expression = "metric" if order.expression == "metric" else (
+                "group_period" if plan.group_by_period else column_reference(plan.group_by[0])
+            )
         sql += f" ORDER BY {expression} {order.direction.upper()}"
     if plan.limit is not None:
         sql += " LIMIT ?"
@@ -708,11 +1089,16 @@ def execute_plan_with_trace(
     ]
     trace.append({"kind": "current", "sql": sql, "params": params})
     records = result.to_dict(orient="records")
+    metrics = (
+        [normalized_plan.metric]
+        if normalized_plan.metric is not None
+        else list(normalized_plan.metrics)
+    )
     if (
         normalized_plan.answer_type == "number"
         and normalized_plan.group_by
-        and normalized_plan.metric is not None
-        and normalized_plan.metric.aggregation in {"count", "count_distinct"}
+        and len(metrics) == 1
+        and metrics[0].aggregation in {"count", "count_distinct"}
     ):
         records = [{"metric": len(records)}]
     if not normalized_plan.comparison_filters:

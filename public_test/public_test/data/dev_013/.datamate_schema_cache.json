@@ -1,0 +1,2129 @@
+{
+  "version": 4,
+  "fingerprint": "4b2022bf2e34af447e179cdd443fbd084d00a2bdede45e3aeb9366226c3e68cb",
+  "schema": {
+    "tables": [
+      {
+        "table": "BanHang_2025_T05_2025",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2025.xlsx",
+        "sheet": "T05-2025",
+        "row_count": 2203,
+        "canonical_name": "BanHang_2025_T05_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 78,
+            "sample_values": [
+              305000.0,
+              190000.0,
+              505000.0,
+              130000.0,
+              55000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 165,
+            "sample_values": [
+              305000.0,
+              190000.0,
+              -10000.0,
+              1010000.0,
+              130000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "bịch",
+              "cái",
+              "lon",
+              "gói",
+              "bộ"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 79,
+            "sample_values": [
+              "tã quần bobby size xxl 44 miếng",
+              "nhiệt kế điện tử microlife mt200",
+              "voucher",
+              "sữa enfagrow a+ neuropro số 3 830g",
+              "tã chéo vải xô sơ sinh gói 10 cái"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 841,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-05-01T00:00:00",
+              "2025-05-02T00:00:00",
+              "2025-05-03T00:00:00",
+              "2025-05-04T00:00:00",
+              "2025-05-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 283,
+            "sample_values": [
+              "đặng thanh thắng",
+              "khách lẻ",
+              "ngô dũng hà",
+              "cao quang bích",
+              "tăng quang đức"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "tại tiệm",
+              "zalo",
+              "sàn tmđt"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "cancel",
+              "huỷ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2025_T06_2025",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2025.xlsx",
+        "sheet": "T06-2025",
+        "row_count": 2199,
+        "canonical_name": "BanHang_2025_T06_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 75,
+            "sample_values": [
+              95000.0,
+              870000.0,
+              45000.0,
+              375000.0,
+              480000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 171,
+            "sample_values": [
+              95000.0,
+              25000.0,
+              870000.0,
+              -190000.0,
+              43000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "chai",
+              "thùng",
+              "set",
+              "lon",
+              "lốc"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 82,
+            "sample_values": [
+              "tắm gội toàn thân d-nee pure 380ml",
+              "phí ship",
+              "miếng lót sơ sinh bobby newborn 1 108 miếng",
+              "voucher",
+              "bao tay bao chân sơ sinh set 3 đôi"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 820,
+            "sample_values": [
+              "ord000842",
+              "ord000843",
+              "ord000844",
+              "ord000845",
+              "ord000846"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-06-01T00:00:00",
+              "2025-06-02T00:00:00",
+              "2025-06-03T00:00:00",
+              "2025-06-04T00:00:00",
+              "2025-06-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 285,
+            "sample_values": [
+              "lâm phong an",
+              "chung bảo quân",
+              "nguyễn đạt an",
+              "khách lẻ",
+              "đặng long trang"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "zalo",
+              "sàn tmđt",
+              "tại tiệm"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "cancel",
+              "huỷ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2025_T07_2025",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2025.xlsx",
+        "sheet": "T07-2025",
+        "row_count": 2339,
+        "canonical_name": "BanHang_2025_T07_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 81,
+            "sample_values": [
+              145000.0,
+              260000.0,
+              240000.0,
+              340000.0,
+              150000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 180,
+            "sample_values": [
+              145000.0,
+              260000.0,
+              -10000.0,
+              25000.0,
+              240000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "bịch",
+              "chai",
+              "lọ",
+              "hộp",
+              "vỉ"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 81,
+            "sample_values": [
+              "miếng lót sơ sinh bobby newborn 1 108 miếng",
+              "sữa dưỡng ẩm cetaphil baby 400ml",
+              "voucher",
+              "phí ship",
+              "vitamin d3 ostelin kids 20ml"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 872,
+            "sample_values": [
+              "ord001662",
+              "ord001663",
+              "ord001664",
+              "ord001665",
+              "ord001666"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-07-01T00:00:00",
+              "2025-07-02T00:00:00",
+              "2025-07-03T00:00:00",
+              "2025-07-04T00:00:00",
+              "2025-07-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 297,
+            "sample_values": [
+              "khách lẻ",
+              "lương dương minh",
+              "hà cường bảo",
+              "nghiêm minh mai",
+              "lương anh thảo"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "zalo",
+              "tại tiệm",
+              "sàn tmđt"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "cancel",
+              "huỷ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2025_T08_2025",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2025.xlsx",
+        "sheet": "T08-2025",
+        "row_count": 2269,
+        "canonical_name": "BanHang_2025_T08_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 79,
+            "sample_values": [
+              380000.0,
+              560000.0,
+              63000.0,
+              480000.0,
+              60000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 170,
+            "sample_values": [
+              380000.0,
+              1120000.0,
+              63000.0,
+              -10000.0,
+              480000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 16,
+            "sample_values": [
+              "bịch",
+              "lon",
+              "tuýp",
+              "gói",
+              "hộp"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "tã quần moony size l 44 miếng",
+              "sữa enfamil a+ neuropro số 1 830g",
+              "kem embé 20g",
+              "voucher",
+              "sữa friso gold số 3 850g"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 848,
+            "sample_values": [
+              "ord002534",
+              "ord002535",
+              "ord002536",
+              "ord002537",
+              "ord002538"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-08-01T00:00:00",
+              "2025-08-02T00:00:00",
+              "2025-08-03T00:00:00",
+              "2025-08-04T00:00:00",
+              "2025-08-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 291,
+            "sample_values": [
+              "châu thu tâm",
+              "la phúc an",
+              "khách lẻ",
+              "lưu quang phương",
+              "từ thanh thanh"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "sàn tmđt",
+              "tại tiệm",
+              "zalo"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "cancel",
+              "huỷ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2025_T09_2025",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2025.xlsx",
+        "sheet": "T09-2025",
+        "row_count": 2061,
+        "canonical_name": "BanHang_2025_T09_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 80,
+            "sample_values": [
+              380000.0,
+              340000.0,
+              335000.0,
+              139000.0,
+              545000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 172,
+            "sample_values": [
+              760000.0,
+              340000.0,
+              -30000.0,
+              335000.0,
+              139000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              2.0,
+              1.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 16,
+            "sample_values": [
+              "bịch",
+              "chai",
+              "lon",
+              "hộp",
+              "gói"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 82,
+            "sample_values": [
+              "tã quần moony size l 44 miếng",
+              "tã quần huggies dry size l 68 miếng",
+              "voucher",
+              "tã dán merries size m 64 miếng",
+              "sữa tắm gội johnson's baby 500ml"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 769,
+            "sample_values": [
+              "ord003382",
+              "ord003383",
+              "ord003384",
+              "ord003385",
+              "ord003386"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-09-01T00:00:00",
+              "2025-09-02T00:00:00",
+              "2025-09-03T00:00:00",
+              "2025-09-04T00:00:00",
+              "2025-09-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 264,
+            "sample_values": [
+              "khách lẻ",
+              "thái trung duy",
+              "hà đạt hiếu",
+              "mai cường phong",
+              "la thu huy"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "sàn tmđt",
+              "tại tiệm",
+              "zalo"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "huỷ",
+              "cancel"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2025_T10_2025",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2025.xlsx",
+        "sheet": "T10-2025",
+        "row_count": 2420,
+        "canonical_name": "BanHang_2025_T10_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 80,
+            "sample_values": [
+              145000.0,
+              335000.0,
+              380000.0,
+              588000.0,
+              95000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 178,
+            "sample_values": [
+              145000.0,
+              335000.0,
+              -10000.0,
+              380000.0,
+              588000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "bịch",
+              "lon",
+              "chai",
+              "gói",
+              "hộp"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "miếng lót sơ sinh bobby newborn 1 108 miếng",
+              "tã dán merries size m 64 miếng",
+              "voucher",
+              "tã quần moony size l 44 miếng",
+              "sữa enfamil a+ neuropro số 1 830g"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 885,
+            "sample_values": [
+              "ord004151",
+              "ord004152",
+              "ord004153",
+              "ord004154",
+              "ord004155"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-10-01T00:00:00",
+              "2025-10-02T00:00:00",
+              "2025-10-03T00:00:00",
+              "2025-10-04T00:00:00",
+              "2025-10-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 291,
+            "sample_values": [
+              "doãn dũng sơn",
+              "khách lẻ",
+              "doãn giang duy",
+              "lý giang ngọc",
+              "triệu giang quân"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "tại tiệm",
+              "sàn tmđt",
+              "zalo"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "huỷ",
+              "cancel"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2025_T11_2025",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2025.xlsx",
+        "sheet": "T11-2025",
+        "row_count": 2208,
+        "canonical_name": "BanHang_2025_T11_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 76,
+            "sample_values": [
+              425000.0,
+              505000.0,
+              499000.0,
+              470000.0,
+              120000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 173,
+            "sample_values": [
+              425000.0,
+              505000.0,
+              -10000.0,
+              499000.0,
+              470000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              3.0,
+              2.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "cái",
+              "lon",
+              "bộ",
+              "bịch",
+              "thùng"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "bình sữa comotomo 250ml",
+              "sữa enfagrow a+ neuropro số 3 830g",
+              "voucher",
+              "sữa similac iq số 3 900g",
+              "sữa bầu similac mom 900g"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 812,
+            "sample_values": [
+              "ord005036",
+              "ord005037",
+              "ord005038",
+              "ord005039",
+              "ord005040"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2025-11-01T00:00:00",
+              "2025-11-02T00:00:00",
+              "2025-11-03T00:00:00",
+              "2025-11-04T00:00:00",
+              "2025-11-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 283,
+            "sample_values": [
+              "khách lẻ",
+              "hà bảo minh",
+              "đinh quân hạnh",
+              "tô hà nam",
+              "đàm an thảo"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "sàn tmđt",
+              "tại tiệm",
+              "zalo"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "huỷ",
+              "cancel"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2025_T12_2025",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2025.xlsx",
+        "sheet": "T12-2025",
+        "row_count": 2262,
+        "canonical_name": "BanHang_2025_T12_2025",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 84,
+            "sample_values": [
+              435000.0,
+              395000.0,
+              441000.0,
+              126000.0,
+              285000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 175,
+            "sample_values": [
+              435000.0,
+              790000.0,
+              441000.0,
+              126000.0,
+              -10000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 16,
+            "sample_values": [
+              "lon",
+              "cái",
+              "bịch",
+              "gói",
+              "thùng"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "sữa abbott grow gold 3+ 900g",
+              "sữa nan optipro plus 3 900g",
+              "bình sữa pigeon ppsu cổ rộng 240ml",
+              "yếm ăn dặm silicon có máng",
+              "voucher"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 843,
+            "sample_values": [
+              "ord005848",
+              "ord005849",
+              "ord005850",
+              "ord005851",
+              "ord005852"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2025-12-01T00:00:00",
+              "2025-12-02T00:00:00",
+              "2025-12-03T00:00:00",
+              "2025-12-04T00:00:00",
+              "2025-12-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 302,
+            "sample_values": [
+              "khách lẻ",
+              "hứa minh ngân",
+              "bạch hà hằng",
+              "vương hương ngọc",
+              "đặng thanh thắng"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "zalo",
+              "sàn tmđt",
+              "tại tiệm"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "cancel",
+              "huỷ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2026_T01_2026",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2026.xlsx",
+        "sheet": "T01-2026",
+        "row_count": 2249,
+        "canonical_name": "BanHang_2026_T01_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 80,
+            "sample_values": [
+              150000.0,
+              107000.0,
+              190000.0,
+              395000.0,
+              40000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 170,
+            "sample_values": [
+              150000.0,
+              107000.0,
+              190000.0,
+              395000.0,
+              -10000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "hộp",
+              "cái",
+              "can",
+              "lon",
+              "bộ"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "nước muối sinh lý fysoline hồng hộp 40 ống",
+              "bánh ăn dặm gerber puffs 42g",
+              "nhiệt kế điện tử microlife mt200",
+              "nước giặt xả d-nee 3000ml",
+              "sữa nan optipro plus 3 900g"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 834,
+            "sample_values": [
+              "ord006691",
+              "ord006692",
+              "ord006693",
+              "ord006694",
+              "ord006695"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-01-01T00:00:00",
+              "2026-01-02T00:00:00",
+              "2026-01-03T00:00:00",
+              "2026-01-04T00:00:00",
+              "2026-01-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 304,
+            "sample_values": [
+              "khách lẻ",
+              "trịnh nhung quang",
+              "đỗ giang huy",
+              "đỗ nhung ngọc",
+              "đàm an thảo"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "sàn tmđt",
+              "tại tiệm",
+              "zalo"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "huỷ",
+              "cancel"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2026_T02_2026",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2026.xlsx",
+        "sheet": "T02-2026",
+        "row_count": 2580,
+        "canonical_name": "BanHang_2026_T02_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 80,
+            "sample_values": [
+              340000.0,
+              380000.0,
+              345000.0,
+              145000.0,
+              314000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 187,
+            "sample_values": [
+              340000.0,
+              -10000.0,
+              380000.0,
+              345000.0,
+              145000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 15,
+            "sample_values": [
+              "bịch",
+              "lon",
+              "chai",
+              "bộ",
+              "cái"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "tã quần huggies dry size l 68 miếng",
+              "voucher",
+              "tã quần moony size l 44 miếng",
+              "tã quần huggies dry size xl 62 miếng",
+              "tã dán huggies dry newborn 60 miếng"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 928,
+            "sample_values": [
+              "ord007525",
+              "ord007526",
+              "ord007527",
+              "ord007528",
+              "ord007529"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 28,
+            "sample_values": [
+              "2026-02-01T00:00:00",
+              "2026-02-02T00:00:00",
+              "2026-02-03T00:00:00",
+              "2026-02-04T00:00:00",
+              "2026-02-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 312,
+            "sample_values": [
+              "tô ngọc bích",
+              "hoàng cường phúc",
+              "khách lẻ",
+              "đào hiếu khoa",
+              "phan quang cường"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "tại tiệm",
+              "zalo",
+              "sàn tmđt"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "cancel",
+              "huỷ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2026_T03_2026",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2026.xlsx",
+        "sheet": "T03-2026",
+        "row_count": 2330,
+        "canonical_name": "BanHang_2026_T03_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 81,
+            "sample_values": [
+              435000.0,
+              85000.0,
+              150000.0,
+              540000.0,
+              279000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 169,
+            "sample_values": [
+              435000.0,
+              -10000.0,
+              25000.0,
+              85000.0,
+              150000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 16,
+            "sample_values": [
+              "lon",
+              "chai",
+              "hộp",
+              "cái",
+              "bộ"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "sữa abbott grow gold 3+ 900g",
+              "voucher",
+              "phí ship",
+              "nước rửa bình sữa d-nee 620ml",
+              "bột ăn dặm hipp ngũ cốc 250g"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 860,
+            "sample_values": [
+              "ord008453",
+              "ord008454",
+              "ord008455",
+              "ord008456",
+              "ord008457"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-03-01T00:00:00",
+              "2026-03-02T00:00:00",
+              "2026-03-03T00:00:00",
+              "2026-03-04T00:00:00",
+              "2026-03-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 310,
+            "sample_values": [
+              "hà hà hằng",
+              "khách lẻ",
+              "hứa hoa hoàng",
+              "la thu hiếu",
+              "lương hà trung"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "zalo",
+              "tại tiệm",
+              "sàn tmđt"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "cancel",
+              "huỷ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2026_T04_2026",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2026.xlsx",
+        "sheet": "T04-2026",
+        "row_count": 2215,
+        "canonical_name": "BanHang_2026_T04_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 82,
+            "sample_values": [
+              165500.0,
+              395000.0,
+              252000.0,
+              340000.0,
+              85000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 180,
+            "sample_values": [
+              331000.0,
+              790000.0,
+              252000.0,
+              -10000.0,
+              340000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              2.0,
+              1.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 16,
+            "sample_values": [
+              "chai",
+              "lon",
+              "lọ",
+              "bịch",
+              "hộp"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "dầu tràm huế kim vui 100ml",
+              "sữa nan optipro plus 3 900g",
+              "vitamin d3 ostelin kids 20ml",
+              "voucher",
+              "tã quần huggies dry size l 68 miếng"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 807,
+            "sample_values": [
+              "ord009313",
+              "ord009314",
+              "ord009315",
+              "ord009316",
+              "ord009317"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2026-04-01T00:00:00",
+              "2026-04-02T00:00:00",
+              "2026-04-03T00:00:00",
+              "2026-04-04T00:00:00",
+              "2026-04-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 302,
+            "sample_values": [
+              "hồ hằng thắng",
+              "nguyễn khoa hồng",
+              "phạm cường hằng",
+              "khách lẻ",
+              "tăng loan quang"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "tại tiệm",
+              "zalo",
+              "sàn tmđt"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "cancel",
+              "huỷ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2026_T05_2026",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2026.xlsx",
+        "sheet": "T05-2026",
+        "row_count": 2438,
+        "canonical_name": "BanHang_2026_T05_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 84,
+            "sample_values": [
+              279000.0,
+              40000.0,
+              556500.0,
+              145000.0,
+              314000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 183,
+            "sample_values": [
+              279000.0,
+              80000.0,
+              -10000.0,
+              556500.0,
+              145000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 16,
+            "sample_values": [
+              "cái",
+              "gói",
+              "lon",
+              "bịch",
+              "hộp"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "bình tập uống richell tli 200ml",
+              "khăn sữa cotton 2 lớp gói 10 cái",
+              "voucher",
+              "sữa similac 5g số 2 900g",
+              "miếng lót sơ sinh bobby newborn 1 108 miếng"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 905,
+            "sample_values": [
+              "ord010120",
+              "ord010121",
+              "ord010122",
+              "ord010123",
+              "ord010124"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 31,
+            "sample_values": [
+              "2026-05-01T00:00:00",
+              "2026-05-02T00:00:00",
+              "2026-05-03T00:00:00",
+              "2026-05-04T00:00:00",
+              "2026-05-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 305,
+            "sample_values": [
+              "khách lẻ",
+              "tạ bình an",
+              "đào khánh châu",
+              "nguyễn dương ngọc",
+              "chung dũng châu"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "tại tiệm",
+              "sàn tmđt",
+              "zalo"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "huỷ",
+              "cancel"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "BanHang_2026_T06_2026",
+        "source": "public_test\\public_test\\data\\dev_013\\BanHang_2026.xlsx",
+        "sheet": "T06-2026",
+        "row_count": 2235,
+        "canonical_name": "BanHang_2026_T06_2026",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "ĐG",
+            "type": "DOUBLE",
+            "distinct_count": 78,
+            "sample_values": [
+              524000.0,
+              40000.0,
+              120000.0,
+              545000.0,
+              37000.0
+            ]
+          },
+          {
+            "name": "TT",
+            "type": "DOUBLE",
+            "distinct_count": 181,
+            "sample_values": [
+              1048000.0,
+              40000.0,
+              -10000.0,
+              25000.0,
+              120000.0
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              2.0,
+              1.0,
+              3.0
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 16,
+            "sample_values": [
+              "lon",
+              "gói",
+              "bộ",
+              "lốc",
+              "bịch"
+            ]
+          },
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 83,
+            "sample_values": [
+              "sữa similac iq số 3 900g",
+              "khăn sữa cotton 2 lớp gói 10 cái",
+              "voucher",
+              "phí ship",
+              "bộ body dài tay cotton sơ sinh"
+            ]
+          },
+          {
+            "name": "HĐ",
+            "type": "VARCHAR",
+            "distinct_count": 810,
+            "sample_values": [
+              "ord011025",
+              "ord011026",
+              "ord011027",
+              "ord011028",
+              "ord011029"
+            ]
+          },
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 30,
+            "sample_values": [
+              "2026-06-01T00:00:00",
+              "2026-06-02T00:00:00",
+              "2026-06-03T00:00:00",
+              "2026-06-04T00:00:00",
+              "2026-06-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Khách",
+            "type": "VARCHAR",
+            "distinct_count": 289,
+            "sample_values": [
+              "khách lẻ",
+              "chung chi dương",
+              "ông cường ngọc",
+              "tăng khoa quang",
+              "hồ nhung thanh"
+            ]
+          },
+          {
+            "name": "Kênh",
+            "type": "VARCHAR",
+            "distinct_count": 3,
+            "sample_values": [
+              "zalo",
+              "tại tiệm",
+              "sàn tmđt"
+            ]
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "cancel",
+              "huỷ",
+              "chưa giao",
+              "đang giao"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "QuanLy_DanhMuc",
+        "source": "public_test\\public_test\\data\\dev_013\\QuanLy.xlsx",
+        "sheet": "DanhMuc",
+        "row_count": 77,
+        "canonical_name": "QuanLy_DanhMuc",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Tên hàng",
+            "type": "VARCHAR",
+            "distinct_count": 77,
+            "sample_values": [
+              "sữa similac 5g số 1 900g",
+              "sữa similac 5g số 2 900g",
+              "sữa similac iq số 3 900g",
+              "sữa enfamil a+ neuropro số 1 830g",
+              "sữa enfagrow a+ neuropro số 3 830g"
+            ]
+          },
+          {
+            "name": "Tên gọi khác",
+            "type": "VARCHAR",
+            "distinct_count": 34,
+            "sample_values": [
+              "similac 1, similac số 1",
+              "similac 2, similac số 2",
+              "similac 3, similac iq 3",
+              "enfa 1, enfamil 1",
+              "enfa 3, enfagrow 3"
+            ]
+          },
+          {
+            "name": "Nhóm",
+            "type": "VARCHAR",
+            "distinct_count": 12,
+            "sample_values": [
+              "sữa bột",
+              "bỉm tã",
+              "bình sữa",
+              "ăn dặm",
+              "khăn ướt"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 36,
+            "sample_values": [
+              "similac",
+              "enfamil",
+              "friso",
+              "nan",
+              "vinamilk"
+            ]
+          },
+          {
+            "name": "Số / Size",
+            "type": "VARCHAR",
+            "distinct_count": 11,
+            "sample_values": [
+              "số 1",
+              "số 2",
+              "số 3",
+              "số 4",
+              "số 0"
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 13,
+            "sample_values": [
+              "lon",
+              "bịch",
+              "cái",
+              "hộp",
+              "gói"
+            ]
+          },
+          {
+            "name": "Quy đổi",
+            "type": "VARCHAR",
+            "distinct_count": 12,
+            "sample_values": [
+              "1 thùng = 6 bịch",
+              "1 thùng = 4 bịch",
+              "1 thùng = 12 hộp",
+              "1 lốc = 4 gói; 1 thùng = 24 gói",
+              "1 thùng = 12 chai"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "QuanLy_KhachHang",
+        "source": "public_test\\public_test\\data\\dev_013\\QuanLy.xlsx",
+        "sheet": "KhachHang",
+        "row_count": 420,
+        "canonical_name": "QuanLy_KhachHang",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Tên KH",
+            "type": "VARCHAR",
+            "distinct_count": 420,
+            "sample_values": [
+              "châu thu tâm",
+              "lê quang đạt",
+              "chung phương nhung",
+              "lê nam lan",
+              "đàm anh đức"
+            ]
+          },
+          {
+            "name": "SĐT",
+            "type": "VARCHAR",
+            "distinct_count": 420,
+            "sample_values": [
+              "0980590313",
+              "0977421922",
+              "0919096077",
+              "0931993661",
+              "0798072450"
+            ]
+          },
+          {
+            "name": "Tên bé",
+            "type": "VARCHAR",
+            "distinct_count": 20,
+            "sample_values": [
+              "xoài",
+              "sữa",
+              "bon",
+              "nấm",
+              "sóc"
+            ]
+          },
+          {
+            "name": "Ngày đăng ký",
+            "type": "TIMESTAMP",
+            "distinct_count": 344,
+            "sample_values": [
+              "2024-07-14T00:00:00",
+              "2025-05-22T00:00:00",
+              "2026-06-20T00:00:00",
+              "2025-09-09T00:00:00",
+              "2026-03-01T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Điểm hiện có",
+            "type": "BIGINT",
+            "distinct_count": 263,
+            "sample_values": [
+              35,
+              232,
+              0,
+              336,
+              185
+            ]
+          }
+        ]
+      },
+      {
+        "table": "QuanLy_NhapHang",
+        "source": "public_test\\public_test\\data\\dev_013\\QuanLy.xlsx",
+        "sheet": "NhapHang",
+        "row_count": 1503,
+        "canonical_name": "QuanLy_NhapHang",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 402,
+            "sample_values": [
+              "2025-05-01T00:00:00",
+              "2025-05-10T00:00:00",
+              "2025-05-11T00:00:00",
+              "2025-05-12T00:00:00",
+              "2025-05-14T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Số phiếu",
+            "type": "VARCHAR",
+            "distinct_count": 402,
+            "sample_values": [
+              "pn00001",
+              "pn00002",
+              "pn00003",
+              "pn00004",
+              "pn00005"
+            ]
+          },
+          {
+            "name": "Nhà cung cấp",
+            "type": "VARCHAR",
+            "distinct_count": 5,
+            "sample_values": [
+              "cty phạm giang",
+              "cty đỗ an",
+              "cty lý hiếu",
+              "cty tăng thu",
+              "cty tạ duy"
+            ]
+          },
+          {
+            "name": "Hàng",
+            "type": "VARCHAR",
+            "distinct_count": 77,
+            "sample_values": [
+              "sữa similac 5g số 1 900g",
+              "sữa similac 5g số 2 900g",
+              "sữa similac iq số 3 900g",
+              "sữa enfamil a+ neuropro số 1 830g",
+              "sữa enfagrow a+ neuropro số 3 830g"
+            ]
+          },
+          {
+            "name": "SL",
+            "type": "BIGINT",
+            "distinct_count": 26,
+            "sample_values": [
+              29,
+              24,
+              19,
+              15,
+              4
+            ]
+          },
+          {
+            "name": "ĐVT",
+            "type": "VARCHAR",
+            "distinct_count": 12,
+            "sample_values": [
+              "lon",
+              "thùng",
+              "cái",
+              "hộp",
+              "tuýp"
+            ]
+          },
+          {
+            "name": "Đơn giá",
+            "type": "BIGINT",
+            "distinct_count": 477,
+            "sample_values": [
+              484000,
+              482000,
+              460000,
+              496000,
+              475000
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Thành tiền",
+            "type": "BIGINT",
+            "distinct_count": 850,
+            "sample_values": [
+              14036000,
+              11568000,
+              8740000,
+              9424000,
+              9025000
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Ghi chú",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "nhập đầu kỳ"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "QuanLy_KhuyenMai",
+        "source": "public_test\\public_test\\data\\dev_013\\QuanLy.xlsx",
+        "sheet": "KhuyenMai",
+        "row_count": 10,
+        "canonical_name": "QuanLy_KhuyenMai",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Chương trình",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "giảm 10k cho đơn từ 300k",
+              "giảm 30k mỗi bịch miếng lót sơ sinh bobby newborn 1 108 miếng",
+              "giảm 10k mỗi bịch tã quần huggies dry size xl 62 miếng",
+              "giảm 20k mỗi bịch tã quần huggies dry size l 68 miếng",
+              "giảm 20k mỗi lon sữa friso gold số 3 850g",
+              "giảm 15k mỗi lon sữa enfamil a+ neuropro số 1 830g",
+              "giảm 20k mỗi bịch tã dán merries size m 64 miếng",
+              "giảm 10k mỗi lon sữa abbott grow gold 3+ 900g",
+              "giảm 15k mỗi lon sữa nutifood growplus+ đỏ 900g",
+              "giảm 10k mỗi lon sữa dielac alpha gold số 2 800g"
+            ]
+          },
+          {
+            "name": "Hàng áp dụng",
+            "type": "VARCHAR",
+            "distinct_count": 10,
+            "sample_values": [
+              "tất cả",
+              "miếng lót sơ sinh bobby newborn 1 108 miếng",
+              "tã quần huggies dry size xl 62 miếng",
+              "tã quần huggies dry size l 68 miếng",
+              "sữa friso gold số 3 850g",
+              "sữa enfamil a+ neuropro số 1 830g",
+              "tã dán merries size m 64 miếng",
+              "sữa abbott grow gold 3+ 900g",
+              "sữa nutifood growplus+ đỏ 900g",
+              "sữa dielac alpha gold số 2 800g"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Từ ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 10,
+            "sample_values": [
+              "2025-05-01T00:00:00",
+              "2025-05-21T00:00:00",
+              "2025-07-07T00:00:00",
+              "2025-08-31T00:00:00",
+              "2025-10-11T00:00:00",
+              "2025-11-30T00:00:00",
+              "2026-01-22T00:00:00",
+              "2026-03-03T00:00:00",
+              "2026-04-28T00:00:00",
+              "2026-06-15T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Đến ngày",
+            "type": "TIMESTAMP",
+            "distinct_count": 10,
+            "sample_values": [
+              "2026-06-30T00:00:00",
+              "2025-06-01T00:00:00",
+              "2025-07-22T00:00:00",
+              "2025-09-09T00:00:00",
+              "2025-10-26T00:00:00",
+              "2025-12-14T00:00:00",
+              "2026-02-01T00:00:00",
+              "2026-03-16T00:00:00",
+              "2026-05-09T00:00:00",
+              "2026-06-29T00:00:00"
+            ],
+            "role": "transaction_date"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu dev_013\n\nSổ sách Excel của tiệm mẹ và bé. `BanHang_<năm>.xlsx`: sổ bán hàng, mỗi tháng một sheet, nhóm tiêu đề hai dòng đã được chuẩn hóa thành một dòng phẳng. Mỗi dòng một mặt hàng khách mua; một hoá đơn nhiều dòng cùng số HĐ. Ngay sau các dòng hàng của một hoá đơn có thể có dòng không phải hàng, chỉ ghi HĐ, tên và TT: \"Voucher\" (tiền giảm của hoá đơn từ các chương trình ở sheet KhuyenMai, TT ghi số âm), \"Dùng <n> điểm\" (khách dùng n điểm thành viên, mỗi điểm trừ 100đ, TT ghi số âm), \"Phí ship\" (phí giao hàng khách trả thêm). `QuanLy.xlsx`: danh mục hàng (DanhMuc), khách thành viên (KhachHang), sổ nhập hàng (NhapHang), chương trình khuyến mãi (KhuyenMai), mỗi danh sách một sheet. Sổ không có mã hàng, mã khách: nối qua tên hàng, tên khách.\n\n## File\n- `BanHang_2025.xlsx` (xlsx)\n- `BanHang_2026.xlsx` (xlsx)\n- `QuanLy.xlsx` (xlsx)\n\n## Cột trong `BanHang_2025.xlsx`\n- **ĐG**: đơn giá\n- **TT**: thành tiền của dòng; Voucher, Dùng điểm ghi số âm (trừ vào hoá đơn), Phí ship ghi phí giao\n- **SL**: số lượng (trống ở dòng không phải hàng)\n- **ĐVT**: đơn vị tính\n- **Tên hàng**: tên hàng; dòng không phải hàng ghi Voucher, Dùng <n> điểm hoặc Phí ship\n- **HĐ**: số hoá đơn, ghi ở mọi dòng của hoá đơn kể cả dòng Voucher / Dùng điểm / Phí ship\n- **Ngày**: ngày bán (dòng Voucher / Dùng điểm / Phí ship để trống)\n- **Khách**: tên khách thành viên (Khách lẻ nếu không lưu); dòng không phải hàng để trống\n- **Kênh**: kênh bán: Tại tiệm, Zalo (khách nhắn đặt, tiệm giao), Sàn TMĐT (bán trên sàn thương mại điện tử); dòng không phải hàng để trống\n- **Ghi chú**: ghi chú của đơn; đơn huỷ hoặc đang giao được ghi ở đây, không có cột trạng thái riêng\n\n## Cột trong `BanHang_2026.xlsx`\n- **ĐG**: đơn giá\n- **TT**: thành tiền của dòng; Voucher, Dùng điểm ghi số âm (trừ vào hoá đơn), Phí ship ghi phí giao\n- **SL**: số lượng (trống ở dòng không phải hàng)\n- **ĐVT**: đơn vị tính\n- **Tên hàng**: tên hàng; dòng không phải hàng ghi Voucher, Dùng <n> điểm hoặc Phí ship\n- **HĐ**: số hoá đơn, ghi ở mọi dòng của hoá đơn kể cả dòng Voucher / Dùng điểm / Phí ship\n- **Ngày**: ngày bán (dòng Voucher / Dùng điểm / Phí ship để trống)\n- **Khách**: tên khách thành viên (Khách lẻ nếu không lưu); dòng không phải hàng để trống\n- **Kênh**: kênh bán: Tại tiệm, Zalo (khách nhắn đặt, tiệm giao), Sàn TMĐT (bán trên sàn thương mại điện tử); dòng không phải hàng để trống\n- **Ghi chú**: ghi chú của đơn; đơn huỷ hoặc đang giao được ghi ở đây, không có cột trạng thái riêng\n\n## Cột trong `QuanLy.xlsx`, sheet `DanhMuc`\n- **Tên hàng**: tên hàng\n- **Tên gọi khác**: tên gọi khác hay dùng (sữa, bỉm), nhiều cách cách nhau dấu phẩy\n- **Nhóm**: nhóm hàng\n- **Hãng**: hãng\n- **Số / Size**: số của sữa (theo tuổi) hoặc size (bỉm, núm ti); trống nếu không có\n- **ĐVT**: đơn vị cơ bản\n- **Quy đổi**: quy đổi đơn vị lớn ra ĐVT, vd \"1 thùng = 4 bịch\"; trống nếu chỉ bán theo ĐVT\n\n## Cột trong `QuanLy.xlsx`, sheet `KhachHang`\n- **Tên KH**: tên khách\n- **SĐT**: số điện thoại\n- **Tên bé**: tên ở nhà của bé\n- **Ngày đăng ký**: ngày đăng ký thành viên; chỉ hoá đơn từ ngày này mới tích, dùng điểm\n- **Điểm hiện có**: điểm còn đến hết ngày cuối dữ liệu\n\n## Cột trong `QuanLy.xlsx`, sheet `NhapHang`\n- **Ngày**: ngày nhập\n- **Số phiếu**: mã phiếu nhập\n- **Nhà cung cấp**: nhà cung cấp\n- **Hàng**: tên hàng\n- **SL**: số lượng nhập\n- **ĐVT**: đơn vị nhập\n- **Đơn giá**: giá nhập một đơn vị (theo đơn vị nhập của dòng)\n- **Thành tiền**: tiền nhập của cả dòng\n- **Ghi chú**: ghi chú\n\n## Cột trong `QuanLy.xlsx`, sheet `KhuyenMai`\n- **Chương trình**: tên chương trình\n- **Hàng áp dụng**: hàng áp dụng (Tất cả: mọi hoá đơn đủ điều kiện ghi ở tên)\n- **Từ ngày**: từ ngày\n- **Đến ngày**: đến ngày (tính cả ngày này)\n\n## Quy ước\n- Dữ liệu có đến hết 30/06/2026.\n- **Nhập hàng**: **Đơn giá** là giá nhập một đơn vị, theo đơn vị nhập của dòng; **Thành tiền** là tiền nhập của cả dòng.\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng, hệ số quy đổi ở `QuanLy.xlsx`.\n"
+}

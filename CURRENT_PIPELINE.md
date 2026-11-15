@@ -79,6 +79,11 @@ Business files + business documents
    The selected planner returns a `QueryPlan` describing the table, metrics,
    filters, joins, grouping, ordering, and answer type.
 
+   `datamate/planning/plan_extraction.py` accepts common response envelopes and
+   formatting, extracts the plan, and validates it against the `QueryPlan`
+   schema. Conflicting or incomplete candidates are rejected rather than
+   guessed.
+
    - `--planner llm` uses an OpenAI-compatible endpoint. Supported provider
      presets are `local`, `openrouter`, `huggingface`, `groq`, and `gemini`.
    - `--planner heuristic` uses the deterministic offline planner.
@@ -101,8 +106,14 @@ Business files + business documents
 
 8. **Write the result**
 
-   Each question produces either an answer or an explicit `unanswerable`
-   result. A failure for one question does not stop the remaining questions.
+   Answered questions are written with `id`, `type`, and `answer`; `type` comes
+   from the query plan. Failed questions are written with `id`, `type`, and a
+   diagnostic `reason`; non-finite scalar results and empty result sets are
+   surfaced as `abstain` instead of being serialized as nulls or empty answers.
+   A failure for one question does not stop the remaining questions.
+   `list` and `table` answers are collections. `number`, `percent`, `string`,
+   `date`, and `boolean` answers are always one value; plans that cannot
+   produce that shape are rejected.
    Database connections are closed after processing.
 
 ## Main entry points
@@ -131,7 +142,7 @@ When the CLI receives an output directory, results are written under:
 ```text
 outputs/
 └── <question-file>_answers/
-    ├── answers.json
+    ├── answers.jsonl
     ├── token_usage.jsonl
     └── <question-id>/
         ├── answer.json
@@ -142,7 +153,6 @@ outputs/
             ├── 04_planner_response.txt       (LLM runs, when available)
             ├── 05_planner_plan.json          (when available)
             ├── 06_validated_plan.json
-            ├── 06_completed_plan.json        (when the plan changed)
             ├── 07_query_trace.json
             ├── 07_query_*_*.sql
             ├── 08_query_result.json
@@ -155,11 +165,12 @@ which business documents are used.
 
 ## Important boundaries
 
-- The planner suggests a plan; local validation and SQL execution are
-  authoritative.
+- Pydantic checks the QueryPlan structure. The local table/column reference
+  validator is disabled by default; generated SQL is checked by DuckDB when it
+  executes.
 - The pipeline uses only schema/context information for planning, not raw table
   rows in the prompt.
-- Ambiguous table, column, status, or join choices are rejected instead of
-  guessed.
+- Plans must still reference CTE output aliases through a CTE in the `FROM` or
+  `JOIN` list; defining a CTE alone does not make its columns available.
 - Evidence files are the best place to debug an answer: inspect the retrieved
-  context, completed plan, SQL trace, and query result in that order.
+  context, validated plan, SQL trace, and query result in that order.

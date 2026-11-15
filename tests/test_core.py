@@ -24,8 +24,11 @@ def test_format_answer_uses_declared_answer_type_shape() -> None:
     assert _format_answer("number", rows, scalar_plan) == 2.08
     assert _format_answer("percent", rows, scalar_plan) == 2.08
     assert _format_answer("boolean", [{"metric": True}], scalar_plan) is True
-    assert _format_answer("list", rows, scalar_plan) == rows
-    assert _format_answer("table", rows, scalar_plan) == rows
+    assert _format_answer("list", rows, scalar_plan) == [2.08]
+    assert _format_answer("table", rows, scalar_plan) == {
+        "columns": ["metric"],
+        "rows": [[2.08]],
+    }
     assert _format_answer("string", [{"value": "done"}], scalar_plan) == "done"
     assert _format_answer("string", [{"value": "done", "metric": 1}], scalar_plan) == "done"
 
@@ -225,6 +228,24 @@ def test_compiler_binds_values_and_executes() -> None:
     assert "?" in sql
     assert params == ["2026-03-01", "2026-03-02"]
     assert execute_plan(plan, database) == [{"metric": 30}]
+
+
+def test_compile_query_skips_local_unknown_column_validation() -> None:
+    connection = duckdb.connect(":memory:")
+    connection.execute('CREATE TABLE "sales" ("amount" INTEGER)')
+    database = BusinessDatabase(
+        connection,
+        {"sales": TableMetadata("sales", "test", None, 0, ["amount"])},
+    )
+    plan = QueryPlan(
+        table="sales",
+        metric=Metric(column="missing_metric", aggregation="sum"),
+    )
+
+    sql, _ = compile_query(plan, database)
+
+    assert '"missing_metric"' in sql
+    connection.close()
 
 
 def test_compiler_supports_weighted_average() -> None:

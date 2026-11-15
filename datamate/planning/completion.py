@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import re
 import unicodedata
+import calendar
 from dataclasses import dataclass, field
+from datetime import date, datetime
+from pathlib import Path
 from typing import Any
 
 from ..ingestion.loader import BusinessDatabase
@@ -32,6 +35,13 @@ _STATUS_CLASSES = {
     "completed": ("hoan thanh", "completed", "done", "da giao"),
     "shipping": ("dang giao", "shipping", "delivering"),
 }
+_DATE_NAME_HINTS = (
+    "date", "datetime", "time", "created", "updated", "ngay", "thoi gian", "gio",
+)
+_COMPARISON_HINTS = (
+    "cung ky", "thang truoc", "cao hay thap hon", "hon hay kem",
+    "so sanh", "tang hay giam", "chenh lech", "so voi",
+)
 
 
 def _fold(value: str) -> str:
@@ -73,6 +83,7 @@ class CompletionResult:
     changes: list[dict[str, Any]] = field(default_factory=list)
     status: str = "unchanged"
     reason: str | None = None
+    fatal: bool = False
 
 
 def _schema_tables(context: dict[str, Any]) -> list[dict[str, Any]]:
@@ -142,11 +153,20 @@ def _plan_cte_columns(plan: QueryPlan, name: str) -> list[dict[str, Any]]:
         if cte.name != name:
             continue
         query = cte.query
-        if query.select_columns:
-            return [{"name": column} for column in query.select_columns]
+        columns = (
+            [{"name": "group_period"}]
+            if query.group_by_period
+            else [{"name": column} for column in query.group_by]
+        )
         metrics = ([query.metric] if query.metric is not None else []) + list(query.metrics)
-        return [{"name": metric.alias or ("metric" if index == 0 else f"metric_{index}")}
-                for index, metric in enumerate(metrics)]
+        if metrics:
+            columns.extend(
+                {"name": metric.alias or ("metric" if index == 0 else f"metric_{index}")}
+                for index, metric in enumerate(metrics)
+            )
+        else:
+            columns.extend({"name": column} for column in query.select_columns)
+        return columns
     return []
 
 
@@ -212,6 +232,122 @@ def _needs_revenue_status_exclusion(question: str) -> bool:
     return any(term in folded for term in _REVENUE_HINTS)
 
 
+def _metric_filter_present(metric: Metric) -> bool:
+    return metric.filter is not None
+
+
+def _percentage_count_pair(plan: QueryPlan) -> tuple[Metric, Metric] | None:
+    """Identify a numerator and denominator in a two-count percentage plan."""
+    if plan.answer_type != "percent" or plan.group_by or plan.group_by_period:
+        return None
+    metrics = ([plan.metric] if plan.metric is not None else []) + list(plan.metrics)
+    if len(metrics) != 2:
+        return None
+
+    numerator, denominator = metrics
+    count_types = {"count", "count_distinct"}
+    if (
+        numerator.aggregation not in count_types
+        or denominator.aggregation not in count_types
+        or numerator.column != denominator.column
+        or (numerator.aggregation == "count_distinct" or numerator.distinct)
+        != (denominator.aggregation == "count_distinct" or denominator.distinct)
+    ):
+        return None
+
+    # Prefer explicit conditional-count structure. Aliases are a fallback for
+    # planners that label the pair but omit the metric-level filters.
+    first_has_filter = _metric_filter_present(metrics[0])
+    second_has_filter = _metric_filter_present(metrics[1])
+    if first_has_filter != second_has_filter:
+        numerator, denominator = (metrics[0], metrics[1]) if first_has_filter else (metrics[1], metrics[0])
+        if not _metric_filter_present(numerator):
+            return None
+        return numerator, denominator
+
+    numerator_hints = ("cancel", "huy", "return", "tra", "numerator")
+    denominator_hints = ("total", "tong", "denominator", "all", "tat ca")
+    first_name = _fold(metrics[0].alias or "")
+    second_name = _fold(metrics[1].alias or "")
+    first_is_num = any(hint in first_name for hint in numerator_hints)
+    second_is_num = any(hint in second_name for hint in numerator_hints)
+    first_is_den = any(hint in first_name for hint in denominator_hints)
+    second_is_den = any(hint in second_name for hint in denominator_hints)
+    if first_is_num and second_is_den:
+        return metrics[0], metrics[1]
+    if second_is_num and first_is_den:
+        return metrics[1], metrics[0]
+    return None
+
+
+def _align_answer_shape(plan: QueryPlan, changes: list[dict[str, Any]]) -> str | None:
+    """Make scalar plans produce one target value, or explain the mismatch."""
+    metrics = ([plan.metric] if plan.metric is not None else []) + list(plan.metrics)
+
+    pair = _percentage_count_pair(plan)
+    if pair is not None:
+        numerator, denominator = pair
+        plan.metric = Metric(
+            column=numerator.column,
+            aggregation="percentage",
+            alias="metric",
+            distinct=(
+                numerator.aggregation == "count_distinct" or numerator.distinct
+            ),
+            filter=numerator.filter,
+            denominator_filter=denominator.filter,
+        )
+        plan.metrics = []
+        metrics = [plan.metric]
+        changes.append({
+            "kind": "answer_shape",
+            "reason": "percentage_counts_collapsed_to_scalar_metric",
+            "numerator_filter": numerator.filter is not None,
+            "denominator_filter": denominator.filter is not None,
+        })
+
+    if plan.answer_type in {"list", "table"}:
+        return None
+
+    if len(metrics) > 1:
+        return (
+            f"Scalar answer type {plan.answer_type!r} requires one metric; "
+            f"the plan contains {len(metrics)}"
+        )
+
+    is_group_count = (
+        plan.answer_type == "number"
+        and len(metrics) == 1
+        and metrics[0].aggregation in {"count", "count_distinct"}
+    )
+    if plan.group_by or plan.group_by_period:
+        # A single ranked result is scalar. Number plans that count distinct
+        # groups are already reduced to one count by the executor.
+        if plan.limit != 1 and not is_group_count:
+            return (
+                f"Scalar answer type {plan.answer_type!r} cannot use grouping "
+                "unless the plan selects one result"
+            )
+    if not metrics:
+        if plan.answer_type in {"number", "percent"} and plan.group_by:
+            return f"Answer type {plan.answer_type!r} requires a numeric metric, not a grouped label"
+        if not plan.group_by and len(plan.select_columns) != 1:
+            return "A scalar selection plan must return exactly one selected column"
+        if plan.limit != 1 and not is_group_count:
+            return "A scalar selection plan must limit its result to one value"
+
+    if plan.answer_type == "string":
+        target_columns = list(dict.fromkeys([*plan.group_by, *plan.select_columns]))
+        if plan.group_by_period:
+            target_columns.insert(0, "group_period")
+        if len(target_columns) > 1:
+            return "A string answer must select exactly one target column"
+        if (plan.group_by or not metrics) and plan.limit != 1:
+            return "A string answer must limit its plan to one selected value"
+
+    return None
+
+
 def _status_column(columns: list[dict[str, Any]]) -> dict[str, Any] | None:
     role_matches = _role_columns(columns, "status")
     if len(role_matches) == 1:
@@ -273,6 +409,453 @@ def _iter_filters(items: list[Filter | FilterGroup]) -> list[Filter]:
 
 def _has_column_filter(items: list[Filter | FilterGroup], column: str) -> bool:
     return any(item.column == column for item in _iter_filters(items))
+
+
+def _is_date_column(column: dict[str, Any]) -> bool:
+    return column.get("role") == "transaction_date" or any(
+        hint in _fold(str(column.get(key, "")))
+        for key in ("name", "canonical_name", "definition")
+        for hint in _DATE_NAME_HINTS
+    )
+
+
+def _date_column_for_plan(
+    plan: QueryPlan, columns: list[dict[str, Any]], question: str
+) -> str | None:
+    date_columns = [column for column in columns if _is_date_column(column)]
+    names = {str(column.get("name")) for column in date_columns if column.get("name")}
+    # Prefer a date field the planner already filtered. This usually captures
+    # the transaction date while allowing a separate time-of-day predicate.
+    existing = [
+        item.column
+        for item in [*_iter_filters(plan.filters), *_iter_filters(plan.comparison_filters)]
+        if item.column in names
+    ]
+    if existing:
+        return existing[0]
+
+    role_match = _best_role_column(columns, "transaction_date", question)
+    if role_match is not None:
+        return role_match
+    if len(date_columns) == 1:
+        return str(date_columns[0]["name"])
+
+    # Prefer invoice/order/sale dates over creation or update timestamps when
+    # the question only supplies a relative period such as "last week".
+    scored: list[tuple[int, str]] = []
+    for column in date_columns:
+        name = _fold(" ".join(str(column.get(key, "")) for key in ("name", "definition")))
+        score = 0
+        if any(term in name for term in ("ngay dat hang", "ngay hoa don", "ngay giao dich", "transaction date", "order date")):
+            score += 3
+        if any(term in name for term in ("gio tao", "created", "updated")):
+            score -= 2
+        scored.append((score, str(column["name"])))
+    scored.sort(reverse=True)
+    if scored and scored[0][0] > 0 and (len(scored) == 1 or scored[0][0] > scored[1][0]):
+        return scored[0][1]
+    return None
+
+
+def _is_comparison_question(question: str) -> bool:
+    folded = _fold(question)
+    return any(hint in folded for hint in _COMPARISON_HINTS)
+
+
+def _parsed_date(value: Any) -> date | None:
+    if isinstance(value, datetime):
+        return value.date()
+    if isinstance(value, date):
+        return value
+    if isinstance(value, str):
+        try:
+            return date.fromisoformat(value[:10])
+        except ValueError:
+            return None
+    return None
+
+
+def _is_full_day_window(item: Filter) -> bool:
+    """Recognize planner-added calendar windows, not hour-of-day filters."""
+    values = item.value if isinstance(item.value, list) else [item.value]
+    if item.operator == "between" and len(values) == 2:
+        parsed = [_parsed_date(value) for value in values]
+        if None in parsed:
+            return False
+        raw_values = [str(value) for value in values]
+        return all(
+            len(raw) <= 10 or raw[10:].strip(" T0:") == ""
+            for raw in raw_values
+        )
+    if item.operator in {"eq", "gte", "gt", "lte", "lt"} and len(values) == 1:
+        raw = str(values[0])
+        return _parsed_date(values[0]) is not None and (
+            len(raw) <= 10 or raw[10:].strip(" T0:") == ""
+        )
+    return False
+
+
+def _reanchor_time_window(
+    item: Filter, date_range: tuple[str, str]
+) -> list[Any] | None:
+    if item.operator != "between" or not isinstance(item.value, list) or len(item.value) != 2:
+        return None
+    parsed: list[datetime] = []
+    for value in item.value:
+        if isinstance(value, datetime):
+            parsed.append(value)
+            continue
+        if not isinstance(value, str):
+            return None
+        try:
+            parsed.append(datetime.fromisoformat(value.replace("Z", "+00:00")))
+        except ValueError:
+            return None
+    if all(value.time().replace(tzinfo=None) == datetime.min.time() for value in parsed):
+        return None
+    anchor = date.fromisoformat(date_range[0])
+    original_anchor = parsed[0].date()
+    result: list[Any] = []
+    for value, raw in zip(parsed, item.value):
+        day_offset = (value.date() - original_anchor).days
+        shifted = datetime.combine(anchor.fromordinal(anchor.toordinal() + day_offset), value.time())
+        if value.tzinfo is not None:
+            shifted = shifted.replace(tzinfo=value.tzinfo)
+        result.append(shifted if isinstance(raw, datetime) else shifted.isoformat())
+    return result
+
+
+def _column_mentioned(question: str, column: dict[str, Any]) -> bool:
+    folded_question = _fold(question)
+    candidates = [
+        column.get("name"), column.get("canonical_name"), column.get("definition"),
+        *(column.get("aliases") or [] if isinstance(column.get("aliases"), list) else []),
+    ]
+    return any(
+        (folded := _fold(str(candidate))).strip()
+        and len(folded) >= 5
+        and folded in folded_question
+        for candidate in candidates
+        if candidate
+    )
+
+
+def _canonicalize_question_date(
+    plan: QueryPlan,
+    question: str,
+    date_range: tuple[str, str] | None,
+    columns: list[dict[str, Any]],
+    changes: list[dict[str, Any]],
+) -> str | None:
+    """Replace conflicting planner calendar windows with the resolved window."""
+    if date_range is None or _is_comparison_question(question):
+        return None
+    target = _date_column_for_plan(plan, columns, question)
+    if target is None:
+        return None
+
+    date_columns = {
+        str(column["name"]): column
+        for column in columns
+        if column.get("name") and _is_date_column(column)
+    }
+    replaced = 0
+    removed: list[str] = []
+    reanchored: list[str] = []
+
+    def rewrite(items: list[Filter | FilterGroup], inside_or: bool = False) -> list[Filter | FilterGroup]:
+        nonlocal replaced
+        result: list[Filter | FilterGroup] = []
+        for item in items:
+            if isinstance(item, FilterGroup):
+                nested = rewrite(item.conditions, inside_or or item.logic == "or")
+                if nested:
+                    item.conditions = nested
+                    result.append(item)
+                continue
+            if item.column == target:
+                if inside_or:
+                    result.append(item)
+                    continue
+                item.operator = "between"
+                item.value = list(date_range)
+                replaced += 1
+                continue
+            column = date_columns.get(item.column)
+            shifted_values = (
+                _reanchor_time_window(item, date_range)
+                if column is not None and item.column != target
+                else None
+            )
+            if shifted_values is not None and not _column_mentioned(question, column):
+                item.value = shifted_values
+                reanchored.append(item.column)
+            if (
+                not inside_or
+                and column is not None
+                and item.column != target
+                and _is_full_day_window(item)
+                and not _column_mentioned(question, column)
+            ):
+                removed.append(item.column)
+                continue
+            result.append(item)
+        return result
+
+    plan.filters = rewrite(plan.filters)  # type: ignore[assignment]
+    plan.comparison_filters = [
+        item for item in rewrite(plan.comparison_filters) if isinstance(item, Filter)
+    ]
+    if replaced == 0:
+        plan.filters.append(
+            Filter(column=target, operator="between", value=list(date_range))
+        )
+    changes.append({
+        "kind": "filter",
+        "reason": "canonical_question_date_range",
+        "column": target,
+        "operator": "between",
+        "value": list(date_range),
+        "replaced_filters": replaced,
+        "removed_conflicting_date_columns": sorted(set(removed)),
+        "reanchored_time_columns": sorted(set(reanchored)),
+    })
+    return target
+
+
+def _table_period(metadata: Any) -> tuple[date, date] | None:
+    labels = " ".join(
+        str(value)
+        for value in (
+            getattr(metadata, "table", ""),
+            Path(str(getattr(metadata, "source", ""))).stem,
+            getattr(metadata, "sheet", "") or "",
+        )
+    )
+    month_match = re.search(
+        r"(?:thang|month|t)[ _./-]*0?([1-9]|1[0-2])[ _./-]*(20\d{2})",
+        labels,
+        flags=re.IGNORECASE,
+    )
+    if month_match is None:
+        month_match = re.search(
+            r"(20\d{2})[ _./-]*(?:thang|month|t)[ _./-]*0?([1-9]|1[0-2])",
+            labels,
+            flags=re.IGNORECASE,
+        )
+        if month_match:
+            year, month = int(month_match.group(1)), int(month_match.group(2))
+        else:
+            year_match = re.search(r"(?<!\d)(20\d{2})(?!\d)", labels)
+            if year_match is None:
+                return None
+            year = int(year_match.group(1))
+            return date(year, 1, 1), date(year, 12, 31)
+    else:
+        month, year = int(month_match.group(1)), int(month_match.group(2))
+    return date(year, month, 1), date(year, month, calendar.monthrange(year, month)[1])
+
+
+def _table_family(metadata: Any) -> str:
+    label = str(getattr(metadata, "table", "")).casefold()
+    label = re.sub(
+        r"(?:thang|month|t)[ _./-]*0?(?:[1-9]|1[0-2])[ _./-]*20\d{2}",
+        " ", label,
+    )
+    label = re.sub(r"20\d{2}[ _./-]*(?:thang|month|t)[ _./-]*0?(?:[1-9]|1[0-2])", " ", label)
+    label = re.sub(r"20\d{2}", " ", label)
+    return re.sub(r"[^a-z0-9]+", "", label)
+
+
+def _observed_period(
+    database: BusinessDatabase, table: str, column: str
+) -> tuple[date, date] | None:
+    quote = lambda value: '"' + value.replace('"', '""') + '"'
+    try:
+        start, end = database.connection.execute(
+            f"SELECT MIN(TRY_CAST({quote(column)} AS DATE)), "
+            f"MAX(TRY_CAST({quote(column)} AS DATE)) FROM {quote(table)}"
+        ).fetchone()
+    except Exception:
+        return None
+    parsed_start, parsed_end = _parsed_date(start), _parsed_date(end)
+    if parsed_start is None or parsed_end is None:
+        return None
+    return parsed_start, parsed_end
+
+
+def _ranges_overlap(
+    period: tuple[date, date], bounds: tuple[date | None, date | None]
+) -> bool:
+    start, end = bounds
+    period_start, period_end = period
+    lower = start or end or date.min
+    upper = end or start or date.max
+    return period_start <= upper and period_end >= lower
+
+
+def _filter_date_bounds(
+    filters: list[Filter | FilterGroup], column: str
+) -> tuple[date | None, date | None] | None:
+    bounds: list[tuple[date | None, date | None]] = []
+    for item in _iter_filters(filters):
+        if item.column != column:
+            continue
+        values = item.value if isinstance(item.value, list) else [item.value]
+        if item.operator == "between" and len(values) == 2:
+            bounds.append((_parsed_date(values[0]), _parsed_date(values[1])))
+        elif item.operator == "eq" and values:
+            value = _parsed_date(values[0])
+            bounds.append((value, value))
+        elif item.operator in {"gt", "gte"} and values:
+            bounds.append((_parsed_date(values[0]), None))
+        elif item.operator in {"lt", "lte"} and values:
+            bounds.append((None, _parsed_date(values[0])))
+    if not bounds:
+        return None
+    starts = [start for start, _ in bounds if start is not None]
+    ends = [end for _, end in bounds if end is not None]
+    return (max(starts) if starts else None, min(ends) if ends else None)
+
+
+def _period_matches(
+    period: tuple[date, date],
+    bounds: tuple[date | None, date | None],
+    *,
+    allow_partial: bool,
+) -> bool:
+    start, end = bounds
+    period_start, period_end = period
+    if allow_partial:
+        lower = start or end or date.min
+        upper = end or start or date.max
+        return period_start <= upper and period_end >= lower
+    return (start is None or period_start <= start) and (end is None or period_end >= end)
+
+
+def _repair_plan_source_coverage(
+    plan: QueryPlan,
+    database: BusinessDatabase,
+    changes: list[dict[str, Any]],
+    *,
+    allow_partial: bool = False,
+) -> str | None:
+    """Repoint a period table only when one compatible source covers its dates."""
+    if plan.table in database.tables:
+        metadata = database.tables[plan.table]
+        columns = _columns_for({}, database, plan.table)
+        date_names = {
+            str(column["name"])
+            for column in columns
+            if column.get("name") and _is_date_column(column)
+        }
+        filter_names = [
+            item.column
+            for item in _iter_filters(plan.filters)
+            if item.column in date_names
+        ]
+        if not filter_names:
+            filter_names = [
+                item.column
+                for item in _iter_filters(plan.comparison_filters)
+                if item.column in date_names
+            ]
+        if filter_names:
+            date_column = filter_names[0]
+            bounds = _filter_date_bounds(plan.filters, date_column)
+            if bounds is None:
+                bounds = _filter_date_bounds(plan.comparison_filters, date_column)
+            period = _table_period(metadata)
+            closed_range = (
+                bounds is not None
+                and bounds[0] is not None
+                and bounds[1] is not None
+            )
+            if closed_range:
+                partial = allow_partial or bool(plan.set_operations)
+                observed = period or _observed_period(
+                    database, metadata.table, date_column
+                )
+                current_matches = (
+                    _period_matches(period, bounds, allow_partial=partial)
+                    if period is not None
+                    else observed is None or _ranges_overlap(observed, bounds)
+                )
+            else:
+                partial = allow_partial or bool(plan.set_operations)
+                observed = period
+                current_matches = True
+
+            if closed_range and not current_matches:
+                candidates = []
+                for candidate in database.tables.values():
+                    if (
+                        candidate.table == metadata.table
+                        or _table_family(candidate) != _table_family(metadata)
+                        or set(candidate.columns) != set(metadata.columns)
+                    ):
+                        continue
+                    candidate_period = _table_period(candidate)
+                    is_partition_label = candidate_period is not None
+                    if candidate_period is None:
+                        candidate_period = _observed_period(
+                            database, candidate.table, date_column
+                        )
+                    if candidate_period is None:
+                        continue
+                    candidate_matches = (
+                        _period_matches(
+                            candidate_period, bounds, allow_partial=partial
+                        )
+                        if is_partition_label
+                        else _ranges_overlap(candidate_period, bounds)
+                    )
+                    if candidate_matches:
+                        candidates.append(candidate)
+                if len(candidates) != 1:
+                    start, end = bounds
+                    requested = f"{start or 'open'}..{end or 'open'}"
+                    if len(candidates) > 1:
+                        return (
+                            f"Date range {requested} is not uniquely covered by a source table "
+                            f"matching {metadata.table!r}"
+                        )
+                    current_range = (
+                        f"{observed[0]}..{observed[1]}" if observed is not None else "an unknown period"
+                    )
+                    return (
+                        f"Source table {metadata.table!r} covers {current_range}, outside "
+                        f"requested date range {requested}; no compatible source was found"
+                    )
+                replacement = candidates[0]
+                old_table = plan.table
+                plan.table = replacement.table
+                for item in [*_iter_filters(plan.filters), *_iter_filters(plan.comparison_filters)]:
+                    if item.table == old_table:
+                        item.table = replacement.table
+                changes.append({
+                    "kind": "table",
+                    "reason": "source_date_coverage",
+                    "from": old_table,
+                    "to": replacement.table,
+                    "date_column": date_column,
+                    "requested_range": [
+                        bounds[0].isoformat() if bounds[0] else None,
+                        bounds[1].isoformat() if bounds[1] else None,
+                    ],
+                })
+
+    for cte in plan.ctes:
+        reason = _repair_plan_source_coverage(cte.query, database, changes)
+        if reason:
+            return reason
+    for branch in plan.set_operations:
+        reason = _repair_plan_source_coverage(
+            branch.query, database, changes, allow_partial=True
+        )
+        if reason:
+            return reason
+    return None
 
 
 def _rewrite_filters(
@@ -481,8 +1064,9 @@ def complete_plan(
     changes: list[dict[str, Any]] = []
     unresolved: list[str] = []
 
+    cte_columns = _plan_cte_columns(completed, completed.table)
     schema_table = _schema_table(context, completed.table)
-    if completed.table not in database.tables:
+    if completed.table not in database.tables and not cte_columns:
         if schema_table is not None and str(schema_table.get("table", "")) in database.tables:
             resolved_table = str(schema_table["table"])
             changes.append({
@@ -500,10 +1084,16 @@ def complete_plan(
                 reason=f"Unknown table: {completed.table}",
             )
 
-    columns = _columns_for(context, database, completed.table)
-    table_columns = set(database.tables[completed.table].columns) if completed.table in database.tables else {
-        str(column["name"]) for column in columns
-    }
+    columns = (
+        cte_columns
+        if cte_columns
+        else _columns_for(context, database, completed.table)
+    )
+    table_columns = (
+        set(database.tables[completed.table].columns)
+        if completed.table in database.tables
+        else {str(column["name"]) for column in columns}
+    )
 
     completed.select_columns = [
         _resolve_column(name, columns, table_columns, changes, unresolved)
@@ -649,23 +1239,37 @@ def complete_plan(
                     reason="Numeric aggregation is missing a unique canonical measure",
                 )
 
-    transaction_date = _best_role_column(columns, "transaction_date", question)
-    has_date_filter = bool(
-        transaction_date and _has_column_filter(completed.filters, transaction_date)
-    )
-    date_range = resolve_date_range(question, as_of_date)
-    if transaction_date and date_range and not has_date_filter:
-        completed.filters.append(
-            Filter(column=transaction_date, operator="between", value=list(date_range))
+    shape_error = _align_answer_shape(completed, changes)
+    if shape_error is not None:
+        return CompletionResult(
+            plan=completed,
+            original_plan=original,
+            changes=changes,
+            status="rejected",
+            reason=shape_error,
+            fatal=True,
         )
-        changes.append({
-            "kind": "filter",
-            "reason": "question_time_range",
-            "column": transaction_date,
-            "operator": "between",
-            "value": list(date_range),
-        })
-        has_date_filter = True
+
+    date_range = resolve_date_range(question, as_of_date)
+    transaction_date = _canonicalize_question_date(
+        completed, question, date_range, columns, changes
+    )
+    # Canonicalization installs a date filter (rewriting an existing predicate
+    # or adding one when absent). Preserve that fact explicitly: the as-of
+    # horizon is only a fallback for plans without a resolved date range.
+    date_range_applied = transaction_date is not None
+    if transaction_date is None:
+        transaction_date = _best_role_column(columns, "transaction_date", question)
+    has_date_filter = bool(
+        date_range_applied
+        or (
+            transaction_date
+            and (
+                _has_column_filter(completed.filters, transaction_date)
+                or _has_column_filter(completed.comparison_filters, transaction_date)
+            )
+        )
+    )
     if transaction_date and not has_date_filter:
         completed.filters.append(
             Filter(column=transaction_date, operator="lte", value=as_of_date)
@@ -685,6 +1289,17 @@ def complete_plan(
             "reason": "period_requires_transaction_date",
             "column": transaction_date,
         })
+
+    source_error = _repair_plan_source_coverage(completed, database, changes)
+    if source_error:
+        return CompletionResult(
+            plan=completed,
+            original_plan=original,
+            changes=changes,
+            status="rejected",
+            reason=source_error,
+            fatal=True,
+        )
 
     status_column = _status_column(columns)
     if (
@@ -708,6 +1323,31 @@ def complete_plan(
                 "operator": "not_in",
                 "value": excluded,
             })
+
+    # Keep the resolved calendar window in the final executable plan. Earlier
+    # repairs can rebuild filter collections, so enforce the canonical range
+    # after those repairs have finished as well.
+    if (
+        date_range_applied
+        and transaction_date is not None
+        and date_range is not None
+        and not _has_column_filter(completed.filters, transaction_date)
+    ):
+        completed.filters.append(
+            Filter(
+                column=transaction_date,
+                operator="between",
+                value=list(date_range),
+                table=column_tables.get(transaction_date),
+            )
+        )
+        changes.append({
+            "kind": "filter",
+            "reason": "restore_canonical_question_date_range",
+            "column": transaction_date,
+            "operator": "between",
+            "value": list(date_range),
+        })
 
     status = "completed" if changes else "unchanged"
     return CompletionResult(

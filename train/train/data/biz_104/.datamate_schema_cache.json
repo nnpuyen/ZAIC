@@ -1,0 +1,173 @@
+{
+  "version": 4,
+  "fingerprint": "4134038145568ed1cabef85ea0405e02d49048900e1d3fd6df57fbf795c47246",
+  "schema": {
+    "tables": [
+      {
+        "table": "DanhSachQuyDoi_Sheet1",
+        "source": "train\\train\\data\\biz_104\\DanhSachQuyDoi.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 2,
+        "canonical_name": "DanhSachQuyDoi_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 2,
+            "sample_values": [
+              "bánh croissant",
+              "bánh tiramisu"
+            ]
+          },
+          {
+            "name": "Đơn vị quy đổi",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "hộp"
+            ]
+          },
+          {
+            "name": "Tỉ lệ quy đổi",
+            "type": "BIGINT",
+            "distinct_count": 1,
+            "sample_values": [
+              6
+            ]
+          },
+          {
+            "name": "Đơn vị cơ bản",
+            "type": "VARCHAR",
+            "distinct_count": 1,
+            "sample_values": [
+              "cái"
+            ]
+          }
+        ]
+      },
+      {
+        "table": "DonHang_ChiTiet_Sheet1",
+        "source": "train\\train\\data\\biz_104\\DonHang_ChiTiet.xlsx",
+        "sheet": "Sheet1",
+        "row_count": 62894,
+        "canonical_name": "DonHang_ChiTiet_Sheet1",
+        "aliases": [],
+        "grain": null,
+        "columns": [
+          {
+            "name": "Mã đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 39006,
+            "sample_values": [
+              "ord000001",
+              "ord000002",
+              "ord000003",
+              "ord000004",
+              "ord000005"
+            ],
+            "role": "identifier"
+          },
+          {
+            "name": "Ngày đặt hàng",
+            "type": "TIMESTAMP",
+            "distinct_count": 428,
+            "sample_values": [
+              "2025-04-01T00:00:00",
+              "2025-04-02T00:00:00",
+              "2025-04-03T00:00:00",
+              "2025-04-04T00:00:00",
+              "2025-04-05T00:00:00"
+            ],
+            "role": "transaction_date"
+          },
+          {
+            "name": "Trạng thái đơn hàng",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "đã hoàn thành",
+              "đã hủy",
+              "đã hoàn hàng",
+              "đang giao dịch"
+            ],
+            "role": "status"
+          },
+          {
+            "name": "Tên khách hàng",
+            "type": "VARCHAR",
+            "distinct_count": 561,
+            "sample_values": [
+              "bạch quang hoa",
+              "khách lẻ",
+              "hà hồng bích",
+              "lý loan nhung",
+              "la phương hùng"
+            ]
+          },
+          {
+            "name": "Tên sản phẩm",
+            "type": "VARCHAR",
+            "distinct_count": 54,
+            "sample_values": [
+              "sinh tố xoài (m)",
+              "trà sữa ô long (l)",
+              "sữa tươi trân châu đường đen (m)",
+              "trà sữa trân châu (m)",
+              "trà vải (m)"
+            ]
+          },
+          {
+            "name": "Số lượng sản phẩm",
+            "type": "DOUBLE",
+            "distinct_count": 3,
+            "sample_values": [
+              2.0,
+              1.0,
+              3.0
+            ]
+          },
+          {
+            "name": "Giá sản phẩm",
+            "type": "DOUBLE",
+            "distinct_count": 31,
+            "sample_values": [
+              42000.0,
+              51000.0,
+              45000.0,
+              39000.0,
+              10000.0
+            ]
+          },
+          {
+            "name": "Tổng tiền",
+            "type": "DOUBLE",
+            "distinct_count": 552,
+            "sample_values": [
+              84000.0,
+              51000.0,
+              45000.0,
+              42000.0,
+              78000.0
+            ],
+            "role": "measure"
+          },
+          {
+            "name": "Đơn vị tính",
+            "type": "VARCHAR",
+            "distinct_count": 4,
+            "sample_values": [
+              "ly",
+              "phần",
+              "cái",
+              "hộp"
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "business_description": "# Dữ liệu biz_104\n\nFile Excel xuất từ phần mềm bán hàng, mỗi danh sách một file (danh sách dài tách thành nhiều file, tên thêm đuôi _1, _2… hoặc đuôi năm _2025, _2026…). File đơn hàng mỗi dòng một sản phẩm, thông tin đơn lặp lại ở mọi dòng của đơn; file này không có mã sản phẩm, nối với các danh sách sản phẩm qua tên sản phẩm. Ngày dạng dd/mm/yyyy.\n\n## File\n- `DonHang_ChiTiet.xlsx` (xlsx)\n- `DanhSachQuyDoi.xlsx` (xlsx)\n\n## Cột trong `DonHang_ChiTiet.xlsx`\n- **Mã đơn hàng**: mã đơn\n- **Ngày đặt hàng**: ngày bán\n- **Trạng thái đơn hàng**: trạng thái đơn\n- **Tên khách hàng**: tên khách (Khách lẻ nếu không lưu)\n- **Tên sản phẩm**: tên hàng\n- **Số lượng sản phẩm**: số lượng\n- **Giá sản phẩm**: đơn giá\n- **Tổng tiền**: thành tiền sau giảm\n- **Đơn vị tính**: đơn vị tính\n\n## Cột trong `DanhSachQuyDoi.xlsx`\n- **Tên sản phẩm**: tên hàng (file chỉ có mặt hàng có đơn vị lớn)\n- **Đơn vị quy đổi**: đơn vị lớn (thùng, hộp, tấn...)\n- **Tỉ lệ quy đổi**: hệ số: số đơn vị cơ bản trong 1 đơn vị lớn\n- **Đơn vị cơ bản**: đơn vị cơ bản\n\n## Quy ước\n- Dữ liệu có đến hết 02/06/2026.\n- **Quy đổi đơn vị**: số lượng ghi theo đơn vị của dòng, hệ số quy đổi ở `DanhSachQuyDoi.xlsx`.\n"
+}
